@@ -122,6 +122,33 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 
 /* ---------- hero ---------- */
 .hero { padding-top: clamp(28px, 5vw, 56px); }
+.hero-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(16px, 4vw, 56px);
+}
+.hero-content { min-width: 0; }
+
+/* mascot — links to Instagram, floats on the paper */
+.hero-pengu {
+  position: relative; display: flex; flex-direction: column; align-items: center;
+  gap: 14px; text-decoration: none; justify-self: end; padding-bottom: 6px;
+}
+.pengu-float { display: block; animation: floaty 5.5s ease-in-out infinite; will-change: transform; }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.hero-pengu img {
+  width: clamp(210px, 23vw, 312px); height: auto; display: block;
+  filter: drop-shadow(0 22px 24px rgba(22, 19, 13, 0.18));
+  transition: transform 0.35s var(--ease);
+}
+.hero-pengu:hover img { transform: scale(1.04) rotate(-1.5deg); }
+.pengu-badge {
+  font-family: var(--mono); font-size: 12px; color: var(--ink-soft);
+  border: 1.5px solid var(--line-ink); padding: 6px 13px; background: var(--paper-card);
+  transition: 0.2s; white-space: nowrap;
+}
+.hero-pengu:hover .pengu-badge { background: var(--ink); color: var(--paper-2); transform: translateY(-1px); }
 .hero-mark {
   font-family: var(--brush); font-size: clamp(120px, 26vw, 300px); line-height: 0.72;
   color: var(--ink); letter-spacing: -8px; margin: 0 0 6px; user-select: none;
@@ -434,6 +461,12 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
   .tool.col-3 { grid-column: span 4; }
   .tool.col-2 { grid-column: span 2; }
   .tool.col-4 { grid-column: span 4; }
+}
+@media (max-width: 880px) {
+  .hero-top { grid-template-columns: 1fr; gap: 8px; }
+  .hero-pengu { flex-direction: row; justify-self: start; align-items: center; gap: 18px; margin-top: 8px; }
+  .hero-pengu img { width: clamp(140px, 34vw, 200px); }
+  .pengu-float { animation-duration: 6.5s; }
 }
 @media (max-width: 760px) {
   .nav-links { display: none; }
