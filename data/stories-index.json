@@ -1,6 +1,24 @@
 {
   "stories": [
     {
+      "slug": "household-income-state-2022",
+      "url": "/stories/household-income-state-2022",
+      "tag": "Income",
+      "title": "Where you live shapes what you earn",
+      "subtitle": "Household income, poverty & the B40/M40/T20 split by state — 2022.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "unemployment-malaysia",
+      "url": "/stories/unemployment-malaysia",
+      "tag": "Jobs",
+      "title": "Is Malaysia working?",
+      "subtitle": "Unemployment & the labour force, 2010–2026 — the COVID spike and recovery.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
       "slug": "median-salary-malaysia-2024",
       "url": "/stories/median-salary-malaysia-2024",
       "tag": "Income",

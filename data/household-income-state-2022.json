@@ -1,0 +1,87 @@
+{
+  "slug": "household-income-state-2022",
+  "kind": "data-story",
+  "title": "Where you live shapes what you earn",
+  "subtitle": "Household income, poverty & the B40 / M40 / T20 split, 2022",
+  "question": "What is the median household income in Malaysia?",
+  "answer": "Malaysia's median household income was RM6,338 a month in 2022 — but it ranges from RM10,234 in Kuala Lumpur to RM3,614 in Kelantan. Nationally, the B40/M40/T20 lines fall at RM4,850 and RM10,960.",
+  "updated": "2026-06-30",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM)",
+    "publisher_type": "Government — national statistics office",
+    "document": "Household Income & Expenditure Survey (HIES) 2022",
+    "published": "2023",
+    "url": "https://open.dosm.gov.my/dashboard/household-income-expenditure",
+    "retrieved": "2026-06-30",
+    "license": "Official DOSM open data (data.gov.my)",
+    "notes": "Figures are gross monthly household income. B40 / M40 / T20 = the bottom 40%, middle 40% and top 20% of households by income. State figures and poverty rates from DOSM HIES 2022."
+  },
+  "headline": [
+    { "label": "National median", "value": 6338, "prefix": "RM", "sub": "half of households earn less, half more · 2022", "note": "DOSM HIES 2022" },
+    { "label": "B40 ceiling", "value": 4850, "prefix": "≤ RM", "sub": "the bottom 40% of households earn under this", "note": "national, 2022" },
+    { "label": "T20 floor", "value": 10960, "prefix": "≥ RM", "sub": "the top 20% earn above this", "note": "national, 2022" }
+  ],
+  "series": {
+    "by_state": {
+      "title": "Median household income by state",
+      "note": "Kuala Lumpur, Putrajaya and Selangor sit far above the rest; whole states fall below the national B40 ceiling of RM4,850.",
+      "ref": "HIES 2022, by state",
+      "unit": "RM / month, household",
+      "metrics": [{ "key": "median", "label": "Median household income", "color": "seal", "fmt": "rm" }],
+      "rows": [
+        { "label": "W.P. Kuala Lumpur", "median": 10234 },
+        { "label": "W.P. Putrajaya", "median": 10056 },
+        { "label": "Selangor", "median": 9983 },
+        { "label": "W.P. Labuan", "median": 6904 },
+        { "label": "Johor", "median": 6879 },
+        { "label": "Pulau Pinang", "median": 6502 },
+        { "label": "Melaka", "median": 6210 },
+        { "label": "Terengganu", "median": 5878 },
+        { "label": "Negeri Sembilan", "median": 5226 },
+        { "label": "Sarawak", "median": 4978 },
+        { "label": "Pahang", "median": 4753 },
+        { "label": "Perlis", "median": 4713 },
+        { "label": "Sabah", "median": 4577 },
+        { "label": "Perak", "median": 4494 },
+        { "label": "Kedah", "median": 4402 },
+        { "label": "Kelantan", "median": 3614 }
+      ]
+    },
+    "poverty_by_state": {
+      "title": "Absolute poverty by state",
+      "note": "Share of households below the national poverty line. Sabah and Kelantan are highest; the Klang Valley lowest.",
+      "ref": "HIES 2022, incidence of poverty",
+      "unit": "% of households below the national poverty line",
+      "metrics": [{ "key": "rate", "label": "Poverty rate", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "label": "Sabah", "rate": 19.7 },
+        { "label": "Kelantan", "rate": 13.2 },
+        { "label": "Sarawak", "rate": 10.8 },
+        { "label": "Kedah", "rate": 9.0 },
+        { "label": "Perak", "rate": 7.5 },
+        { "label": "Pahang", "rate": 6.3 },
+        { "label": "Terengganu", "rate": 6.2 },
+        { "label": "Johor", "rate": 4.6 },
+        { "label": "Negeri Sembilan", "rate": 4.4 },
+        { "label": "Melaka", "rate": 4.2 },
+        { "label": "Perlis", "rate": 4.0 },
+        { "label": "W.P. Labuan", "rate": 2.5 },
+        { "label": "Pulau Pinang", "rate": 2.0 },
+        { "label": "Selangor", "rate": 1.5 },
+        { "label": "W.P. Kuala Lumpur", "rate": 1.4 },
+        { "label": "W.P. Putrajaya", "rate": 0.1 }
+      ]
+    }
+  },
+  "takeaways": [
+    "A Kuala Lumpur household earns about **2.8× more** than a Kelantan one (RM10,234 vs RM3,614 median).",
+    "Whole states sit largely in the **B40**: Kelantan, Kedah, Perak and Sabah all have median household incomes **below the national B40 ceiling of RM4,850**.",
+    "**Sabah** has the highest poverty rate (19.7%) despite its natural resources; **Putrajaya** the lowest (0.1%).",
+    "The B40/M40/T20 labels are national cut-offs — what counts as 'middle income' in KL can be well-off in Kelantan."
+  ],
+  "faq": [
+    { "q": "What is the median household income in Malaysia?", "a": "Malaysia's median household income was RM6,338 per month in 2022, according to the Department of Statistics Malaysia (DOSM)." },
+    { "q": "What is the B40, M40 and T20 income range in Malaysia?", "a": "By household monthly income (DOSM HIES 2022): B40 is RM4,850 and below, M40 is RM4,851–RM10,960, and T20 is RM10,960 and above." },
+    { "q": "Which Malaysian state has the highest household income?", "a": "Kuala Lumpur has the highest median household income (RM10,234/month in 2022), followed by Putrajaya and Selangor. Kelantan is the lowest at RM3,614." }
+  ]
+}

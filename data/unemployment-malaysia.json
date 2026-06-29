@@ -1,0 +1,91 @@
+{
+  "slug": "unemployment-malaysia",
+  "kind": "data-story",
+  "title": "Is Malaysia working?",
+  "subtitle": "Unemployment & the labour force, 2010–2026",
+  "question": "What is Malaysia's unemployment rate?",
+  "answer": "Malaysia's unemployment rate is 3.0% as of early 2026 — near its lowest in over a decade — with a record 70.9% of working-age adults in the labour force. It spiked to 4.6% in 2021 during COVID before recovering.",
+  "updated": "2026-06-30",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM)",
+    "publisher_type": "Government — national statistics office",
+    "document": "Labour Force Survey, Malaysia (monthly)",
+    "published": "2026",
+    "url": "https://open.dosm.gov.my/dashboard/labour-market",
+    "retrieved": "2026-06-30",
+    "license": "Official DOSM open data (data.gov.my)",
+    "notes": "Annual figures are averages of monthly Labour Force Survey data. Unemployment rate = unemployed persons as a share of the labour force. Participation rate = share of working-age adults in the labour force. 2026 figures reflect data to April 2026."
+  },
+  "headline": [
+    { "label": "Unemployment rate", "value": "3.0", "suffix": "%", "sub": "of the labour force · early 2026", "note": "near a decade low" },
+    { "label": "In the labour force", "value": "17.3", "suffix": "M", "sub": "people working or seeking work", "note": "DOSM, 2026" },
+    { "label": "Participation rate", "value": "70.9", "suffix": "%", "sub": "record high · adults in the workforce", "note": "DOSM, 2026" }
+  ],
+  "series": {
+    "trend": {
+      "title": "The COVID spike, and the recovery",
+      "note": "Unemployment rate (annual average), 2010–2025. It jumped during the pandemic, then fell back toward pre-COVID lows.",
+      "ref": "Labour Force Survey, annual average",
+      "unit": "% of the labour force",
+      "x": "year",
+      "highlight": { "x": "2021", "label": "COVID peak" },
+      "metrics": [{ "key": "u_rate", "label": "Unemployment rate", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "year": "2010", "u_rate": 3.3 },
+        { "year": "2011", "u_rate": 3.1 },
+        { "year": "2012", "u_rate": 3.0 },
+        { "year": "2013", "u_rate": 3.1 },
+        { "year": "2014", "u_rate": 2.9 },
+        { "year": "2015", "u_rate": 3.2 },
+        { "year": "2016", "u_rate": 3.5 },
+        { "year": "2017", "u_rate": 3.4 },
+        { "year": "2018", "u_rate": 3.3 },
+        { "year": "2019", "u_rate": 3.3 },
+        { "year": "2020", "u_rate": 4.5 },
+        { "year": "2021", "u_rate": 4.6 },
+        { "year": "2022", "u_rate": 3.8 },
+        { "year": "2023", "u_rate": 3.4 },
+        { "year": "2024", "u_rate": 3.3 },
+        { "year": "2025", "u_rate": 3.0 }
+      ]
+    },
+    "participation": {
+      "title": "More Malaysians are working than ever",
+      "note": "Labour force participation rate (share of working-age adults in the workforce), 2010–2025 — now at record highs, led by rising women's participation.",
+      "ref": "Labour Force Survey, annual average",
+      "unit": "% of working-age adults",
+      "layout": "vertical",
+      "x": "year",
+      "metrics": [{ "key": "p_rate", "label": "Participation rate", "color": "blue", "fmt": "pct" }],
+      "rows": [
+        { "year": "2010", "p_rate": 63.8 },
+        { "year": "2011", "p_rate": 64.7 },
+        { "year": "2012", "p_rate": 65.6 },
+        { "year": "2013", "p_rate": 67.2 },
+        { "year": "2014", "p_rate": 67.7 },
+        { "year": "2015", "p_rate": 67.9 },
+        { "year": "2016", "p_rate": 67.7 },
+        { "year": "2017", "p_rate": 67.8 },
+        { "year": "2018", "p_rate": 68.4 },
+        { "year": "2019", "p_rate": 68.6 },
+        { "year": "2020", "p_rate": 68.4 },
+        { "year": "2021", "p_rate": 68.6 },
+        { "year": "2022", "p_rate": 69.5 },
+        { "year": "2023", "p_rate": 70.0 },
+        { "year": "2024", "p_rate": 70.6 },
+        { "year": "2025", "p_rate": 70.8 }
+      ]
+    }
+  },
+  "takeaways": [
+    "Unemployment spiked to **4.6% in 2021** — the worst in decades — as COVID hit, then fell steadily back to **3.0%**, near pre-pandemic lows.",
+    "A record **70.9%** of working-age Malaysians are now in the labour force, up from about 64% in 2010 — driven largely by more women working.",
+    "Around **512,000** Malaysians were unemployed in early 2026, out of a **17.3 million**-strong labour force.",
+    "A 'low' 3% headline doesn't capture underemployment or people outside the labour force — it counts only those actively seeking work."
+  ],
+  "faq": [
+    { "q": "What is Malaysia's unemployment rate?", "a": "Malaysia's unemployment rate was 3.0% as of early 2026, according to the Department of Statistics Malaysia (DOSM) — near its lowest in over a decade." },
+    { "q": "What was Malaysia's unemployment rate during COVID?", "a": "It rose sharply during the pandemic, peaking at about 4.6% in 2021 (annual average), before recovering toward 3%." },
+    { "q": "What is Malaysia's labour force participation rate?", "a": "A record 70.9% of working-age adults were in the labour force in early 2026 (DOSM), up from around 64% in 2010." }
+  ]
+}
