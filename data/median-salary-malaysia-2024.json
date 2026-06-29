@@ -1,0 +1,89 @@
+{
+  "slug": "median-salary-malaysia-2024",
+  "kind": "data-story",
+  "title": "How much do Malaysians earn?",
+  "subtitle": "Median & mean monthly salary in Malaysia, 2024",
+  "question": "What is the median salary in Malaysia?",
+  "answer": "In 2024, the median monthly salary for Malaysian citizens was RM2,793 and the mean was RM3,652 — up 7.3% and 6.1% from 2023.",
+  "updated": "2026-06-30",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM)",
+    "publisher_type": "Government — national statistics office",
+    "document": "Salaries & Wages Survey Report, Malaysia, 2024",
+    "published": "2025",
+    "url": "https://www.dosm.gov.my/portal-main/release-content/salaries-and-wages-survey-report-2024",
+    "retrieved": "2026-06-30",
+    "license": "Official DOSM public statistical release",
+    "notes": "Figures refer to Malaysian citizens. From 2020 onward, estimates are based on the Population & Housing Census of Malaysia 2020. Median = the middle earner; mean = the average."
+  },
+  "headline": [
+    { "label": "Median monthly salary", "value": 2793, "prefix": "RM", "sub": "the middle earner · 2024", "yoy": 7.3, "page": 1 },
+    { "label": "Mean monthly salary", "value": 3652, "prefix": "RM", "sub": "the average · 2024", "yoy": 6.1, "page": 1 },
+    { "label": "Year-on-year (median)", "value": 7.3, "suffix": "%", "sub": "RM2,602 → RM2,793", "page": 1 }
+  ],
+  "series": {
+    "trend": {
+      "title": "The 9-year climb (with a COVID dip)",
+      "note": "Median and mean monthly salary, Malaysian citizens, 2016–2024. Median fell in 2020 during the pandemic before recovering.",
+      "page": 1,
+      "unit": "RM / month",
+      "rows": [
+        { "year": "2016", "median": 2000, "mean": 2657 },
+        { "year": "2017", "median": 2160, "mean": 2879 },
+        { "year": "2018", "median": 2308, "mean": 3087 },
+        { "year": "2019", "median": 2442, "mean": 3224 },
+        { "year": "2020", "median": 2076, "mean": 2954 },
+        { "year": "2021", "median": 2256, "mean": 3049 },
+        { "year": "2022", "median": 2429, "mean": 3219 },
+        { "year": "2023", "median": 2602, "mean": 3441 },
+        { "year": "2024", "median": 2793, "mean": 3652 }
+      ]
+    },
+    "by_sex": {
+      "title": "Men still earn more than women",
+      "note": "Median and mean monthly salary by sex, 2024.",
+      "page": 1,
+      "unit": "RM / month",
+      "rows": [
+        { "label": "Male", "median": 2850, "mean": 3789 },
+        { "label": "Female", "median": 2641, "mean": 3499 }
+      ]
+    },
+    "by_education": {
+      "title": "The education premium is real",
+      "note": "Median and mean monthly salary by highest education attainment, 2024.",
+      "page": 1,
+      "unit": "RM / month",
+      "rows": [
+        { "label": "Tertiary", "median": 4131, "mean": 4962 },
+        { "label": "Secondary", "median": 2046, "mean": 2684 },
+        { "label": "Primary", "median": 1644, "mean": 2128 },
+        { "label": "No formal education", "median": 1559, "mean": 1900 }
+      ]
+    },
+    "by_sector": {
+      "title": "Mining pays most, farming least",
+      "note": "Mean and median monthly salary by economic sector, 2024.",
+      "page": 2,
+      "unit": "RM / month",
+      "rows": [
+        { "label": "Mining & quarrying", "median": 4450, "mean": 5904 },
+        { "label": "Services", "median": 2894, "mean": 3831 },
+        { "label": "Manufacturing", "median": 2490, "mean": 3278 },
+        { "label": "Construction", "median": 2051, "mean": 3035 },
+        { "label": "Agriculture", "median": 1698, "mean": 2409 }
+      ]
+    }
+  },
+  "takeaways": [
+    "The median (RM2,793) sits well below the mean (RM3,652) — a sign that higher earners pull the average up, so \"average salary\" overstates what a typical Malaysian makes.",
+    "Salaries dipped in 2020 during the pandemic (median fell from RM2,442 to RM2,076) and only passed the pre-COVID level again around 2022–2023.",
+    "A tertiary education roughly doubles the median salary versus secondary (RM4,131 vs RM2,046).",
+    "A gender gap persists: women's median salary is about 7% below men's."
+  ],
+  "faq": [
+    { "q": "What is the median salary in Malaysia in 2024?", "a": "The median monthly salary for Malaysian citizens was RM2,793 in 2024, according to the Department of Statistics Malaysia (DOSM). The mean (average) was RM3,652." },
+    { "q": "What is the average salary in Malaysia?", "a": "The mean monthly salary was RM3,652 in 2024 (DOSM). Note the median — RM2,793 — better reflects a typical earner, because a minority of high earners raises the average." },
+    { "q": "How much did salaries grow in 2024?", "a": "Median monthly salary rose 7.3% and mean rose 6.1% versus 2023, per DOSM's Salaries & Wages Survey Report 2024." }
+  ]
+}
