@@ -32,8 +32,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="story.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/stories/story.css" />
   </head>
   <body>
     <div class="paper-bg" aria-hidden="true"></div>
@@ -42,17 +42,17 @@
 
     <header class="nav" id="nav">
       <div class="nav-inner">
-        <a class="brand" href="../index.html">
+        <a class="brand" href="/">
           <span class="gm">GM</span>
           <span class="gm-full">Greater Malaysia</span>
         </a>
         <span class="nav-spacer"></span>
         <nav class="nav-links">
-          <a href="../index.html#tools">Tools</a>
-          <a href="./">Data stories</a>
-          <a href="../index.html#sources">Sources</a>
+          <a href="/#tools">Tools</a>
+          <a href="/stories/">Data stories</a>
+          <a href="/#sources">Sources</a>
         </nav>
-        <a class="nav-cta" href="../index.html">Open the tools</a>
+        <a class="nav-cta" href="/">Open the tools</a>
       </div>
     </header>
 
@@ -80,7 +80,7 @@
         window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
         const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
         try {
-          const { stories } = await (await fetch("../data/stories-index.json")).json();
+          const { stories } = await (await fetch("/data/stories-index.json")).json();
           const cards = stories.map((s) => `
             <a class="story-card" href="${esc(s.url)}">
               <span class="sc-tag">${esc(s.tag)}</span>
