@@ -1,0 +1,10 @@
+# Vercel
+.vercel
+
+# Local tooling / editor
+.claude
+.DS_Store
+*.log
+
+# Dependencies (none used, but just in case)
+node_modules

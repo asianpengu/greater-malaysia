@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google tag (gtag.js) — Greater Malaysia GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2R45WDST7M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-2R45WDST7M");
+    </script>
+
+    <title>Greater Malaysia ~ the nation, live</title>
+    <meta
+      name="description"
+      content="Greater Malaysia ~ a suite of free live tools built on the nation's open data. Prayer times, petrol prices, the ringgit, the weather, the air, the rakyat. No login, just the numbers that run the country."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e9e4d8'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-style='italic' font-weight='bold' font-size='22' text-anchor='middle' fill='%2316130d'%3EGM%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="paper-bg" aria-hidden="true"></div>
+    <span class="smudge s1" aria-hidden="true"></span>
+    <span class="smudge s2" aria-hidden="true"></span>
+
+    <header class="nav" id="nav">
+      <div class="nav-inner">
+        <a class="brand" href="#top">
+          <span class="gm">GM</span>
+          <span class="gm-full">Greater Malaysia</span>
+        </a>
+        <span class="nav-spacer"></span>
+        <nav class="nav-links">
+          <a href="#tools">Tools</a>
+          <a href="#sources">Sources</a>
+        </nav>
+        <a class="nav-cta" href="#tools">Open the tools</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-mark">GM</div>
+        <h1 class="hero-title">Malaysia,<br />in <span class="seal">real time.</span></h1>
+        <p class="hero-sub">
+          Free live tools built on the nation's open data ~ <b>waktu solat</b>, <b>petrol prices</b>,
+          the <b>ringgit</b>, the <b>weather</b>, the <b>air</b>, the <b>rakyat</b>.
+          No app, no login. Just the numbers that run the country.
+        </p>
+        <div class="hero-row">
+          <a class="hero-cta" href="#tools">Open the tools ↓</a>
+          <div class="hero-clock">
+            <span class="ld"></span>
+            <span id="heroClock">— : — : —</span>
+            <span style="color: var(--ink-faint)">MYT</span>
+          </div>
+        </div>
+
+        <!-- LIVE TICKER -->
+        <div class="ticker" id="ticker">
+          <div class="ticker-track" id="tickerTrack">
+            <span class="tick"><span class="t-lab">loading live data…</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOOLS SUITE -->
+      <section class="section" id="tools">
+        <div class="section-head">
+          <div class="sh-left">
+            <span class="eyebrow">the toolkit</span>
+            <h2>Tools, not tabs</h2>
+            <p>Six live instruments wired straight into Malaysia's public APIs. Each one fetches fresh, every time you open it.</p>
+          </div>
+          <div class="sh-note">live · auto-refreshed<br />data.gov.my · JAKIM · BNM-grade feeds</div>
+        </div>
+
+        <div class="tools-grid">
+          <!-- 1. Prayer times -->
+          <article class="tool col-2" id="tool-prayer">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Waktu Solat</div>
+                <div class="tool-en">Prayer times</div>
+              </div>
+              <select id="prayerZone" aria-label="Prayer zone"></select>
+            </div>
+            <div class="tool-body" id="prayerBody"><div class="tool-loading">Fetching prayer times…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://www.e-solat.gov.my" target="_blank" rel="noopener">JAKIM e-Solat</a>
+            </div>
+          </article>
+
+          <!-- 2. Fuel prices -->
+          <article class="tool col-2" id="tool-fuel">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Harga Minyak</div>
+                <div class="tool-en">Weekly fuel prices</div>
+              </div>
+            </div>
+            <div class="tool-body" id="fuelBody"><div class="tool-loading">Fetching pump prices…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://data.gov.my/data-catalogue/fuelprice" target="_blank" rel="noopener">data.gov.my</a>
+            </div>
+          </article>
+
+          <!-- 3. Population -->
+          <article class="tool col-2" id="tool-pop">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Rakyat</div>
+                <div class="tool-en">Population & composition</div>
+              </div>
+            </div>
+            <div class="tool-body" id="popBody"><div class="tool-loading">Counting the rakyat…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://data.gov.my/data-catalogue/population_malaysia" target="_blank" rel="noopener">DOSM · data.gov.my</a>
+            </div>
+          </article>
+
+          <!-- 4. Ringgit / FX -->
+          <article class="tool col-3" id="tool-fx">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Ringgit Watch</div>
+                <div class="tool-en">Live exchange rates · 30-day trend</div>
+              </div>
+            </div>
+            <div class="tool-body" id="fxBody"><div class="tool-loading">Fetching rates…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://frankfurter.dev" target="_blank" rel="noopener">Frankfurter / ECB</a>
+            </div>
+          </article>
+
+          <!-- 5. Crypto in MYR -->
+          <article class="tool col-3" id="tool-crypto">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Kripto dalam Ringgit</div>
+                <div class="tool-en">Crypto priced in MYR · 24h</div>
+              </div>
+            </div>
+            <div class="tool-body" id="cryptoBody"><div class="tool-loading">Fetching crypto…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>
+            </div>
+          </article>
+
+          <!-- 6. Weather + Air combo -->
+          <article class="tool col-6" id="tool-wx">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Cuaca &amp; Udara</div>
+                <div class="tool-en">Weather + air quality · a two-API combo</div>
+              </div>
+              <select id="wxCity" aria-label="City"></select>
+            </div>
+            <div class="tool-body" id="wxBody"><div class="tool-loading">Reading the skies…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo (weather + air quality)</a>
+            </div>
+          </article>
+
+          <!-- 7. Disaster warnings (combo) -->
+          <article class="tool col-3" id="tool-warn">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Amaran Bencana</div>
+                <div class="tool-en">Live weather warnings + flood alerts</div>
+              </div>
+            </div>
+            <div class="tool-body" id="warnBody"><div class="tool-loading">Checking warnings…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://data.gov.my" target="_blank" rel="noopener">MET Malaysia · JPS · data.gov.my</a>
+            </div>
+          </article>
+
+          <!-- 8. Inflation / cost of living -->
+          <article class="tool col-3" id="tool-cpi">
+            <div class="tool-head">
+              <div>
+                <div class="tool-kicker">Kos Sara Hidup</div>
+                <div class="tool-en">Inflation · consumer price index</div>
+              </div>
+            </div>
+            <div class="tool-body" id="cpiBody"><div class="tool-loading">Reading prices…</div></div>
+            <div class="tool-src" style="margin-top: auto; padding-top: 14px;">
+              <a href="https://data.gov.my/data-catalogue/cpi_headline" target="_blank" rel="noopener">DOSM · data.gov.my</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- TRUST BAND (where the numbers come from) -->
+      <section class="section" id="sources">
+        <div class="section-head">
+          <div class="sh-left">
+            <span class="eyebrow">where it comes from</span>
+            <h2>Straight from the source</h2>
+            <p>No middlemen, no guesswork. Every number on this page is pulled live, in your browser, from official and trusted feeds ~ the same data the agencies publish.</p>
+          </div>
+        </div>
+
+        <div class="src-grid">
+          <div class="src-card"><div class="src-name">JAKIM e-Solat</div><div class="src-what">Prayer times for every zone</div></div>
+          <div class="src-card"><div class="src-name">DOSM · data.gov.my</div><div class="src-what">Fuel, population, inflation</div></div>
+          <div class="src-card"><div class="src-name">MET Malaysia · JPS</div><div class="src-what">Weather warnings &amp; flood alerts</div></div>
+          <div class="src-card"><div class="src-name">Open-Meteo</div><div class="src-what">Weather &amp; air quality</div></div>
+          <div class="src-card"><div class="src-name">Frankfurter · ECB</div><div class="src-what">Ringgit exchange rates</div></div>
+          <div class="src-card"><div class="src-name">CoinGecko</div><div class="src-what">Crypto prices in MYR</div></div>
+        </div>
+
+        <div class="src-foot">
+          <span id="srcCount">Indexed across hundreds of public Malaysian APIs.</span>
+          <a href="https://pasarapi.krackeddevs.com" target="_blank" rel="noopener">Building something? Browse every Malaysian API →</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-mark">GM</div>
+        <div class="footer-tag">Greater Malaysia</div>
+        <p class="footer-sources">
+          Live data from <a href="https://data.gov.my" target="_blank" rel="noopener">data.gov.my</a> (DOSM),
+          <a href="https://www.e-solat.gov.my" target="_blank" rel="noopener">JAKIM e-Solat</a>,
+          <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>,
+          <a href="https://frankfurter.dev" target="_blank" rel="noopener">Frankfurter</a> and
+          <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>.
+          API library indexed by <a href="https://pasarapi.krackeddevs.com" target="_blank" rel="noopener">Pasar API</a>.
+        </p>
+        <p class="footer-credit">
+          Built by <a href="https://x.com/aaronteng" target="_blank" rel="noopener">Aaron Teng</a>
+          <span class="x-ico" aria-hidden="true">𝕏</span>
+        </p>
+        <p class="footer-meta" id="footerMeta"></p>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
