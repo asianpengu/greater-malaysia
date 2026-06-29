@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google tag (gtag.js) — Greater Malaysia GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2R45WDST7M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-2R45WDST7M");
+    </script>
+
+    <title>Data Stories ~ Greater Malaysia</title>
+    <meta name="description" content="Verified facts from Malaysia's most trusted official reports — rebuilt as interactive, citable charts. Salaries, cost of living, demographics and more." />
+    <link rel="canonical" href="https://greatermalaysia.com/stories/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Greater Malaysia" />
+    <meta property="og:title" content="Data Stories ~ Greater Malaysia" />
+    <meta property="og:description" content="Verified facts from Malaysia's most trusted reports, rebuilt as interactive, citable charts." />
+    <meta property="og:url" content="https://greatermalaysia.com/stories/" />
+    <meta property="og:image" content="https://greatermalaysia.com/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="story.css" />
+  </head>
+  <body>
+    <div class="paper-bg" aria-hidden="true"></div>
+    <span class="smudge s1" aria-hidden="true"></span>
+    <span class="smudge s2" aria-hidden="true"></span>
+
+    <header class="nav" id="nav">
+      <div class="nav-inner">
+        <a class="brand" href="../index.html">
+          <span class="gm">GM</span>
+          <span class="gm-full">Greater Malaysia</span>
+        </a>
+        <span class="nav-spacer"></span>
+        <nav class="nav-links">
+          <a href="../index.html#tools">Tools</a>
+          <a href="./">Data stories</a>
+          <a href="../index.html#sources">Sources</a>
+        </nav>
+        <a class="nav-cta" href="../index.html">Open the tools</a>
+      </div>
+    </header>
+
+    <main class="story">
+      <div class="hub-head">
+        <div class="st-kicker">data stories</div>
+        <h1>The numbers, decoded.</h1>
+        <p>Verified facts from Malaysia's most trusted official reports ~ DOSM, BNM, the World Bank and more ~ rebuilt as interactive, citable charts. Every figure traces back to its source.</p>
+      </div>
+      <div class="st-rule"></div>
+      <div class="hub-grid" id="hubGrid"><div class="story-loading">Loading stories…</div></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-mark">GM</div>
+      <div class="footer-tag">Greater Malaysia</div>
+      <p class="footer-sources">Verified data, rebuilt as interactive charts. Built on Malaysia's official open data.</p>
+      <p class="footer-credit">Built by <a href="https://x.com/aaronteng" target="_blank" rel="noopener">Aaron Teng</a> <span class="x-ico">𝕏</span></p>
+    </footer>
+
+    <script>
+      (async () => {
+        const nav = document.querySelector("#nav");
+        const onScroll = () => nav.classList.toggle("scrolled", (window.scrollY || document.documentElement.scrollTop) > 24);
+        window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+        const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+        try {
+          const { stories } = await (await fetch("../data/stories-index.json")).json();
+          const cards = stories.map((s) => `
+            <a class="story-card" href="${esc(s.url)}">
+              <span class="sc-tag">${esc(s.tag)}</span>
+              <h3>${esc(s.title)}</h3>
+              <div class="sc-sub">${esc(s.subtitle)}</div>
+              <div class="sc-meta"><span>Source · ${esc(s.source)} · ${esc(s.date)}</span><span class="sc-arrow">Read →</span></div>
+            </a>`).join("");
+          document.querySelector("#hubGrid").innerHTML = cards + `<div class="story-card hub-soon">more stories<br>coming soon ~</div>`;
+        } catch (e) {
+          document.querySelector("#hubGrid").innerHTML = `<div class="story-loading">Couldn't load stories.</div>`;
+        }
+      })();
+    </script>
+  </body>
+</html>

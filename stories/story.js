@@ -7,6 +7,7 @@
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const rm = (n) => "RM" + Number(n).toLocaleString("en-MY");
+function track(name, params = {}) { if (typeof window.gtag === "function") window.gtag("event", name, params); }
 
 boot();
 
@@ -106,10 +107,10 @@ function render(d) {
 
   // animate bars in + wire actions
   requestAnimationFrame(() => $$all(".hb-bar").forEach((b) => (b.style.width = b.dataset.w + "%")));
-  $("#dlJson")?.addEventListener("click", () => download(`${d.slug}.json`, JSON.stringify(d, null, 2), "application/json"));
-  $("#dlCsv")?.addEventListener("click", () => download(`${d.slug}.csv`, toCsv(d), "text/csv"));
+  $("#dlJson")?.addEventListener("click", () => { download(`${d.slug}.json`, JSON.stringify(d, null, 2), "application/json"); track("data_download", { story: d.slug, format: "json" }); });
+  $("#dlCsv")?.addEventListener("click", () => { download(`${d.slug}.csv`, toCsv(d), "text/csv"); track("data_download", { story: d.slug, format: "csv" }); });
   const cf = $("#capForm");
-  if (cf) cf.addEventListener("submit", (e) => { e.preventDefault(); toast("Thanks! (demo — connect your email tool to go live)"); cf.reset(); });
+  if (cf) cf.addEventListener("submit", (e) => { e.preventDefault(); track("lead_capture", { source: "data_story", story: d.slug }); toast("Thanks! (demo — connect your email tool to go live)"); cf.reset(); });
 }
 
 const $$all = (s, r = document) => [...r.querySelectorAll(s)];

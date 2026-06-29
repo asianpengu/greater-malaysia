@@ -100,8 +100,24 @@
 .cap-form button:hover { background: var(--seal); border-color: var(--seal); }
 .cap-tiny { font-family: var(--mono); font-size: 11px; color: var(--ink-ghost); margin-top: 12px; }
 
+/* ---------- Data Stories hub ---------- */
+.hub-head { margin-bottom: 8px; }
+.hub-head .st-kicker { font-size: 24px; }
+.hub-head h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(36px, 6.4vw, 66px); line-height: 0.95; letter-spacing: 0.5px; margin: 6px 0 10px; }
+.hub-head p { font-size: clamp(15px, 2.2vw, 19px); color: var(--ink-soft); max-width: 620px; margin: 0; }
+.hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 30px 0; }
+.story-card { display: block; text-decoration: none; color: inherit; background: var(--paper-card); border: 2px solid var(--line-ink); padding: 22px; box-shadow: 4px 4px 0 rgba(22,19,13,0.08); transition: transform 0.2s var(--ease), box-shadow 0.2s; position: relative; }
+.story-card:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+.story-card .sc-tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--seal); border: 1.5px solid var(--seal); padding: 3px 8px; margin-bottom: 14px; }
+.story-card h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(20px, 2.6vw, 26px); line-height: 1; letter-spacing: 0.3px; margin: 0 0 8px; }
+.story-card .sc-sub { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; }
+.story-card .sc-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); display: flex; justify-content: space-between; }
+.story-card .sc-arrow { color: var(--seal); }
+.hub-soon { border: 2px dashed var(--line-ink); background: transparent; box-shadow: none; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--ink-faint); font-family: var(--brush); font-size: 22px; min-height: 160px; }
+
 @media (max-width: 720px) {
   .st-stats { grid-template-columns: 1fr; }
   .prov-grid { grid-template-columns: 1fr; gap: 2px 0; }
   .prov-grid dt { padding-top: 10px; }
+  .hub-grid { grid-template-columns: 1fr; }
 }

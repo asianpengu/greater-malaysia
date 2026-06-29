@@ -18,11 +18,58 @@
       name="description"
       content="Greater Malaysia ~ a suite of free live tools built on the nation's open data. Prayer times, petrol prices, the ringgit, the weather, the air, the rakyat. No login, just the numbers that run the country."
     />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e9e4d8'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-style='italic' font-weight='bold' font-size='22' text-anchor='middle' fill='%2316130d'%3EGM%3C/text%3E%3C/svg%3E"
-    />
+    <link rel="canonical" href="https://greatermalaysia.com/" />
+
+    <!-- Open Graph / Twitter (WhatsApp share card) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Greater Malaysia" />
+    <meta property="og:locale" content="en_MY" />
+    <meta property="og:title" content="Greater Malaysia ~ the nation, in real time" />
+    <meta property="og:description" content="Free live tools on Malaysia's open data — waktu solat, petrol, the ringgit, the weather, the air, the rakyat. No app, no login." />
+    <meta property="og:url" content="https://greatermalaysia.com/" />
+    <meta property="og:image" content="https://greatermalaysia.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Greater Malaysia ~ the nation, in real time" />
+    <meta name="twitter:description" content="Free live tools on Malaysia's open data. No app, no login." />
+    <meta name="twitter:image" content="https://greatermalaysia.com/assets/og.png" />
+
+    <!-- Favicons (penguin mascot) -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+    <!-- Site-wide structured data (AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://greatermalaysia.com/#org",
+          "name": "Greater Malaysia",
+          "url": "https://greatermalaysia.com/",
+          "logo": "https://greatermalaysia.com/assets/favicon-192.png",
+          "description": "Free live tools and verified data on Malaysia ~ built on official open data.",
+          "sameAs": [
+            "https://www.instagram.com/mypudgyfriends",
+            "https://github.com/asianpengu/greater-malaysia"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://greatermalaysia.com/#site",
+          "url": "https://greatermalaysia.com/",
+          "name": "Greater Malaysia",
+          "publisher": { "@id": "https://greatermalaysia.com/#org" },
+          "inLanguage": "en-MY"
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,6 +92,7 @@
         <span class="nav-spacer"></span>
         <nav class="nav-links">
           <a href="#tools">Tools</a>
+          <a href="stories/">Data stories</a>
           <a href="#sources">Sources</a>
         </nav>
         <a class="nav-cta" href="#tools">Open the tools</a>

@@ -9,6 +9,16 @@ const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<
 const fmt = (n, d = 2) => Number(n).toLocaleString("en-MY", { minimumFractionDigits: d, maximumFractionDigits: d });
 const debounce = (fn, ms = 160) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/* GA4 custom events — fires only if gtag is present; deduped per name+key */
+const _tracked = new Set();
+function track(name, params = {}) {
+  if (typeof window.gtag !== "function") return;
+  const key = name + ":" + (params.tool || params.network || params.pair || params.to || "");
+  if (_tracked.has(key)) return; // once per session per tool, avoid flooding
+  _tracked.add(key);
+  window.gtag("event", name, params);
+}
 const jget = async (url, retries = 2) => {
   for (let i = 0; ; i++) {
     try {
@@ -83,8 +93,14 @@ function boot() {
   // populate selects
   $("#prayerZone").innerHTML = ZONES.map((z) => `<option value="${z.code}">${esc(z.name)}</option>`).join("");
   $("#wxCity").innerHTML = CITIES.map((c, i) => `<option value="${i}">${esc(c.name)}</option>`).join("");
-  $("#prayerZone").addEventListener("change", (e) => loadPrayer(e.target.value));
-  $("#wxCity").addEventListener("change", (e) => loadWeather(+e.target.value));
+  $("#prayerZone").addEventListener("change", (e) => { loadPrayer(e.target.value); track("tool_use", { tool: "waktu_solat", zone: e.target.value }); });
+  $("#wxCity").addEventListener("change", (e) => { loadWeather(+e.target.value); track("tool_use", { tool: "cuaca_udara", city: CITIES[+e.target.value]?.name }); });
+
+  // engagement events
+  $(".hero-pengu")?.addEventListener("click", () => track("social_click", { network: "instagram", placement: "hero_mascot" }));
+  $$('a[href="#tools"], a[href="stories/"]').forEach((a) =>
+    a.addEventListener("click", () => track("nav_click", { to: a.getAttribute("href") }))
+  );
 
   // load tools staggered by host, so we never burst a single rate-limited API
   // (CoinGecko / Pasar are the touchiest, so they go later & spaced out)
@@ -224,8 +240,9 @@ async function loadFuel() {
       $("#fuelCost").textContent = `RM ${fmt(l * fuelPrice, 2)}`;
       $("#fuelCalcNote").textContent = `${l} litres at RM ${fmt(fuelPrice, 2)}/L`;
     };
-    $("#fuelLitres").addEventListener("input", recalc);
+    $("#fuelLitres").addEventListener("input", () => { recalc(); track("tool_use", { tool: "harga_minyak" }); });
     $$("#fuelSel button").forEach((b) => b.addEventListener("click", () => {
+      track("tool_use", { tool: "harga_minyak" });
       $$("#fuelSel button").forEach((x) => x.classList.remove("active"));
       b.classList.add("active"); fuelPrice = +b.dataset.p; recalc();
     }));
@@ -315,8 +332,8 @@ async function loadFX(base) {
       </div>
       <div class="fx-pairs">${FX_PAIRS.map((p) => `<button class="fx-pair ${p === base ? "active" : ""}" data-cur="${p}">${p}</button>`).join("")}</div>`;
     const conv = () => { const a = parseFloat($("#fxAmt").value) || 0; $("#fxOut").textContent = `RM ${fmt(a * rate, 2)}`; };
-    $("#fxAmt").addEventListener("input", conv); conv();
-    $$("#fxBody .fx-pair").forEach((b) => b.addEventListener("click", () => loadFX(b.dataset.cur)));
+    $("#fxAmt").addEventListener("input", () => { conv(); track("tool_use", { tool: "ringgit" }); }); conv();
+    $$("#fxBody .fx-pair").forEach((b) => b.addEventListener("click", () => { track("tool_use", { tool: "ringgit", pair: b.dataset.cur }); loadFX(b.dataset.cur); }));
   } catch (e) {
     body.innerHTML = `<div class="tool-err">Couldn't reach the FX feed.</div>`;
   }
