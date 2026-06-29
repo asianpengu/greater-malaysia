@@ -444,7 +444,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* ---------- footer ---------- */
-.footer { padding: clamp(60px, 9vw, 110px) 0 60px; border-top: 2px solid var(--line-ink); margin-top: clamp(60px, 9vw, 100px); }
+.footer { max-width: var(--maxw); margin: clamp(60px, 9vw, 100px) auto 0; padding: clamp(60px, 9vw, 110px) clamp(16px, 4vw, 36px) 60px; border-top: 2px solid var(--line-ink); }
+.footer--narrow { max-width: 860px; }
 .footer-mark { font-family: var(--brush); font-size: 64px; line-height: 0.8; color: var(--ink); }
 .footer-tag { font-family: var(--brush); font-size: 24px; color: var(--ink-soft); margin: 4px 0 22px; }
 .footer-sources { font-size: 13px; color: var(--ink-soft); max-width: 560px; line-height: 1.7; }
