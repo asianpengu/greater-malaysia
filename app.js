@@ -97,7 +97,6 @@ function boot() {
   $("#wxCity").addEventListener("change", (e) => { loadWeather(+e.target.value); track("tool_use", { tool: "cuaca_udara", city: CITIES[+e.target.value]?.name }); });
 
   // engagement events
-  $(".hero-pengu")?.addEventListener("click", () => track("social_click", { network: "instagram", placement: "hero_mascot" }));
   $$('a[href="#tools"], a[href="stories/"]').forEach((a) =>
     a.addEventListener("click", () => track("nav_click", { to: a.getAttribute("href") }))
   );
