@@ -1,6 +1,15 @@
 {
   "stories": [
     {
+      "slug": "population-malaysia",
+      "url": "/stories/population-malaysia",
+      "tag": "Rakyat",
+      "title": "Who are the rakyat?",
+      "subtitle": "Malaysia's 34.2M people — ethnic make-up, age structure and population by state.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
       "slug": "cost-of-living-malaysia",
       "url": "/stories/cost-of-living-malaysia",
       "tag": "Cost of living",

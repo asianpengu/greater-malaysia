@@ -1,0 +1,83 @@
+{
+  "slug": "population-malaysia",
+  "kind": "data-story",
+  "title": "Who are the rakyat?",
+  "subtitle": "Malaysia's population, ethnic make-up and age structure",
+  "question": "What is the population of Malaysia, and who makes it up?",
+  "answer": "Malaysia is home to 34.2 million people. Bumiputera make up 63.6% of the population, Chinese 20.0% and Indians 5.9%, with non-citizens about 9.9%. Selangor is the most populous state (7.2M), and the country has just crossed into an 'ageing society' — 8.0% are now 65 or older.",
+  "updated": "2026-06-30",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM)",
+    "publisher_type": "Government — national statistics office",
+    "document": "Current Population Estimates, Malaysia",
+    "published": "2025",
+    "url": "https://open.dosm.gov.my/dashboard/population",
+    "retrieved": "2026-06-30",
+    "license": "Official DOSM open data (data.gov.my)",
+    "notes": "Population total, ethnic composition and age structure are 2025 estimates; state breakdown is the 2023 estimate. Figures in millions of people. Shares are of the total population (citizens and non-citizens)."
+  },
+  "headline": [
+    { "label": "Total population", "value": "34.2", "suffix": "M", "sub": "people in Malaysia · 2025", "note": "DOSM" },
+    { "label": "Bumiputera", "value": "63.6", "suffix": "%", "sub": "of the total population", "note": "2025" },
+    { "label": "Aged 65+", "value": "8.0", "suffix": "%", "sub": "Malaysia is now an 'ageing society'", "note": "2025" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Malaysia's age structure",
+      "note": "The population by 5-year age band (2025). The base is narrowing — fewer children — while the top is slowly growing as Malaysia ages.",
+      "ref": "population by age, 2025",
+      "unit": "people (millions)",
+      "x": "age",
+      "metrics": [{ "key": "pop", "label": "Population", "color": "ink", "fmt": "M" }],
+      "rows": [
+        { "age": "0-4", "pop": 2306.7 }, { "age": "5-9", "pop": 2516.4 }, { "age": "10-14", "pop": 2579.3 },
+        { "age": "15-19", "pop": 2705.2 }, { "age": "20-24", "pop": 3155.5 }, { "age": "25-29", "pop": 3086.8 },
+        { "age": "30-34", "pop": 2889.4 }, { "age": "35-39", "pop": 2849.4 }, { "age": "40-44", "pop": 2660.6 },
+        { "age": "45-49", "pop": 2104.6 }, { "age": "50-54", "pop": 1759.2 }, { "age": "55-59", "pop": 1505.9 },
+        { "age": "60-64", "pop": 1366.1 }, { "age": "65-69", "pop": 1090.3 }, { "age": "70-74", "pop": 786.4 },
+        { "age": "75-79", "pop": 486.3 }, { "age": "80-84", "pop": 228.9 }, { "age": "85+", "pop": 154.6 }
+      ]
+    },
+    "by_ethnicity": {
+      "title": "Who lives here — by ethnic group",
+      "note": "Malaysia's population by ethnic group (2025). Bumiputera (Malays plus other indigenous peoples) are the majority.",
+      "ref": "population by ethnicity, 2025",
+      "unit": "people (millions)",
+      "metrics": [{ "key": "pop", "label": "Population", "color": "seal", "fmt": "M" }],
+      "rows": [
+        { "label": "Bumiputera — Malay", "pop": 17981.2 },
+        { "label": "Chinese", "pop": 6849.6 },
+        { "label": "Bumiputera — other", "pop": 3779.8 },
+        { "label": "Non-citizen", "pop": 3380.7 },
+        { "label": "Indian", "pop": 2006.1 },
+        { "label": "Other citizen", "pop": 234.3 }
+      ]
+    },
+    "by_state": {
+      "title": "Where Malaysians live — by state",
+      "note": "Population by state (2023). Selangor alone holds more than 1 in 5 Malaysians.",
+      "ref": "population by state, 2023",
+      "unit": "people (millions)",
+      "metrics": [{ "key": "pop", "label": "Population", "color": "blue", "fmt": "M" }],
+      "rows": [
+        { "label": "Selangor", "pop": 7205.3 }, { "label": "Johor", "pop": 4100.9 }, { "label": "Sabah", "pop": 3592.8 },
+        { "label": "Perak", "pop": 2540.4 }, { "label": "Sarawak", "pop": 2509.5 }, { "label": "Kedah", "pop": 2187.5 },
+        { "label": "W.P. Kuala Lumpur", "pop": 1998.6 }, { "label": "Kelantan", "pop": 1857.6 }, { "label": "Pulau Pinang", "pop": 1771.6 },
+        { "label": "Pahang", "pop": 1642.7 }, { "label": "Negeri Sembilan", "pop": 1224.3 }, { "label": "Terengganu", "pop": 1209.4 },
+        { "label": "Melaka", "pop": 1027.5 }, { "label": "Perlis", "pop": 292.7 }, { "label": "W.P. Putrajaya", "pop": 119.2 },
+        { "label": "W.P. Labuan", "pop": 99.5 }
+      ]
+    }
+  },
+  "takeaways": [
+    "Malaysia has **34.2 million** people. **Selangor** alone is home to **7.2M** — more than 1 in 5 Malaysians.",
+    "By ethnicity: **Bumiputera 63.6%**, **Chinese 20.0%**, **Indian 5.9%** of the population; **non-citizens** are about **9.9%**.",
+    "Malaysia has crossed into an **'ageing society'** — **8.0%** are aged 65+, while the under-15 share has slipped to **21.6%**.",
+    "The biggest single age group is **20–24** — a large young-adult cohort — but the pyramid is narrowing at the base as birth rates fall."
+  ],
+  "faq": [
+    { "q": "What is the population of Malaysia?", "a": "Malaysia's population is about 34.2 million (2025 estimate), according to the Department of Statistics Malaysia (DOSM)." },
+    { "q": "What is the ethnic composition of Malaysia?", "a": "Of the total population (2025): Bumiputera 63.6%, Chinese 20.0%, Indian 5.9%, with non-citizens about 9.9% and other citizens the remainder." },
+    { "q": "Which is the most populous state in Malaysia?", "a": "Selangor, with about 7.2 million people, followed by Johor (4.1M) and Sabah (3.6M)." }
+  ]
+}
