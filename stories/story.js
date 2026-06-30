@@ -10,6 +10,11 @@ const $$all = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 function track(name, params = {}) { if (typeof window.gtag === "function") window.gtag("event", name, params); }
 
+/* Email signup — set this to your provider's form POST endpoint to enable signups.
+   Empty string = signup hidden (no half-working form on the page). */
+const EMAIL_ENDPOINT = "";
+const EMAIL_FIELD = "email"; // the email field name your provider expects
+
 const COLORS = { seal: "var(--seal)", blue: "#2563eb", gold: "var(--gold)", ink: "var(--ink)", green: "var(--up)", faint: "var(--ink-faint)" };
 const num = (n) => Number(n).toLocaleString("en-MY");
 function fmtVal(v, f) {
@@ -96,16 +101,16 @@ function render(d) {
     <div class="st-faq"><h3>Frequently asked</h3>
       ${d.faq.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("")}</div>`);
 
-  parts.push(`
+  if (EMAIL_ENDPOINT) parts.push(`
     <div class="st-capture">
       <div class="cap-k">stay in the know</div>
       <h3>Malaysia, decoded weekly</h3>
       <p>One email a week — the numbers that run the country, pulled straight from the source. No spam, unsubscribe anytime.</p>
       <form class="cap-form" id="capForm">
-        <input type="email" id="capEmail" placeholder="you@email.com" required />
+        <input type="email" id="capEmail" name="${EMAIL_FIELD}" placeholder="you@email.com" required />
         <button type="submit">Get the brief</button>
       </form>
-      <div class="cap-tiny">(demo — wire to your email provider when ready)</div>
+      <div class="cap-tiny">No spam. Unsubscribe anytime.</div>
     </div>`);
 
   $("#story").innerHTML = `<div id="storyRoot">${parts.join("")}</div>`;
@@ -115,7 +120,18 @@ function render(d) {
   $("#dlJson")?.addEventListener("click", () => { download(`${d.slug}.json`, JSON.stringify(d, null, 2), "application/json"); track("data_download", { story: d.slug, format: "json" }); });
   $("#dlCsv")?.addEventListener("click", () => { download(`${d.slug}.csv`, toCsv(d), "text/csv"); track("data_download", { story: d.slug, format: "csv" }); });
   const cf = $("#capForm");
-  if (cf) cf.addEventListener("submit", (e) => { e.preventDefault(); track("lead_capture", { source: "data_story", story: d.slug }); toast("Thanks! (demo — connect your email tool to go live)"); cf.reset(); });
+  if (cf) cf.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = $("#capEmail").value.trim();
+    if (!email) return;
+    const btn = cf.querySelector("button"); btn.disabled = true; btn.textContent = "Subscribing…";
+    try {
+      await fetch(EMAIL_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ [EMAIL_FIELD]: email }) });
+      track("lead_capture", { source: "data_story", story: d.slug });
+      toast("You're in! 🇲🇾"); cf.reset();
+    } catch (err) { toast("Hmm, that didn't work — try again."); }
+    btn.disabled = false; btn.textContent = "Get the brief";
+  });
 }
 
 function legend(metrics) {
