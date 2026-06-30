@@ -470,7 +470,12 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
   .pengu-float { animation-duration: 6.5s; }
 }
 @media (max-width: 760px) {
-  .nav-links { display: none; }
+  /* keep nav reachable on mobile: compact links, drop the wordmark + redundant CTA */
+  .nav-inner { gap: 10px; }
+  .brand .gm-full { display: none; }
+  .nav-cta { display: none; }
+  .nav-links { display: flex; gap: 2px; margin-left: auto; }
+  .nav-links a { padding: 7px 10px; font-size: 13px; }
   .tools-grid { grid-template-columns: 1fr; }
   .tool.col-2, .tool.col-3, .tool.col-4, .tool.col-6 { grid-column: span 1; }
   .atlas-cats { grid-template-columns: 1fr; }
