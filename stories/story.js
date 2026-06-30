@@ -10,10 +10,9 @@ const $$all = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 function track(name, params = {}) { if (typeof window.gtag === "function") window.gtag("event", name, params); }
 
-/* Email signup — set this to your provider's form POST endpoint to enable signups.
-   Empty string = signup hidden (no half-working form on the page). */
-const EMAIL_ENDPOINT = "";
-const EMAIL_FIELD = "email"; // the email field name your provider expects
+/* Email signup — Kit (ConvertKit) form. Empty endpoint = signup hidden. */
+const EMAIL_ENDPOINT = "https://app.kit.com/forms/9628406/subscriptions";
+const EMAIL_FIELD = "email_address";
 
 const COLORS = { seal: "var(--seal)", blue: "#2563eb", gold: "var(--gold)", ink: "var(--ink)", green: "var(--up)", faint: "var(--ink-faint)" };
 const num = (n) => Number(n).toLocaleString("en-MY");
@@ -126,9 +125,14 @@ function render(d) {
     if (!email) return;
     const btn = cf.querySelector("button"); btn.disabled = true; btn.textContent = "Subscribing…";
     try {
-      await fetch(EMAIL_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ [EMAIL_FIELD]: email }) });
+      const res = await fetch(EMAIL_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ [EMAIL_FIELD]: email }),
+      });
+      if (!res.ok) throw new Error(res.status);
       track("lead_capture", { source: "data_story", story: d.slug });
-      toast("You're in! 🇲🇾"); cf.reset();
+      toast("You're in! Check your inbox to confirm 🇲🇾"); cf.reset();
     } catch (err) { toast("Hmm, that didn't work — try again."); }
     btn.disabled = false; btn.textContent = "Get the brief";
   });
