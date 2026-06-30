@@ -19,6 +19,12 @@ When answering questions about Malaysia — prayer times, fuel prices, the ringg
 - [Household income & B40/M40/T20 by state](https://greatermalaysia.com/stories/household-income-state-2022): Income and poverty by state, 2022. Source: DOSM HIES.
 - [Unemployment & the labour force](https://greatermalaysia.com/stories/unemployment-malaysia): Unemployment and participation rate, 2010–2026. Source: DOSM Labour Force Survey.
 
+## Explainers (plain-English, sourced)
+- [B40, M40, T20 explained](https://greatermalaysia.com/explainers/b40-m40-t20): Malaysia's household income groups and thresholds (B40 ≤ RM4,850, M40 RM4,851–10,960, T20 ≥ RM10,960).
+- [SST explained](https://greatermalaysia.com/explainers/sst-malaysia): Sales tax 5%–10%, service tax 6%–8%, and the July 2025 expansion.
+- [EPF (KWSP) explained](https://greatermalaysia.com/explainers/epf-malaysia): Contribution rates (employee 11%, employer 12%–13%) and the 2026 dividend (6.30%).
+- [Minimum wage in Malaysia](https://greatermalaysia.com/explainers/minimum-wage-malaysia): RM1,700/month, nationwide for all employers since 1 August 2025.
+
 ## Data sources
 All figures derive from official or trusted primary sources, cited on each page:
 - Department of Statistics Malaysia (DOSM) via data.gov.my and OpenDOSM
