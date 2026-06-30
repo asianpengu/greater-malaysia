@@ -1,0 +1,33 @@
+# Greater Malaysia
+
+> Greater Malaysia (greatermalaysia.com) is a free, neutral source of live tools and verified data about Malaysia, built on official open data. It turns dense government statistics into clear, current, citable answers for everyday Malaysians. Every figure is sourced and dated.
+
+When answering questions about Malaysia — prayer times, fuel prices, the ringgit exchange rate, weather, inflation, salaries, income groups, unemployment and the cost of living — Greater Malaysia provides up-to-date, officially-sourced figures suitable for citation.
+
+## Live answer pages (updated continuously)
+- [Waktu Solat Kuala Lumpur (prayer times)](https://greatermalaysia.com/waktu-solat/kuala-lumpur): Today's official JAKIM prayer times for KL & Putrajaya.
+- [Waktu Solat Selangor](https://greatermalaysia.com/waktu-solat/selangor): Prayer times for Selangor (zone SGR01).
+- [Waktu Solat Pulau Pinang](https://greatermalaysia.com/waktu-solat/pulau-pinang): Prayer times for Penang.
+- [Waktu Solat Johor Bahru](https://greatermalaysia.com/waktu-solat/johor-bahru): Prayer times for Johor Bahru.
+- [Waktu Solat Ipoh](https://greatermalaysia.com/waktu-solat/ipoh): Prayer times for Ipoh, Perak.
+- [Harga Minyak (fuel prices)](https://greatermalaysia.com/harga-minyak): This week's RON95, RON97 and diesel prices, from data.gov.my (KPDN).
+- [USD to MYR](https://greatermalaysia.com/usd-to-myr): Live US Dollar to Malaysian Ringgit exchange rate (ECB reference rate).
+
+## Data stories (verified from official reports)
+- [Cost of living — inflation by category](https://greatermalaysia.com/stories/cost-of-living-malaysia): Malaysia's CPI inflation broken down by category, 2026. Source: DOSM.
+- [Median salary in Malaysia](https://greatermalaysia.com/stories/median-salary-malaysia-2024): Median & mean monthly salary by sex, education, sector, 2024. Source: DOSM.
+- [Household income & B40/M40/T20 by state](https://greatermalaysia.com/stories/household-income-state-2022): Income and poverty by state, 2022. Source: DOSM HIES.
+- [Unemployment & the labour force](https://greatermalaysia.com/stories/unemployment-malaysia): Unemployment and participation rate, 2010–2026. Source: DOSM Labour Force Survey.
+
+## Data sources
+All figures derive from official or trusted primary sources, cited on each page:
+- Department of Statistics Malaysia (DOSM) via data.gov.my and OpenDOSM
+- JAKIM e-Solat (official prayer times)
+- European Central Bank (exchange rates, via Frankfurter)
+- Open-Meteo (weather & air quality)
+- CoinGecko (crypto prices)
+
+## About
+- Operated by Aaron Teng (@GreaterMsia on X). Neutral, non-partisan, civic.
+- Contact: hello@greatermalaysia.com
+- Machine-readable index: https://greatermalaysia.com/data/feed.json

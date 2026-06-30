@@ -1,0 +1,73 @@
+{
+  "name": "Greater Malaysia — data feed",
+  "description": "A machine-readable index of live tools and verified data about Malaysia, built on official open data. Every dataset links to its official primary source.",
+  "url": "https://greatermalaysia.com",
+  "publisher": "Greater Malaysia",
+  "updated": "2026-06-30",
+  "license": "Figures derive from official open data; cite the primary source listed per item.",
+  "datasets": [
+    {
+      "topic": "Prayer times (waktu solat)",
+      "description": "Daily Islamic prayer times by JAKIM zone for cities across Malaysia.",
+      "page": "https://greatermalaysia.com/waktu-solat/kuala-lumpur",
+      "source": "JAKIM e-Solat",
+      "source_api": "https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=today&zone=WLY01",
+      "frequency": "daily"
+    },
+    {
+      "topic": "Fuel prices",
+      "description": "Weekly RON95, RON97 and diesel retail prices (RM/litre) in Malaysia.",
+      "page": "https://greatermalaysia.com/harga-minyak",
+      "source": "DOSM / KPDN via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=fuelprice&sort=-date",
+      "frequency": "weekly"
+    },
+    {
+      "topic": "Exchange rates (ringgit)",
+      "description": "Live MYR exchange rates against major currencies, ECB reference rates.",
+      "page": "https://greatermalaysia.com/usd-to-myr",
+      "source": "European Central Bank via Frankfurter",
+      "source_api": "https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR",
+      "frequency": "daily"
+    },
+    {
+      "topic": "Inflation / cost of living",
+      "description": "Consumer Price Index inflation, overall and by category.",
+      "page": "https://greatermalaysia.com/stories/cost-of-living-malaysia",
+      "source": "DOSM via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=cpi_headline&sort=-date",
+      "frequency": "monthly"
+    },
+    {
+      "topic": "Salaries & wages",
+      "description": "Median and mean monthly salary by sex, education and sector.",
+      "page": "https://greatermalaysia.com/stories/median-salary-malaysia-2024",
+      "source": "DOSM Salaries & Wages Survey",
+      "frequency": "annual"
+    },
+    {
+      "topic": "Household income & poverty (B40/M40/T20)",
+      "description": "Median household income, poverty and the B40/M40/T20 split by state.",
+      "page": "https://greatermalaysia.com/stories/household-income-state-2022",
+      "source": "DOSM Household Income Survey via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=hies_state",
+      "frequency": "biennial"
+    },
+    {
+      "topic": "Unemployment & labour force",
+      "description": "Unemployment rate, participation rate and labour force, 2010–present.",
+      "page": "https://greatermalaysia.com/stories/unemployment-malaysia",
+      "source": "DOSM Labour Force Survey via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=lfs_month&sort=-date",
+      "frequency": "monthly"
+    },
+    {
+      "topic": "Population",
+      "description": "Malaysia's population and ethnic composition.",
+      "page": "https://greatermalaysia.com/#tools",
+      "source": "DOSM via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=population_malaysia&sort=-date",
+      "frequency": "annual"
+    }
+  ]
+}

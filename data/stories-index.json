@@ -1,6 +1,15 @@
 {
   "stories": [
     {
+      "slug": "cost-of-living-malaysia",
+      "url": "/stories/cost-of-living-malaysia",
+      "tag": "Cost of living",
+      "title": "What's getting more expensive?",
+      "subtitle": "Malaysia's inflation by category — where prices are rising fastest, 2026.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
       "slug": "household-income-state-2022",
       "url": "/stories/household-income-state-2022",
       "tag": "Income",

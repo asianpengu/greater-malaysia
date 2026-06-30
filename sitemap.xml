@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://greatermalaysia.com/</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://greatermalaysia.com/stories/</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://greatermalaysia.com/stories/median-salary-malaysia-2024</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://greatermalaysia.com/stories/household-income-state-2022</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://greatermalaysia.com/stories/unemployment-malaysia</loc>
-    <lastmod>2026-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://greatermalaysia.com/</loc><lastmod>2026-06-30</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+
+  <url><loc>https://greatermalaysia.com/waktu-solat/kuala-lumpur</loc><lastmod>2026-06-30</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://greatermalaysia.com/waktu-solat/selangor</loc><lastmod>2026-06-30</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://greatermalaysia.com/waktu-solat/pulau-pinang</loc><lastmod>2026-06-30</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://greatermalaysia.com/waktu-solat/johor-bahru</loc><lastmod>2026-06-30</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://greatermalaysia.com/waktu-solat/ipoh</loc><lastmod>2026-06-30</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://greatermalaysia.com/harga-minyak</loc><lastmod>2026-06-30</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://greatermalaysia.com/usd-to-myr</loc><lastmod>2026-06-30</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+
+  <url><loc>https://greatermalaysia.com/stories/</loc><lastmod>2026-06-30</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://greatermalaysia.com/stories/cost-of-living-malaysia</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://greatermalaysia.com/stories/median-salary-malaysia-2024</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://greatermalaysia.com/stories/household-income-state-2022</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://greatermalaysia.com/stories/unemployment-malaysia</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
