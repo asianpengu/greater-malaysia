@@ -1,21 +1,75 @@
-# Greater Malaysia — open to everyone, including answer engines
+# Greater Malaysia — open to everyone, including answer engines.
+# We want to be cited. Every major search + AI/LLM crawler is welcomed.
+
 User-agent: *
 Allow: /
 
-# AI / answer-engine crawlers explicitly welcomed (AEO)
+# --- OpenAI / ChatGPT ---
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 User-agent: ChatGPT-User
 Allow: /
+
+# --- Anthropic / Claude ---
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# --- Google (Gemini / AI Overviews) ---
+User-agent: Google-Extended
+Allow: /
+
+# --- Perplexity ---
 User-agent: PerplexityBot
 Allow: /
-User-agent: Google-Extended
+User-agent: Perplexity-User
+Allow: /
+
+# --- Apple Intelligence ---
+User-agent: Applebot
 Allow: /
 User-agent: Applebot-Extended
 Allow: /
+
+# --- Microsoft / Bing (powers Copilot) ---
+User-agent: bingbot
+Allow: /
+
+# --- Meta AI ---
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+# --- ByteDance / TikTok (big in Malaysia) ---
+User-agent: Bytespider
+Allow: /
+
+# --- Amazon, DuckDuckGo, You.com, Cohere, Huawei, Common Crawl, others ---
+User-agent: Amazonbot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: PetalBot
+Allow: /
 User-agent: CCBot
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: ImagesiftBot
 Allow: /
 
 Sitemap: https://greatermalaysia.com/sitemap.xml
