@@ -2,6 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "nextelection.greatermalaysia.com" }],
+      "destination": "/election"
+    }
+  ],
   "redirects": [
     {
       "source": "/(.*)",

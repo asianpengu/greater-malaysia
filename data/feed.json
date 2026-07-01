@@ -7,6 +7,13 @@
   "license": "Figures derive from official open data; cite the primary source listed per item.",
   "datasets": [
     {
+      "topic": "Elections (general election history)",
+      "description": "Malaysian general election results 1959–2022 — winning coalition's share of Parliament, GE15 seats by coalition, turnout. Plus GE16 timing (deadline 17 Feb 2028) and how the system works (222 seats, 112 majority).",
+      "page": "https://greatermalaysia.com/election/",
+      "source": "Election Commission of Malaysia (SPR); Federal Constitution; open-data archives (Thevesh, Tindak Malaysia)",
+      "frequency": "per election cycle"
+    },
+    {
       "topic": "Government spending (federal finance)",
       "description": "Federal government spending, revenue and deficit — operating vs development expenditure, and the breakdown of where the money goes.",
       "page": "https://greatermalaysia.com/stories/government-spending-malaysia",

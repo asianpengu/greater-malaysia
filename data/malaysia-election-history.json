@@ -1,0 +1,82 @@
+{
+  "slug": "malaysia-election-history",
+  "kind": "data-story",
+  "title": "How Malaysia votes: every election since 1959",
+  "subtitle": "The winning bloc once took 90% of Parliament. In 2022, no one won a majority at all.",
+  "question": "Who has won every Malaysian general election, and how has it changed?",
+  "answer": "For decades one coalition dominated Malaysian elections — Barisan Nasional and its predecessor won every general election from 1955 to 2013, at its peak taking 90% of Parliament in 2004. Then came three shocks: the 2008 'political tsunami' ended its two-thirds supermajority, 2018 delivered the first change of government in history, and 2022 produced the first hung parliament — the largest bloc (Pakatan Harapan) held just 82 of 222 seats.",
+  "updated": "2026-07-01",
+  "source": {
+    "publisher": "Election Commission of Malaysia (SPR)",
+    "publisher_type": "Government — electoral authority (via open-data archives)",
+    "document": "Malaysian general election results, 1959–2022",
+    "published": "2022",
+    "url": "https://github.com/Thevesh/analysis-election-msia",
+    "retrieved": "2026-07-01",
+    "license": "Compiled from SPR official results via open-data archives (Thevesh, Tindak Malaysia); CC BY-SA. Cross-checked with public records.",
+    "notes": "The Dewan Rakyat (federal Parliament) has 222 seats today; a simple majority to form government is 112, and a two-thirds supermajority is 148. 'Winning bloc's share' is the seats won by the largest/governing coalition divided by total seats that election. Seat totals grew over time as Sabah, Sarawak and new constituencies were added."
+  },
+  "headline": [
+    { "label": "Seats in Parliament", "value": "222", "sub": "Dewan Rakyat, elected at each GE", "note": "SPR" },
+    { "label": "Seats to govern", "value": "112", "sub": "a simple majority (half + 1)", "note": "112 of 222" },
+    { "label": "Turnout, GE15 (2022)", "value": "74", "suffix": "%", "sub": "of 21.2 million registered voters", "note": "SPR" }
+  ],
+  "series": {
+    "trend": {
+      "title": "The winning bloc's share of Parliament, 1959–2022",
+      "note": "Seats won by the largest/governing coalition, as a share of all seats. The two-thirds line is 66.7%; a bare majority is 50.5%. Barisan Nasional's dominance peaked in 2004, then fell across three elections to 2022 — the first time no bloc won a majority.",
+      "ref": "Winning coalition seats ÷ total seats, per general election",
+      "unit": "% of Parliament",
+      "x": "year",
+      "highlight": { "x": "2008", "label": "tsunami" },
+      "metrics": [{ "key": "share", "label": "% of seats", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "year": "1959", "share": 71.2 },
+        { "year": "1964", "share": 56.0 },
+        { "year": "1969", "share": 66.0 },
+        { "year": "1974", "share": 87.7 },
+        { "year": "1978", "share": 84.4 },
+        { "year": "1982", "share": 85.7 },
+        { "year": "1986", "share": 83.6 },
+        { "year": "1990", "share": 70.6 },
+        { "year": "1995", "share": 84.4 },
+        { "year": "1999", "share": 76.7 },
+        { "year": "2004", "share": 90.4 },
+        { "year": "2008", "share": 63.1 },
+        { "year": "2013", "share": 59.9 },
+        { "year": "2018", "share": 56.3 },
+        { "year": "2022", "share": 36.9 }
+      ]
+    },
+    "ge15": {
+      "title": "GE15 (2022) — a hung parliament, by the seats",
+      "note": "The 2022 result: the largest bloc, Pakatan Harapan, held just 82 seats — far short of 112. Anwar Ibrahim became PM only after a multi-coalition unity government formed.",
+      "ref": "Seats by coalition, GE15, 19 November 2022",
+      "unit": "seats (of 222)",
+      "layout": "horizontal",
+      "metrics": [{ "key": "seats", "label": "seats", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Pakatan Harapan (PH)", "seats": 82 },
+        { "label": "Perikatan Nasional (PN)", "seats": 74 },
+        { "label": "Barisan Nasional (BN)", "seats": 30 },
+        { "label": "Gabungan Parti Sarawak (GPS)", "seats": 23 },
+        { "label": "Gabungan Rakyat Sabah (GRS)", "seats": 6 },
+        { "label": "Warisan", "seats": 3 },
+        { "label": "Others & independents", "seats": 4 }
+      ]
+    }
+  },
+  "takeaways": [
+    "One coalition — **Barisan Nasional** and its Alliance predecessor — won **every** Malaysian general election from independence until 2018.",
+    "Its grip peaked in **2004 at 90% of Parliament**, then the **2008 'political tsunami'** stripped its two-thirds supermajority for the first time.",
+    "**2018** delivered the **first change of federal government** in Malaysia's history; **2022** delivered the **first hung parliament**.",
+    "In 2022 the largest bloc held just **82 of 222 seats** — government required a **unity coalition**, a new normal of coalition politics.",
+    "The number that decides power is **112** — a simple majority of the 222 seats. Watch that line, not the popular vote."
+  ],
+  "faq": [
+    { "q": "How many seats are needed to win a Malaysian general election?", "a": "222 seats are contested in the Dewan Rakyat (federal Parliament). A coalition needs a simple majority of 112 seats to form the government. 148 seats is a two-thirds supermajority." },
+    { "q": "Who won GE15 in 2022?", "a": "No single bloc won a majority — it was Malaysia's first hung parliament. Pakatan Harapan won the most seats (82), followed by Perikatan Nasional (74) and Barisan Nasional (30). Anwar Ibrahim became prime minister after a unity government formed." },
+    { "q": "Has the Malaysian government ever changed hands?", "a": "Yes. Barisan Nasional (and its Alliance predecessor) governed continuously from independence until 2018, when Pakatan Harapan won GE14 — the first change of government in the country's history." },
+    { "q": "What was voter turnout in GE15?", "a": "About 74% of the 21.2 million registered voters cast their ballots in the 2022 general election." }
+  ]
+}

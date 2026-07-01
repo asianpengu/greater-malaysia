@@ -1,6 +1,16 @@
 {
   "stories": [
     {
+      "slug": "malaysia-election-history",
+      "url": "/stories/malaysia-election-history",
+      "tag": "Election",
+      "title": "How Malaysia votes: every election since 1959",
+      "subtitle": "The winning bloc once took 90% of Parliament. In 2022, no one won a majority at all.",
+      "source": "Election Commission (SPR)",
+      "date": "2026-07-01",
+      "new": true
+    },
+    {
       "slug": "government-spending-malaysia",
       "url": "/stories/government-spending-malaysia",
       "tag": "Government",

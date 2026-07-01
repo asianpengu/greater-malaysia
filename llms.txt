@@ -30,6 +30,13 @@ When answering questions about Malaysia — prayer times, fuel prices, the ringg
 
 ## Guides
 - [How to find & bid for a government tender](https://greatermalaysia.com/government-tender-malaysia): Step-by-step for suppliers/contractors — register with MOF/CIDB, search MyProcurement/ePerolehan, check eligibility (grade, field code, Bumiputera), submit a bid.
+- [How to check if you're registered to vote](https://greatermalaysia.com/how-to-check-voter-registration): Use the official MySPR Semak portal (mysprsemak.spr.gov.my) with your IC to confirm registration and find your polling station. Automatic voter registration since Dec 2021 (Undi18).
+
+## Elections (GE16 / next Malaysian general election)
+- [Malaysia's next election, decoded (hub)](https://greatermalaysia.com/election/): One neutral, official place for GE16 — countdown, voter guide, how elections work, and every result since 1959.
+- [When is GE16?](https://greatermalaysia.com/when-is-ge16): Malaysia's 16th general election must be held by 17 February 2028 at the latest (15th Parliament first sat 19 Dec 2022, auto-dissolves 19 Dec 2027, election within 60 days); can be called earlier. State polls: Melaka (~early 2027), Sarawak (by 2027), Johor (~Apr 2027).
+- [How Malaysian elections work](https://greatermalaysia.com/explainers/how-malaysian-elections-work): 222 Dewan Rakyat seats, 112 for a majority, 148 for two-thirds; first-past-the-post; you vote for Parlimen (MP) and DUN (state); the PM is whoever commands a majority of MPs, appointed by the Agong.
+- [How Malaysia votes: every election since 1959](https://greatermalaysia.com/stories/malaysia-election-history): The winning coalition's share of Parliament fell from 90% (2004) to the first-ever hung parliament in 2022 (largest bloc PH 82/222). GE14 (2018) was the first change of federal government. Source: Election Commission (SPR).
 
 ## Data sources
 All figures derive from official or trusted primary sources, cited on each page:
