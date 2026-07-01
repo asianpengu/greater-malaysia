@@ -94,6 +94,7 @@
           const { stories } = await (await fetch("/data/stories-index.json")).json();
           const cards = stories.map((s) => `
             <a class="story-card" href="${esc(s.url)}">
+              ${s.new ? `<span class="badge-new">New</span>` : ``}
               <span class="sc-tag">${esc(s.tag)}</span>
               <h3>${esc(s.title)}</h3>
               <div class="sc-sub">${esc(s.subtitle)}</div>

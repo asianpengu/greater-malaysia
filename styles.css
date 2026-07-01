@@ -501,6 +501,20 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 .qa-card:hover .qa-go { background: var(--seal); color: var(--paper-2); transform: translateX(2px); }
 @media (max-width: 860px) { .qa-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .qa-grid { grid-template-columns: 1fr; } }
+.qa-card.is-new .qa-k { padding-right: 52px; }
+
+/* animated "NEW" badge — marks freshly shipped discovery entry points */
+.badge-new {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--sans); font-weight: 700; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--paper-2); background: var(--seal); padding: 3px 7px; border-radius: 2px; line-height: 1;
+  box-shadow: 0 0 0 0 rgba(178, 58, 35, 0.5); animation: badgePulse 1.9s ease-out infinite;
+}
+.badge-new::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--paper-2); animation: badgeBlink 1.9s ease-in-out infinite; }
+@keyframes badgePulse { 0% { box-shadow: 0 0 0 0 rgba(178, 58, 35, 0.5); } 70% { box-shadow: 0 0 0 8px rgba(178, 58, 35, 0); } 100% { box-shadow: 0 0 0 0 rgba(178, 58, 35, 0); } }
+@keyframes badgeBlink { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .badge-new, .badge-new::before { animation: none; } }
 
 /* ---------- email signup (reusable) ---------- */
 .gm-signup {
