@@ -1,0 +1,88 @@
+{
+  "slug": "government-spending-malaysia",
+  "kind": "data-story",
+  "title": "Where does Malaysia's money go?",
+  "subtitle": "The federal government's RM407 billion — who gets paid, and what gets built.",
+  "question": "How does the Malaysian government spend its money?",
+  "answer": "In 2023 the federal government spent about RM407 billion. RM311bn went to running the country day-to-day — civil servant salaries, subsidies and debt interest — and RM96bn went to building things like roads, schools and hospitals. It collected RM315bn in revenue, so it spent roughly RM91bn more than it earned.",
+  "updated": "2026-07-01",
+  "source": {
+    "publisher": "Ministry of Finance Malaysia (via data.gov.my)",
+    "publisher_type": "Government — federal treasury open data",
+    "document": "Annual Federal Government Finance",
+    "published": "2024 (FY2023 actuals)",
+    "url": "https://data.gov.my/data-catalogue/federal_finance_year",
+    "retrieved": "2026-07-01",
+    "license": "Official open data (data.gov.my), Ministry of Finance",
+    "notes": "Federal government finance for financial year 2023 — the latest full-year actuals published. Figures are split into Operating Expenditure (day-to-day running costs) and Development Expenditure (building assets). Amounts shown in RM billion; source values are in RM million."
+  },
+  "headline": [
+    { "label": "Total federal spending", "value": "407", "prefix": "RM", "suffix": "bn", "sub": "operating + development · 2023", "note": "MOF" },
+    { "label": "Revenue collected", "value": "315", "prefix": "RM", "suffix": "bn", "sub": "taxes and other income · 2023", "note": "MOF" },
+    { "label": "Budget deficit", "value": "91", "prefix": "−RM", "suffix": "bn", "sub": "spent more than it collected", "note": "funded by borrowing" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Total federal spending, 2018–2023",
+      "note": "Operating plus development expenditure each year, in RM billion. Spending dipped in the pandemic year (2020) then climbed to a record RM407bn in 2023.",
+      "ref": "Operating + development expenditure by year",
+      "unit": "RM billion",
+      "x": "year",
+      "highlight": { "x": "2020", "label": "COVID" },
+      "metrics": [{ "key": "value", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "year": "2018", "value": 287 },
+        { "year": "2019", "value": 318 },
+        { "year": "2020", "value": 276 },
+        { "year": "2021", "value": 296 },
+        { "year": "2022", "value": 364 },
+        { "year": "2023", "value": 407 }
+      ]
+    },
+    "operating": {
+      "title": "Operating spending — where it goes (2023)",
+      "note": "The RM311bn it costs to run the country every year. The single biggest line is civil servant salaries, followed by subsidies & social assistance.",
+      "ref": "Operating expenditure by object, 2023",
+      "unit": "RM billion",
+      "layout": "horizontal",
+      "metrics": [{ "key": "value", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Civil servant salaries (emoluments)", "value": 91.9 },
+        { "label": "Subsidies & social assistance", "value": 77.9 },
+        { "label": "Debt interest", "value": 46.3 },
+        { "label": "Supplies & services", "value": 35.9 },
+        { "label": "Pensions & retirement", "value": 34.1 },
+        { "label": "Grants & transfers", "value": 23.3 },
+        { "label": "Other", "value": 1.9 }
+      ]
+    },
+    "development": {
+      "title": "Development spending — what gets built (2023)",
+      "note": "The RM96bn spent on building the country: infrastructure, public services and defence. 'Economy' covers roads, utilities, transport and industry.",
+      "ref": "Development expenditure by function, 2023",
+      "unit": "RM billion",
+      "layout": "horizontal",
+      "metrics": [{ "key": "value", "label": "RM billion", "color": "blue", "fmt": "num" }],
+      "rows": [
+        { "label": "Economy (roads, utilities, industry)", "value": 57.2 },
+        { "label": "Social (education, health, housing)", "value": 24.2 },
+        { "label": "Defence & security", "value": 11.4 },
+        { "label": "General administration", "value": 3.2 }
+      ]
+    }
+  },
+  "takeaways": [
+    "Federal spending splits in two: **RM311bn operating** (the cost of running the country day-to-day) and **RM96bn development** (building roads, schools and hospitals).",
+    "The biggest single cost is **civil servant salaries at ~RM92bn** — nearly a third of all operating spending — followed by **subsidies & social assistance (~RM78bn)**.",
+    "**Debt interest alone was ~RM46bn** in 2023 — more than the government spent building all of Malaysia's social infrastructure that year.",
+    "Development money is dominated by the **economy function (~RM57bn)**: roads, utilities, transport and industry.",
+    "Spending outran revenue by **~RM91bn**, a gap the government covers by **borrowing** — which is why debt interest keeps climbing."
+  ],
+  "faq": [
+    { "q": "How much does the Malaysian government spend?", "a": "In 2023 the federal government spent about RM407 billion — roughly RM311 billion in operating expenditure (day-to-day running costs) and RM96 billion in development expenditure (building assets), according to the Ministry of Finance." },
+    { "q": "What does the Malaysian government spend the most on?", "a": "The single largest item is civil servant salaries (emoluments) at about RM92 billion in 2023, followed by subsidies & social assistance at about RM78 billion." },
+    { "q": "How much does Malaysia pay in debt interest?", "a": "The federal government paid about RM46 billion in debt service (interest) in 2023 — around 15% of its operating spending." },
+    { "q": "Does Malaysia run a budget deficit?", "a": "Yes. In 2023 the federal government spent about RM91 billion more than it collected in revenue, a gap funded by borrowing." },
+    { "q": "Where does this data come from?", "a": "From the Ministry of Finance's Annual Federal Government Finance, published as official open data on data.gov.my. Figures are FY2023 actuals, the latest full year available." }
+  ]
+}

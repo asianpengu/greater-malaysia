@@ -1,6 +1,15 @@
 {
   "stories": [
     {
+      "slug": "government-spending-malaysia",
+      "url": "/stories/government-spending-malaysia",
+      "tag": "Government",
+      "title": "Where does Malaysia's money go?",
+      "subtitle": "The federal government's RM407 billion — who gets paid, and what gets built.",
+      "source": "Ministry of Finance",
+      "date": "2026-07-01"
+    },
+    {
       "slug": "population-malaysia",
       "url": "/stories/population-malaysia",
       "tag": "Rakyat",

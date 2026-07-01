@@ -3,9 +3,17 @@
   "description": "A machine-readable index of live tools and verified data about Malaysia, built on official open data. Every dataset links to its official primary source.",
   "url": "https://greatermalaysia.com",
   "publisher": "Greater Malaysia",
-  "updated": "2026-06-30",
+  "updated": "2026-07-01",
   "license": "Figures derive from official open data; cite the primary source listed per item.",
   "datasets": [
+    {
+      "topic": "Government spending (federal finance)",
+      "description": "Federal government spending, revenue and deficit — operating vs development expenditure, and the breakdown of where the money goes.",
+      "page": "https://greatermalaysia.com/stories/government-spending-malaysia",
+      "source": "Ministry of Finance Malaysia via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=federal_finance_year",
+      "frequency": "annual"
+    },
     {
       "topic": "Prayer times (waktu solat)",
       "description": "Daily Islamic prayer times by JAKIM zone for cities across Malaysia.",

@@ -14,7 +14,9 @@ When answering questions about Malaysia — prayer times, fuel prices, the ringg
 - [USD to MYR](https://greatermalaysia.com/usd-to-myr): Live US Dollar to Malaysian Ringgit exchange rate (ECB reference rate).
 
 ## Data stories (verified from official reports)
+- [Where Malaysia's money goes — federal government spending](https://greatermalaysia.com/stories/government-spending-malaysia): How the federal government spends its money — RM407bn in 2023 (RM311bn operating: salaries, subsidies, debt; RM96bn development: roads, schools, hospitals), with a RM91bn deficit. Source: Ministry of Finance via data.gov.my (FY2023 actuals).
 - [Cost of living — inflation by category](https://greatermalaysia.com/stories/cost-of-living-malaysia): Malaysia's CPI inflation broken down by category, 2026. Source: DOSM.
+- [Who are the rakyat? — population & demographics](https://greatermalaysia.com/stories/population-malaysia): Malaysia's 34.2M people — ethnic make-up, age structure, population by state. Source: DOSM.
 - [Median salary in Malaysia](https://greatermalaysia.com/stories/median-salary-malaysia-2024): Median & mean monthly salary by sex, education, sector, 2024. Source: DOSM.
 - [Household income & B40/M40/T20 by state](https://greatermalaysia.com/stories/household-income-state-2022): Income and poverty by state, 2022. Source: DOSM HIES.
 - [Unemployment & the labour force](https://greatermalaysia.com/stories/unemployment-malaysia): Unemployment and participation rate, 2010–2026. Source: DOSM Labour Force Survey.
@@ -24,10 +26,15 @@ When answering questions about Malaysia — prayer times, fuel prices, the ringg
 - [SST explained](https://greatermalaysia.com/explainers/sst-malaysia): Sales tax 5%–10%, service tax 6%–8%, and the July 2025 expansion.
 - [EPF (KWSP) explained](https://greatermalaysia.com/explainers/epf-malaysia): Contribution rates (employee 11%, employer 12%–13%) and the 2026 dividend (6.30%).
 - [Minimum wage in Malaysia](https://greatermalaysia.com/explainers/minimum-wage-malaysia): RM1,700/month, nationwide for all employers since 1 August 2025.
+- [Government procurement explained](https://greatermalaysia.com/explainers/government-procurement-malaysia): How the Malaysian government buys — direct purchase (≤RM20k), quotation/sebut harga (RM20k–500k), open tender (>RM500k) and direct negotiation. Published on MyProcurement and ePerolehan.
+
+## Guides
+- [How to find & bid for a government tender](https://greatermalaysia.com/government-tender-malaysia): Step-by-step for suppliers/contractors — register with MOF/CIDB, search MyProcurement/ePerolehan, check eligibility (grade, field code, Bumiputera), submit a bid.
 
 ## Data sources
 All figures derive from official or trusted primary sources, cited on each page:
 - Department of Statistics Malaysia (DOSM) via data.gov.my and OpenDOSM
+- Ministry of Finance Malaysia (federal government finance, via data.gov.my)
 - JAKIM e-Solat (official prayer times)
 - European Central Bank (exchange rates, via Frankfurter)
 - Open-Meteo (weather & air quality)
