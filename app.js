@@ -46,20 +46,20 @@ const CITIES = [
 
 /* JAKIM e-solat zones (curated, major areas) */
 const ZONES = [
-  { code: "WLY01", name: "Kuala Lumpur / Putrajaya" },
-  { code: "SGR01", name: "Selangor (Gombak, Petaling…)" },
-  { code: "JHR02", name: "Johor (Johor Bahru, Kota Tinggi)" },
+  { code: "WLY01", name: "KL & Putrajaya" },
+  { code: "SGR01", name: "Selangor" },
+  { code: "JHR02", name: "Johor" },
   { code: "PNG01", name: "Pulau Pinang" },
-  { code: "PRK02", name: "Perak (Ipoh, Batu Gajah)" },
+  { code: "PRK02", name: "Perak" },
   { code: "MLK01", name: "Melaka" },
-  { code: "NGS01", name: "Negeri Sembilan (Seremban)" },
-  { code: "PHG02", name: "Pahang (Kuantan)" },
-  { code: "KDH01", name: "Kedah (Kota Setar)" },
-  { code: "KTN01", name: "Kelantan (Kota Bharu)" },
-  { code: "TRG01", name: "Terengganu (Kuala Terengganu)" },
-  { code: "SBH07", name: "Sabah (Kota Kinabalu)" },
-  { code: "SWK08", name: "Sarawak (Kuching)" },
-  { code: "PLS01", name: "Perlis (Kangar)" },
+  { code: "NGS01", name: "Negeri Sembilan" },
+  { code: "PHG02", name: "Pahang" },
+  { code: "KDH01", name: "Kedah" },
+  { code: "KTN01", name: "Kelantan" },
+  { code: "TRG01", name: "Terengganu" },
+  { code: "SBH07", name: "Sabah" },
+  { code: "SWK08", name: "Sarawak" },
+  { code: "PLS01", name: "Perlis" },
 ];
 
 const PRAYERS = [
