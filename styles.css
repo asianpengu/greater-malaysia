@@ -488,6 +488,17 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
   .ticker-track { animation: none; }
 }
 
+/* ---------- quick answers ---------- */
+.qa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.qa-card { position: relative; text-decoration: none; color: inherit; background: var(--paper-card); border: 2px solid var(--line-ink); padding: 20px; box-shadow: 4px 4px 0 rgba(22, 19, 13, 0.08); transition: transform 0.2s var(--ease), box-shadow 0.2s; display: block; }
+.qa-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.qa-card .qa-k { display: block; font-family: var(--brush); font-size: 26px; line-height: 0.95; }
+.qa-card .qa-s { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 6px; padding-right: 20px; }
+.qa-card .qa-go { position: absolute; right: 16px; bottom: 16px; color: var(--seal); font-size: 16px; transition: transform 0.2s; }
+.qa-card:hover .qa-go { transform: translateX(3px); }
+@media (max-width: 860px) { .qa-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .qa-grid { grid-template-columns: 1fr; } }
+
 /* ---------- email signup (reusable) ---------- */
 .gm-signup {
   border: 2px solid var(--line-ink); background: var(--paper-card);
