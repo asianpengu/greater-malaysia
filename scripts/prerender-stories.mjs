@@ -1,27 +1,29 @@
 /* ============================================================
-   Greater Malaysia — generic Data Story renderer
-   Reads a provenance-rich JSON and builds the page + AEO schema.
-   Metric-driven: each series declares its own metrics/layout, so
-   the same template renders any story. Reusable across all stories.
+   Greater Malaysia — story pre-renderer (no dependencies)
 
-   Story pages are PRE-RENDERED at build time by
-   scripts/prerender-stories.mjs (run `node scripts/prerender-stories.mjs`
-   after editing data/*.json) so crawlers see the full content without
-   JS. When #storyRoot[data-prerendered] is present this script only
-   enhances: bar animation, downloads, signup — it never re-renders.
-   The HTML-building functions below are duplicated in that script —
-   keep them in sync.
+   Bakes each data story's full content + JSON-LD schema into its
+   HTML file, so crawlers that don't run JS (GPTBot, ClaudeBot,
+   PerplexityBot…) see the real page, not "Loading the data…".
 
-   Shared helpers ($, $$, esc, fmt, jget, track, toast, wireNav…)
-   live in /common.js — load it first.
+   Usage:  node scripts/prerender-stories.mjs
+   Run it after every edit to data/*.json (or to the render logic).
+   Idempotent — safe to re-run; it replaces the previous bake.
+
+   The HTML builders below MIRROR stories/story.js — if you change
+   the markup there, change it here too, then re-run this script.
    ============================================================ */
 
-/* Email signup — Kit (ConvertKit) form. Empty endpoint = signup hidden. */
-const EMAIL_ENDPOINT = "https://app.kit.com/forms/9628406/subscriptions";
-const EMAIL_FIELD = "email_address";
+import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+/* ---------- helpers (mirrors common.js / story.js) ---------- */
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const COLORS = { seal: "var(--seal)", blue: "#2563eb", gold: "var(--gold)", ink: "var(--ink)", green: "var(--up)", faint: "var(--ink-faint)" };
 const num = (n) => Number(n).toLocaleString("en-MY");
+const EMAIL_FIELD = "email_address";
 function fmtVal(v, f) {
   if (f === "pct") return (Math.round(v * 10) / 10) + "%";
   if (f === "rm") return "RM" + num(v);
@@ -42,27 +44,7 @@ function metricsOf(s) {
   return [{ key: "value", label: s.valueLabel || "Value", color: "seal", fmt: s.fmt || "num" }];
 }
 
-boot();
-
-async function boot() {
-  wireNav();
-  const pre = $("#storyRoot")?.dataset.prerendered === "true";
-  let data;
-  try { data = await jget(window.STORY_DATA_URL, 2, 36e5); }
-  catch (e) {
-    // never wipe pre-rendered content — only the downloads lose their data
-    if (!pre) $("#storyRoot").innerHTML = `<p class="tool-err">Couldn't load this story's data.</p>`;
-    return;
-  }
-  if (!pre) {
-    $("#story").innerHTML = `<div id="storyRoot">${buildStory(data)}</div>`;
-    $("#footerSrc").innerHTML = footerSrc(data.source);
-    injectSchema(data);
-  }
-  wire(data);
-}
-
-/* ---------- render (pure HTML builders — mirrored in scripts/prerender-stories.mjs) ---------- */
+/* ---------- render (mirrors stories/story.js buildStory) ---------- */
 function buildStory(d) {
   const s = d.source, parts = [];
 
@@ -91,7 +73,6 @@ function buildStory(d) {
     </div>`;
   }).join("")}</div>`);
 
-  // render trend first (vertical), then every other series in declared order
   if (d.series.trend) parts.push(chartBlock(d.series.trend, s, "vertical"));
   Object.keys(d.series).forEach((k) => {
     if (k === "trend") return;
@@ -109,7 +90,7 @@ function buildStory(d) {
     <div class="st-faq"><h3>Frequently asked</h3>
       ${d.faq.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("")}</div>`);
 
-  if (EMAIL_ENDPOINT) parts.push(`
+  parts.push(`
     <div class="st-capture">
       <div class="cap-k">stay in the know</div>
       <h3>Malaysia, decoded weekly</h3>
@@ -126,31 +107,6 @@ function buildStory(d) {
 
 function footerSrc(s) {
   return `Data verified from <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.publisher)}</a> — ${esc(s.document)}. Every figure traces back to the official source.`;
-}
-
-/* ---------- wire (interactivity on rendered or pre-rendered DOM) ---------- */
-function wire(d) {
-  requestAnimationFrame(() => $$(".hb-bar").forEach((b) => (b.style.width = b.dataset.w + "%")));
-  $("#dlJson")?.addEventListener("click", () => { download(`${d.slug}.json`, JSON.stringify(d, null, 2), "application/json"); track("data_download", { story: d.slug, format: "json" }); });
-  $("#dlCsv")?.addEventListener("click", () => { download(`${d.slug}.csv`, toCsv(d), "text/csv"); track("data_download", { story: d.slug, format: "csv" }); });
-  const cf = $("#capForm");
-  if (cf) cf.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = $("#capEmail").value.trim();
-    if (!email) return;
-    const btn = cf.querySelector("button"); btn.disabled = true; btn.textContent = "Subscribing…";
-    try {
-      const res = await fetch(EMAIL_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ [EMAIL_FIELD]: email }),
-      });
-      if (!res.ok) throw new Error(res.status);
-      track("lead_capture", { source: "data_story", story: d.slug });
-      toast("You're in! Check your inbox to confirm 🇲🇾"); cf.reset();
-    } catch (err) { toast("Hmm, that didn't work — try again."); }
-    btn.disabled = false; btn.textContent = "Get the brief";
-  });
 }
 
 function legend(metrics) {
@@ -170,7 +126,6 @@ function chartBlock(b, s, layout) {
   </div>`;
 }
 
-/* vertical grouped bars (time series) */
 function vBars(b, metrics) {
   const rows = b.rows, xKey = b.x || "year";
   const W = 720, H = 290, padL = 8, padR = 8, padT = 24, padB = b.highlight ? 42 : 30;
@@ -194,7 +149,6 @@ function vBars(b, metrics) {
   return `<svg class="trend-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(b.title)}">${svg}</svg>`;
 }
 
-/* horizontal grouped bars (breakdowns) */
 function hBars(b, metrics) {
   const max = Math.max(...b.rows.flatMap((r) => metrics.map((m) => +r[m.key])));
   const multi = metrics.length > 1;
@@ -229,9 +183,6 @@ function provenanceBlock(s) {
   </div>`;
 }
 
-function injectSchema(d) {
-  $("#ldjson").textContent = JSON.stringify(schemaOf(d));
-}
 function schemaOf(d) {
   const s = d.source;
   const graph = [
@@ -247,17 +198,33 @@ function schemaOf(d) {
 }
 
 function linkBold(t) { return esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
-function toCsv(d) {
-  const s = d.source, lines = [["series", "label", "metric", "value", "source", "document", "ref"]];
-  for (const [k, v] of Object.entries(d.series)) {
-    const metrics = metricsOf(v);
-    (v.rows || []).forEach((r) => metrics.forEach((m) =>
-      lines.push([k, r.label || r[v.x || "year"], m.key, r[m.key] ?? "", s.publisher, s.document, v.ref || ""])));
+
+/* ---------- bake ---------- */
+const storiesDir = join(ROOT, "stories");
+const files = readdirSync(storiesDir).filter((f) => f.endsWith(".html") && f !== "index.html");
+let baked = 0;
+
+for (const file of files) {
+  const path = join(storiesDir, file);
+  let html = readFileSync(path, "utf8");
+
+  const m = html.match(/window\.STORY_DATA_URL = "([^"]+)"/);
+  if (!m) { console.warn(`skip ${file} — no STORY_DATA_URL`); continue; }
+  const d = JSON.parse(readFileSync(join(ROOT, m[1]), "utf8"));
+
+  const main = `<main class="story" id="story"><!-- pre-rendered by scripts/prerender-stories.mjs — do not edit by hand, edit ${m[1]} and re-run --><div id="storyRoot" data-prerendered="true">${buildStory(d)}</div></main>`;
+  const ld = `<script type="application/ld+json" id="ldjson">${JSON.stringify(schemaOf(d)).replace(/</g, "\\u003c")}</script>`;
+  const foot = `<p class="footer-sources" id="footerSrc">${footerSrc(d.source)}</p>`;
+
+  const reMain = /<main class="story" id="story">[\s\S]*?<\/main>/;
+  const reLd = /<script type="application\/ld\+json" id="ldjson">[\s\S]*?<\/script>/;
+  const reFoot = /<p class="footer-sources" id="footerSrc">[\s\S]*?<\/p>/;
+  if (!reMain.test(html) || !reLd.test(html) || !reFoot.test(html)) {
+    console.error(`FAIL ${file} — expected markers not found`); process.exitCode = 1; continue;
   }
-  return lines.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\n");
+  html = html.replace(reMain, main).replace(reLd, ld).replace(reFoot, foot);
+  writeFileSync(path, html);
+  baked++;
+  console.log(`baked ${file} ← ${m[1]}`);
 }
-function download(name, text, type) {
-  const blob = new Blob([text], { type }), a = document.createElement("a");
-  a.href = URL.createObjectURL(blob); a.download = name; a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast("Downloaded " + name);
-}
+console.log(`${baked}/${files.length} story pages pre-rendered.`);

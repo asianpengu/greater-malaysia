@@ -78,6 +78,29 @@ python3 -m http.server 4178
 
 The tools fetch live data, so they update every time you load.
 
+## Maintenance
+
+**Data stories are pre-rendered.** The `stories/*.html` pages have their full
+content and JSON-LD schema baked into the HTML (so AI/search crawlers that
+don't run JS still see everything). After editing any `data/*.json` story file
+— or the render markup in `stories/story.js` / `scripts/prerender-stories.mjs`
+(they mirror each other) — re-run:
+
+```bash
+node scripts/prerender-stories.mjs
+```
+
+**Yearly rollover.** `/cuti-umum` is a stable redirect (see `vercel.json`)
+currently pointing at `cuti-umum-2026.html`. When the 2027 holiday list is
+gazetted, create `cuti-umum-2027.html` and repoint the redirect (there's a
+TODO at the top of the 2026 page).
+
+**Shared JS.** `common.js` holds the helpers ($, esc, fmt, jget with
+timeout + sessionStorage cache, sparkline, wireNav, toast…) used by `app.js`,
+`today.js`, `answer.js` and `stories/story.js` — load it first on any new page.
+Follow-up idea: the HTML page chrome (nav / footer / gtag snippet) is still
+copy-pasted per page and could be generated from a template at build time.
+
 ## Full walkthrough
 
 <details>

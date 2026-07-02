@@ -1,36 +1,9 @@
 /* ============================================================
    GREATER MALAYSIA — live tools on the nation's open data
    Vanilla JS · fetches real public APIs in the browser
+   Shared helpers ($, $$, esc, fmt, jget, track, wireNav,
+   sparkline, toast, myNow…) live in common.js — load it first.
    ============================================================ */
-
-const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const fmt = (n, d = 2) => Number(n).toLocaleString("en-MY", { minimumFractionDigits: d, maximumFractionDigits: d });
-const debounce = (fn, ms = 160) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-/* GA4 custom events — fires only if gtag is present; deduped per name+key */
-const _tracked = new Set();
-function track(name, params = {}) {
-  if (typeof window.gtag !== "function") return;
-  const key = name + ":" + (params.tool || params.network || params.pair || params.to || "");
-  if (_tracked.has(key)) return; // once per session per tool, avoid flooding
-  _tracked.add(key);
-  window.gtag("event", name, params);
-}
-const jget = async (url, retries = 2) => {
-  for (let i = 0; ; i++) {
-    try {
-      const r = await fetch(url);
-      if (!r.ok) throw new Error(r.status);
-      return await r.json();
-    } catch (e) {
-      if (i >= retries) throw e;
-      await sleep(500 + i * 600); // backoff on transient burst failures
-    }
-  }
-};
 
 /* Malaysian cities (lat/lon) for weather + air */
 const CITIES = [
@@ -117,20 +90,8 @@ function boot() {
 /* ---------- clock ---------- */
 function startClock() {
   const el = $("#heroClock");
-  const tick = () => {
-    const now = new Date();
-    const my = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
-    el.textContent = my.toLocaleTimeString("en-GB", { hour12: false });
-  };
+  const tick = () => { el.textContent = myNow().toLocaleTimeString("en-GB", { hour12: false }); };
   tick(); setInterval(tick, 1000);
-}
-
-/* nav turns solid once you scroll past the hero top */
-function wireNav() {
-  const nav = $("#nav");
-  const onScroll = () => nav.classList.toggle("scrolled", (window.scrollY || document.documentElement.scrollTop) > 24);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 }
 
 /* ============================================================
@@ -141,12 +102,12 @@ async function loadPrayer(zone) {
   body.innerHTML = `<div class="tool-loading">Fetching prayer times…</div>`;
   try {
     const url = `https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=today&zone=${zone}`;
-    const data = await jget(url);
+    const data = await jget(url, 2, 600e3); // times change once a day
     const t = data.prayerTime?.[0];
     if (!t) throw new Error("no data");
 
     const toMin = (hms) => { const [h, m] = hms.split(":").map(Number); return h * 60 + m; };
-    const nowMy = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+    const nowMy = myNow();
     const nowMin = nowMy.getHours() * 60 + nowMy.getMinutes();
 
     const main = PRAYERS.filter((p) => !["imsak", "syuruk", "dhuha"].includes(p.key) || p.key === "syuruk");
@@ -195,7 +156,7 @@ async function loadPrayer(zone) {
 async function loadFuel() {
   const body = $("#fuelBody");
   try {
-    const rows = await jget("https://api.data.gov.my/data-catalogue/?id=fuelprice&limit=6&sort=-date");
+    const rows = await jget("https://api.data.gov.my/data-catalogue/?id=fuelprice&limit=6&sort=-date", 2, 36e5); // weekly data
     const level = rows.find((r) => r.series_type === "level");
     const change = rows.find((r) => r.series_type === "change_weekly");
     if (!level) throw new Error("no data");
@@ -265,7 +226,7 @@ const ETHNIC = [
 async function loadPopulation() {
   const body = $("#popBody");
   try {
-    const rows = await jget("https://api.data.gov.my/data-catalogue/?id=population_malaysia&limit=40&sort=-date");
+    const rows = await jget("https://api.data.gov.my/data-catalogue/?id=population_malaysia&limit=40&sort=-date", 2, 36e5); // annual data
     const ld = rows[0].date;
     const latest = rows.filter((r) => r.date === ld && r.sex === "both" && r.age === "overall");
     const val = (k) => latest.find((r) => r.ethnicity === k)?.population || 0;
@@ -301,13 +262,13 @@ async function loadFX(base) {
   body.innerHTML = `<div class="tool-loading">Fetching rates…</div>`;
   try {
     // 1 unit of `base` in MYR
-    const latest = await jget(`https://api.frankfurter.dev/v1/latest?base=${base}&symbols=MYR`);
+    const latest = await jget(`https://api.frankfurter.dev/v1/latest?base=${base}&symbols=MYR`, 2, 600e3); // daily ECB fix
     const rate = latest.rates.MYR;
 
     // 30-day series of base->MYR
     const end = latest.date;
     const start = new Date(new Date(end).getTime() - 31 * 864e5).toISOString().slice(0, 10);
-    const ts = await jget(`https://api.frankfurter.dev/v1/${start}..${end}?base=${base}&symbols=MYR`);
+    const ts = await jget(`https://api.frankfurter.dev/v1/${start}..${end}?base=${base}&symbols=MYR`, 2, 600e3);
     const days = Object.keys(ts.rates).sort();
     const vals = days.map((d) => ts.rates[d].MYR);
     const first = vals[0], last = vals[vals.length - 1];
@@ -337,15 +298,6 @@ async function loadFX(base) {
     body.innerHTML = `<div class="tool-err">Couldn't reach the FX feed.</div>`;
   }
 }
-function sparkline(vals, w, h) {
-  const min = Math.min(...vals), max = Math.max(...vals), pad = 6;
-  const rng = max - min || 1;
-  const x = (i) => (i / (vals.length - 1)) * w;
-  const y = (v) => pad + (1 - (v - min) / rng) * (h - pad * 2);
-  const line = vals.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
-  const area = `${line} L${w},${h} L0,${h} Z`;
-  return `<path class="area" d="${area}"/><path class="line" d="${line}"/>`;
-}
 
 /* ============================================================
    5. CRYPTO IN MYR — CoinGecko
@@ -360,7 +312,7 @@ async function loadCrypto() {
   const body = $("#cryptoBody");
   try {
     const ids = COINS.map((c) => c.id).join(",");
-    const d = await jget(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=myr&include_24hr_change=true`);
+    const d = await jget(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=myr&include_24hr_change=true`, 2, 60e3); // rate-limited
     tickerData.btc = d.bitcoin?.myr;
     rebuildTicker();
     body.innerHTML = `<div class="crypto-list">${COINS.map((c) => {
@@ -387,12 +339,12 @@ async function loadWeather(idx) {
   try {
     const wxUrl = `https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FKuala_Lumpur&forecast_days=5`;
     const airUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${c.lat}&longitude=${c.lon}&current=pm2_5,us_aqi`;
-    const [wx, air] = await Promise.all([jget(wxUrl), jget(airUrl)]);
+    const [wx, air] = await Promise.all([jget(wxUrl, 2, 300e3), jget(airUrl, 2, 300e3)]);
 
     const cur = wx.current;
     const [emoji, cond] = wxOf(cur.weather_code);
     const days = wx.daily.time.map((t, i) => {
-      const d = new Date(t).toLocaleDateString("en-GB", { weekday: "short" });
+      const d = new Date(t).toLocaleDateString("en-GB", { weekday: "short", timeZone: "Asia/Kuala_Lumpur" });
       const [e] = wxOf(wx.daily.weather_code[i]);
       return { d, e, hi: Math.round(wx.daily.temperature_2m_max[i]), lo: Math.round(wx.daily.temperature_2m_min[i]) };
     });
@@ -451,10 +403,10 @@ function aqiBand(a) {
 async function loadWarnings() {
   const body = $("#warnBody");
   try {
-    const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+    const now = myNow();
     const [warns, flood] = await Promise.all([
-      jget("https://api.data.gov.my/weather/warning/?limit=20&sort=-warning_issue"),
-      jget("https://api.data.gov.my/flood-warning/?limit=600"),
+      jget("https://api.data.gov.my/weather/warning/?limit=20&sort=-warning_issue", 2, 120e3),
+      jget("https://api.data.gov.my/flood-warning/?limit=600", 2, 120e3),
     ]);
 
     const active = (warns || []).filter((w) => {
@@ -501,7 +453,7 @@ async function loadWarnings() {
 async function loadInflation() {
   const body = $("#cpiBody");
   try {
-    const rows = await jget("https://api.data.gov.my/data-catalogue/?id=cpi_headline&limit=400&sort=-date");
+    const rows = await jget("https://api.data.gov.my/data-catalogue/?id=cpi_headline&limit=400&sort=-date", 2, 36e5); // monthly data
     const overall = rows.filter((r) => r.division === "overall");
     if (!overall.length) throw new Error("no data");
     const latest = overall[0];
@@ -559,7 +511,7 @@ function rebuildTicker() {
 const API = "https://pasarapi.krackeddevs.com/api";
 async function loadSourceCount() {
   try {
-    const data = await jget(`${API}/catalogue`);
+    const data = await jget(`${API}/catalogue`, 2, 36e5);
     const n = data.apis?.length || data.count || 0;
     const gov = (data.apis || []).filter((a) => a.group === "Government & open data").length;
     $("#srcCount").textContent = `Indexed across ${n} public Malaysian APIs · ${gov} official government feeds.`;
@@ -590,10 +542,4 @@ function setupReveal() {
 }
 function copy(text, msg) {
   navigator.clipboard?.writeText(text).then(() => toast(msg)).catch(() => toast("Copy failed"));
-}
-let toastT;
-function toast(msg) {
-  const t = $("#toast"); t.textContent = msg; t.hidden = false;
-  setTimeout(() => t.classList.add("show"), 15);
-  clearTimeout(toastT); toastT = setTimeout(() => { t.classList.remove("show"); setTimeout(() => (t.hidden = true), 320); }, 2000);
 }
