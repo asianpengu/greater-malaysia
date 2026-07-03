@@ -1,6 +1,16 @@
 {
   "stories": [
     {
+      "slug": "ai-adoption-malaysia",
+      "url": "/stories/ai-adoption-malaysia",
+      "tag": "Tech",
+      "title": "Is Malaysia actually using AI?",
+      "subtitle": "21.8% of working-age Malaysians use AI — 51st in the world, a third of Singapore's rate.",
+      "source": "Microsoft AI for Good Lab · Vodus",
+      "date": "2026-07-03",
+      "new": true
+    },
+    {
       "slug": "malaysia-election-history",
       "url": "/stories/malaysia-election-history",
       "tag": "Election",

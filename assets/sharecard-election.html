@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#d8d2c2; --paper-card:#f3efe6; --panel:#efeadf;
+    --ink:#16130d; --ink-soft:#4a443a; --seal:#b23a23; --up:#2f6b4a;
+    --line-ink:rgba(22,19,13,0.85); --line:rgba(22,19,13,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;
+    font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:60px 68px 60px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:26px}
+  .brand{display:flex;align-items:center;gap:16px}
+  .gm{font-family:'Caveat Brush',cursive;font-size:58px;line-height:.8}
+  .brand-txt .n{font-family:'Space Grotesk';font-weight:700;font-size:22px}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--seal);letter-spacing:.04em}
+  .shipped{text-align:right}
+  .shipped .k{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:26px}
+  .shipped .h{font-family:'Anton',sans-serif;font-size:52px;line-height:.9;text-transform:uppercase}
+  .rule{height:3px;background:var(--line-ink);position:relative;margin-bottom:30px}
+  .rule::after{content:"";position:absolute;right:0;top:-3px;border-left:9px solid var(--line-ink);border-top:5px solid transparent;border-bottom:5px solid transparent}
+  .panels{display:grid;grid-template-columns:0.82fr 1fr;gap:32px;flex:1}
+  .panel{background:var(--panel);border:2.5px solid var(--line-ink);box-shadow:8px 8px 0 rgba(22,19,13,.1);padding:28px 30px;display:flex;flex-direction:column}
+  .p-eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:24px;margin-bottom:4px}
+  .p-title{font-family:'Anton',sans-serif;font-size:34px;line-height:.92;text-transform:uppercase;margin-bottom:18px}
+  /* countdown */
+  .cd{border:2px solid var(--line-ink);border-top:6px solid var(--seal);background:var(--paper-card);padding:20px;margin-bottom:20px}
+  .cd .lab{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:20px;margin-bottom:8px}
+  .cd .big{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:76px;line-height:.9;color:var(--ink)}
+  .cd .sub{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:8px;letter-spacing:.02em}
+  .chips{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+  .chip{display:flex;align-items:center;gap:10px;background:var(--paper-card);border:2px solid var(--line-ink);padding:11px 14px;font-size:15px;font-weight:600}
+  .chip .ar{margin-left:auto;color:var(--seal);font-family:'JetBrains Mono',monospace}
+  /* chart */
+  .chartwrap{flex:1;display:flex;flex-direction:column}
+  .bars{flex:1;display:flex;align-items:flex-end;gap:6px;position:relative;padding-top:26px;border-bottom:2px solid var(--line-ink)}
+  .majline{position:absolute;left:0;right:0;bottom:100px;border-top:1.5px dashed rgba(22,19,13,.4)}
+  .majlab{position:absolute;left:2px;bottom:103px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);background:var(--panel);padding:0 4px}
+  .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar{width:100%;background:var(--seal);border-radius:1px 1px 0 0}
+  .col.hi .bar{background:var(--ink)}
+  .col .v{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;margin-bottom:4px}
+  .col .yr{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-soft);margin-top:6px;transform:rotate(0)}
+  .cap{font-size:13px;color:var(--ink-soft);margin-top:14px;line-height:1.4}
+  .cap b{color:var(--ink)}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:26px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:30px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:26px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="brand"><div class="gm">GM</div><div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div></div>
+    <div class="shipped"><div class="k">shipped</div><div class="h">Malaysia's next election, decoded.</div></div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="panels">
+    <!-- countdown + entry points -->
+    <div class="panel">
+      <div class="p-eyebrow">the next election</div>
+      <div class="p-title">GE16 is coming.</div>
+      <div class="cd">
+        <div class="lab">latest possible GE16</div>
+        <div class="big">594<span style="font-size:26px"> days</span></div>
+        <div class="sub">until the deadline · 17 Feb 2028</div>
+      </div>
+      <div class="chips">
+        <div class="chip">When is GE16?<span class="ar">→</span></div>
+        <div class="chip">Am I registered to vote?<span class="ar">→</span></div>
+        <div class="chip">How elections work<span class="ar">→</span></div>
+        <div class="chip">Every result since 1959<span class="ar">→</span></div>
+      </div>
+    </div>
+
+    <!-- the chart -->
+    <div class="panel">
+      <div class="p-eyebrow">every election since 1959</div>
+      <div class="p-title">The winning bloc's grip is slipping.</div>
+      <div class="chartwrap">
+        <div class="bars">
+          <div class="majline"></div><div class="majlab">majority = 50%</div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:142px"></div><span class="yr">'59</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:112px"></div><span class="yr">'64</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:132px"></div><span class="yr">'69</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:175px"></div><span class="yr">'74</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:169px"></div><span class="yr">'78</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:171px"></div><span class="yr">'82</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:167px"></div><span class="yr">'86</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:141px"></div><span class="yr">'90</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:169px"></div><span class="yr">'95</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:153px"></div><span class="yr">'99</span></div>
+          <div class="col hi"><span class="v">90%</span><div class="bar" style="height:181px"></div><span class="yr">'04</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:126px"></div><span class="yr">'08</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:120px"></div><span class="yr">'13</span></div>
+          <div class="col"><span class="v"></span><div class="bar" style="height:113px"></div><span class="yr">'18</span></div>
+          <div class="col hi"><span class="v">37%</span><div class="bar" style="height:74px"></div><span class="yr">'22</span></div>
+        </div>
+        <div class="cap">Seats won by the largest bloc, as a share of Parliament. From <b>90% in 2004</b> to a <b>hung parliament in 2022</b>, the first in history.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="site">greatermalaysia.com</div>
+    <div class="tag">neutral · official · free · <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+</body>
+</html>

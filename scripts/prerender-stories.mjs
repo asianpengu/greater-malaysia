@@ -187,7 +187,7 @@ function schemaOf(d) {
   const s = d.source;
   const graph = [
     { "@type": "Dataset", "name": d.title + " — " + d.subtitle, "description": d.answer, "dateModified": d.updated,
-      "creator": { "@type": "GovernmentOrganization", "name": s.publisher }, "isBasedOn": s.url,
+      "creator": { "@type": s.creator_type || "GovernmentOrganization", "name": s.publisher }, "isBasedOn": s.url,
       "citation": `${s.publisher}, ${s.document} (${s.published})`, "license": s.license,
       "url": "https://greatermalaysia.com/stories/" + d.slug },
     { "@type": "FAQPage", "mainEntity": (d.faq || []).map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) },

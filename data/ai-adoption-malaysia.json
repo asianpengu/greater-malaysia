@@ -1,0 +1,85 @@
+{
+  "slug": "ai-adoption-malaysia",
+  "kind": "data-story",
+  "title": "Is Malaysia actually using AI?",
+  "subtitle": "21.8% of working-age Malaysians use AI tools — 51st in the world, a third of Singapore's rate, and climbing every quarter.",
+  "question": "How many Malaysians use AI, and how does Malaysia compare?",
+  "answer": "It depends how you measure it. Microsoft's AI Diffusion data (Q1 2026) estimates 21.8% of working-age Malaysians use AI tools — 51st of 147 economies, behind Singapore (63.4%) and Vietnam (26.5%) but ahead of the Philippines, Indonesia and Thailand. Local surveys read higher: Vodus found 67% of Malaysians say they used AI in the past 3 months, led by 25–34-year-olds. Both agree on the direction: adoption is rising every quarter.",
+  "updated": "2026-07-03",
+  "source": {
+    "publisher": "Microsoft AI for Good Lab (AI Diffusion Report)",
+    "publisher_type": "Research lab — open data (MIT licence), with Vodus Research (Malaysian panel survey)",
+    "creator_type": "ResearchOrganization",
+    "document": "AI Diffusion Q1 2026 Update (open CSV) + Vodus AI Usage in Malaysia 2026",
+    "published": "2026",
+    "url": "https://github.com/microsoft/ai-diffusion-report",
+    "retrieved": "2026-07-03",
+    "license": "Microsoft AI Diffusion data: MIT licence, fetched from the official open CSV. Vodus survey figures as published (29 Dec 2025 – 2 Jan 2026 fieldwork).",
+    "notes": "Microsoft's 'AI diffusion' estimates the share of the working-age population actively using AI tools, comparable across 147 economies. Vodus asked Malaysians directly whether they used AI in the past 3 months — self-reported, so it reads higher. The two measure different things; both are shown."
+  },
+  "headline": [
+    { "label": "Working-age Malaysians using AI", "value": "21.8", "suffix": "%", "sub": "Q1 2026 · up from 18.3% in early 2025", "note": "Microsoft AI Diffusion" },
+    { "label": "Malaysia's global rank", "value": "51", "prefix": "#", "sub": "of 147 economies measured", "note": "Microsoft AI Diffusion" },
+    { "label": "Say they used AI recently", "value": "67", "suffix": "%", "sub": "of Malaysians, past 3 months · self-reported", "note": "Vodus survey" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Malaysia's AI adoption, quarter by quarter",
+      "note": "Share of working-age Malaysians using AI tools. Up 3.5 percentage points in nine months — steady, not explosive.",
+      "ref": "AI Diffusion Q1 2026 Update — Malaysia row",
+      "unit": "% of working-age population",
+      "x": "period",
+      "metrics": [{ "key": "share", "label": "% using AI", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "period": "H1 2025", "share": 18.3 },
+        { "period": "H2 2025", "share": 19.7 },
+        { "period": "Q1 2026", "share": 21.8 }
+      ]
+    },
+    "sea": {
+      "title": "Southeast Asia's AI league table (Q1 2026)",
+      "note": "Singapore is the region's runaway leader — #2 in the world — and Vietnam has overtaken Malaysia with the region's fastest growth.",
+      "ref": "AI Diffusion Q1 2026 Update — SEA economies",
+      "unit": "% of working-age population using AI",
+      "layout": "horizontal",
+      "metrics": [{ "key": "share", "label": "% using AI", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "label": "Singapore (#2 globally)", "share": 63.4 },
+        { "label": "Vietnam (#35)", "share": 26.5 },
+        { "label": "Malaysia (#51)", "share": 21.8 },
+        { "label": "Philippines (#55)", "share": 20.1 },
+        { "label": "Indonesia (#77)", "share": 14.1 },
+        { "label": "Thailand (#87)", "share": 12.4 }
+      ]
+    },
+    "age": {
+      "title": "Who's actually using it — by age (Malaysia)",
+      "note": "From the Vodus panel survey: usage in the past 3 months. Young working adults lead; most Malaysians 55+ haven't touched it.",
+      "ref": "Vodus AI Usage in Malaysia 2026 (fieldwork 29 Dec 2025 – 2 Jan 2026)",
+      "unit": "% who used AI in the past 3 months",
+      "layout": "horizontal",
+      "metrics": [{ "key": "share", "label": "% used AI", "color": "blue", "fmt": "pct" }],
+      "rows": [
+        { "label": "Aged 25–34", "share": 85 },
+        { "label": "All Malaysians", "share": 67 },
+        { "label": "Aged 55 and above", "share": 33 }
+      ]
+    }
+  },
+  "takeaways": [
+    "By the strictest comparable measure, **21.8% of working-age Malaysians use AI tools** — ranking **#51 of 147 economies** (Microsoft AI Diffusion, Q1 2026).",
+    "**Singapore (63.4%) is in another league** — nearly 3× Malaysia's rate and #2 in the world. **Vietnam (26.5%) has pulled ahead** with the region's fastest growth.",
+    "Malaysia still beats the **Philippines (20.1%), Indonesia (14.1%) and Thailand (12.4%)** — solidly mid-table in ASEAN, mid-table globally.",
+    "Ask Malaysians directly and the number jumps: **67% say they used AI in the past 3 months** (Vodus). Self-reported use of any AI reads higher than measured active use of AI tools — both are true, they measure different things.",
+    "The divide is **age, not access**: ~**85% of 25–34-year-olds** have used AI recently, versus only about a third of Malaysians **55 and older**.",
+    "The trend is the story: **+3.5 percentage points in nine months**, rising every quarter."
+  ],
+  "faq": [
+    { "q": "How many Malaysians use AI?", "a": "About 21.8% of working-age Malaysians actively use AI tools as of Q1 2026, per Microsoft's AI Diffusion data — while 67% of Malaysians say they used AI at least once in the past 3 months, per the Vodus panel survey. The first measures regular tool use comparably across countries; the second is self-reported recent use." },
+    { "q": "How does Malaysia compare to Singapore on AI adoption?", "a": "Singapore's AI diffusion is 63.4% of working-age adults (2nd in the world); Malaysia's is 21.8% (51st of 147). Singapore's rate is nearly three times Malaysia's." },
+    { "q": "Is Malaysia ahead of its neighbours on AI?", "a": "Mid-table: behind Singapore (63.4%) and Vietnam (26.5%), ahead of the Philippines (20.1%), Indonesia (14.1%) and Thailand (12.4%), as of Q1 2026." },
+    { "q": "Is AI adoption in Malaysia growing?", "a": "Yes — from 18.3% (H1 2025) to 19.7% (H2 2025) to 21.8% (Q1 2026) of the working-age population, a gain of 3.5 percentage points in about nine months." },
+    { "q": "Who uses AI most in Malaysia?", "a": "Young working adults: about 85% of Malaysians aged 25–34 used AI in the past 3 months. Among those 55 and above, roughly two-thirds have not used it at all (Vodus, early 2026)." },
+    { "q": "Where does this data come from?", "a": "Microsoft AI for Good Lab's AI Diffusion Report — published as an open, MIT-licensed CSV on GitHub (147 economies, updated roughly quarterly) — plus the Vodus AI Usage in Malaysia 2026 panel survey. Every figure links to its source." }
+  ]
+}
