@@ -7,6 +7,13 @@
   "license": "Figures derive from official open data; cite the primary source listed per item.",
   "datasets": [
     {
+      "topic": "Malaysia for digital nomads (DE Rantau visa)",
+      "description": "Living in Malaysia as a remote worker: the DE Rantau Nomad Pass (USD24k/yr foreign income, 0% tax on foreign income), fast internet (~154 Mbps mobile / ~170 Mbps fixed, Ookla), plus live weather, air quality and ringgit rates for KL and Penang.",
+      "page": "https://greatermalaysia.com/malaysia-for-digital-nomads",
+      "source": "MDEC (DE Rantau); Ookla Speedtest Global Index; Open-Meteo; European Central Bank",
+      "frequency": "live (weather/FX) + as visa terms change"
+    },
+    {
       "topic": "AI adoption in Malaysia",
       "description": "Share of working-age Malaysians using AI tools, with SEA and global comparison (147 economies), updated roughly quarterly. Malaysia: 18.3% (H1 2025) → 21.8% (Q1 2026).",
       "page": "https://greatermalaysia.com/stories/ai-adoption-malaysia",
