@@ -508,17 +508,12 @@ function rebuildTicker() {
 /* ============================================================
    SOURCE COUNT — trust band (Pasar API catalogue, just the number)
    ============================================================ */
-const API = "https://pasarapi.krackeddevs.com/api";
-async function loadSourceCount() {
-  try {
-    const data = await jget(`${API}/catalogue`, 2, 36e5);
-    const n = data.apis?.length || data.count || 0;
-    const gov = (data.apis || []).filter((a) => a.group === "Government & open data").length;
-    $("#srcCount").textContent = `Indexed across ${n} public Malaysian APIs · ${gov} official government feeds.`;
-    $("#footerMeta").textContent = `${n} APIs indexed · catalogue ${data.updated || ""} · every tool fetches live in your browser`;
-  } catch (e) {
-    $("#footerMeta").textContent = "Tools fetch live in your browser from official Malaysian open data.";
-  }
+function loadSourceCount() {
+  // The Pasar API catalogue endpoint sends no CORS header, so a browser fetch
+  // always failed (2 retries = 3 console errors every load) and left the count
+  // unset. Keep the trust band static and honest instead — #srcCount already has
+  // a sensible default ("Indexed across hundreds of public Malaysian APIs.").
+  $("#footerMeta").textContent = "Tools fetch live in your browser from official Malaysian open data.";
 }
 
 /* ============================================================
