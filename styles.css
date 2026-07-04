@@ -560,6 +560,16 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 .cd-sub { font-size: 13.5px; color: var(--ink-soft); margin-top: 14px; line-height: 1.5; }
 .hub-neutral { max-width: 720px; margin: 30px auto 0; text-align: center; font-size: 12.5px; color: var(--ink-faint); line-height: 1.55; }
 
+/* hero "Malaysia right now" live strip */
+.hero-live { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 22px 0 18px; }
+.hl-chip { position: relative; display: flex; flex-direction: column; gap: 3px; text-decoration: none; color: inherit; background: var(--paper-card); border: 2px solid var(--line-ink); padding: 12px 14px; box-shadow: 3px 3px 0 rgba(22, 19, 13, 0.08); transition: transform 0.15s var(--ease), box-shadow 0.15s; }
+.hl-chip:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+.hl-k { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+.hl-v { font-family: var(--mono); font-weight: 700; font-size: 21px; line-height: 1.05; color: var(--ink); }
+.hl-go { position: absolute; top: 10px; right: 12px; color: var(--seal); font-size: 13px; opacity: 0; transition: opacity 0.15s, transform 0.15s; }
+.hl-chip:hover .hl-go { opacity: 1; transform: translateX(2px); }
+@media (max-width: 720px) { .hero-live { grid-template-columns: 1fr 1fr; } }
+
 /* nomad live city cards */
 .nomad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .nomad-city { border: 2px solid var(--line-ink); background: var(--paper-2); padding: 18px 18px 16px; }

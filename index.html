@@ -144,6 +144,14 @@
           </a>
         </div>
 
+        <!-- LIVE "right now" strip — instant value + one click into each tool -->
+        <div class="hero-live" id="heroLive" aria-label="Malaysia right now">
+          <a class="hl-chip" href="waktu-solat/kuala-lumpur"><span class="hl-k">Next solat · KL</span><span class="hl-v" id="hlSolat">…</span><span class="hl-go">→</span></a>
+          <a class="hl-chip" href="harga-minyak"><span class="hl-k">RON95 today</span><span class="hl-v" id="hlFuel">…</span><span class="hl-go">→</span></a>
+          <a class="hl-chip" href="usd-to-myr"><span class="hl-k">1 USD in ringgit</span><span class="hl-v" id="hlFx">…</span><span class="hl-go">→</span></a>
+          <a class="hl-chip" href="today"><span class="hl-k">KL right now</span><span class="hl-v" id="hlWx">…</span><span class="hl-go">→</span></a>
+        </div>
+
         <!-- LIVE TICKER -->
         <div class="ticker" id="ticker">
           <div class="ticker-track" id="tickerTrack">
@@ -364,6 +372,38 @@
     <div class="toast" id="toast" hidden></div>
 
     <script src="common.js"></script>
+    <script>
+    /* Hero "Malaysia right now" strip — instant live value above the fold. */
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+      var myNow = function () { return new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" })); };
+      var jget = function (u) { return fetch(u).then(function (r) { if (!r.ok) throw 0; return r.json(); }); };
+      var set = function (id, v) { var e = $(id); if (e) e.textContent = v; };
+      // Next prayer, KL
+      jget("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=today&zone=WLY01").then(function (d) {
+        var t = d.prayerTime[0];
+        var seq = [["fajr", "Subuh"], ["syuruk", "Syuruk"], ["dhuhr", "Zohor"], ["asr", "Asar"], ["maghrib", "Maghrib"], ["isha", "Isyak"]];
+        var now = myNow(), nm = now.getHours() * 60 + now.getMinutes();
+        var toMin = function (h) { var p = h.split(":"); return +p[0] * 60 + +p[1]; };
+        var nx = seq.find(function (p) { return toMin(t[p[0]]) > nm; }) || seq[0];
+        set("hlSolat", nx[1] + " " + t[nx[0]].slice(0, 5));
+      }).catch(function () { set("hlSolat", "—"); });
+      // RON95
+      jget("https://api.data.gov.my/data-catalogue/?id=fuelprice&limit=4&sort=-date").then(function (rows) {
+        var l = rows.find(function (r) { return r.series_type === "level"; });
+        set("hlFuel", "RM" + Number(l.ron95_skps != null ? l.ron95_skps : l.ron95).toFixed(2));
+      }).catch(function () { set("hlFuel", "—"); });
+      // USD -> MYR
+      jget("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR").then(function (d) {
+        set("hlFx", "RM" + d.rates.MYR.toFixed(2));
+      }).catch(function () { set("hlFx", "—"); });
+      // KL weather now
+      jget("https://api.open-meteo.com/v1/forecast?latitude=3.139&longitude=101.687&current=temperature_2m,weather_code&timezone=Asia%2FKuala_Lumpur").then(function (d) {
+        var WX = { 0: "☀️", 1: "🌤", 2: "⛅", 3: "☁️", 45: "🌫", 51: "🌦", 53: "🌦", 55: "🌧", 61: "🌦", 63: "🌧", 65: "🌧", 80: "🌦", 81: "🌧", 82: "⛈", 95: "⛈", 96: "⛈", 99: "⛈" };
+        set("hlWx", Math.round(d.current.temperature_2m) + "° " + (WX[d.current.weather_code] || "🌡"));
+      }).catch(function () { set("hlWx", "—"); });
+    })();
+    </script>
     <script src="app.js"></script>
     <script src="subscribe.js" defer></script>
     <script src="newbadge.js" defer></script>
