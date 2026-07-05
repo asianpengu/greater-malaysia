@@ -1,6 +1,26 @@
 {
   "stories": [
     {
+      "slug": "how-malaysians-commute",
+      "url": "/stories/how-malaysians-commute",
+      "tag": "Transport",
+      "title": "How do Malaysians get around?",
+      "subtitle": "1.4 million rides a day on public transport. The MRT and LRT do the heavy lifting.",
+      "source": "Prasarana / KTMB",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "malaysia-income-divide",
+      "url": "/stories/malaysia-income-divide",
+      "tag": "Income",
+      "title": "Malaysia's income divide, state by state",
+      "subtitle": "In Sabah about 1 in 5 households lives in poverty; in KL about 1 in 70.",
+      "source": "DOSM",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
       "slug": "how-malaysians-pay",
       "url": "/stories/how-malaysians-pay",
       "tag": "Money",

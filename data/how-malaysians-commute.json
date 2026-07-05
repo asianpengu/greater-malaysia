@@ -1,0 +1,61 @@
+{
+  "slug": "how-malaysians-commute",
+  "kind": "data-story",
+  "title": "How do Malaysians get around?",
+  "subtitle": "1.4 million rides a day on public transport. The MRT and LRT do the heavy lifting.",
+  "question": "How many people use public transport in Malaysia, and which lines?",
+  "answer": "On a typical weekday, Malaysians take about 1.4 million rides on rail and bus public transport, dropping to around 930,000 on weekends. The Klang Valley carries most of it: the MRT Kajang line alone averages about 287,000 rides a day, with the LRT lines and Rapid buses close behind.",
+  "updated": "2026-07-06",
+  "source": {
+    "publisher": "Prasarana, KTMB & operators, via data.gov.my",
+    "publisher_type": "Government, public transport operators, open data",
+    "document": "Daily public transport ridership",
+    "published": "2026",
+    "url": "https://data.gov.my/data-catalogue/ridership_headline",
+    "retrieved": "2026-07-06",
+    "license": "Official open data (data.gov.my), Ministry of Transport / Prasarana / KTMB",
+    "notes": "Daily boardings by service. Figures here are average weekday ridership over the most recent ~30 days (to end May 2026). 'Rapid' services are Prasarana (Rapid Rail and Rapid Bus, KL and Penang); ETS, Komuter and Intercity are KTMB; the JB-Singapore Shuttle is the Tebrau line."
+  },
+  "headline": [
+    { "label": "Rides on a weekday", "value": "1.4", "suffix": "m", "sub": "public transport, average weekday", "note": "Prasarana/KTMB" },
+    { "label": "Busiest line", "value": "287k", "sub": "MRT Kajang, per day", "note": "avg weekday" },
+    { "label": "On weekends", "value": "934k", "sub": "about a third fewer rides", "note": "avg weekend" }
+  ],
+  "series": {
+    "bybusiest": {
+      "title": "Busiest services, average weekday",
+      "note": "Boardings per weekday. The three Klang Valley rail workhorses (MRT Kajang, LRT Kelana Jaya, LRT Ampang) and Rapid Bus KL each move over 200,000 people a day.",
+      "ref": "Average weekday ridership by service, ~30 days to end May 2026",
+      "unit": "rides per weekday",
+      "layout": "horizontal",
+      "metrics": [{ "key": "v", "label": "rides / weekday", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "MRT Kajang", "v": 287011 },
+        { "label": "LRT Kelana Jaya", "v": 276621 },
+        { "label": "Rapid Bus KL", "v": 235003 },
+        { "label": "LRT Ampang / Sri Petaling", "v": 221290 },
+        { "label": "MRT Putrajaya", "v": 183861 },
+        { "label": "KL Monorail", "v": 59452 },
+        { "label": "Rapid Bus Penang", "v": 48066 },
+        { "label": "KTM Komuter", "v": 25405 },
+        { "label": "KTM ETS", "v": 17292 },
+        { "label": "KTM Komuter Utara", "v": 17012 },
+        { "label": "JB–Singapore Shuttle", "v": 8798 },
+        { "label": "KTM Intercity", "v": 2841 }
+      ]
+    }
+  },
+  "takeaways": [
+    "Malaysians take about **1.4 million public transport rides on an average weekday**, falling to roughly **934,000 on weekends** as the commute disappears.",
+    "The **Klang Valley rail network does the heavy lifting**: MRT Kajang (~287k/day), LRT Kelana Jaya (~277k) and LRT Ampang (~221k) are the busiest services.",
+    "**Buses still matter**: Rapid Bus KL alone carries about 235,000 people a day, more than most rail lines.",
+    "**Penang runs on buses**: Rapid Bus Penang moves ~48,000 a day, with no urban rail line yet.",
+    "The **KTM Komuter and ETS** trains carry far fewer, a reminder that Malaysia's mass transit is still overwhelmingly a Klang Valley story."
+  ],
+  "faq": [
+    { "q": "How many people use public transport in Malaysia each day?", "a": "About 1.4 million rides on an average weekday across rail and bus, dropping to around 934,000 on weekends, based on operator data on data.gov.my (to end May 2026)." },
+    { "q": "What is the busiest train line in Malaysia?", "a": "The MRT Kajang line, averaging about 287,000 rides a weekday, followed by the LRT Kelana Jaya line (~277,000) and LRT Ampang/Sri Petaling (~221,000)." },
+    { "q": "Do more Malaysians take the train or the bus?", "a": "Rail carries more in total, but buses are significant: Rapid Bus KL alone averages about 235,000 rides a weekday, more than any single rail line except the busiest MRT and LRT services." },
+    { "q": "Where does this ridership data come from?", "a": "From Malaysia's public transport operators (Prasarana's Rapid Rail and Rapid Bus, and KTMB), published as official open data on data.gov.my." }
+  ]
+}

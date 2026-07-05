@@ -1,0 +1,66 @@
+{
+  "slug": "malaysia-income-divide",
+  "kind": "data-story",
+  "title": "Malaysia's income divide, state by state",
+  "subtitle": "In Sabah, about 1 in 5 households lives in poverty. In Kuala Lumpur, about 1 in 70.",
+  "question": "Which Malaysian states are richest and poorest, and how wide is the gap?",
+  "answer": "Very wide, and it runs by geography. In 2022, absolute poverty ranged from 19.7% of households in Sabah down to 1.4% in Kuala Lumpur and just 0.1% in Putrajaya. The Borneo states (Sabah, Sarawak) and the north-east (Kelantan) sit far above the richer west-coast states.",
+  "updated": "2026-07-06",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM), via data.gov.my",
+    "publisher_type": "Government, national statistics office, open data",
+    "document": "Household poverty and income inequality by state (HIES)",
+    "published": "2022",
+    "url": "https://data.gov.my/data-catalogue/hh_poverty_state",
+    "retrieved": "2026-07-06",
+    "license": "Official open data (data.gov.my), Department of Statistics Malaysia",
+    "notes": "Absolute poverty is the share of households with income below the national Poverty Line Income (PLI). Figures are from the 2022 Household Income and Basic Amenities Survey (HIES), the latest available. Inequality is measured by the Gini coefficient (0 = perfect equality, 1 = maximum)."
+  },
+  "headline": [
+    { "label": "Highest poverty", "value": "19.7", "suffix": "%", "sub": "Sabah, of households", "note": "DOSM 2022" },
+    { "label": "Lowest (a real city)", "value": "1.4", "suffix": "%", "sub": "Kuala Lumpur", "note": "Putrajaya 0.1%" },
+    { "label": "The gap", "value": "14", "suffix": "x", "sub": "Sabah's poverty rate vs KL's", "note": "2022" }
+  ],
+  "series": {
+    "bystate": {
+      "title": "Absolute poverty rate by state (2022)",
+      "note": "Share of households below the national Poverty Line Income. Sabah, Kelantan and Sarawak are far above the rest; the west-coast and urban states are lowest.",
+      "ref": "Household absolute poverty by state, HIES 2022",
+      "unit": "% of households in poverty",
+      "layout": "horizontal",
+      "metrics": [{ "key": "share", "label": "% in poverty", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "label": "Sabah", "share": 19.7 },
+        { "label": "Kelantan", "share": 13.2 },
+        { "label": "Sarawak", "share": 10.8 },
+        { "label": "Kedah", "share": 9.0 },
+        { "label": "Perak", "share": 7.5 },
+        { "label": "Pahang", "share": 6.3 },
+        { "label": "Terengganu", "share": 6.2 },
+        { "label": "Johor", "share": 4.6 },
+        { "label": "N. Sembilan", "share": 4.4 },
+        { "label": "Melaka", "share": 4.2 },
+        { "label": "Perlis", "share": 4.0 },
+        { "label": "Labuan", "share": 2.5 },
+        { "label": "Penang", "share": 2.0 },
+        { "label": "Selangor", "share": 1.5 },
+        { "label": "Kuala Lumpur", "share": 1.4 },
+        { "label": "Putrajaya", "share": 0.1 }
+      ]
+    }
+  },
+  "takeaways": [
+    "**Sabah has the highest household poverty in Malaysia at 19.7%**, roughly one in five households, followed by Kelantan (13.2%) and Sarawak (10.8%).",
+    "The **richest states are the urban west coast**: Kuala Lumpur (1.4%), Selangor (1.5%) and Penang (2.0%), with Putrajaya lowest at 0.1%.",
+    "That is a **roughly 14-fold gap** between Sabah and Kuala Lumpur, a divide that tracks the coastline and the causeway to Borneo.",
+    "**Inequality follows the same map**: the Gini coefficient is highest in Sabah (0.395) and Kelantan (0.385), so the poorest states are also the most unequal.",
+    "These are **2022 figures** from DOSM's household survey, the latest full read. Poverty here means income below the official Poverty Line Income."
+  ],
+  "faq": [
+    { "q": "Which Malaysian state has the highest poverty?", "a": "Sabah, at 19.7% of households living in absolute poverty in 2022, followed by Kelantan (13.2%) and Sarawak (10.8%), according to DOSM data on data.gov.my." },
+    { "q": "Which state has the lowest poverty?", "a": "Putrajaya (0.1%) among the federal territories, and Kuala Lumpur (1.4%) and Selangor (1.5%) among the main states." },
+    { "q": "How big is the income gap between Malaysian states?", "a": "Sabah's household poverty rate (19.7%) is about 14 times Kuala Lumpur's (1.4%). Inequality (Gini) is also highest in Sabah and Kelantan." },
+    { "q": "What is 'absolute poverty' in Malaysia?", "a": "The share of households with income below the national Poverty Line Income (PLI), the government's official poverty threshold. It's measured in DOSM's Household Income survey." },
+    { "q": "Where does this data come from?", "a": "From the Department of Statistics Malaysia's 2022 Household Income and Basic Amenities Survey (HIES), published as official open data on data.gov.my." }
+  ]
+}
