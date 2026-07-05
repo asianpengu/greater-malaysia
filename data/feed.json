@@ -7,6 +7,13 @@
   "license": "Figures derive from official open data; cite the primary source listed per item.",
   "datasets": [
     {
+      "topic": "Starting a business in Malaysia (SSM registration)",
+      "description": "How to register a business in Malaysia: sole proprietor/Enterprise via ezBiz (from RM30/year) or Sdn Bhd via MyCoID (~RM1,000), both online with SSM. Enterprise vs Sdn Bhd compared, plus the RM500,000 SST threshold.",
+      "page": "https://greatermalaysia.com/how-to-start-a-business-in-malaysia",
+      "source": "Companies Commission of Malaysia (SSM) — ezBiz, MyCoID",
+      "frequency": "as rules/fees change"
+    },
+    {
       "topic": "Malaysia for digital nomads (DE Rantau visa)",
       "description": "Living in Malaysia as a remote worker: the DE Rantau Nomad Pass (USD24k/yr foreign income, 0% tax on foreign income), fast internet (~154 Mbps mobile / ~170 Mbps fixed, Ookla), plus live weather, air quality and ringgit rates for KL and Penang.",
       "page": "https://greatermalaysia.com/malaysia-for-digital-nomads",
