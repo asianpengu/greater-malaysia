@@ -1,6 +1,36 @@
 {
   "stories": [
     {
+      "slug": "how-malaysians-pay",
+      "url": "/stories/how-malaysians-pay",
+      "tag": "Money",
+      "title": "How do Malaysians pay?",
+      "subtitle": "FPX moves RM1.3 billion a day. Inside Malaysia's cashless surge.",
+      "source": "Bank Negara / PayNet",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "malaysia-ev-adoption",
+      "url": "/stories/malaysia-ev-adoption",
+      "tag": "Cars",
+      "title": "Are Malaysians switching to EVs?",
+      "subtitle": "Electric cars hit 6% of new registrations, double a year earlier.",
+      "source": "JPJ (Road Transport Dept)",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "crime-in-malaysia",
+      "url": "/stories/crime-in-malaysia",
+      "tag": "Safety",
+      "title": "Is crime rising in Malaysia?",
+      "subtitle": "Recorded index crime has more than halved since 2016.",
+      "source": "Royal Malaysia Police",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
       "slug": "ai-adoption-malaysia",
       "url": "/stories/ai-adoption-malaysia",
       "tag": "Tech",

@@ -94,7 +94,7 @@ function buildStory(d) {
     <div class="st-capture">
       <div class="cap-k">stay in the know</div>
       <h3>Malaysia, decoded weekly</h3>
-      <p>One email a week — the numbers that run the country, pulled straight from the source. No spam, unsubscribe anytime.</p>
+      <p>One email a week, the numbers that run the country, pulled straight from the source. No spam, unsubscribe anytime.</p>
       <form class="cap-form" id="capForm">
         <input type="email" id="capEmail" name="${EMAIL_FIELD}" placeholder="you@email.com" required />
         <button type="submit">Get the brief</button>
@@ -106,7 +106,7 @@ function buildStory(d) {
 }
 
 function footerSrc(s) {
-  return `Data verified from <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.publisher)}</a> — ${esc(s.document)}. Every figure traces back to the official source.`;
+  return `Data verified from <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.publisher)}</a> · ${esc(s.document)}. Every figure traces back to the official source.`;
 }
 
 function legend(metrics) {
@@ -186,7 +186,7 @@ function provenanceBlock(s) {
 function schemaOf(d) {
   const s = d.source;
   const graph = [
-    { "@type": "Dataset", "name": d.title + " — " + d.subtitle, "description": d.answer, "dateModified": d.updated,
+    { "@type": "Dataset", "name": d.title + ": " + d.subtitle, "description": d.answer, "dateModified": d.updated,
       "creator": { "@type": s.creator_type || "GovernmentOrganization", "name": s.publisher }, "isBasedOn": s.url,
       "citation": `${s.publisher}, ${s.document} (${s.published})`, "license": s.license,
       "url": "https://greatermalaysia.com/stories/" + d.slug },

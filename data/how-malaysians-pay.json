@@ -1,0 +1,67 @@
+{
+  "slug": "how-malaysians-pay",
+  "kind": "data-story",
+  "title": "How do Malaysians pay?",
+  "subtitle": "FPX moves RM1.3 billion a day. Inside Malaysia's cashless surge.",
+  "question": "How much money do Malaysians move digitally, and through what?",
+  "answer": "A lot, and mostly through FPX. On an average day, Malaysians move about RM1.3 billion through FPX alone across 2.7 million transactions, roughly 31 every second. Add shared ATMs, DirectDebit and JomPAY and it is over RM2.2 billion moving through these rails every single day.",
+  "updated": "2026-07-06",
+  "source": {
+    "publisher": "Bank Negara Malaysia / PayNet (via data.gov.my)",
+    "publisher_type": "Government, central bank & national payments network, open data",
+    "document": "Daily payment system transactions (FPX, JomPAY, DirectDebit, Shared ATM Network)",
+    "published": "2026",
+    "url": "https://data.gov.my/data-catalogue/trnsc_daily_fpx",
+    "retrieved": "2026-07-06",
+    "license": "Official open data (data.gov.my), Bank Negara Malaysia / PayNet",
+    "notes": "Figures are the average daily transaction value and volume over the most recent 30 days of published data (to early July 2026). FPX is online bank transfers (the 'pay with FPX' checkout); JomPAY is bill payments; DirectDebit is recurring auto-debits; the Shared ATM Network (SAN) links banks' ATMs."
+  },
+  "headline": [
+    { "label": "Moved through FPX", "value": "1.3", "prefix": "RM", "suffix": "bn", "sub": "on an average day", "note": "BNM/PayNet" },
+    { "label": "FPX transactions a day", "value": "2.7", "suffix": "m", "sub": "about 31 every second", "note": "30-day avg" },
+    { "label": "Across all four rails", "value": "2.2", "prefix": "RM", "suffix": "bn", "sub": "moved every day", "note": "FPX+DD+SAN+JomPAY" }
+  ],
+  "series": {
+    "byvalue": {
+      "title": "Money moved per day, by channel",
+      "note": "Average daily value over the last 30 days, in RM million. FPX (online bank transfers) dwarfs the rest; DirectDebit moves big recurring bills in fewer, larger payments.",
+      "ref": "Average daily transaction value, last 30 days",
+      "unit": "RM million per day",
+      "layout": "horizontal",
+      "metrics": [{ "key": "v", "label": "RM million / day", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "FPX (online bank transfer)", "v": 1313 },
+        { "label": "DirectDebit (auto-debit)", "v": 424 },
+        { "label": "Shared ATM Network", "v": 329 },
+        { "label": "JomPAY (bill payments)", "v": 171 }
+      ]
+    },
+    "byvolume": {
+      "title": "Transactions per day, by channel",
+      "note": "Average daily number of transactions, in millions. FPX also leads on sheer count; DirectDebit is few-but-large (rent, loans, insurance).",
+      "ref": "Average daily transaction volume, last 30 days",
+      "unit": "million transactions per day",
+      "layout": "horizontal",
+      "metrics": [{ "key": "v", "label": "million transactions / day", "color": "blue", "fmt": "num" }],
+      "rows": [
+        { "label": "FPX", "v": 2.68 },
+        { "label": "Shared ATM Network", "v": 0.75 },
+        { "label": "JomPAY", "v": 0.27 },
+        { "label": "DirectDebit", "v": 0.1 }
+      ]
+    }
+  },
+  "takeaways": [
+    "**FPX is the backbone of Malaysian digital payments**, about **RM1.3 billion and 2.7 million transactions a day**, roughly 31 every second.",
+    "Across FPX, DirectDebit, the Shared ATM Network and JomPAY, **more than RM2.2 billion moves every day**.",
+    "**DirectDebit is few-but-large**: only ~100,000 transactions a day, but RM424 million, the recurring bills (loans, rent, insurance) that auto-debit each month.",
+    "The **Shared ATM Network still moves RM329 million a day**, cash withdrawal isn't dead, but it's dwarfed by online transfers.",
+    "This is just four rails. It doesn't even count **DuitNow QR** and card payments, so the true cashless flow is larger still."
+  ],
+  "faq": [
+    { "q": "How much money moves through FPX in Malaysia each day?", "a": "About RM1.3 billion across roughly 2.7 million transactions on an average day (30-day average to early July 2026), according to Bank Negara Malaysia / PayNet data on data.gov.my." },
+    { "q": "What is FPX?", "a": "FPX (Financial Process Exchange) is Malaysia's online bank-transfer system, the 'pay with FPX' option at checkout that debits your bank account directly. It's run by PayNet." },
+    { "q": "What is the difference between FPX, JomPAY and DirectDebit?", "a": "FPX is one-off online bank transfers; JomPAY is bill payments using a Biller Code; DirectDebit is recurring automatic debits (like loan or insurance instalments). All are Malaysian payment rails operated via PayNet." },
+    { "q": "Where does this payment data come from?", "a": "From Bank Negara Malaysia and PayNet, published as official open data on data.gov.my. Figures here are 30-day average daily value and volume." }
+  ]
+}

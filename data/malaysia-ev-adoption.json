@@ -1,0 +1,76 @@
+{
+  "slug": "malaysia-ev-adoption",
+  "kind": "data-story",
+  "title": "Are Malaysians switching to EVs?",
+  "subtitle": "Electric cars hit 6% of new registrations, double a year earlier. Petrol still rules.",
+  "question": "How many electric vehicles are Malaysians actually buying?",
+  "answer": "More every month, but off a small base. In May 2026, 8,287 of the 137,561 vehicles newly registered in Malaysia were fully electric, 6.0%, up from 2.7% a year earlier. Add hybrids and roughly 1 in 10 new vehicles is now electrified. Petrol still powers about 85%.",
+  "updated": "2026-07-06",
+  "source": {
+    "publisher": "Road Transport Department (JPJ), via data.gov.my",
+    "publisher_type": "Government, vehicle registration authority, open data",
+    "document": "Monthly vehicle registrations by vehicle and fuel type",
+    "published": "2026",
+    "url": "https://data.gov.my/data-catalogue/registrations_type_fuel",
+    "retrieved": "2026-07-06",
+    "license": "Official open data (data.gov.my), Road Transport Department (JPJ)",
+    "notes": "Newly registered vehicles by fuel type, from JPJ. 'Electric' means battery EVs; 'hybrid' includes petrol-electric hybrids; 'green diesel' is biodiesel-blend. Share is fully-electric registrations divided by all registrations that month."
+  },
+  "headline": [
+    { "label": "New cars that are electric", "value": "6.0", "suffix": "%", "sub": "May 2026 registrations", "note": "JPJ" },
+    { "label": "A year earlier", "value": "2.7", "suffix": "%", "sub": "the EV share has doubled", "note": "Jul 2025" },
+    { "label": "EVs registered in May", "value": "8,287", "sub": "of 137,561 vehicles", "note": "JPJ" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Electric share of new registrations, monthly",
+      "note": "Fully-electric vehicles as a share of all new registrations. The trend is up and to the right, from under 3% to 6%, with the usual monthly wobble.",
+      "ref": "Battery-EV registrations ÷ all registrations, by month",
+      "unit": "% of new vehicles",
+      "x": "month",
+      "metrics": [{ "key": "share", "label": "% electric", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "month": "Jul '25", "share": 2.7 },
+        { "month": "Aug '25", "share": 3.1 },
+        { "month": "Sep '25", "share": 4.0 },
+        { "month": "Oct '25", "share": 3.5 },
+        { "month": "Nov '25", "share": 5.0 },
+        { "month": "Dec '25", "share": 6.0 },
+        { "month": "Jan '26", "share": 5.4 },
+        { "month": "Feb '26", "share": 3.7 },
+        { "month": "Mar '26", "share": 4.3 },
+        { "month": "Apr '26", "share": 5.9 },
+        { "month": "May '26", "share": 6.0 }
+      ]
+    },
+    "byfuel": {
+      "title": "New registrations by fuel type (May 2026)",
+      "note": "Petrol still dominates at about 85%. Electric has overtaken hybrid, and both are now bigger than plain diesel.",
+      "ref": "Vehicle registrations by fuel type, May 2026",
+      "unit": "vehicles registered",
+      "layout": "horizontal",
+      "metrics": [{ "key": "v", "label": "vehicles", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Petrol", "v": 117296 },
+        { "label": "Electric", "v": 8287 },
+        { "label": "Hybrid", "v": 5103 },
+        { "label": "Green diesel", "v": 4339 },
+        { "label": "Diesel", "v": 2049 },
+        { "label": "Other", "v": 487 }
+      ]
+    }
+  },
+  "takeaways": [
+    "**Electric vehicles hit 6.0% of new registrations in May 2026**, up from 2.7% a year earlier, the EV share has **doubled in twelve months**.",
+    "Electric has **overtaken hybrid** (3.7%) and is now well ahead of plain diesel, a real shift in what Malaysians drive off the lot.",
+    "But **petrol still rules at about 85%**. The switch is real but early; the vast majority of new cars still burn fuel.",
+    "Counting hybrids too, roughly **1 in 10 new vehicles is now electrified**.",
+    "Monthly numbers wobble (incentive deadlines, model launches, festive timing), so watch the **trend**, not any single month."
+  ],
+  "faq": [
+    { "q": "What percentage of new cars in Malaysia are electric?", "a": "About 6.0% of vehicles newly registered in May 2026 were fully electric (8,287 of 137,561), up from 2.7% a year earlier, according to Road Transport Department (JPJ) data on data.gov.my." },
+    { "q": "Is EV adoption growing in Malaysia?", "a": "Yes. The fully-electric share of new registrations roughly doubled over the year to May 2026, from under 3% to 6%. Hybrids are rising too." },
+    { "q": "What do most Malaysians still drive?", "a": "Petrol. It made up about 85% of new registrations in May 2026. Electric and hybrid together are around 10%." },
+    { "q": "Where does this EV data come from?", "a": "From the Road Transport Department (JPJ), published as official open data on data.gov.my, monthly vehicle registrations by fuel type." }
+  ]
+}

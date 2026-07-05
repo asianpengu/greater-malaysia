@@ -1,0 +1,77 @@
+{
+  "slug": "crime-in-malaysia",
+  "kind": "data-story",
+  "title": "Is crime rising in Malaysia?",
+  "subtitle": "Recorded index crime has more than halved since 2016. Property crime is 4 in 5 of it.",
+  "question": "Is crime going up or down in Malaysia, and what kind?",
+  "answer": "Down, sharply. Police-recorded index crime fell from 112,355 cases in 2016 to 52,444 in 2023, less than half in seven years. Four out of five of those are property crimes, not violent ones, and motorcycle theft is the single biggest category.",
+  "updated": "2026-07-06",
+  "source": {
+    "publisher": "Royal Malaysia Police (PDRM), via data.gov.my",
+    "publisher_type": "Government, national police, open data",
+    "document": "Index crimes by district and crime type",
+    "published": "2024 (2023 data)",
+    "url": "https://data.gov.my/data-catalogue/crime_district",
+    "retrieved": "2026-07-06",
+    "license": "Official open data (data.gov.my), Royal Malaysia Police (PDRM)",
+    "notes": "'Index crime' is the standard set of serious crimes police track: violent crime (murder, rape, robbery, causing injury) plus property crime (theft, housebreaking, vehicle theft). 2023 is the latest full year published. These are recorded cases, which can be affected by reporting rates, not only actual crime."
+  },
+  "headline": [
+    { "label": "Index crimes recorded", "value": "52,444", "sub": "in 2023, the latest full year", "note": "PDRM" },
+    { "label": "Down from 2016", "value": "53", "prefix": "−", "suffix": "%", "sub": "from 112,355 cases", "note": "seven-year fall" },
+    { "label": "Are property crime", "value": "80", "suffix": "%", "sub": "not violent crime", "note": "2023" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Index crime in Malaysia, 2016–2023",
+      "note": "Total recorded index crimes each year. The fall is steady and large: a drop of more than half, with the sharpest declines around 2020–2021.",
+      "ref": "Total index crimes, national, by year",
+      "unit": "recorded cases",
+      "x": "year",
+      "metrics": [{ "key": "v", "label": "cases", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "year": "2016", "v": 112355 },
+        { "year": "2017", "v": 99170 },
+        { "year": "2018", "v": 88662 },
+        { "year": "2019", "v": 83456 },
+        { "year": "2020", "v": 65623 },
+        { "year": "2021", "v": 52974 },
+        { "year": "2022", "v": 50813 },
+        { "year": "2023", "v": 52444 }
+      ]
+    },
+    "bytype": {
+      "title": "What kind of crime? (2023)",
+      "note": "Property crime dominates. 'Other theft' plus housebreaking and motorcycle theft alone account for most cases; violent crime is a smaller share.",
+      "ref": "Index crimes by type, national, 2023",
+      "unit": "recorded cases",
+      "layout": "horizontal",
+      "metrics": [{ "key": "v", "label": "cases", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Other theft", "v": 15837 },
+        { "label": "Housebreaking / burglary", "v": 11557 },
+        { "label": "Motorcycle theft", "v": 10588 },
+        { "label": "Causing injury", "v": 3693 },
+        { "label": "Car theft", "v": 3245 },
+        { "label": "Gang robbery (unarmed)", "v": 2578 },
+        { "label": "Solo robbery (unarmed)", "v": 1967 },
+        { "label": "Rape", "v": 1914 },
+        { "label": "Murder", "v": 258 }
+      ]
+    }
+  },
+  "takeaways": [
+    "**Recorded index crime more than halved**, from 112,355 cases in 2016 to 52,444 in 2023, a drop of about 53%.",
+    "**Four in five index crimes are property crimes**, not violent ones. The everyday risk is to your stuff, not your safety.",
+    "**Motorcycle theft is the single biggest specific category** (10,588 cases in 2023), reflecting how many Malaysians ride.",
+    "Violent crime is real but far rarer: **258 murders** and 1,914 rapes recorded in 2023, out of 52,444 total cases.",
+    "A caveat: these are **recorded** cases. Some of the fall is genuine, but reporting rates and definitions also shape the numbers."
+  ],
+  "faq": [
+    { "q": "Is crime going up or down in Malaysia?", "a": "Down. Police-recorded index crime fell from 112,355 cases in 2016 to 52,444 in 2023, a drop of more than half, according to Royal Malaysia Police data on data.gov.my." },
+    { "q": "What is the most common crime in Malaysia?", "a": "Property crime, by far. 'Other theft' (15,837 cases in 2023), housebreaking (11,557) and motorcycle theft (10,588) are the biggest categories. About 80% of index crime is property crime." },
+    { "q": "How much violent crime is there in Malaysia?", "a": "Violent (assault-type) crime made up about 20% of index crime in 2023, including 258 murders and 1,914 rapes out of 52,444 total recorded cases." },
+    { "q": "What is 'index crime'?", "a": "It's the standard set of serious crimes police track: violent crime (murder, rape, robbery, causing injury) plus property crime (theft, housebreaking, vehicle theft). It's the usual measure of the overall crime level." },
+    { "q": "Where does this crime data come from?", "a": "From the Royal Malaysia Police (PDRM), published as official open data on data.gov.my (index crimes by district and type). 2023 is the latest full year available." }
+  ]
+}
