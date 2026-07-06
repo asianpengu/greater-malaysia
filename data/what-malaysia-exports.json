@@ -1,0 +1,78 @@
+{
+  "slug": "what-malaysia-exports",
+  "kind": "data-story",
+  "title": "What does Malaysia sell to the world?",
+  "subtitle": "Chips and machines, mostly. And it runs a big trade surplus doing it.",
+  "question": "What does Malaysia export, and does it sell more than it buys?",
+  "answer": "Electronics, above all. In March 2026 Malaysia exported RM149 billion of goods and imported RM124 billion, a RM25 billion trade surplus in a single month. More than half of exports, about RM80 billion, was machinery and electronics. Palm oil, the thing Malaysia is famous for, was just RM6 billion.",
+  "updated": "2026-07-06",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM), via data.gov.my",
+    "publisher_type": "Government, national statistics office, open data",
+    "document": "External trade by SITC section",
+    "published": "2026",
+    "url": "https://data.gov.my/data-catalogue/trade_sitc_1d",
+    "retrieved": "2026-07-06",
+    "license": "Official open data (data.gov.my), Department of Statistics Malaysia",
+    "notes": "Exports and imports of goods by SITC 1-digit section, monthly, in ringgit. Latest published month is March 2026. 'Machinery & transport equipment' is where electrical & electronics (E&E) products sit; 'animal & vegetable oils' is mostly palm oil."
+  },
+  "headline": [
+    { "label": "Exports in a month", "value": "149", "prefix": "RM", "suffix": "bn", "sub": "March 2026", "note": "DOSM" },
+    { "label": "Trade surplus", "value": "25", "prefix": "+RM", "suffix": "bn", "sub": "exports minus imports, that month", "note": "sells more than it buys" },
+    { "label": "Is machinery & electronics", "value": "54", "suffix": "%", "sub": "of all exports", "note": "RM80bn" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Monthly exports, RM billion",
+      "note": "Malaysia's goods exports run around RM130 to RM150 billion a month, and it has posted a trade surplus every month.",
+      "ref": "Total goods exports by month",
+      "unit": "RM billion",
+      "x": "month",
+      "metrics": [{ "key": "v", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "month": "Aug '25", "v": 131 },
+        { "month": "Sep '25", "v": 139 },
+        { "month": "Oct '25", "v": 148 },
+        { "month": "Nov '25", "v": 135 },
+        { "month": "Dec '25", "v": 153 },
+        { "month": "Jan '26", "v": 147 },
+        { "month": "Feb '26", "v": 131 },
+        { "month": "Mar '26", "v": 149 }
+      ]
+    },
+    "bysection": {
+      "title": "Exports by category (March 2026)",
+      "note": "Machinery and electronics dwarfs everything. Petroleum and LNG are still big; palm oil, Malaysia's signature crop, is a small slice of a modern manufacturing economy.",
+      "ref": "Goods exports by SITC section, March 2026, RM billion",
+      "unit": "RM billion",
+      "layout": "horizontal",
+      "metrics": [{ "key": "v", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Machinery & electronics", "v": 80.5 },
+        { "label": "Misc manufactured articles", "v": 17.8 },
+        { "label": "Mineral fuels (petroleum, LNG)", "v": 16.0 },
+        { "label": "Manufactured goods", "v": 11.3 },
+        { "label": "Chemicals", "v": 8.1 },
+        { "label": "Palm & other oils", "v": 5.9 },
+        { "label": "Food & live animals", "v": 4.0 },
+        { "label": "Crude materials", "v": 3.3 },
+        { "label": "Other", "v": 1.6 },
+        { "label": "Beverages & tobacco", "v": 0.2 }
+      ]
+    }
+  },
+  "takeaways": [
+    "**Machinery and electronics is 54% of Malaysia's exports** (about RM80 billion in March 2026), the backbone of the economy. Malaysia is a chips-and-devices exporter first.",
+    "Malaysia **runs a trade surplus**: it sold RM149 billion and bought RM124 billion in March 2026, a RM25 billion gap, and it has been in surplus every recent month.",
+    "**Petroleum and LNG** are still a major earner at about RM16 billion a month.",
+    "**Palm oil is a small slice now** (about RM6 billion). The crop Malaysia is known for is dwarfed by its factories.",
+    "Total goods exports run around **RM130 to RM150 billion a month**, one of the highest trade-to-GDP ratios in the world."
+  ],
+  "faq": [
+    { "q": "What is Malaysia's biggest export?", "a": "Machinery and electronics (including electrical & electronic products), which made up about 54% of exports, roughly RM80 billion, in March 2026, according to DOSM data on data.gov.my." },
+    { "q": "Does Malaysia have a trade surplus?", "a": "Yes. In March 2026 it exported RM149 billion and imported RM124 billion, a surplus of about RM25 billion, and it has run a surplus every recent month." },
+    { "q": "Is palm oil still Malaysia's main export?", "a": "No. Palm and other vegetable oils were only about RM6 billion in March 2026, far behind machinery, electronics and even petroleum. Malaysia's exports are dominated by manufacturing." },
+    { "q": "How much does Malaysia export each month?", "a": "Around RM130 to RM150 billion of goods a month in 2025-26, per DOSM external trade statistics on data.gov.my." },
+    { "q": "Where does this trade data come from?", "a": "From the Department of Statistics Malaysia's external trade statistics (by SITC section), published as official open data on data.gov.my. Latest month: March 2026." }
+  ]
+}

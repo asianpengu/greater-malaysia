@@ -7,6 +7,14 @@
   "license": "Figures derive from official open data; cite the primary source listed per item.",
   "datasets": [
     {
+      "topic": "External trade (exports & surplus)",
+      "description": "Malaysia's goods exports and imports by category. ~RM149bn exports / RM124bn imports (Mar 2026, ~RM25bn surplus); machinery & electronics ~54% of exports.",
+      "page": "https://greatermalaysia.com/stories/what-malaysia-exports",
+      "source": "Department of Statistics Malaysia (DOSM) via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=trade_sitc_1d&sort=-date",
+      "frequency": "monthly"
+    },
+    {
       "topic": "Tourist arrivals by country",
       "description": "Foreign tourist arrivals to Malaysia by country of nationality. ~3.1m in Oct 2024, about half from Singapore, then Indonesia and China.",
       "page": "https://greatermalaysia.com/stories/who-visits-malaysia",

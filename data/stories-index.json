@@ -1,6 +1,16 @@
 {
   "stories": [
     {
+      "slug": "what-malaysia-exports",
+      "url": "/stories/what-malaysia-exports",
+      "tag": "Trade",
+      "title": "What does Malaysia sell to the world?",
+      "subtitle": "Chips and machines, mostly. And it runs a big trade surplus doing it.",
+      "source": "DOSM",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
       "slug": "who-visits-malaysia",
       "url": "/stories/who-visits-malaysia",
       "tag": "Tourism",
