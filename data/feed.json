@@ -7,6 +7,14 @@
   "license": "Figures derive from official open data; cite the primary source listed per item.",
   "datasets": [
     {
+      "topic": "Tourist arrivals by country",
+      "description": "Foreign tourist arrivals to Malaysia by country of nationality. ~3.1m in Oct 2024, about half from Singapore, then Indonesia and China.",
+      "page": "https://greatermalaysia.com/stories/who-visits-malaysia",
+      "source": "Immigration Department / Tourism Malaysia via data.gov.my",
+      "source_api": "https://api.data.gov.my/data-catalogue/?id=arrivals&sort=-date",
+      "frequency": "monthly"
+    },
+    {
       "topic": "Public transport ridership",
       "description": "Daily boardings across Malaysia's rail and bus services. ~1.4 million rides on an average weekday; busiest is the MRT Kajang line (~287k/day).",
       "page": "https://greatermalaysia.com/stories/how-malaysians-commute",

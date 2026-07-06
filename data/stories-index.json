@@ -1,6 +1,16 @@
 {
   "stories": [
     {
+      "slug": "who-visits-malaysia",
+      "url": "/stories/who-visits-malaysia",
+      "tag": "Tourism",
+      "title": "Who visits Malaysia?",
+      "subtitle": "Half of all arrivals come from one country next door: Singapore.",
+      "source": "Immigration / Tourism Malaysia",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
       "slug": "how-malaysians-commute",
       "url": "/stories/how-malaysians-commute",
       "tag": "Transport",
