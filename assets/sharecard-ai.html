@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#d8d2c2;--paper-card:#f3efe6;--panel:#efeadf;--ink:#16130d;--ink-soft:#4a443a;--seal:#b23a23;--up:#2f6b4a;--line-ink:rgba(22,19,13,0.85);--line:rgba(22,19,13,0.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:60px 68px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:26px}
+  .brand{display:flex;align-items:center;gap:16px}
+  .gm{font-family:'Caveat Brush',cursive;font-size:58px;line-height:.8}
+  .brand-txt .n{font-weight:700;font-size:22px}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--seal);letter-spacing:.04em}
+  .shipped{text-align:right}
+  .shipped .k{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:26px}
+  .shipped .h{font-family:'Anton',sans-serif;font-size:54px;line-height:.9;text-transform:uppercase}
+  .rule{height:3px;background:var(--line-ink);position:relative;margin-bottom:30px}
+  .rule::after{content:"";position:absolute;right:0;top:-3px;border-left:9px solid var(--line-ink);border-top:5px solid transparent;border-bottom:5px solid transparent}
+  .panels{display:grid;grid-template-columns:0.72fr 1fr;gap:32px;flex:1}
+  .panel{background:var(--panel);border:2.5px solid var(--line-ink);box-shadow:8px 8px 0 rgba(22,19,13,.1);padding:30px 32px;display:flex;flex-direction:column}
+  .p-eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:24px;margin-bottom:6px}
+  .p-title{font-family:'Anton',sans-serif;font-size:30px;line-height:.94;text-transform:uppercase;margin-bottom:20px}
+  .bignum{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:104px;line-height:.85;color:var(--seal)}
+  .biglab{font-size:17px;color:var(--ink-soft);margin-top:8px;line-height:1.35}
+  .biglab b{color:var(--ink)}
+  .substats{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+  .substat{border-top:1.5px solid var(--line);padding-top:12px}
+  .substat .v{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:30px}
+  .substat .l{font-size:13px;color:var(--ink-soft);margin-top:2px}
+  /* league bars */
+  .league{display:flex;flex-direction:column;gap:15px;flex:1;justify-content:center}
+  .lrow{display:flex;flex-direction:column;gap:5px}
+  .lrow .lt{display:flex;justify-content:space-between;align-items:baseline;font-size:15px}
+  .lrow .lt .nm{font-weight:600}
+  .lrow.hi .lt .nm{color:var(--seal)}
+  .lrow .lt .vv{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px}
+  .track{height:22px;background:rgba(22,19,13,.06);border:1px solid var(--line)}
+  .fill{height:100%;background:var(--seal)}
+  .lrow.hi .fill{background:var(--ink)}
+  .lrow.dim .fill{background:#b98c7e}
+  .cap{font-size:12.5px;color:var(--ink-soft);margin-top:16px}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:26px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:30px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:26px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="brand"><div class="gm">GM</div><div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div></div>
+    <div class="shipped"><div class="k">shipped</div><div class="h">Is Malaysia using AI?</div></div>
+  </div>
+  <div class="rule"></div>
+  <div class="panels">
+    <div class="panel">
+      <div class="p-eyebrow">the headline</div>
+      <div class="p-title">Yes, but mid-table.</div>
+      <div class="bignum">21.8%</div>
+      <div class="biglab">of <b>working-age Malaysians</b> use AI tools<br>(Q1 2026, up from 18.3% a year ago)</div>
+      <div class="substats">
+        <div class="substat"><div class="v">#51<span style="font-size:16px;color:var(--ink-soft)"> / 147</span></div><div class="l">Malaysia's rank among all economies</div></div>
+        <div class="substat"><div class="v">67%</div><div class="l">say they've used AI in the past 3 months</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="p-eyebrow">southeast asia · % of adults using AI</div>
+      <div class="p-title">Singapore is in another league.</div>
+      <div class="league">
+        <div class="lrow"><div class="lt"><span class="nm">🇸🇬 Singapore</span><span class="vv">63.4%</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+        <div class="lrow"><div class="lt"><span class="nm">🇻🇳 Vietnam</span><span class="vv">26.5%</span></div><div class="track"><div class="fill" style="width:41.8%"></div></div></div>
+        <div class="lrow hi"><div class="lt"><span class="nm">🇲🇾 Malaysia</span><span class="vv">21.8%</span></div><div class="track"><div class="fill" style="width:34.4%"></div></div></div>
+        <div class="lrow dim"><div class="lt"><span class="nm">🇵🇭 Philippines</span><span class="vv">20.1%</span></div><div class="track"><div class="fill" style="width:31.7%"></div></div></div>
+        <div class="lrow dim"><div class="lt"><span class="nm">🇮🇩 Indonesia</span><span class="vv">14.1%</span></div><div class="track"><div class="fill" style="width:22.2%"></div></div></div>
+        <div class="lrow dim"><div class="lt"><span class="nm">🇹🇭 Thailand</span><span class="vv">12.4%</span></div><div class="track"><div class="fill" style="width:19.6%"></div></div></div>
+      </div>
+      <div class="cap">Source: Microsoft AI for Good Lab, AI Diffusion (open data, Q1 2026). Survey figure: Vodus, early 2026.</div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="site">greatermalaysia.com</div>
+    <div class="tag">official data, decoded · <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+</body>
+</html>
