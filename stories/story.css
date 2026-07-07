@@ -121,3 +121,18 @@
   .prov-grid dt { padding-top: 10px; }
   .hub-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Brand v2 Phase 4: story polish ---------- */
+/* first headline stat gets the seal spine + seal value (spec) */
+.st-stats .st-stat:first-child { border-left: 6px solid var(--seal); }
+.st-stats .st-stat:first-child .ss-val { color: var(--seal); }
+/* takeaways become the "APA MAKNANYA / SO WHAT" red-spine box */
+.st-takeaways { border-left: 7px solid var(--seal); position: relative; padding-top: 30px; }
+.st-takeaways::before {
+  content: "APA MAKNANYA · SO WHAT"; position: absolute; top: 13px; left: 26px;
+  font-family: var(--mono); font-size: 8.5px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+/* one seal element per chart: keep mean series neutral grey, not blue */
+.sw-mean, .trend-svg .bar-mean, .hb-bar.mean { background: var(--chart-neutral); }
+.trend-svg .bar-mean { fill: var(--chart-neutral); }
