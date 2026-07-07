@@ -200,7 +200,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 /* ============================================================
    TOOLS SUITE
    ============================================================ */
-.tools-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+.tools-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; }
 .tool {
   background: var(--paper-card); border: 2px solid var(--line-ink);
   padding: 22px; position: relative; display: flex; flex-direction: column;
@@ -459,10 +459,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 
 /* ---------- responsive ---------- */
 @media (max-width: 1080px) {
-  .tools-grid { grid-template-columns: repeat(4, 1fr); }
+  .tools-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .tool.col-3 { grid-column: span 4; }
   .tool.col-2 { grid-column: span 2; }
   .tool.col-4 { grid-column: span 4; }
+  .tool.col-6 { grid-column: span 4; }
 }
 @media (max-width: 880px) {
   .hero-top { grid-template-columns: 1fr; gap: 8px; }
