@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="420" viewBox="0 0 1400 420">
+<defs></defs>
+
+<rect x="46" y="56" width="308" height="308" fill="#f3efe6" stroke="#16130d" stroke-width="10"></rect>
+<rect x="65" y="75" width="270" height="270" fill="none" stroke="#16130d" stroke-opacity="0.35" stroke-width="2.5"></rect>
+<text x="197" y="268" text-anchor="middle" font-size="185" letter-spacing="-10" fill="#16130d">GM</text>
+<rect x="314" y="324" width="22" height="22" fill="#b23a23"></rect>
+<text class="anton" x="420" y="196" font-size="150" fill="#16130d">GREATER</text>
+<text class="anton" x="420" y="336" font-size="150" fill="#16130d">MALAYSIA</text>
+<text class="mono" x="424" y="392" font-size="30" letter-spacing="9" fill="#b23a23" font-weight="700">MALAYSIA, IN REAL TIME</text>
+</svg>

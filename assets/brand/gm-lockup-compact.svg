@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="160" viewBox="0 0 1000 160">
+<defs></defs>
+
+<rect x="16" y="16" width="128" height="128" fill="#f3efe6" stroke="#16130d" stroke-width="6"></rect>
+<text x="79" y="106" text-anchor="middle" font-size="78" letter-spacing="-4" fill="#16130d">GM</text>
+<rect x="128" y="128" width="10" height="10" fill="#b23a23"></rect>
+<text class="anton" x="176" y="118" font-size="86" fill="#16130d">GREATER MALAYSIA</text>
+</svg>

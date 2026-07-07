@@ -36,11 +36,21 @@
          Internal links already use the stable /cuti-umum path. -->
     <div class="paper-bg" aria-hidden="true"></div><span class="smudge s1" aria-hidden="true"></span><span class="smudge s2" aria-hidden="true"></span>
     <header class="nav" id="nav"><div class="nav-inner">
-      <a class="brand" href="/"><span class="gm">GM</span><span class="gm-full">Greater Malaysia</span></a>
-      <span class="nav-spacer"></span>
-      <nav class="nav-links"><a href="/#tools">Tools</a><a href="/explainers/">Explainers</a><a href="/stories/">Data stories</a></nav>
-      <a class="nav-cta" href="/">Open the tools</a></div>
-    </header>
+<a class="brand" href="/"><img class="nav-chop" src="/assets/brand/gm-chop.svg" alt="Greater Malaysia" width="34" height="34"><span class="gm-full">Greater Malaysia</span></a>
+<span class="nav-spacer"></span>
+<nav class="nav-links" aria-label="Primary"><a href="/#tools" class="active" aria-current="page">Tools</a><a href="/#answers">Answers</a><a href="/election/">Election</a><a href="/explainers/">Explainers</a><a href="/stories/">Data stories</a></nav>
+<a class="nav-cta" href="/#subscribe">Get the monthly briefing</a>
+<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navSheet"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-sheet" id="navSheet">
+<a href="/#tools" class="active">Tools</a>
+<a href="/#answers">Answers</a>
+<a href="/election/">Election</a>
+<a href="/explainers/">Explainers</a>
+<a href="/stories/">Data stories</a>
+<a class="nav-cta" href="/#subscribe">Get the monthly briefing</a>
+</div>
+</header>
 
     <main class="answer">
       <div class="ans-kicker">cuti umum</div>
@@ -87,32 +97,26 @@
       <div class="ans-section"><h2>Related</h2><div class="ans-related"><a href="/waktu-solat/kuala-lumpur">Waktu Solat</a><a href="/#tools">All tools</a><a href="/explainers/">Explainers</a></div></div>
     </main>
 
-    <footer class="footer footer--narrow"><div class="footer-mark">GM</div><div class="footer-tag">Greater Malaysia</div><p class="footer-sources">National public holidays compiled from gazetted sources. Verify state holidays at MyGov.</p><p class="footer-credit">Built by <a href="https://x.com/aaronteng" target="_blank" rel="noopener">Aaron Teng</a> <span class="x-ico">𝕏</span></p></footer>
+    <footer class="footer footer-v2">
+<div class="foot-top">
+<div class="foot-brand"><div class="foot-wordmark">Greater Malaysia</div><p class="foot-tag">Malaysia, in real time. Free live tools built on the nation's open data.</p></div>
+<div class="foot-cols">
+<div class="foot-col"><div class="fc-h">Tools</div><a href="/waktu-solat/kuala-lumpur">Waktu solat</a><a href="/harga-minyak">Harga minyak</a><a href="/usd-to-myr">Ringgit</a><a href="/today">Malaysia today</a></div>
+<div class="foot-col"><div class="fc-h">Answers + Election</div><a href="/#answers">Quick answers</a><a href="/election/">GE16 hub</a><a href="/when-is-ge16">When is GE16</a><a href="/how-to-check-voter-registration">Check voter reg</a></div>
+<div class="foot-col"><div class="fc-h">Read</div><a href="/stories/">Data stories</a><a href="/explainers/">Explainers</a><a href="/malaysia-for-digital-nomads">Digital nomads</a><a href="/how-to-start-a-business-in-malaysia">Start a business</a></div>
+<div class="foot-col"><div class="fc-h">Trust + machines</div><a href="/robots.txt">Source policy</a><a href="/llms.txt">llms.txt</a><a href="/data/feed.json">Data feed</a><a href="/sitemap.xml">Sitemap</a></div>
+</div>
+</div>
+<p class="foot-disclaimer">Independent and non-partisan. Every number links to its official primary source.</p>
+<div class="foot-bottom">
+<p class="foot-sources">Live data from data.gov.my (DOSM), JAKIM e-Solat, Open-Meteo, Frankfurter (ECB) and CoinGecko. API library indexed by Pasar API.</p>
+<p class="footer-credit">Built by <a href="https://x.com/aaronteng" target="_blank" rel="noopener">Aaron Teng</a> <span class="x-ico" aria-hidden="true">&#120143;</span></p>
+</div>
+<p class="footer-meta" id="footerMeta"></p>
+</footer>
 
-    <script>
-      (function(){
-        var n=document.getElementById("nav");function f(){n.classList.toggle("scrolled",(window.scrollY||document.documentElement.scrollTop)>24)}window.addEventListener("scroll",f,{passive:true});f();
-        var now=new Date(new Date().toLocaleString("en-US",{timeZone:"Asia/Kuala_Lumpur"})); now.setHours(0,0,0,0);
-        var rows=[].slice.call(document.querySelectorAll(".cuti-row"));
-        var next=null;
-        rows.forEach(function(r){
-          var d=new Date(r.getAttribute("data-date")+"T00:00:00");
-          if(d>=now && !next){ next=r; r.classList.add("active"); }
-          if(d<now) r.classList.add("past");
-        });
-        if(next){
-          var d=new Date(next.getAttribute("data-date")+"T00:00:00");
-          var days=Math.round((d-now)/864e5);
-          var name=next.querySelector(".cuti-n").textContent.replace("*","");
-          var dd=next.querySelector(".cuti-d").textContent;
-          document.getElementById("nextLine").textContent="next: "+name+" on "+dd+" (in "+days+" day"+(days===1?"":"s")+")";
-          document.getElementById("nextCard").innerHTML='<div class="cuti-next"><div><div class="cn-lab">Next public holiday</div><div class="cn-name">'+name+'</div><div class="cn-date">'+dd+' 2026</div></div><div class="cn-cd">'+days+'<span>days</span></div></div>';
-        } else {
-          document.getElementById("nextLine").textContent="that's all for 2026 — see you in 2027!";
-          document.getElementById("nextCard").style.display="none";
-        }
-      })();
-    </script>
+    
     <script src="/subscribe.js" defer></script>
-  </body>
+  <script src="/common.js"></script>
+</body>
 </html>

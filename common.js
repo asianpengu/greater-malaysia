@@ -45,13 +45,50 @@ const jget = async (url, retries = 2, ttl = 60e3) => {
   }
 };
 
-/* nav turns solid once you scroll past the hero top */
+/* nav turns solid once you scroll past the hero top, and wires the mobile sheet */
 function wireNav() {
   const nav = $("#nav");
-  if (!nav) return;
-  const onScroll = () => nav.classList.toggle("scrolled", (window.scrollY || document.documentElement.scrollTop) > 24);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  if (nav && !nav._scrollWired) {
+    nav._scrollWired = true;
+    const onScroll = () => nav.classList.toggle("scrolled", (window.scrollY || document.documentElement.scrollTop) > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+  wireNavSheet();
+}
+
+/* mobile nav sheet: burger toggles body[data-nav-open], Escape closes, focus returns.
+   Named wireNavSheet (not navSheet) to avoid colliding with the id="navSheet" element,
+   which browsers expose as a global window.navSheet. */
+function wireNavSheet() {
+  const btn = $("#navBurger");
+  if (!btn || btn._wired) return;
+  btn._wired = true;
+  const body = document.body;
+  const isOpen = () => body.hasAttribute("data-nav-open");
+  const close = () => { body.removeAttribute("data-nav-open"); btn.setAttribute("aria-expanded", "false"); btn.focus(); };
+  const open = () => { body.setAttribute("data-nav-open", ""); btn.setAttribute("aria-expanded", "true"); const first = $("#navSheet a"); if (first) first.focus(); };
+  btn.addEventListener("click", () => (isOpen() ? close() : open()));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && isOpen()) close(); });
+  $$("#navSheet a").forEach((a) => a.addEventListener("click", close));
+}
+
+/* source-provenance chip. o = {name, kind:"LIVE API"|"DATASET", time, href} */
+function srcChip(o) {
+  o = o || {};
+  const name = esc(o.name || "SUMBER");
+  const kind = esc(o.kind || "LIVE API");
+  const t = o.time ? " · CHECKED " + esc(o.time) : "";
+  const attr = o.href ? ` href="${esc(o.href)}" target="_blank" rel="noopener"` : "";
+  const tag = o.href ? "a" : "span";
+  return `<${tag} class="src-chip"${attr}><span class="sc-check">✓</span>SUMBER: ${name} · ${kind}${t}${o.href ? ' <span class="sc-arr">↗</span>' : ""}</${tag}>`;
+}
+
+/* auto-init the nav on every page that loads common.js (idempotent, guarded) */
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", wireNav);
+} else {
+  wireNav();
 }
 
 /* sparkline SVG paths (area + line) */
