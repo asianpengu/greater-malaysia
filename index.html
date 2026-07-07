@@ -96,7 +96,7 @@
     <span class="smudge s2" aria-hidden="true"></span>
 
     <header class="nav" id="nav"><div class="nav-inner">
-<a class="brand" href="/"><img class="nav-chop" src="/assets/brand/gm-chop.svg" alt="Greater Malaysia" width="34" height="34"><span class="gm-full">Greater Malaysia</span></a>
+<a class="brand" href="/"><svg class="nav-chop" viewBox="0 0 512 512" width="34" height="34" role="img" aria-label="Greater Malaysia"><rect x="8" y="8" width="496" height="496" fill="#f3efe6" stroke="#16130d" stroke-width="16"/><rect x="38" y="38" width="436" height="436" fill="none" stroke="#16130d" stroke-opacity=".35" stroke-width="4"/><text x="252" y="366" text-anchor="middle" font-family="'Caveat Brush',cursive" font-size="300" fill="#16130d">GM</text><rect x="440" y="440" width="36" height="36" fill="#b23a23"/></svg><span class="gm-full">Greater Malaysia</span></a>
 <span class="nav-spacer"></span>
 <nav class="nav-links" aria-label="Primary"><a href="/#tools">Tools</a><a href="/#answers">Answers</a><a href="/election/">Election</a><a href="/explainers/">Explainers</a><a href="/stories/">Data stories</a></nav>
 <a class="nav-cta" href="/#subscribe">Get the monthly briefing</a>
@@ -117,38 +117,39 @@
       <section class="hero">
         <div class="hero-top">
           <div class="hero-content">
-            <div class="hero-mark">GM</div>
+            <div class="hero-brush">Greater Malaysia</div>
             <h1 class="hero-title">Malaysia,<br />in <span class="seal">real time.</span></h1>
             <p class="hero-sub">
-              Free live tools built on the nation's open data ~ <b>waktu solat</b>, <b>petrol prices</b>,
+              Free live tools built on the nation's open data, <b>waktu solat</b>, <b>petrol prices</b>,
               the <b>ringgit</b>, the <b>weather</b>, the <b>air</b>, the <b>rakyat</b>.
-              No app, no login. Just the numbers that run the country.
+              <b>No app, no login. Just the numbers that run the country.</b>
             </p>
             <div class="hero-row">
-              <a class="hero-cta" href="#tools">Open the tools ↓</a>
-              <div class="hero-clock">
-                <span class="ld"></span>
-                <span id="heroClock">— : — : —</span>
-                <span style="color: var(--ink-faint)">MYT</span>
-              </div>
+              <a class="hero-cta" href="today">See Malaysia right now ↓</a>
+              <a class="hero-cta2" href="#subscribe">Get the monthly briefing</a>
+            </div>
+            <div class="hero-chips">
+              <span class="hero-clock"><span class="ld"></span><span id="heroClock">— : — : —</span> MYT</span>
+              <span class="chip-dashed">No app · No login · Percuma</span>
+              <span class="stamp">✓ Every number source-cited</span>
             </div>
           </div>
 
-          <a class="hero-pengu" href="https://x.com/GreaterMsia" target="_blank" rel="noopener" aria-label="Greater Malaysia on X">
-            <span class="pengu-float">
-              <img src="assets/pengu-harimau.svg" width="880" height="1006"
-                   alt="Greater Malaysia's mascot — Pengu Harimau, a tiger-penguin" />
-            </span>
-            <span class="pengu-badge">@GreaterMsia ↗</span>
-          </a>
-        </div>
-
-        <!-- LIVE "right now" strip — instant value + one click into each tool -->
-        <div class="hero-live" id="heroLive" aria-label="Malaysia right now">
-          <a class="hl-chip" href="waktu-solat/kuala-lumpur"><span class="hl-k">Next solat · KL</span><span class="hl-v" id="hlSolat">…</span><span class="hl-go">→</span></a>
-          <a class="hl-chip" href="harga-minyak"><span class="hl-k">RON95 today</span><span class="hl-v" id="hlFuel">…</span><span class="hl-go">→</span></a>
-          <a class="hl-chip" href="usd-to-myr"><span class="hl-k">1 USD in ringgit</span><span class="hl-v" id="hlFx">…</span><span class="hl-go">→</span></a>
-          <a class="hl-chip" href="today"><span class="hl-k">KL right now</span><span class="hl-v" id="hlWx">…</span><span class="hl-go">→</span></a>
+          <!-- Malaysia right now module (with Pengu easter egg behind it) -->
+          <div class="now-module">
+            <img class="pengu-egg" src="assets/pengu-hd.png" alt="" aria-hidden="true" />
+            <div class="nm-head">
+              <span class="nm-title">Malaysia right now</span>
+              <span class="stamp solid"><span class="dot"></span>LIVE</span>
+            </div>
+            <div class="now-grid" id="heroLive" aria-label="Malaysia right now">
+              <a class="now-tile is-solat" href="waktu-solat/kuala-lumpur"><span class="nt-label">Next solat · KL</span><span class="nt-value" id="hlSolat">…</span><span class="nt-sub">Prayer time, Kuala Lumpur</span><span class="nt-src">JAKIM e-Solat ↗</span></a>
+              <a class="now-tile" href="harga-minyak"><span class="nt-label">RON95 today</span><span class="nt-value" id="hlFuel">…</span><span class="nt-sub">Pump price per litre</span><span class="nt-src">data.gov.my ↗</span></a>
+              <a class="now-tile" href="usd-to-myr"><span class="nt-label">1 USD in ringgit</span><span class="nt-value" id="hlFx">…</span><span class="nt-sub">Live exchange rate</span><span class="nt-src">ECB / Frankfurter ↗</span></a>
+              <a class="now-tile" href="today"><span class="nt-label">KL right now</span><span class="nt-value" id="hlWx">…</span><span class="nt-sub">Temperature, Kuala Lumpur</span><span class="nt-src">Open-Meteo ↗</span></a>
+            </div>
+            <div class="nm-foot"><span>4 official sources · tap any tile</span><a href="today">Full dashboard →</a></div>
+          </div>
         </div>
 
         <!-- LIVE TICKER -->
@@ -165,7 +166,7 @@
           <div class="sh-left">
             <span class="eyebrow">the toolkit</span>
             <h2>Tools, not tabs</h2>
-            <p>Six live instruments wired straight into Malaysia's public APIs. Each one fetches fresh, every time you open it.</p>
+            <p>Eight live instruments wired straight into Malaysia's public APIs. Each one fetches fresh, every time you open it.</p>
           </div>
           <div class="sh-note">live · auto-refreshed<br />data.gov.my · JAKIM · BNM-grade feeds</div>
         </div>
@@ -311,17 +312,92 @@
         </div>
       </section>
 
+      <!-- DATA STORIES -->
+      <section class="section" id="home-stories">
+        <div class="section-head">
+          <div class="sh-left">
+            <span class="eyebrow">the numbers, explained</span>
+            <h2>Data stories</h2>
+            <p>One chart, one takeaway, every number sourced to official open data.</p>
+          </div>
+          <div class="sh-note"><a href="stories/" style="color:var(--seal);text-decoration:none">All stories →</a></div>
+        </div>
+        <div class="home-stories-grid">
+          <a class="hs-featured" href="stories/malaysia-income-divide">
+            <span class="hs-kicker">Data story · income · DOSM</span>
+            <span class="hs-title">Malaysia's income divide, state by state</span>
+            <span class="hs-take">In Sabah, about <b>1 in 5 households</b> lives in poverty. In Kuala Lumpur, about <b>1 in 70</b>. A roughly <b>14x gap</b> that tracks the coastline.</span>
+            <div class="hs-chart" aria-hidden="true">
+              <svg viewBox="0 0 520 120" preserveAspectRatio="none"><polyline points="8,18 45,20 90,44 140,64 200,72 270,84 340,90 410,100 500,104" fill="none" stroke="var(--ink)" stroke-width="2.5"/><circle cx="500" cy="104" r="5" fill="var(--seal)"/></svg>
+            </div>
+            <span class="hs-src"><span>SUMBER: DOSM · data.gov.my</span><span class="go">Read the story →</span></span>
+          </a>
+          <div class="hs-side">
+            <a class="hs-row" href="stories/what-malaysia-exports"><span class="r-t">What does Malaysia sell to the world? <span class="newmark"><span class="nm-dot"></span>New</span></span><span class="r-m">Electronics 54% · RM25bn surplus · DOSM</span></a>
+            <a class="hs-row" href="stories/crime-in-malaysia"><span class="r-t">Is crime rising in Malaysia?</span><span class="r-m">Index crime more than halved since 2016 · PDRM</span></a>
+            <a class="hs-row" href="stories/malaysia-ev-adoption"><span class="r-t">Are Malaysians switching to EVs?</span><span class="r-m">6% of new cars electric, double a year ago · JPJ</span></a>
+            <a class="hs-row dashed" href="stories/">All data stories →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPLAINERS -->
+      <section class="section" id="home-explainers">
+        <div class="section-head">
+          <div class="sh-left">
+            <span class="eyebrow">plain english</span>
+            <h2>Explainers</h2>
+            <p>The terms every Malaysian hears but few get explained, in 60 seconds.</p>
+          </div>
+          <div class="sh-note"><a href="explainers/" style="color:var(--seal);text-decoration:none">All explainers →</a></div>
+        </div>
+        <div class="home-expl-grid">
+          <a class="he-card" href="explainers/b40-m40-t20"><span class="e-t">B40 M40 T20</span><span class="e-s">Which income group are you in?</span><span class="e-go">Read →</span></a>
+          <a class="he-card" href="explainers/sst-malaysia"><span class="e-t">SST</span><span class="e-s">Sales &amp; service tax, explained</span><span class="e-go">Read →</span></a>
+          <a class="he-card" href="explainers/epf-malaysia"><span class="e-t">EPF / KWSP</span><span class="e-s">Your retirement savings</span><span class="e-go">Read →</span></a>
+          <a class="he-card" href="explainers/minimum-wage-malaysia"><span class="e-t">Minimum wage</span><span class="e-s">What the law sets, and when</span><span class="e-go">Read →</span></a>
+          <a class="he-card" href="explainers/who-is-middle-class-in-malaysia"><span class="e-t">Middle class</span><span class="e-s">Who really counts as M40?</span><span class="e-go">Read →</span></a>
+          <a class="he-card" href="explainers/government-procurement-malaysia"><span class="e-t">Procurement</span><span class="e-s">How the govt buys things</span><span class="e-go">Read →</span></a>
+          <a class="he-card" href="explainers/how-malaysian-elections-work"><span class="e-t">How elections work</span><span class="e-s">222 seats, 112 to govern</span><span class="e-go">Read →</span></a>
+        </div>
+      </section>
+
+      <!-- ELECTION BAND -->
+      <section class="section" id="home-election">
+        <div class="election-band">
+          <div class="eb-left">
+            <div class="eb-kicker">the next election</div>
+            <h2 class="eb-title">GE16, without the noise</h2>
+            <p class="eb-copy">When the next general election must happen, how the system works, and how to check you're registered. The process, not the politics.</p>
+            <div class="eb-chips">
+              <a href="election/">GE16 hub</a>
+              <a href="when-is-ge16">When is GE16?</a>
+              <a href="how-to-check-voter-registration">Check voter reg</a>
+            </div>
+          </div>
+          <div class="eb-right">
+            <div class="eb-count" id="ebCount" aria-label="Countdown to Parliament dissolution">
+              <div class="eb-cell"><b id="ebDays">—</b><span>Days</span></div>
+              <div class="eb-cell"><b id="ebHours">—</b><span>Hours</span></div>
+              <div class="eb-cell"><b id="ebMin">—</b><span>Min</span></div>
+            </div>
+            <p class="eb-until">Until Parliament dissolves automatically, 19 Dec 2027.</p>
+            <p class="eb-foot">Independent + non-partisan · SUMBER: <a href="https://www.spr.gov.my" target="_blank" rel="noopener">SPR ↗</a> · Art. 55</p>
+          </div>
+        </div>
+      </section>
+
       <!-- EMAIL SIGNUP -->
       <section class="section" id="subscribe">
-        <div class="gm-signup">
-          <div class="gs-k">stay in the know</div>
-          <h3>Malaysia, decoded monthly</h3>
-          <p>One email a month, petrol, the ringgit, the weather, and the numbers that run the country, pulled straight from the source. No spam, unsubscribe anytime.</p>
+        <div class="news-band">
+          <div class="nb-k">stay in the know</div>
+          <div class="nb-h">Malaysia, decoded <span class="hot">monthly.</span></div>
+          <p class="nb-s">One email a month. Official data, plain English.</p>
           <form class="gm-signup-form" data-src="homepage">
             <input type="email" placeholder="you@email.com" required aria-label="Email address" />
-            <button type="submit">Get the brief</button>
+            <button type="submit">Get the monthly briefing</button>
           </form>
-          <div class="gm-signup-tiny">Free. No spam. Built by Malaysians, for Malaysians.</div>
+          <div class="nb-micro">Double opt-in · Unsubscribe any time · Kit form 9628406 via subscribe.js</div>
         </div>
       </section>
 
@@ -402,6 +478,25 @@
         var WX = { 0: "☀️", 1: "🌤", 2: "⛅", 3: "☁️", 45: "🌫", 51: "🌦", 53: "🌦", 55: "🌧", 61: "🌦", 63: "🌧", 65: "🌧", 80: "🌦", 81: "🌧", 82: "⛈", 95: "⛈", 96: "⛈", 99: "⛈" };
         set("hlWx", Math.round(d.current.temperature_2m) + "° " + (WX[d.current.weather_code] || "🌡"));
       }).catch(function () { set("hlWx", "—"); });
+    })();
+    </script>
+    <script>
+    /* Election band countdown to automatic Parliament dissolution (19 Dec 2027, MYT) */
+    (function () {
+      var target = Date.parse("2027-12-19T00:00:00+08:00");
+      function set(id, v) { var e = document.getElementById(id); if (e) e.textContent = v; }
+      function tick() {
+        var ms = target - Date.now();
+        if (ms < 0) ms = 0;
+        var d = Math.floor(ms / 864e5);
+        var h = Math.floor((ms % 864e5) / 36e5);
+        var m = Math.floor((ms % 36e5) / 6e4);
+        set("ebDays", d.toLocaleString("en-MY"));
+        set("ebHours", String(h).padStart(2, "0"));
+        set("ebMin", String(m).padStart(2, "0"));
+      }
+      tick();
+      setInterval(tick, 30000);
     })();
     </script>
     <script src="app.js"></script>
