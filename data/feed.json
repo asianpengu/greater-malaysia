@@ -1,5 +1,5 @@
 {
-  "name": "Greater Malaysia — data feed",
+  "name": "Greater Malaysia, data feed",
   "description": "A machine-readable index of live tools and verified data about Malaysia, built on official open data. Every dataset links to its official primary source.",
   "url": "https://greatermalaysia.com",
   "publisher": "Greater Malaysia",
@@ -66,7 +66,7 @@
       "topic": "Starting a business in Malaysia (SSM registration)",
       "description": "How to register a business in Malaysia: sole proprietor/Enterprise via ezBiz (from RM30/year) or Sdn Bhd via MyCoID (~RM1,000), both online with SSM. Enterprise vs Sdn Bhd compared, plus the RM500,000 SST threshold.",
       "page": "https://greatermalaysia.com/how-to-start-a-business-in-malaysia",
-      "source": "Companies Commission of Malaysia (SSM) — ezBiz, MyCoID",
+      "source": "Companies Commission of Malaysia (SSM), ezBiz, MyCoID",
       "frequency": "as rules/fees change"
     },
     {
@@ -80,20 +80,20 @@
       "topic": "AI adoption in Malaysia",
       "description": "Share of working-age Malaysians using AI tools, with SEA and global comparison (147 economies), updated roughly quarterly. Malaysia: 18.3% (H1 2025) → 21.8% (Q1 2026).",
       "page": "https://greatermalaysia.com/stories/ai-adoption-malaysia",
-      "source": "Microsoft AI for Good Lab — AI Diffusion Report (MIT-licensed open data)",
+      "source": "Microsoft AI for Good Lab, AI Diffusion Report (MIT-licensed open data)",
       "source_api": "https://raw.githubusercontent.com/microsoft/ai-diffusion-report/main/data/AI_Diffusion_Q12026_Update.csv",
       "frequency": "quarterly"
     },
     {
       "topic": "Elections (general election history)",
-      "description": "Malaysian general election results 1959–2022 — winning coalition's share of Parliament, GE15 seats by coalition, turnout. Plus GE16 timing (deadline 17 Feb 2028) and how the system works (222 seats, 112 majority).",
+      "description": "Malaysian general election results 1959–2022, winning coalition's share of Parliament, GE15 seats by coalition, turnout. Plus GE16 timing (deadline 17 Feb 2028) and how the system works (222 seats, 112 majority).",
       "page": "https://greatermalaysia.com/election/",
       "source": "Election Commission of Malaysia (SPR); Federal Constitution; open-data archives (Thevesh, Tindak Malaysia)",
       "frequency": "per election cycle"
     },
     {
       "topic": "Government spending (federal finance)",
-      "description": "Federal government spending, revenue and deficit — operating vs development expenditure, and the breakdown of where the money goes.",
+      "description": "Federal government spending, revenue and deficit, operating vs development expenditure, and the breakdown of where the money goes.",
       "page": "https://greatermalaysia.com/stories/government-spending-malaysia",
       "source": "Ministry of Finance Malaysia via data.gov.my",
       "source_api": "https://api.data.gov.my/data-catalogue/?id=federal_finance_year",

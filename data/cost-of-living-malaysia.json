@@ -2,13 +2,13 @@
   "slug": "cost-of-living-malaysia",
   "kind": "data-story",
   "title": "What's getting more expensive in Malaysia?",
-  "subtitle": "Inflation by category — where prices are rising fastest, 2026",
+  "subtitle": "Inflation by category, where prices are rising fastest, 2026",
   "question": "What is Malaysia's inflation rate, and what's getting more expensive?",
-  "answer": "Malaysia's headline inflation was +2.0% year-on-year as of May 2026 — moderate overall, but the squeeze is uneven. Insurance & finance (+4.9%), personal care (+4.8%) and transport (+3.8%) rose fastest, while clothing actually got slightly cheaper.",
+  "answer": "Malaysia's headline inflation was +2.0% year-on-year as of May 2026, moderate overall, but the squeeze is uneven. Insurance & finance (+4.9%), personal care (+4.8%) and transport (+3.8%) rose fastest, while clothing actually got slightly cheaper.",
   "updated": "2026-06-30",
   "source": {
     "publisher": "Department of Statistics Malaysia (DOSM)",
-    "publisher_type": "Government — national statistics office",
+    "publisher_type": "Government, national statistics office",
     "document": "Consumer Price Index (CPI), Malaysia",
     "published": "2026",
     "url": "https://open.dosm.gov.my/dashboard/consumer-prices",
@@ -18,8 +18,8 @@
   },
   "headline": [
     { "label": "Overall inflation", "value": "+2.0", "suffix": "%", "sub": "headline CPI, year-on-year · May 2026", "note": "DOSM CPI" },
-    { "label": "Fastest rising", "value": "+4.9", "suffix": "%", "sub": "Insurance & finance — the biggest jump", "note": "y/y" },
-    { "label": "Getting cheaper", "value": "−0.1", "suffix": "%", "sub": "Clothing & footwear — the only faller", "note": "y/y" }
+    { "label": "Fastest rising", "value": "+4.9", "suffix": "%", "sub": "Insurance & finance, the biggest jump", "note": "y/y" },
+    { "label": "Getting cheaper", "value": "−0.1", "suffix": "%", "sub": "Clothing & footwear, the only faller", "note": "y/y" }
   ],
   "series": {
     "by_category": {
@@ -46,10 +46,10 @@
     }
   },
   "takeaways": [
-    "Overall prices rose **+2.0%** in the year to May 2026 — moderate, and below Malaysia's long-run average.",
+    "Overall prices rose **+2.0%** in the year to May 2026, moderate, and below Malaysia's long-run average.",
     "The real squeeze is in **services**: insurance & finance (+4.9%), personal care (+4.8%) and **transport (+3.8%)** led the gains.",
     "Everyday **food** rose a milder **+1.4%**, and **clothing** was the only category to get *cheaper* (−0.1%).",
-    "\"Headline inflation\" is an average — your personal rate depends on what you spend on. A heavy driver feels transport; a renter feels housing."
+    "\"Headline inflation\" is an average, your personal rate depends on what you spend on. A heavy driver feels transport; a renter feels housing."
   ],
   "faq": [
     { "q": "What is Malaysia's inflation rate?", "a": "Malaysia's headline inflation (CPI) was +2.0% year-on-year as of May 2026, according to the Department of Statistics Malaysia (DOSM)." },

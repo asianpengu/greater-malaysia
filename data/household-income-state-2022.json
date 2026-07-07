@@ -4,11 +4,11 @@
   "title": "Where you live shapes what you earn",
   "subtitle": "Household income, poverty & the B40 / M40 / T20 split, 2022",
   "question": "What is the median household income in Malaysia?",
-  "answer": "Malaysia's median household income was RM6,338 a month in 2022 — but it ranges from RM10,234 in Kuala Lumpur to RM3,614 in Kelantan. Nationally, the B40/M40/T20 lines fall at RM4,850 and RM10,960.",
+  "answer": "Malaysia's median household income was RM6,338 a month in 2022, but it ranges from RM10,234 in Kuala Lumpur to RM3,614 in Kelantan. Nationally, the B40/M40/T20 lines fall at RM4,850 and RM10,960.",
   "updated": "2026-06-30",
   "source": {
     "publisher": "Department of Statistics Malaysia (DOSM)",
-    "publisher_type": "Government — national statistics office",
+    "publisher_type": "Government, national statistics office",
     "document": "Household Income & Expenditure Survey (HIES) 2022",
     "published": "2023",
     "url": "https://open.dosm.gov.my/dashboard/household-income-expenditure",
@@ -77,7 +77,7 @@
     "A Kuala Lumpur household earns about **2.8× more** than a Kelantan one (RM10,234 vs RM3,614 median).",
     "Whole states sit largely in the **B40**: Kelantan, Kedah, Perak and Sabah all have median household incomes **below the national B40 ceiling of RM4,850**.",
     "**Sabah** has the highest poverty rate (19.7%) despite its natural resources; **Putrajaya** the lowest (0.1%).",
-    "The B40/M40/T20 labels are national cut-offs — what counts as 'middle income' in KL can be well-off in Kelantan."
+    "The B40/M40/T20 labels are national cut-offs, what counts as 'middle income' in KL can be well-off in Kelantan."
   ],
   "faq": [
     { "q": "What is the median household income in Malaysia?", "a": "Malaysia's median household income was RM6,338 per month in 2022, according to the Department of Statistics Malaysia (DOSM)." },

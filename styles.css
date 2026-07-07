@@ -951,3 +951,23 @@ body[data-nav-open] .nav-sheet { display: flex; }
 /* FAQ rows to the v2 +/- treatment (slightly larger tap target) */
 .ans-faq summary { padding: 15px 0; font-size: 15.5px; align-items: center; }
 .ans-faq summary::after { font-size: 20px; line-height: 1; }
+
+/* ============================================================
+   BRAND V2 — Phase 5: election pages (non-partisan grey)
+   The ONLY accent on election pages is --election grey. Spec: swap
+   every seal usage for grey via a single --seal override.
+   ============================================================ */
+.election-page { --seal: var(--election); --seal-deep: #575046; }
+.election-page main { border-top: 8px solid var(--election); padding-top: clamp(20px, 4vw, 36px); }
+/* non-partisan standing note (dashed grey box) */
+.np-note {
+  border: 1.5px dashed var(--election); border-radius: var(--r); background: var(--paper-2);
+  padding: 14px 16px; margin: 0 0 22px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.5;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.np-note .np-stamp {
+  flex: none; font-family: var(--mono); font-weight: 700; font-size: 9px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--election); border: 2px solid var(--election);
+  border-radius: 2px; padding: 5px 8px; transform: rotate(-3deg);
+}
+.np-note b { color: var(--ink); }

@@ -8,7 +8,7 @@
   "updated": "2026-06-30",
   "source": {
     "publisher": "Department of Statistics Malaysia (DOSM)",
-    "publisher_type": "Government — national statistics office",
+    "publisher_type": "Government, national statistics office",
     "document": "Current Population Estimates, Malaysia",
     "published": "2025",
     "url": "https://open.dosm.gov.my/dashboard/population",
@@ -24,7 +24,7 @@
   "series": {
     "trend": {
       "title": "Malaysia's age structure",
-      "note": "The population by 5-year age band (2025). The base is narrowing — fewer children — while the top is slowly growing as Malaysia ages.",
+      "note": "The population by 5-year age band (2025). The base is narrowing, fewer children, while the top is slowly growing as Malaysia ages.",
       "ref": "population by age, 2025",
       "unit": "people (millions)",
       "x": "age",
@@ -39,22 +39,22 @@
       ]
     },
     "by_ethnicity": {
-      "title": "Who lives here — by ethnic group",
+      "title": "Who lives here, by ethnic group",
       "note": "Malaysia's population by ethnic group (2025). Bumiputera (Malays plus other indigenous peoples) are the majority.",
       "ref": "population by ethnicity, 2025",
       "unit": "people (millions)",
       "metrics": [{ "key": "pop", "label": "Population", "color": "seal", "fmt": "M" }],
       "rows": [
-        { "label": "Bumiputera — Malay", "pop": 17981.2 },
+        { "label": "Bumiputera, Malay", "pop": 17981.2 },
         { "label": "Chinese", "pop": 6849.6 },
-        { "label": "Bumiputera — other", "pop": 3779.8 },
+        { "label": "Bumiputera, other", "pop": 3779.8 },
         { "label": "Non-citizen", "pop": 3380.7 },
         { "label": "Indian", "pop": 2006.1 },
         { "label": "Other citizen", "pop": 234.3 }
       ]
     },
     "by_state": {
-      "title": "Where Malaysians live — by state",
+      "title": "Where Malaysians live, by state",
       "note": "Population by state (2023). Selangor alone holds more than 1 in 5 Malaysians.",
       "ref": "population by state, 2023",
       "unit": "people (millions)",
@@ -73,7 +73,7 @@
     "Malaysia has **34.2 million** people. **Selangor** alone is home to **7.2M** — more than 1 in 5 Malaysians.",
     "By ethnicity: **Bumiputera 63.6%**, **Chinese 20.0%**, **Indian 5.9%** of the population; **non-citizens** are about **9.9%**.",
     "Malaysia has crossed into an **'ageing society'** — **8.0%** are aged 65+, while the under-15 share has slipped to **21.6%**.",
-    "The biggest single age group is **20–24** — a large young-adult cohort — but the pyramid is narrowing at the base as birth rates fall."
+    "The biggest single age group is **20–24** — a large young-adult cohort, but the pyramid is narrowing at the base as birth rates fall."
   ],
   "faq": [
     { "q": "What is the population of Malaysia?", "a": "Malaysia's population is about 34.2 million (2025 estimate), according to the Department of Statistics Malaysia (DOSM)." },

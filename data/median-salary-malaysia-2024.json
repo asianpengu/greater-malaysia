@@ -4,11 +4,11 @@
   "title": "How much do Malaysians earn?",
   "subtitle": "Median & mean monthly salary in Malaysia, 2024",
   "question": "What is the median salary in Malaysia?",
-  "answer": "In 2024, the median monthly salary for Malaysian citizens was RM2,793 and the mean was RM3,652 — up 7.3% and 6.1% from 2023.",
+  "answer": "In 2024, the median monthly salary for Malaysian citizens was RM2,793 and the mean was RM3,652, up 7.3% and 6.1% from 2023.",
   "updated": "2026-06-30",
   "source": {
     "publisher": "Department of Statistics Malaysia (DOSM)",
-    "publisher_type": "Government — national statistics office",
+    "publisher_type": "Government, national statistics office",
     "document": "Salaries & Wages Survey Report, Malaysia, 2024",
     "published": "2025",
     "url": "https://www.dosm.gov.my/portal-main/release-content/salaries-and-wages-survey-report-2024",
@@ -76,14 +76,14 @@
     }
   },
   "takeaways": [
-    "The median (RM2,793) sits well below the mean (RM3,652) — a sign that higher earners pull the average up, so \"average salary\" overstates what a typical Malaysian makes.",
+    "The median (RM2,793) sits well below the mean (RM3,652), a sign that higher earners pull the average up, so \"average salary\" overstates what a typical Malaysian makes.",
     "Salaries dipped in 2020 during the pandemic (median fell from RM2,442 to RM2,076) and only passed the pre-COVID level again around 2022–2023.",
     "A tertiary education roughly doubles the median salary versus secondary (RM4,131 vs RM2,046).",
     "A gender gap persists: women's median salary is about 7% below men's."
   ],
   "faq": [
     { "q": "What is the median salary in Malaysia in 2024?", "a": "The median monthly salary for Malaysian citizens was RM2,793 in 2024, according to the Department of Statistics Malaysia (DOSM). The mean (average) was RM3,652." },
-    { "q": "What is the average salary in Malaysia?", "a": "The mean monthly salary was RM3,652 in 2024 (DOSM). Note the median — RM2,793 — better reflects a typical earner, because a minority of high earners raises the average." },
+    { "q": "What is the average salary in Malaysia?", "a": "The mean monthly salary was RM3,652 in 2024 (DOSM). Note the median, RM2,793, better reflects a typical earner, because a minority of high earners raises the average." },
     { "q": "How much did salaries grow in 2024?", "a": "Median monthly salary rose 7.3% and mean rose 6.1% versus 2023, per DOSM's Salaries & Wages Survey Report 2024." }
   ]
 }
