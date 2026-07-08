@@ -119,12 +119,13 @@
     <script src="/subscribe.js" defer></script>
   <script src="/common.js"></script>
 <script>
-/* Populate the next-holiday line from the .cuti-row[data-date] list (MYT). */
+/* Next-holiday line + card, computed from .cuti-row[data-date] (MYT). */
 (function () {
-  var el = document.getElementById("nextLine");
-  if (!el) return;
+  var line = document.getElementById("nextLine");
+  var card = document.getElementById("nextCard");
   var rows = [].slice.call(document.querySelectorAll(".cuti-row[data-date]"));
   if (!rows.length) return;
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); };
   var now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
   var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   var next = null, nextDate = null;
@@ -132,19 +133,23 @@
     var p = (r.getAttribute("data-date") || "").split("-");
     if (p.length !== 3) return;
     var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (d < today) r.classList.add("past");
     if (d >= today && (!nextDate || d < nextDate)) { nextDate = d; next = r; }
   });
-  rows.forEach(function (r) {
-    var p = (r.getAttribute("data-date") || "").split("-");
-    if (p.length === 3 && new Date(+p[0], +p[1] - 1, +p[2]) < today) r.classList.add("past");
-  });
-  if (!next) { el.textContent = "that is a wrap for 2026, see you in 2027"; return; }
+  if (!next) {
+    if (line) line.textContent = "that is a wrap for 2026, see you in 2027";
+    if (card) card.style.display = "none";
+    return;
+  }
   next.classList.add("active");
-  var name = (next.querySelector(".cuti-n") || {}).textContent || "the next holiday";
+  var name = ((next.querySelector(".cuti-n") || {}).textContent || "the next holiday").trim();
+  var dd = ((next.querySelector(".cuti-d") || {}).textContent || "").trim();
   var days = Math.round((nextDate - today) / 864e5);
   var when = days === 0 ? "today" : days === 1 ? "tomorrow" : "in " + days + " days";
-  var dd = (next.querySelector(".cuti-d") || {}).textContent || "";
-  el.textContent = "next: " + name + " (" + dd + "), " + when;
+  if (line) line.textContent = "next: " + name + " (" + dd + "), " + when;
+  if (card) card.innerHTML = "<div class=\"cuti-next\"><div><div class=\"cn-lab\">next public holiday</div><div class=\"cn-name\">NAME</div><div class=\"cn-date\">DD 2026</div></div><div class=\"cn-cd\">DAYS<span>WHEN</span></div></div>"
+    .replace("NAME", esc(name)).replace("DD", esc(dd))
+    .replace("DAYS", days === 0 ? "0" : days).replace("WHEN", days === 1 ? "day away" : days === 0 ? "today" : "days away");
 })();
 </script>
 </body>
