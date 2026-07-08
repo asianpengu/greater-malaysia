@@ -986,3 +986,17 @@ body[data-nav-open] .nav-sheet { display: flex; }
   .calc input[type="number"] { min-height: 40px; }
   .now-tile .nt-src, .tool-src a, .hs-src, .nm-foot a { min-height: 24px; }
 }
+
+/* ============================================================
+   Owned channels: follow buttons (hero + newsletter band)
+   ============================================================ */
+.hero-follow { font-size: 13.5px; color: var(--ink-soft); margin-top: 14px; max-width: 520px; line-height: 1.5; }
+.hero-follow a { color: var(--seal); font-weight: 600; border-bottom: 1px solid var(--seal); text-decoration: none; }
+/* newsletter band, on ink */
+.news-band .nb-follow { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+.news-band .nb-btn { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--ink); background: var(--paper-2); border: 2px solid var(--paper-2); border-radius: 2px; padding: 13px 22px; text-decoration: none; transition: opacity var(--t-ui) var(--ease); }
+.news-band .nb-btn:hover { opacity: 0.86; }
+.news-band .nb-btn.tg { background: transparent; color: var(--paper-2); border-color: var(--paper-2); }
+.news-band .nb-or { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin: 4px 0 12px; }
+.news-band .gm-signup-form { opacity: 0.92; }
+@media (max-width: 560px) { .news-band .nb-follow { flex-direction: column; } .news-band .nb-btn { width: 100%; } }
