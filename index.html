@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) — Greater Malaysia GA4 -->
+    <!-- Google tag (gtag.js), Greater Malaysia GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2R45WDST7M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -25,7 +25,7 @@
     <meta property="og:site_name" content="Greater Malaysia" />
     <meta property="og:locale" content="en_MY" />
     <meta property="og:title" content="Greater Malaysia ~ the nation, in real time" />
-    <meta property="og:description" content="Free live tools on Malaysia's open data — waktu solat, petrol, the ringgit, the weather, the air, the rakyat. No app, no login." />
+    <meta property="og:description" content="Free live tools on Malaysia's open data, waktu solat, petrol, the ringgit, the weather, the air, the rakyat. No app, no login." />
     <meta property="og:url" content="https://greatermalaysia.com/" />
     <meta property="og:image" content="https://greatermalaysia.com/assets/og.png?v=2" />
     <meta property="og:image:width" content="1200" />
@@ -377,9 +377,9 @@
           </div>
           <div class="eb-right">
             <div class="eb-count" id="ebCount" aria-label="Countdown to Parliament dissolution">
-              <div class="eb-cell"><b id="ebDays">—</b><span>Days</span></div>
-              <div class="eb-cell"><b id="ebHours">—</b><span>Hours</span></div>
-              <div class="eb-cell"><b id="ebMin">—</b><span>Min</span></div>
+              <div class="eb-cell"><b id="ebDays">··</b><span>Days</span></div>
+              <div class="eb-cell"><b id="ebHours">··</b><span>Hours</span></div>
+              <div class="eb-cell"><b id="ebMin">··</b><span>Min</span></div>
             </div>
             <p class="eb-until">Until Parliament dissolves automatically, 19 Dec 2027.</p>
             <p class="eb-foot">Independent + non-partisan · SUMBER: <a href="https://www.spr.gov.my" target="_blank" rel="noopener">SPR ↗</a> · Art. 55</p>
@@ -449,7 +449,7 @@
 
     <script src="common.js"></script>
     <script>
-    /* Hero "Malaysia right now" strip — instant live value above the fold. */
+    /* Hero "Malaysia right now" strip, instant live value above the fold. */
     (function () {
       var $ = function (id) { return document.getElementById(id); };
       var myNow = function () { return new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" })); };
@@ -463,21 +463,21 @@
         var toMin = function (h) { var p = h.split(":"); return +p[0] * 60 + +p[1]; };
         var nx = seq.find(function (p) { return toMin(t[p[0]]) > nm; }) || seq[0];
         set("hlSolat", nx[1] + " " + t[nx[0]].slice(0, 5));
-      }).catch(function () { set("hlSolat", "—"); });
+      }).catch(function () { set("hlSolat", "··"); });
       // RON95
       jget("https://api.data.gov.my/data-catalogue/?id=fuelprice&limit=4&sort=-date").then(function (rows) {
         var l = rows.find(function (r) { return r.series_type === "level"; });
         set("hlFuel", "RM" + Number(l.ron95_skps != null ? l.ron95_skps : l.ron95).toFixed(2));
-      }).catch(function () { set("hlFuel", "—"); });
+      }).catch(function () { set("hlFuel", "··"); });
       // USD -> MYR
       jget("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR").then(function (d) {
         set("hlFx", "RM" + d.rates.MYR.toFixed(2));
-      }).catch(function () { set("hlFx", "—"); });
+      }).catch(function () { set("hlFx", "··"); });
       // KL weather now
       jget("https://api.open-meteo.com/v1/forecast?latitude=3.139&longitude=101.687&current=temperature_2m,weather_code&timezone=Asia%2FKuala_Lumpur").then(function (d) {
         var WX = { 0: "☀️", 1: "🌤", 2: "⛅", 3: "☁️", 45: "🌫", 51: "🌦", 53: "🌦", 55: "🌧", 61: "🌦", 63: "🌧", 65: "🌧", 80: "🌦", 81: "🌧", 82: "⛈", 95: "⛈", 96: "⛈", 99: "⛈" };
         set("hlWx", Math.round(d.current.temperature_2m) + "° " + (WX[d.current.weather_code] || "🌡"));
-      }).catch(function () { set("hlWx", "—"); });
+      }).catch(function () { set("hlWx", "··"); });
     })();
     </script>
     <script>

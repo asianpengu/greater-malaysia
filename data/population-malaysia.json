@@ -4,7 +4,7 @@
   "title": "Who are the rakyat?",
   "subtitle": "Malaysia's population, ethnic make-up and age structure",
   "question": "What is the population of Malaysia, and who makes it up?",
-  "answer": "Malaysia is home to 34.2 million people. Bumiputera make up 63.6% of the population, Chinese 20.0% and Indians 5.9%, with non-citizens about 9.9%. Selangor is the most populous state (7.2M), and the country has just crossed into an 'ageing society' — 8.0% are now 65 or older.",
+  "answer": "Malaysia is home to 34.2 million people. Bumiputera make up 63.6% of the population, Chinese 20.0% and Indians 5.9%, with non-citizens about 9.9%. Selangor is the most populous state (7.2M), and the country has just crossed into an 'ageing society', 8.0% are now 65 or older.",
   "updated": "2026-06-30",
   "source": {
     "publisher": "Department of Statistics Malaysia (DOSM)",
@@ -70,10 +70,10 @@
     }
   },
   "takeaways": [
-    "Malaysia has **34.2 million** people. **Selangor** alone is home to **7.2M** — more than 1 in 5 Malaysians.",
+    "Malaysia has **34.2 million** people. **Selangor** alone is home to **7.2M**, more than 1 in 5 Malaysians.",
     "By ethnicity: **Bumiputera 63.6%**, **Chinese 20.0%**, **Indian 5.9%** of the population; **non-citizens** are about **9.9%**.",
-    "Malaysia has crossed into an **'ageing society'** — **8.0%** are aged 65+, while the under-15 share has slipped to **21.6%**.",
-    "The biggest single age group is **20–24** — a large young-adult cohort, but the pyramid is narrowing at the base as birth rates fall."
+    "Malaysia has crossed into an **'ageing society'**, **8.0%** are aged 65+, while the under-15 share has slipped to **21.6%**.",
+    "The biggest single age group is **20–24**, a large young-adult cohort, but the pyramid is narrowing at the base as birth rates fall."
   ],
   "faq": [
     { "q": "What is the population of Malaysia?", "a": "Malaysia's population is about 34.2 million (2025 estimate), according to the Department of Statistics Malaysia (DOSM)." },

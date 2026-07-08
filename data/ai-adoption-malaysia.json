@@ -38,7 +38,7 @@
     },
     "sea": {
       "title": "Southeast Asia's AI league table (Q1 2026)",
-      "note": "Singapore is the region's runaway leader — #2 in the world, and Vietnam has overtaken Malaysia with the region's fastest growth.",
+      "note": "Singapore is the region's runaway leader, #2 in the world, and Vietnam has overtaken Malaysia with the region's fastest growth.",
       "ref": "AI Diffusion Q1 2026 Update, SEA economies",
       "unit": "% of working-age population using AI",
       "layout": "horizontal",
@@ -67,9 +67,9 @@
     }
   },
   "takeaways": [
-    "By the strictest comparable measure, **21.8% of working-age Malaysians use AI tools** — ranking **#51 of 147 economies** (Microsoft AI Diffusion, Q1 2026).",
-    "**Singapore (63.4%) is in another league** — nearly 3× Malaysia's rate and #2 in the world. **Vietnam (26.5%) has pulled ahead** with the region's fastest growth.",
-    "Malaysia still beats the **Philippines (20.1%), Indonesia (14.1%) and Thailand (12.4%)** — solidly mid-table in ASEAN, mid-table globally.",
+    "By the strictest comparable measure, **21.8% of working-age Malaysians use AI tools**, ranking **#51 of 147 economies** (Microsoft AI Diffusion, Q1 2026).",
+    "**Singapore (63.4%) is in another league**, nearly 3× Malaysia's rate and #2 in the world. **Vietnam (26.5%) has pulled ahead** with the region's fastest growth.",
+    "Malaysia still beats the **Philippines (20.1%), Indonesia (14.1%) and Thailand (12.4%)**, solidly mid-table in ASEAN, mid-table globally.",
     "Ask Malaysians directly and the number jumps: **67% say they used AI in the past 3 months** (Vodus). Self-reported use of any AI reads higher than measured active use of AI tools, both are true, they measure different things.",
     "The divide is **age, not access**: ~**85% of 25–34-year-olds** have used AI recently, versus only about a third of Malaysians **55 and older**.",
     "The trend is the story: **+3.5 percentage points in nine months**, rising every quarter."
