@@ -118,5 +118,30 @@
     
     <script src="/subscribe.js" defer></script>
   <script src="/common.js"></script>
+<script>
+/* Populate the next-holiday line from the .cuti-row[data-date] list (MYT). */
+(function () {
+  var el = document.getElementById("nextLine");
+  if (!el) return;
+  var rows = [].slice.call(document.querySelectorAll(".cuti-row[data-date]"));
+  if (!rows.length) return;
+  var now = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var next = null, nextDate = null;
+  rows.forEach(function (r) {
+    var p = (r.getAttribute("data-date") || "").split("-");
+    if (p.length !== 3) return;
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (d >= today && (!nextDate || d < nextDate)) { nextDate = d; next = r; }
+  });
+  if (!next) { el.textContent = "that is a wrap for 2026, see you in 2027"; return; }
+  next.classList.add("is-next");
+  var name = (next.querySelector(".cuti-n") || {}).textContent || "the next holiday";
+  var days = Math.round((nextDate - today) / 864e5);
+  var when = days === 0 ? "today" : days === 1 ? "tomorrow" : "in " + days + " days";
+  var dd = (next.querySelector(".cuti-d") || {}).textContent || "";
+  el.textContent = "next: " + name + " (" + dd + "), " + when;
+})();
+</script>
 </body>
 </html>
