@@ -1,0 +1,6 @@
+{
+  "name": "greater-malaysia",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
