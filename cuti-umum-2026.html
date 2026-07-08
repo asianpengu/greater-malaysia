@@ -134,8 +134,12 @@
     var d = new Date(+p[0], +p[1] - 1, +p[2]);
     if (d >= today && (!nextDate || d < nextDate)) { nextDate = d; next = r; }
   });
+  rows.forEach(function (r) {
+    var p = (r.getAttribute("data-date") || "").split("-");
+    if (p.length === 3 && new Date(+p[0], +p[1] - 1, +p[2]) < today) r.classList.add("past");
+  });
   if (!next) { el.textContent = "that is a wrap for 2026, see you in 2027"; return; }
-  next.classList.add("is-next");
+  next.classList.add("active");
   var name = (next.querySelector(".cuti-n") || {}).textContent || "the next holiday";
   var days = Math.round((nextDate - today) / 864e5);
   var when = days === 0 ? "today" : days === 1 ? "tomorrow" : "in " + days + " days";
