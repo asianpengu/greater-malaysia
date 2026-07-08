@@ -971,3 +971,18 @@ body[data-nav-open] .nav-sheet { display: flex; }
   border-radius: 2px; padding: 5px 8px; transform: rotate(-3deg);
 }
 .np-note b { color: var(--ink); }
+
+/* ============================================================
+   Design review FINDING-001: comfortable touch targets on mobile
+   Tool controls and pill links reach the 44px tap target where it
+   matters (no hover, finger input). Desktop density stays intentional.
+   ============================================================ */
+@media (max-width: 760px) {
+  .fx-pair, .calc-fuelsel button, .chip,
+  .related-row a, .eb-chips a, .ans-related a {
+    min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+  }
+  .tool select, .ans-controls select { min-height: 44px; }
+  .calc input[type="number"] { min-height: 40px; }
+  .now-tile .nt-src, .tool-src a, .hs-src, .nm-foot a { min-height: 24px; }
+}
