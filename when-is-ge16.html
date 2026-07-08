@@ -54,4 +54,18 @@
 </footer>
 
 <script src="/subscribe.js" defer></script><script src="/common.js"></script>
+<script>
+/* Countdown to the constitutional deadline for GE16 (17 Feb 2028, MYT). */
+(function () {
+  var target = Date.parse("2028-02-17T00:00:00+08:00");
+  function set(id, v) { var e = document.getElementById(id); if (e) e.textContent = v; }
+  function tick() {
+    var ms = target - Date.now(); if (ms < 0) ms = 0;
+    var d = Math.floor(ms / 864e5), h = Math.floor((ms % 864e5) / 36e5), m = Math.floor((ms % 36e5) / 6e4), s = Math.floor((ms % 6e4) / 1e3);
+    set("cdD", d.toLocaleString("en-MY")); set("cdH", String(h).padStart(2, "0"));
+    set("cdM", String(m).padStart(2, "0")); set("cdS", String(s).padStart(2, "0"));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
 </body></html>
