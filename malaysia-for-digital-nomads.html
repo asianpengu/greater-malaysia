@@ -58,4 +58,29 @@
 </footer>
 
 <script src="/subscribe.js" defer></script><script src="/common.js"></script>
-</body></html>
+<script>
+/* Live city cards (weather + air) and ringgit for the nomad guide. */
+(function () {
+  var WX = { 0:"☀️",1:"🌤",2:"⛅",3:"☁️",45:"🌫",48:"🌫",51:"🌦",53:"🌦",55:"🌧",61:"🌦",63:"🌧",65:"🌧",80:"🌦",81:"🌧",82:"⛈",95:"⛈",96:"⛈",99:"⛈" };
+  function aqiLabel(v){ return v<=50?"Good":v<=100?"Moderate":v<=150?"Unhealthy (sensitive)":v<=200?"Unhealthy":v<=300?"Very unhealthy":"Hazardous"; }
+  function set(root, sel, v){ var e=root.querySelector(sel); if(e) e.textContent=v; }
+  var cities=[{id:"ncKL",lat:3.139,lon:101.687},{id:"ncPG",lat:5.414,lon:100.329}];
+  cities.forEach(function(c){
+    var root=document.getElementById(c.id); if(!root) return;
+    fetch("https://api.open-meteo.com/v1/forecast?latitude="+c.lat+"&longitude="+c.lon+"&current=temperature_2m,relative_humidity_2m,weather_code&timezone=Asia%2FKuala_Lumpur")
+      .then(function(r){return r.json();}).then(function(d){
+        var cur=d.current||{};
+        set(root, ".v-wx", Math.round(cur.temperature_2m)+"° "+(WX[cur.weather_code]||"🌡"));
+        set(root, ".v-hum", Math.round(cur.relative_humidity_2m)+"%");
+      }).catch(function(){ set(root, ".v-wx", "data tak sampai"); set(root, ".v-hum", "—"); });
+    fetch("https://air-quality-api.open-meteo.com/v1/air-quality?latitude="+c.lat+"&longitude="+c.lon+"&current=us_aqi&timezone=Asia%2FKuala_Lumpur")
+      .then(function(r){return r.json();}).then(function(d){
+        var v=Math.round((d.current||{}).us_aqi); set(root, ".v-aqi", v+" · "+aqiLabel(v));
+      }).catch(function(){ set(root, ".v-aqi", "—"); });
+  });
+  var fx=document.getElementById("fxLine");
+  if(fx) fetch("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR").then(function(r){return r.json();})
+    .then(function(d){ fx.textContent="1 USD = RM"+d.rates.MYR.toFixed(2); })
+    .catch(function(){ fx.textContent="rate unavailable right now"; });
+})();
+</script></body></html>
