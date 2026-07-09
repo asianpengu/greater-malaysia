@@ -34,9 +34,10 @@ export default async function handler(req, res) {
   try {
     if (req.query && req.query.diag) {
       const probe = async (u) => { try { const rr = await fetch(u); const t = await rr.text(); return { s: rr.status, b: t.slice(0, 160) }; } catch (e) { return { s: 0, b: String(e) }; } };
-      const us = await probe(`https://financialmodelingprep.com/stable/quote?symbol=AAPL&apikey=${KEY}`);
-      const kl = await probe(`https://financialmodelingprep.com/stable/quote?symbol=1155.KL&apikey=${KEY}`);
-      return res.status(200).json({ us_single: us, bursa_single: kl });
+      const probeUA = async (u) => { try { const rr = await fetch(u, { headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36" } }); const t = await rr.text(); return { s: rr.status, b: t.slice(0, 220) }; } catch (e) { return { s: 0, b: String(e) }; } };
+      const yahoo = await probeUA("https://query1.finance.yahoo.com/v8/finance/chart/1155.KL?interval=1d&range=1d");
+      const yahoo2 = await probeUA("https://query2.finance.yahoo.com/v8/finance/chart/1155.KL?interval=1d&range=1d");
+      return res.status(200).json({ yahoo_q1: yahoo, yahoo_q2: yahoo2 });
     }
     const syms = roster.map((c) => c.sym).filter(Boolean).join(",");
     const r = await fetch(`https://financialmodelingprep.com/stable/quote?symbol=${syms}&apikey=${KEY}`);
