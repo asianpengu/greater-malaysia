@@ -119,9 +119,11 @@ function wireShare() {
   const url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href.split("?")[0];
   const title = (document.querySelector('meta[property="og:title"]') || {}).content || document.title;
   const enc = encodeURIComponent;
-  const wa = "https://wa.me/?text=" + enc(title + "\n" + url);
-  const tg = "https://t.me/share/url?url=" + enc(url) + "&text=" + enc(title);
-  const x = "https://twitter.com/intent/tweet?text=" + enc(title) + "&url=" + enc(url);
+  // Tag shared links so GA attributes the inbound click instead of dumping it in "Unassigned".
+  const tag = (src) => url + (url.indexOf("?") > -1 ? "&" : "?") + "utm_source=" + src + "&utm_medium=social&utm_campaign=share";
+  const wa = "https://wa.me/?text=" + enc(title + "\n" + tag("whatsapp"));
+  const tg = "https://t.me/share/url?url=" + enc(tag("telegram")) + "&text=" + enc(title);
+  const x = "https://twitter.com/intent/tweet?text=" + enc(title) + "&url=" + enc(tag("twitter"));
   const row = document.createElement("div");
   row.className = "gm-share";
   row.innerHTML =
@@ -134,9 +136,10 @@ function wireShare() {
   const copy = row.querySelector(".gs-copy");
   copy.addEventListener("click", function () {
     const done = function () { copy.textContent = "Copied"; setTimeout(function () { copy.textContent = "Copy link"; }, 1500); };
+    const link = tag("copy_link");
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(done).catch(function () { fallbackCopy(url); done(); });
-    } else { fallbackCopy(url); done(); }
+      navigator.clipboard.writeText(link).then(done).catch(function () { fallbackCopy(link); done(); });
+    } else { fallbackCopy(link); done(); }
   });
   return true;
 }
