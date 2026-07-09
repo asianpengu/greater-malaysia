@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--paper:#e9e4d8;--card:#f3efe6;--ink:#16130d;--ink-soft:#4a4437;--ink-faint:#8a8271;--seal:#b23a23;--line:#16130d}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1600px;height:838px}
+  body{background:var(--paper);font-family:"Space Grotesk",sans-serif;color:var(--ink);position:relative;overflow:hidden}
+  .grain{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(var(--ink) 1px,transparent 1px);background-size:5px 5px;pointer-events:none}
+  .frame{position:absolute;inset:34px;border:2px solid var(--line);border-radius:8px}
+  .frame::after{content:"";position:absolute;inset:14px;border:1px solid rgba(22,19,13,.28);border-radius:4px}
+  .pad{position:absolute;inset:34px;padding:64px 72px;display:flex;flex-direction:column;height:calc(838px - 68px)}
+  /* header */
+  .head{display:flex;align-items:flex-start;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:20px}
+  .wm{font-family:"Space Grotesk";font-weight:700;font-size:38px;letter-spacing:-.01em;line-height:1}
+  .handle{font-family:"JetBrains Mono";font-size:19px;color:var(--ink-faint);margin-top:6px}
+  .tag{font-family:"Caveat Brush";color:var(--seal);font-size:34px;transform:rotate(-4deg);border:2.5px solid var(--seal);border-radius:40px/28px;padding:8px 22px 6px;white-space:nowrap}
+  /* headline */
+  .hl{font-family:"Anton";text-transform:uppercase;font-size:150px;line-height:.9;letter-spacing:.5px;margin-top:56px}
+  .hl .red{color:var(--seal)}
+  .sub{font-size:29px;line-height:1.4;color:var(--ink-soft);max-width:1080px;margin-top:28px}
+  /* tools */
+  .tools{margin-top:auto;font-family:"JetBrains Mono";font-size:22px;color:var(--ink);line-height:1.9;letter-spacing:.2px}
+  .tools .dot{color:var(--seal);padding:0 6px}
+  /* bottom */
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:30px;padding-top:26px;border-top:2px solid var(--line)}
+  .url{font-family:"JetBrains Mono";font-weight:700;font-size:30px;color:var(--ink)}
+  .url .slash{color:var(--seal)}
+  .chips{display:flex;gap:12px}
+  .chip{font-family:"JetBrains Mono";font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:3px;padding:9px 15px}
+</style></head>
+<body>
+<div class="grain"></div>
+<div class="frame"></div>
+<div class="pad">
+  <div class="head">
+    <div class="brand">
+      <svg viewBox="0 0 512 512" width="76" height="76" role="img" aria-label="Greater Malaysia"><rect x="8" y="8" width="496" height="496" fill="#f3efe6" stroke="#16130d" stroke-width="16"/><rect x="38" y="38" width="436" height="436" fill="none" stroke="#16130d" stroke-opacity=".35" stroke-width="4"/><text x="252" y="366" text-anchor="middle" font-family="'Caveat Brush',cursive" font-size="300" fill="#16130d">GM</text><rect x="440" y="440" width="36" height="36" fill="#b23a23"/></svg>
+      <div><div class="wm">Greater Malaysia</div><div class="handle">@GreaterMsia</div></div>
+    </div>
+    <div class="tag">now callable by AI ↗</div>
+  </div>
+
+  <div class="hl">Malaysia,<br /><span class="red">for machines.</span></div>
+  <div class="sub">A free API and MCP server that lets any AI agent pull Malaysian ground-truth. Every number links to its official source.</div>
+
+  <div class="tools">
+    get_fuel_prices<span class="dot">·</span>get_exchange_rate<span class="dot">·</span>get_prayer_times<span class="dot">·</span>get_public_holidays<br />
+    get_weather<span class="dot">·</span>get_inflation<span class="dot">·</span>get_population<span class="dot">·</span>get_election
+  </div>
+
+  <div class="foot">
+    <div class="url">greatermalaysia.com<span class="slash">/</span>for-agents</div>
+    <div class="chips"><span class="chip">8 tools</span><span class="chip">no key</span><span class="chip">source-cited</span></div>
+  </div>
+</div>
+</body></html>

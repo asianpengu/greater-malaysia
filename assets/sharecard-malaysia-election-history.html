@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#d8d2c2;--paper-card:#f3efe6;--panel:#efeadf;--ink:#16130d;--ink-soft:#4a443a;--seal:#b23a23;--line-ink:rgba(22,19,13,0.85);--line:rgba(22,19,13,0.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:60px 66px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+  .brand{display:flex;align-items:center;gap:15px}
+  .gm{font-family:'Caveat Brush',cursive;font-size:56px;line-height:.8}
+  .brand-txt .n{font-weight:700;font-size:21px}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--seal);letter-spacing:.04em}
+  .eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:26px}
+  .title{font-family:'Anton',sans-serif;font-size:64px;line-height:.94;text-transform:uppercase;letter-spacing:.005em;margin-bottom:14px;max-width:1360px}
+  .sub{font-size:23px;color:var(--ink-soft);line-height:1.3;margin-bottom:26px;max-width:1240px}
+  .rule{height:3px;background:var(--line-ink);position:relative;margin-bottom:34px}
+  .rule::after{content:"";position:absolute;right:0;top:-3px;border-left:9px solid var(--line-ink);border-top:5px solid transparent;border-bottom:5px solid transparent}
+  .tiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1}
+  .tile{background:var(--panel);border:2.5px solid var(--line-ink);box-shadow:8px 8px 0 rgba(22,19,13,.1);padding:30px 30px;display:flex;flex-direction:column}
+  .tile:first-child{border-left:8px solid var(--seal)}
+  .tstat{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:74px;line-height:.85;color:var(--seal)}
+  .tile:not(:first-child) .tstat{color:var(--ink)}
+  .tlab{font-size:20px;font-weight:600;margin-top:18px;line-height:1.15}
+  .tsub{font-size:15px;color:var(--ink-soft);margin-top:8px;line-height:1.35}
+  .tsrc{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8272;letter-spacing:.03em;margin-top:auto;padding-top:14px}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:30px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:29px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:25px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <div class="brand"><div class="gm">GM</div><div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div></div>
+    <div class="eyebrow">data story</div>
+  </div>
+  <div class="title">How Malaysia votes: every election since 1959</div>
+  <div class="sub">The winning bloc once took 90% of Parliament. In 2022, no one won a majority at all.</div>
+  <div class="rule"></div>
+  <div class="tiles">
+    <div class="tile">
+      <div class="tstat">222</div>
+      <div class="tlab">Seats in Parliament</div>
+      <div class="tsub">Dewan Rakyat, elected at each GE</div>
+      <div class="tsrc">SPR</div>
+    </div>
+    <div class="tile">
+      <div class="tstat">112</div>
+      <div class="tlab">Seats to govern</div>
+      <div class="tsub">a simple majority (half + 1)</div>
+      <div class="tsrc">112 of 222</div>
+    </div>
+    <div class="tile">
+      <div class="tstat">74%</div>
+      <div class="tlab">Turnout, GE15 (2022)</div>
+      <div class="tsub">of 21.2 million registered voters</div>
+      <div class="tsrc">SPR</div>
+    </div></div>
+  <div class="foot">
+    <div class="site">greatermalaysia.com</div>
+    <div class="tag">Election Commission of Malaysia (SPR) &middot; <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+</body></html>

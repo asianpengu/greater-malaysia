@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#e0dbcd;--paper-2:#efeadf;--ink:#16130d;--ink-soft:#4a443a;--seal:#b23a23;--line-ink:rgba(22,19,13,0.85)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:34px 44px 30px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .chop{width:52px;height:52px}
+  .brand-txt .n{font-weight:700;font-size:20px;line-height:1}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--seal);letter-spacing:.04em;margin-top:3px}
+  .headline{font-family:'Caveat Brush',cursive;font-size:34px;color:var(--ink-soft);line-height:1}
+  .headline b{color:var(--ink)}
+  .eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:28px;transform:rotate(-2.5deg);border:2.5px solid var(--seal);padding:5px 16px;border-radius:2px}
+  /* browser window */
+  .win{flex:1;border:2.5px solid var(--line-ink);border-radius:8px;overflow:hidden;box-shadow:10px 12px 0 rgba(22,19,13,.12);display:flex;flex-direction:column;background:#fff}
+  .bar{height:46px;background:var(--paper-2);border-bottom:2px solid var(--line-ink);display:flex;align-items:center;gap:9px;padding:0 16px;flex:none}
+  .dot{width:13px;height:13px;border-radius:50%;border:1.5px solid rgba(22,19,13,.55)}
+  .dot.r{background:#d98b7f}.dot.y{background:#dcc07a}.dot.g{background:#9ec59f}
+  .addr{margin-left:14px;flex:1;max-width:520px;height:28px;background:#fff;border:1.5px solid var(--line-ink);border-radius:14px;display:flex;align-items:center;gap:8px;padding:0 14px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ink-soft)}
+  .addr .lock{font-size:11px;color:#6f9a76}
+  .shot{flex:1;overflow:hidden;background:#e9e4d8}
+  .shot img{width:100%;display:block;object-fit:cover;object-position:top center}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:26px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:26px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <div class="brand">
+      <svg class="chop" viewBox="0 0 512 512"><rect x="8" y="8" width="496" height="496" fill="#f3efe6" stroke="#16130d" stroke-width="16"/><rect x="38" y="38" width="436" height="436" fill="none" stroke="#16130d" stroke-opacity=".35" stroke-width="4"/><text x="252" y="366" text-anchor="middle" font-family="'Caveat Brush',cursive" font-size="300" fill="#16130d">GM</text><rect x="440" y="440" width="36" height="36" fill="#b23a23"/></svg>
+      <div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div>
+    </div>
+    <div class="eyebrow">a whole new look, now live</div>
+  </div>
+  <div class="win">
+    <div class="bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <div class="addr"><span class="lock">&#128274;</span> greatermalaysia.com</div>
+    </div>
+    <div class="shot"><img src="/assets/hero-shot.png" alt="Greater Malaysia homepage"></div>
+  </div>
+  <div class="foot">
+    <div class="site">greatermalaysia.com</div>
+    <div class="tag">free live tools on Malaysia's open data &middot; <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+</body></html>

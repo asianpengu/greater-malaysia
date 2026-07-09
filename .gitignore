@@ -9,3 +9,7 @@
 # Dependencies (none used, but just in case)
 node_modules
 .gstack/
+
+# Local-only: internal tooling state + original design-spec upload (input artifact)
+.context/
+design_handoff_greater_malaysia/
