@@ -1,10 +1,10 @@
 {
-  "asof": "2026-06-30",
+  "asof": "2026-07",
   "currency": "RM",
   "verified": false,
-  "note": "DRAFT snapshot. Market caps are indicative estimates pending verification against Bursa Malaysia filings, or replacement with a live licensed feed. Not for publication.",
+  "note": "Approximate market caps, rounded, as of July 2026. Verify current figures on Bursa Malaysia. Refreshed periodically (no free live Bursa feed exists).",
   "source": {
-    "name": "Bursa Malaysia (main market listings)",
+    "name": "Bursa Malaysia (approximate)",
     "url": "https://www.bursamalaysia.com"
   },
   "companies": [
@@ -46,15 +46,6 @@
     },
     {
       "rank": 5,
-      "name": "CelcomDigi",
-      "ticker": "6947",
-      "sector": "Telco",
-      "mcap_bn": 46,
-      "sym": "6947.KL",
-      "shares_m": 11728
-    },
-    {
-      "rank": 6,
       "name": "IHH Healthcare",
       "ticker": "5225",
       "sector": "Healthcare",
@@ -63,13 +54,22 @@
       "shares_m": 8807
     },
     {
+      "rank": 6,
+      "name": "CelcomDigi",
+      "ticker": "6947",
+      "sector": "Telco",
+      "mcap_bn": 46,
+      "sym": "6947.KL",
+      "shares_m": 11728
+    },
+    {
       "rank": 7,
-      "name": "Petronas Chemicals",
-      "ticker": "5183",
-      "sector": "Chemicals",
-      "mcap_bn": 40,
-      "sym": "5183.KL",
-      "shares_m": 8000
+      "name": "Press Metal Aluminium",
+      "ticker": "8869",
+      "sector": "Materials",
+      "mcap_bn": 44,
+      "sym": "8869.KL",
+      "shares_m": 8242
     },
     {
       "rank": 8,
@@ -82,6 +82,15 @@
     },
     {
       "rank": 9,
+      "name": "Petronas Chemicals",
+      "ticker": "5183",
+      "sector": "Chemicals",
+      "mcap_bn": 40,
+      "sym": "5183.KL",
+      "shares_m": 8000
+    },
+    {
+      "rank": 10,
       "name": "Petronas Gas",
       "ticker": "6033",
       "sector": "Utilities",
@@ -90,61 +99,7 @@
       "shares_m": 1978
     },
     {
-      "rank": 10,
-      "name": "Press Metal Aluminium",
-      "ticker": "8869",
-      "sector": "Materials",
-      "mcap_bn": 44,
-      "sym": "8869.KL",
-      "shares_m": 8242
-    },
-    {
       "rank": 11,
-      "name": "Maxis",
-      "ticker": "6012",
-      "sector": "Telco",
-      "mcap_bn": 28,
-      "sym": "6012.KL",
-      "shares_m": 7833
-    },
-    {
-      "rank": 12,
-      "name": "Sime Darby",
-      "ticker": "4197",
-      "sector": "Conglomerate",
-      "mcap_bn": 16,
-      "sym": "4197.KL",
-      "shares_m": 6800
-    },
-    {
-      "rank": 13,
-      "name": "Nestle Malaysia",
-      "ticker": "4707",
-      "sector": "Consumer",
-      "mcap_bn": 27,
-      "sym": "4707.KL",
-      "shares_m": 234.5
-    },
-    {
-      "rank": 14,
-      "name": "RHB Bank",
-      "ticker": "1066",
-      "sector": "Banking",
-      "mcap_bn": 24,
-      "sym": "1066.KL",
-      "shares_m": 4300
-    },
-    {
-      "rank": 15,
-      "name": "Hong Leong Financial Group",
-      "ticker": "1082",
-      "sector": "Banking",
-      "mcap_bn": 22,
-      "sym": "1082.KL",
-      "shares_m": 1147
-    },
-    {
-      "rank": 16,
       "name": "MISC",
       "ticker": "3816",
       "sector": "Shipping",
@@ -153,34 +108,7 @@
       "shares_m": 4464
     },
     {
-      "rank": 17,
-      "name": "Axiata Group",
-      "ticker": "6888",
-      "sector": "Telco",
-      "mcap_bn": 22,
-      "sym": "6888.KL",
-      "shares_m": 9180
-    },
-    {
-      "rank": 18,
-      "name": "PPB Group",
-      "ticker": "4065",
-      "sector": "Consumer",
-      "mcap_bn": 20,
-      "sym": "4065.KL",
-      "shares_m": 1423
-    },
-    {
-      "rank": 19,
-      "name": "Telekom Malaysia",
-      "ticker": "4863",
-      "sector": "Telco",
-      "mcap_bn": 26,
-      "sym": "4863.KL",
-      "shares_m": 3834
-    },
-    {
-      "rank": 20,
+      "rank": 12,
       "name": "SD Guthrie",
       "ticker": "5285",
       "sector": "Plantation",
@@ -189,61 +117,7 @@
       "shares_m": 6915
     },
     {
-      "rank": 21,
-      "name": "Genting",
-      "ticker": "3182",
-      "sector": "Leisure",
-      "mcap_bn": 16,
-      "sym": "3182.KL",
-      "shares_m": 3850
-    },
-    {
-      "rank": 22,
-      "name": "Genting Malaysia",
-      "ticker": "4715",
-      "sector": "Leisure",
-      "mcap_bn": 12,
-      "sym": "4715.KL",
-      "shares_m": 5659
-    },
-    {
-      "rank": 23,
-      "name": "IOI Corporation",
-      "ticker": "1961",
-      "sector": "Plantation",
-      "mcap_bn": 24,
-      "sym": "1961.KL",
-      "shares_m": 6197
-    },
-    {
-      "rank": 24,
-      "name": "Kuala Lumpur Kepong (KLK)",
-      "ticker": "2445",
-      "sector": "Plantation",
-      "mcap_bn": 23,
-      "sym": "2445.KL",
-      "shares_m": 1078
-    },
-    {
-      "rank": 25,
-      "name": "Gamuda",
-      "ticker": "5398",
-      "sector": "Construction",
-      "mcap_bn": 28,
-      "sym": "5398.KL",
-      "shares_m": 8700
-    },
-    {
-      "rank": 26,
-      "name": "YTL Corporation",
-      "ticker": "4677",
-      "sector": "Conglomerate",
-      "mcap_bn": 26,
-      "sym": "4677.KL",
-      "shares_m": 10900
-    },
-    {
-      "rank": 27,
+      "rank": 13,
       "name": "YTL Power International",
       "ticker": "6742",
       "sector": "Utilities",
@@ -252,7 +126,97 @@
       "shares_m": 8130
     },
     {
-      "rank": 28,
+      "rank": 14,
+      "name": "Maxis",
+      "ticker": "6012",
+      "sector": "Telco",
+      "mcap_bn": 28,
+      "sym": "6012.KL",
+      "shares_m": 7833
+    },
+    {
+      "rank": 15,
+      "name": "Gamuda",
+      "ticker": "5398",
+      "sector": "Construction",
+      "mcap_bn": 28,
+      "sym": "5398.KL",
+      "shares_m": 8700
+    },
+    {
+      "rank": 16,
+      "name": "Nestle Malaysia",
+      "ticker": "4707",
+      "sector": "Consumer",
+      "mcap_bn": 27,
+      "sym": "4707.KL",
+      "shares_m": 234.5
+    },
+    {
+      "rank": 17,
+      "name": "Telekom Malaysia",
+      "ticker": "4863",
+      "sector": "Telco",
+      "mcap_bn": 26,
+      "sym": "4863.KL",
+      "shares_m": 3834
+    },
+    {
+      "rank": 18,
+      "name": "YTL Corporation",
+      "ticker": "4677",
+      "sector": "Conglomerate",
+      "mcap_bn": 26,
+      "sym": "4677.KL",
+      "shares_m": 10900
+    },
+    {
+      "rank": 19,
+      "name": "RHB Bank",
+      "ticker": "1066",
+      "sector": "Banking",
+      "mcap_bn": 24,
+      "sym": "1066.KL",
+      "shares_m": 4300
+    },
+    {
+      "rank": 20,
+      "name": "IOI Corporation",
+      "ticker": "1961",
+      "sector": "Plantation",
+      "mcap_bn": 24,
+      "sym": "1961.KL",
+      "shares_m": 6197
+    },
+    {
+      "rank": 21,
+      "name": "Kuala Lumpur Kepong (KLK)",
+      "ticker": "2445",
+      "sector": "Plantation",
+      "mcap_bn": 23,
+      "sym": "2445.KL",
+      "shares_m": 1078
+    },
+    {
+      "rank": 22,
+      "name": "Hong Leong Financial Group",
+      "ticker": "1082",
+      "sector": "Banking",
+      "mcap_bn": 22,
+      "sym": "1082.KL",
+      "shares_m": 1147
+    },
+    {
+      "rank": 23,
+      "name": "Axiata Group",
+      "ticker": "6888",
+      "sector": "Telco",
+      "mcap_bn": 22,
+      "sym": "6888.KL",
+      "shares_m": 9180
+    },
+    {
+      "rank": 24,
       "name": "Petronas Dagangan",
       "ticker": "5681",
       "sector": "Retail fuel",
@@ -261,16 +225,43 @@
       "shares_m": 993
     },
     {
-      "rank": 29,
-      "name": "QL Resources",
-      "ticker": "7084",
+      "rank": 25,
+      "name": "PPB Group",
+      "ticker": "4065",
       "sector": "Consumer",
-      "mcap_bn": 12,
-      "sym": "7084.KL",
-      "shares_m": 2434
+      "mcap_bn": 20,
+      "sym": "4065.KL",
+      "shares_m": 1423
     },
     {
-      "rank": 30,
+      "rank": 26,
+      "name": "99 Speed Mart Retail",
+      "ticker": "5326",
+      "sector": "Retail",
+      "mcap_bn": 18,
+      "sym": "5326.KL",
+      "shares_m": 8400
+    },
+    {
+      "rank": 27,
+      "name": "Sime Darby",
+      "ticker": "4197",
+      "sector": "Conglomerate",
+      "mcap_bn": 16,
+      "sym": "4197.KL",
+      "shares_m": 6800
+    },
+    {
+      "rank": 28,
+      "name": "Genting",
+      "ticker": "3182",
+      "sector": "Leisure",
+      "mcap_bn": 16,
+      "sym": "3182.KL",
+      "shares_m": 3850
+    },
+    {
+      "rank": 29,
       "name": "Mr DIY Group",
       "ticker": "5296",
       "sector": "Retail",
@@ -279,13 +270,22 @@
       "shares_m": 9429
     },
     {
+      "rank": 30,
+      "name": "Genting Malaysia",
+      "ticker": "4715",
+      "sector": "Leisure",
+      "mcap_bn": 12,
+      "sym": "4715.KL",
+      "shares_m": 5659
+    },
+    {
       "rank": 31,
-      "name": "99 Speed Mart Retail",
-      "ticker": "5326",
-      "sector": "Retail",
-      "mcap_bn": 18,
-      "sym": "5326.KL",
-      "shares_m": 8400
+      "name": "QL Resources",
+      "ticker": "7084",
+      "sector": "Consumer",
+      "mcap_bn": 12,
+      "sym": "7084.KL",
+      "shares_m": 2434
     },
     {
       "rank": 32,

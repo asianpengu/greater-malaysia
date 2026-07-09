@@ -21,9 +21,9 @@ export default async function handler(req, res) {
   res.status(200).json({
     live: false,
     basis: "snapshot",
-    asof: "2026-06-30",
-    note: "Indicative snapshot. Live figures require a paid Bursa-capable data feed.",
-    source: { name: "Bursa Malaysia (indicative)", url: "https://www.bursamalaysia.com" },
+    asof: "2026-07",
+    note: "Approximate figures, refreshed periodically. Live figures require a paid Bursa-capable data feed.",
+    source: { name: "Bursa Malaysia (approximate)", url: "https://www.bursamalaysia.com" },
     provider: "Greater Malaysia (greatermalaysia.com)",
     companies: roster.slice().sort((a, b) => b.mcap_bn - a.mcap_bn)
       .map((c, i) => ({ rank: i + 1, name: c.name, ticker: c.ticker, sector: c.sector, mcap_bn: c.mcap_bn, price: null, change_pct: null }))
