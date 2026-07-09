@@ -14,7 +14,8 @@
       "ticker": "1155",
       "sector": "Banking",
       "mcap_bn": 122,
-      "sym": "1155.KL"
+      "sym": "1155.KL",
+      "shares_m": 12065
     },
     {
       "rank": 2,
@@ -22,7 +23,8 @@
       "ticker": "1295",
       "sector": "Banking",
       "mcap_bn": 88,
-      "sym": "1295.KL"
+      "sym": "1295.KL",
+      "shares_m": 19414
     },
     {
       "rank": 3,
@@ -30,7 +32,8 @@
       "ticker": "5347",
       "sector": "Utilities",
       "mcap_bn": 82,
-      "sym": "5347.KL"
+      "sym": "5347.KL",
+      "shares_m": 5791
     },
     {
       "rank": 4,
@@ -38,7 +41,8 @@
       "ticker": "1023",
       "sector": "Banking",
       "mcap_bn": 78,
-      "sym": "1023.KL"
+      "sym": "1023.KL",
+      "shares_m": 10734
     },
     {
       "rank": 5,
@@ -46,7 +50,8 @@
       "ticker": "6947",
       "sector": "Telco",
       "mcap_bn": 46,
-      "sym": "6947.KL"
+      "sym": "6947.KL",
+      "shares_m": 11728
     },
     {
       "rank": 6,
@@ -54,7 +59,8 @@
       "ticker": "5225",
       "sector": "Healthcare",
       "mcap_bn": 62,
-      "sym": "5225.KL"
+      "sym": "5225.KL",
+      "shares_m": 8807
     },
     {
       "rank": 7,
@@ -62,7 +68,8 @@
       "ticker": "5183",
       "sector": "Chemicals",
       "mcap_bn": 40,
-      "sym": "5183.KL"
+      "sym": "5183.KL",
+      "shares_m": 8000
     },
     {
       "rank": 8,
@@ -70,7 +77,8 @@
       "ticker": "5819",
       "sector": "Banking",
       "mcap_bn": 42,
-      "sym": "5819.KL"
+      "sym": "5819.KL",
+      "shares_m": 2168
     },
     {
       "rank": 9,
@@ -78,7 +86,8 @@
       "ticker": "6033",
       "sector": "Utilities",
       "mcap_bn": 36,
-      "sym": "6033.KL"
+      "sym": "6033.KL",
+      "shares_m": 1978
     },
     {
       "rank": 10,
@@ -86,7 +95,8 @@
       "ticker": "8869",
       "sector": "Materials",
       "mcap_bn": 44,
-      "sym": "8869.KL"
+      "sym": "8869.KL",
+      "shares_m": 8242
     },
     {
       "rank": 11,
@@ -94,7 +104,8 @@
       "ticker": "6012",
       "sector": "Telco",
       "mcap_bn": 28,
-      "sym": "6012.KL"
+      "sym": "6012.KL",
+      "shares_m": 7833
     },
     {
       "rank": 12,
@@ -102,7 +113,8 @@
       "ticker": "4197",
       "sector": "Conglomerate",
       "mcap_bn": 16,
-      "sym": "4197.KL"
+      "sym": "4197.KL",
+      "shares_m": 6800
     },
     {
       "rank": 13,
@@ -110,7 +122,8 @@
       "ticker": "4707",
       "sector": "Consumer",
       "mcap_bn": 27,
-      "sym": "4707.KL"
+      "sym": "4707.KL",
+      "shares_m": 234.5
     },
     {
       "rank": 14,
@@ -118,7 +131,8 @@
       "ticker": "1066",
       "sector": "Banking",
       "mcap_bn": 24,
-      "sym": "1066.KL"
+      "sym": "1066.KL",
+      "shares_m": 4300
     },
     {
       "rank": 15,
@@ -126,7 +140,8 @@
       "ticker": "1082",
       "sector": "Banking",
       "mcap_bn": 22,
-      "sym": "1082.KL"
+      "sym": "1082.KL",
+      "shares_m": 1147
     },
     {
       "rank": 16,
@@ -134,7 +149,8 @@
       "ticker": "3816",
       "sector": "Shipping",
       "mcap_bn": 34,
-      "sym": "3816.KL"
+      "sym": "3816.KL",
+      "shares_m": 4464
     },
     {
       "rank": 17,
@@ -142,7 +158,8 @@
       "ticker": "6888",
       "sector": "Telco",
       "mcap_bn": 22,
-      "sym": "6888.KL"
+      "sym": "6888.KL",
+      "shares_m": 9180
     },
     {
       "rank": 18,
@@ -150,7 +167,8 @@
       "ticker": "4065",
       "sector": "Consumer",
       "mcap_bn": 20,
-      "sym": "4065.KL"
+      "sym": "4065.KL",
+      "shares_m": 1423
     },
     {
       "rank": 19,
@@ -158,7 +176,8 @@
       "ticker": "4863",
       "sector": "Telco",
       "mcap_bn": 26,
-      "sym": "4863.KL"
+      "sym": "4863.KL",
+      "shares_m": 3834
     },
     {
       "rank": 20,
@@ -166,7 +185,8 @@
       "ticker": "5285",
       "sector": "Plantation",
       "mcap_bn": 33,
-      "sym": "5285.KL"
+      "sym": "5285.KL",
+      "shares_m": 6915
     },
     {
       "rank": 21,
@@ -174,7 +194,8 @@
       "ticker": "3182",
       "sector": "Leisure",
       "mcap_bn": 16,
-      "sym": "3182.KL"
+      "sym": "3182.KL",
+      "shares_m": 3850
     },
     {
       "rank": 22,
@@ -182,7 +203,8 @@
       "ticker": "4715",
       "sector": "Leisure",
       "mcap_bn": 12,
-      "sym": "4715.KL"
+      "sym": "4715.KL",
+      "shares_m": 5659
     },
     {
       "rank": 23,
@@ -190,7 +212,8 @@
       "ticker": "1961",
       "sector": "Plantation",
       "mcap_bn": 24,
-      "sym": "1961.KL"
+      "sym": "1961.KL",
+      "shares_m": 6197
     },
     {
       "rank": 24,
@@ -198,7 +221,8 @@
       "ticker": "2445",
       "sector": "Plantation",
       "mcap_bn": 23,
-      "sym": "2445.KL"
+      "sym": "2445.KL",
+      "shares_m": 1078
     },
     {
       "rank": 25,
@@ -206,7 +230,8 @@
       "ticker": "5398",
       "sector": "Construction",
       "mcap_bn": 28,
-      "sym": "5398.KL"
+      "sym": "5398.KL",
+      "shares_m": 8700
     },
     {
       "rank": 26,
@@ -214,7 +239,8 @@
       "ticker": "4677",
       "sector": "Conglomerate",
       "mcap_bn": 26,
-      "sym": "4677.KL"
+      "sym": "4677.KL",
+      "shares_m": 10900
     },
     {
       "rank": 27,
@@ -222,7 +248,8 @@
       "ticker": "6742",
       "sector": "Utilities",
       "mcap_bn": 30,
-      "sym": "6742.KL"
+      "sym": "6742.KL",
+      "shares_m": 8130
     },
     {
       "rank": 28,
@@ -230,7 +257,8 @@
       "ticker": "5681",
       "sector": "Retail fuel",
       "mcap_bn": 21,
-      "sym": "5681.KL"
+      "sym": "5681.KL",
+      "shares_m": 993
     },
     {
       "rank": 29,
@@ -238,7 +266,8 @@
       "ticker": "7084",
       "sector": "Consumer",
       "mcap_bn": 12,
-      "sym": "7084.KL"
+      "sym": "7084.KL",
+      "shares_m": 2434
     },
     {
       "rank": 30,
@@ -246,7 +275,8 @@
       "ticker": "5296",
       "sector": "Retail",
       "mcap_bn": 14,
-      "sym": "5296.KL"
+      "sym": "5296.KL",
+      "shares_m": 9429
     },
     {
       "rank": 31,
@@ -254,7 +284,8 @@
       "ticker": "5326",
       "sector": "Retail",
       "mcap_bn": 18,
-      "sym": "5326.KL"
+      "sym": "5326.KL",
+      "shares_m": 8400
     },
     {
       "rank": 32,
@@ -262,7 +293,9 @@
       "ticker": "0166",
       "sector": "Semiconductors",
       "mcap_bn": 11,
-      "sym": "0166.KL"
+      "sym": "0166.KL",
+      "shares_m": 3750
     }
-  ]
+  ],
+  "shares_note": "shares_m = issued shares in millions, best-effort, PENDING verification vs Bursa/annual reports"
 }
