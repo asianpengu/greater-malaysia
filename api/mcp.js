@@ -10,7 +10,10 @@ const TOOLS = [
   { name: "get_exchange_rate", description: "Ringgit and other exchange rates (ECB reference, via Frankfurter). Source-cited.", inputSchema: { type: "object", properties: { base: { type: "string", description: "Base currency, 3-letter code. Default USD." }, symbols: { type: "string", description: "Comma-separated target codes. Default MYR." } }, additionalProperties: false } },
   { name: "get_prayer_times", description: "Today's prayer times (waktu solat) for a Malaysian city or JAKIM zone, from JAKIM e-Solat. Source-cited.", inputSchema: { type: "object", properties: { city: { type: "string", description: "e.g. kuala-lumpur, pulau-pinang, johor-bahru" }, zone: { type: "string", description: "JAKIM zone code, e.g. WLY01. Overrides city." } }, additionalProperties: false } },
   { name: "get_public_holidays", description: "Malaysian national public holidays for a year, plus the next upcoming one. Source-cited.", inputSchema: { type: "object", properties: { year: { type: "string", description: "Four-digit year. Default 2026." } }, additionalProperties: false } },
-  { name: "get_weather", description: "Current weather and US air-quality index for a Malaysian city, from Open-Meteo. Source-cited.", inputSchema: { type: "object", properties: { city: { type: "string", description: "e.g. kuala-lumpur, kuching, kota-kinabalu" } }, additionalProperties: false } }
+  { name: "get_weather", description: "Current weather and US air-quality index for a Malaysian city, from Open-Meteo. Source-cited.", inputSchema: { type: "object", properties: { city: { type: "string", description: "e.g. kuala-lumpur, kuching, kota-kinabalu" } }, additionalProperties: false } },
+  { name: "get_inflation", description: "Malaysian headline inflation (CPI) and year-on-year rate, from DOSM. Source-cited.", inputSchema: { type: "object", properties: {}, additionalProperties: false } },
+  { name: "get_population", description: "Malaysia's total population, latest official figure from DOSM. Source-cited.", inputSchema: { type: "object", properties: {}, additionalProperties: false } },
+  { name: "get_election", description: "Malaysia's next general election (GE16): the must-be-held-by date, a countdown, and how the system works. Source-cited.", inputSchema: { type: "object", properties: {}, additionalProperties: false } }
 ];
 
 const ROUTES = {
@@ -18,7 +21,10 @@ const ROUTES = {
   get_exchange_rate: (a) => `/api/fx?base=${encodeURIComponent(a.base || "USD")}&symbols=${encodeURIComponent(a.symbols || "MYR")}`,
   get_prayer_times: (a) => `/api/prayer?city=${encodeURIComponent(a.city || "")}&zone=${encodeURIComponent(a.zone || "")}`,
   get_public_holidays: (a) => `/api/holidays?year=${encodeURIComponent(a.year || "2026")}`,
-  get_weather: (a) => `/api/weather?city=${encodeURIComponent(a.city || "kuala-lumpur")}`
+  get_weather: (a) => `/api/weather?city=${encodeURIComponent(a.city || "kuala-lumpur")}`,
+  get_inflation: () => "/api/inflation",
+  get_population: () => "/api/population",
+  get_election: () => "/api/election"
 };
 
 async function callTool(name, args, base) {

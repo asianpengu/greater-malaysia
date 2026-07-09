@@ -49,6 +49,9 @@
     <div class="ag-ep"><div class="m">GET /api/prayer?city=kuala-lumpur</div><div class="d">Today's prayer times (waktu solat) by city or JAKIM zone. Source: JAKIM e-Solat.</div></div>
     <div class="ag-ep"><div class="m">GET /api/holidays?year=2026</div><div class="d">National public holidays plus the next upcoming one. Source: official gazette.</div></div>
     <div class="ag-ep"><div class="m">GET /api/weather?city=kuala-lumpur</div><div class="d">Current weather and US air-quality index. Source: Open-Meteo.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/inflation</div><div class="d">Headline inflation (CPI) and the year-on-year rate. Source: DOSM via data.gov.my.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/population</div><div class="d">Malaysia's total population, latest official figure. Source: DOSM via data.gov.my.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/election</div><div class="d">Next general election (GE16): the must-be-held-by date, a countdown, and how the system works. Source: Federal Constitution; SPR.</div></div>
   </div>
   <pre><span class="c"># try it</span>
 curl https://greatermalaysia.com/api/fuel
@@ -57,7 +60,7 @@ curl https://greatermalaysia.com/api/fuel
 curl https://greatermalaysia.com/api</pre>
 
   <h2 class="ag-h2">MCP server</h2>
-  <p class="ag-p">Plug Greater Malaysia straight into any AI agent that speaks the <b>Model Context Protocol</b>. One endpoint, five tools: <code>get_fuel_prices</code>, <code>get_exchange_rate</code>, <code>get_prayer_times</code>, <code>get_public_holidays</code>, <code>get_weather</code>.</p>
+  <p class="ag-p">Plug Greater Malaysia straight into any AI agent that speaks the <b>Model Context Protocol</b>. One endpoint, eight tools: <code>get_fuel_prices</code>, <code>get_exchange_rate</code>, <code>get_prayer_times</code>, <code>get_public_holidays</code>, <code>get_weather</code>, <code>get_inflation</code>, <code>get_population</code>, <code>get_election</code>.</p>
   <p class="ag-p"><b>Endpoint:</b> <code>https://greatermalaysia.com/api/mcp</code> (Streamable HTTP)</p>
   <p class="ag-p">Clients that support remote MCP over HTTP:</p>
   <pre>{

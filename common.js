@@ -109,3 +109,44 @@ function toast(msg) {
   setTimeout(() => t.classList.add("show"), 15);
   clearTimeout(toastT); toastT = setTimeout(() => { t.classList.remove("show"); setTimeout(() => (t.hidden = true), 320); }, 2000);
 }
+
+/* Share row (WhatsApp / Telegram / X / copy) on stories and answer pages.
+   Inserted after the H1. Retries because story.js renders its title async. */
+function wireShare() {
+  if (document.querySelector(".gm-share")) return true;
+  const h = document.querySelector(".st-title, .ans-h1");
+  if (!h) return false;
+  const url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href.split("?")[0];
+  const title = (document.querySelector('meta[property="og:title"]') || {}).content || document.title;
+  const enc = encodeURIComponent;
+  const wa = "https://wa.me/?text=" + enc(title + "\n" + url);
+  const tg = "https://t.me/share/url?url=" + enc(url) + "&text=" + enc(title);
+  const x = "https://twitter.com/intent/tweet?text=" + enc(title) + "&url=" + enc(url);
+  const row = document.createElement("div");
+  row.className = "gm-share";
+  row.innerHTML =
+    '<span class="gs-lab">Share</span>' +
+    '<a class="gs-btn" href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' +
+    '<a class="gs-btn" href="' + tg + '" target="_blank" rel="noopener">Telegram</a>' +
+    '<a class="gs-btn" href="' + x + '" target="_blank" rel="noopener">X</a>' +
+    '<button class="gs-btn gs-copy" type="button">Copy link</button>';
+  h.insertAdjacentElement("afterend", row);
+  const copy = row.querySelector(".gs-copy");
+  copy.addEventListener("click", function () {
+    const done = function () { copy.textContent = "Copied"; setTimeout(function () { copy.textContent = "Copy link"; }, 1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done).catch(function () { fallbackCopy(url); done(); });
+    } else { fallbackCopy(url); done(); }
+  });
+  return true;
+}
+function fallbackCopy(text) {
+  const t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+  document.body.appendChild(t); t.select(); try { document.execCommand("copy"); } catch (e) { /* ignore */ }
+  document.body.removeChild(t);
+}
+(function () {
+  let tries = 0;
+  function go() { if (wireShare()) return; if (++tries < 14) setTimeout(go, 350); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+})();

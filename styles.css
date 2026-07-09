@@ -1015,3 +1015,11 @@ body[data-nav-open] .nav-sheet { display: flex; }
 .footer-v2 .foot-follow a { color: var(--paper-2); text-decoration: none; border-bottom: 1.5px solid var(--seal); padding-bottom: 1px; }
 .footer-v2 .foot-follow a:hover { color: #e9b4a6; }
 @media (max-width: 460px) { .gm-follow { flex-direction: column; } .gm-follow a { width: 100%; justify-content: center; } }
+
+/* ---- Share row (stories + answer pages): WhatsApp / Telegram / X / copy ---- */
+.gm-share { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 16px 0 22px; }
+.gm-share .gs-lab { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin-right: 2px; }
+.gm-share .gs-btn { font-family: var(--sans); font-size: 13px; font-weight: 600; line-height: 1; text-decoration: none; color: var(--ink); background: var(--paper-card); border: 1.5px solid var(--line-ink); border-radius: 2px; padding: 9px 14px; cursor: pointer; transition: background .14s ease, color .14s ease, transform .14s ease; }
+.gm-share .gs-btn:hover { background: var(--ink); color: var(--paper-2); transform: translateY(-1px); }
+.gm-share .gs-copy { font: inherit; font-size: 13px; font-weight: 600; }
+@media (max-width: 600px) { .gm-share .gs-btn { min-height: 44px; display: inline-flex; align-items: center; } }

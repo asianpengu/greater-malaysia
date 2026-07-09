@@ -15,7 +15,10 @@ export default function handler(req, res) {
       { path: "/api/fx?base=USD&symbols=MYR", desc: "Ringgit exchange rates (ECB reference)" },
       { path: "/api/prayer?city=kuala-lumpur", desc: "Prayer times (waktu solat) today, by city or JAKIM zone" },
       { path: "/api/holidays?year=2026", desc: "Malaysian national public holidays + the next one" },
-      { path: "/api/weather?city=kuala-lumpur", desc: "Current weather and US air-quality index" }
+      { path: "/api/weather?city=kuala-lumpur", desc: "Current weather and US air-quality index" },
+      { path: "/api/inflation", desc: "Headline inflation (CPI) and year-on-year rate" },
+      { path: "/api/population", desc: "Malaysia's total population (latest official figure)" },
+      { path: "/api/election", desc: "Next general election (GE16): deadline, countdown, how it works" }
     ]
   });
 }
