@@ -126,6 +126,7 @@
         '<td class="co-cap">' + fmtCap(r.mcap_bn) + chgTag(r.change_pct) + '</td>' +
       '</tr>';
     }).join("");
+    if (!rows.length) body.innerHTML = '<tr><td colspan="4" style="padding:22px 14px;text-align:center;color:var(--ink-faint)">No companies match ' + (q ? '“' + esc(q) + '”' : 'your search') + '. Try a name, ticker or sector.</td></tr>';
     document.getElementById("coCount").textContent = rows.length + " companies";
   }
   function setSort(key) {
