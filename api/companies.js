@@ -34,8 +34,13 @@ export default async function handler(req, res) {
   try {
     const syms = roster.map((c) => c.sym).filter(Boolean).join(",");
     const r = await fetch(`https://financialmodelingprep.com/api/v3/quote/${syms}?apikey=${KEY}`);
+    const raw = await r.text();
+    let quotes;
+    try { quotes = JSON.parse(raw); } catch (e) { quotes = null; }
+    if (req.query && req.query.diag) {
+      return res.status(200).json({ http_status: r.status, is_array: Array.isArray(quotes), body_preview: raw.slice(0, 400) });
+    }
     if (!r.ok) throw new Error(r.status);
-    const quotes = await r.json();
     if (!Array.isArray(quotes) || !quotes.length) throw new Error("empty");
     const byS = {};
     for (const q of quotes) byS[q.symbol] = q;
