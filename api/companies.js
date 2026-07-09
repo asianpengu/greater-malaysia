@@ -31,14 +31,15 @@ export default async function handler(req, res) {
   if (!KEY) return res.status(200).json(snapshot("Indicative snapshot. Add TWELVEDATA_API_KEY to serve live figures."));
 
   try {
-    const syms = roster.map((c) => c.ticker).filter(Boolean).join(",");
+    const allSyms = roster.map((c) => c.ticker).filter(Boolean);
+    const syms = (req.query && req.query.diag ? allSyms.slice(0, 7) : allSyms).join(",");
     const r = await fetch(`https://api.twelvedata.com/quote?symbol=${syms}&mic_code=XKLS&apikey=${KEY}`);
     const raw = await r.text();
     let data; try { data = JSON.parse(raw); } catch (e) { data = null; }
 
     if (req.query && req.query.diag) {
-      const sample = data && (data["1155"] || data.symbol ? (data["1155"] || data) : Object.values(data || {})[0]);
-      return res.status(200).json({ http_status: r.status, keys: data ? Object.keys(data).slice(0, 5) : null, sample: sample || null, body_preview: raw.slice(0, 300) });
+      const m1 = data && data["1155"];
+      return res.status(200).json({ http_status: r.status, keys: data ? Object.keys(data).slice(0, 8) : null, maybank: m1 ? { name: m1.name, close: m1.close, currency: m1.currency, percent_change: m1.percent_change, exchange: m1.exchange } : null, body_preview: raw.slice(0, 200) });
     }
 
     // Batch returns an object keyed by symbol; single returns a flat quote.
