@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#d8d2c2;--paper-card:#f3efe6;--panel:#efeadf;--ink:#16130d;--ink-soft:#4a443a;--ink-faint:#8a8272;--seal:#b23a23;--line-ink:rgba(22,19,13,0.85);--line:rgba(22,19,13,0.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:48px 58px 42px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .brand{display:flex;align-items:center;gap:15px}
+  .gm{font-family:'Caveat Brush',cursive;font-size:52px;line-height:.8}
+  .brand-txt .n{font-weight:700;font-size:20px}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--seal);letter-spacing:.04em}
+  .eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:30px;transform:rotate(-3deg);border:2.5px solid var(--seal);border-radius:40px/28px;padding:6px 20px 4px}
+  .win{flex:1;background:var(--paper-card);border:2.5px solid var(--line-ink);border-radius:14px;box-shadow:10px 10px 0 rgba(22,19,13,.1);display:flex;flex-direction:column;overflow:hidden}
+  .winbar{height:46px;flex:0 0 46px;border-bottom:2px solid var(--line-ink);display:flex;align-items:center;gap:8px;padding:0 18px;background:var(--panel)}
+  .dot{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--line-ink)}
+  .url{margin-left:14px;font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--ink-soft);background:var(--paper);border:1.5px solid var(--line);border-radius:20px;padding:5px 16px}
+  .body{flex:1;padding:22px 34px 20px;display:flex;flex-direction:column}
+  .ttl{font-family:'Anton',sans-serif;font-size:40px;line-height:.98;text-transform:uppercase;letter-spacing:.01em}
+  .inputs{display:flex;gap:12px;margin:14px 0 6px}
+  .pill{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;color:var(--ink);background:var(--paper);border:2px solid var(--line-ink);border-radius:6px;padding:9px 15px}
+  .pill.sel{display:flex;align-items:center;gap:10px}
+  .pill .cx{color:var(--ink-faint)}
+  .res{font-size:17px;color:var(--ink-soft);margin:6px 0 12px}
+  .res b{color:var(--ink)}
+  .bars{display:flex;flex-direction:column;gap:6px;flex:1;justify-content:space-between}
+  .bar{display:grid;grid-template-columns:150px 1fr 96px;gap:12px;align-items:center}
+  .bar .st{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar.on .st{font-weight:700}
+  .track{position:relative;height:19px;background:rgba(22,19,13,.07);border-radius:3px;overflow:hidden}
+  .fill{position:absolute;left:0;top:0;bottom:0;background:rgba(22,19,13,.24);border-radius:3px}
+  .bar.on .fill{background:var(--seal)}
+  .you{position:absolute;top:-24px;bottom:-24px;width:3px;background:var(--ink);z-index:3}
+  .you::after{content:"you: RM6,000";position:absolute;top:-20px;left:6px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap}
+  .val{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;text-align:right;white-space:nowrap}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:25px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:24px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <div class="brand"><div class="gm">GM</div><div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div></div>
+    <div class="eyebrow">new tool</div>
+  </div>
+  <div class="win">
+    <div class="winbar"><span class="dot" style="background:#e0655a;border-color:#c14a3f"></span><span class="dot" style="background:#e6b95a"></span><span class="dot" style="background:#7fae7a"></span><span class="url">greatermalaysia.com/household-income-by-state</span></div>
+    <div class="body">
+      <div class="ttl">How does your household income compare?</div>
+      <div class="inputs"><span class="pill">RM 6,000 / month</span><span class="pill sel">Selangor <span class="cx">&#9662;</span></span></div>
+      <div class="res">Your <b>RM6,000</b> is <b>RM4,726 below</b> the median household in <b>Selangor</b> (RM10,726).</div>
+      <div class="bars" id="bars"></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="site">greatermalaysia.com/household-income-by-state</div>
+    <div class="tag">DOSM, HIES 2024 &middot; <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+<script>
+  var S = [["Kuala Lumpur",10802],["Putrajaya",10769],["Selangor",10726],["Johor",7712],["Pulau Pinang",7386],["Labuan",7383],["Melaka",6891],["Terengganu",6627],["Negeri Sembilan",5591],["Sarawak",5504],["Pahang",4975],["Perlis",4950],["Kedah",4895],["Sabah",4890],["Perak",4687],["Kelantan",4083]];
+  var max = S[0][1], you = 6000;
+  document.getElementById("bars").innerHTML = S.map(function (s) {
+    var pct = (s[1] / max * 100).toFixed(1), on = s[0] === "Selangor";
+    var mark = s[0] === "Kuala Lumpur" ? '<span class="you" style="left:' + (you / max * 100).toFixed(1) + '%"></span>' : "";
+    return '<div class="bar' + (on ? " on" : "") + '"><span class="st">' + s[0] + '</span>' +
+      '<span class="track"><span class="fill" style="width:' + pct + '%"></span>' + mark + '</span>' +
+      '<span class="val">RM' + s[1].toLocaleString("en-US") + '</span></div>';
+  }).join("");
+</script>
+</body></html>
