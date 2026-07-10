@@ -1,0 +1,28 @@
+{
+  "asof": "2024",
+  "unit": "RM per month, household",
+  "source": {
+    "name": "Department of Statistics Malaysia (DOSM)",
+    "document": "Household Income & Expenditure Survey (HIES), 2024",
+    "url": "https://data.gov.my/data-catalogue/hies_state"
+  },
+  "note": "Median and mean gross monthly household income by state, 2024. Poverty is the absolute poverty rate; Gini is the income inequality coefficient (0 = perfectly equal). Household income, not individual salary.",
+  "states": [
+    { "rank": 1, "state": "W.P. Kuala Lumpur", "median": 10802, "mean": 13985, "poverty": 1.0, "gini": 0.375 },
+    { "rank": 2, "state": "W.P. Putrajaya", "median": 10769, "mean": 13846, "poverty": 0.2, "gini": 0.324 },
+    { "rank": 3, "state": "Selangor", "median": 10726, "mean": 13296, "poverty": 0.9, "gini": 0.332 },
+    { "rank": 4, "state": "Johor", "median": 7712, "mean": 9484, "poverty": 2.5, "gini": 0.348 },
+    { "rank": 5, "state": "Pulau Pinang", "median": 7386, "mean": 9152, "poverty": 1.9, "gini": 0.311 },
+    { "rank": 6, "state": "W.P. Labuan", "median": 7383, "mean": 8555, "poverty": 2.0, "gini": 0.327 },
+    { "rank": 7, "state": "Melaka", "median": 6891, "mean": 8686, "poverty": 3.0, "gini": 0.337 },
+    { "rank": 8, "state": "Terengganu", "median": 6627, "mean": 7627, "poverty": 5.8, "gini": 0.263 },
+    { "rank": 9, "state": "Negeri Sembilan", "median": 5591, "mean": 7305, "poverty": 4.0, "gini": 0.343 },
+    { "rank": 10, "state": "Sarawak", "median": 5504, "mean": 6947, "poverty": 8.4, "gini": 0.361 },
+    { "rank": 11, "state": "Pahang", "median": 4975, "mean": 6066, "poverty": 5.9, "gini": 0.319 },
+    { "rank": 12, "state": "Perlis", "median": 4950, "mean": 5996, "poverty": 3.6, "gini": 0.334 },
+    { "rank": 13, "state": "Kedah", "median": 4895, "mean": 5793, "poverty": 8.4, "gini": 0.334 },
+    { "rank": 14, "state": "Sabah", "median": 4890, "mean": 6498, "poverty": 17.7, "gini": 0.405 },
+    { "rank": 15, "state": "Perak", "median": 4687, "mean": 6173, "poverty": 6.9, "gini": 0.298 },
+    { "rank": 16, "state": "Kelantan", "median": 4083, "mean": 5265, "poverty": 11.5, "gini": 0.356 }
+  ]
+}
