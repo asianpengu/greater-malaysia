@@ -13,3 +13,10 @@ node_modules
 # Local-only: internal tooling state + original design-spec upload (input artifact)
 .context/
 design_handoff_greater_malaysia/
+
+# Local-only operator tooling (daily posting kit + content calendar) — never publish
+posting-kit.html
+data/daily-cards.json
+assets/daily/
+scripts/gen-posting-kit.mjs
+scripts/gen-daily-card.mjs
