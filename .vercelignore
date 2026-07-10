@@ -1,6 +1,9 @@
-# README screenshots — keep in the repo, don't ship 7MB to production
-docs
-# tooling
-scripts
-LICENSE
-README.md
+# Local-only operator tooling and internal artifacts — never deploy to any environment
+posting-kit.html
+data/daily-cards.json
+assets/daily/
+scripts/gen-posting-kit.mjs
+scripts/gen-daily-card.mjs
+assets/sharecard-*.html
+design_handoff_greater_malaysia/
+.context/
