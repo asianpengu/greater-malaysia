@@ -136,3 +136,14 @@
 /* one seal element per chart: keep mean series neutral grey, not blue */
 .sw-mean, .trend-svg .bar-mean, .hb-bar.mean { background: var(--chart-neutral); }
 .trend-svg .bar-mean { fill: var(--chart-neutral); }
+
+/* ---- Read next: related-story cards (retention + internal linking) ---- */
+.st-related { margin: 42px 0 6px; }
+.st-related h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(18px,3vw,22px); letter-spacing: .4px; margin: 0 0 14px; }
+.st-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.st-related-card { display: flex; flex-direction: column; gap: 6px; padding: 16px 17px; border: 2px solid var(--line-ink); border-radius: var(--r, 4px); background: var(--paper-card); text-decoration: none; color: var(--ink); transition: transform .14s ease, box-shadow .14s ease; }
+.st-related-card:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 rgba(22,19,13,.10); }
+.rc-tag { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--seal); }
+.rc-title { font-weight: 700; font-size: 16px; line-height: 1.25; }
+.rc-sub { font-size: 13px; color: var(--ink-soft); line-height: 1.4; }
+@media (max-width: 720px) { .st-related-grid { grid-template-columns: 1fr; } }

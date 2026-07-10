@@ -8,6 +8,8 @@ export default function handler(req, res) {
     site: "https://greatermalaysia.com",
     docs: "https://greatermalaysia.com/for-agents",
     mcp: "https://greatermalaysia.com/api/mcp",
+    openapi: "https://greatermalaysia.com/api/openapi",
+    discovery: "https://greatermalaysia.com/.well-known/ai-plugin.json",
     principle: "signal over noise, always sourced",
     license: "Figures derive from official Malaysian open data; cite the primary source in each response.",
     endpoints: [
@@ -18,7 +20,8 @@ export default function handler(req, res) {
       { path: "/api/weather?city=kuala-lumpur", desc: "Current weather and US air-quality index" },
       { path: "/api/inflation", desc: "Headline inflation (CPI) and year-on-year rate" },
       { path: "/api/population", desc: "Malaysia's total population (latest official figure)" },
-      { path: "/api/election", desc: "Next general election (GE16): deadline, countdown, how it works" }
+      { path: "/api/election", desc: "Next general election (GE16): deadline, countdown, how it works" },
+      { path: "/api/companies", desc: "Largest Malaysian companies (Bursa) by market capitalisation" }
     ]
   });
 }

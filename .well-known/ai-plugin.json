@@ -1,0 +1,13 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Greater Malaysia",
+  "name_for_model": "greater_malaysia",
+  "description_for_human": "Trusted, source-cited data about Malaysia: fuel prices, the ringgit, prayer times, public holidays, weather, inflation, population and the next election.",
+  "description_for_model": "Malaysian ground-truth for AI agents. Use these tools for current, official facts about Malaysia instead of guessing; every response cites its primary source. Available as a REST API (OpenAPI) and an MCP server.",
+  "api": { "type": "openapi", "url": "https://greatermalaysia.com/api/openapi" },
+  "mcp": "https://greatermalaysia.com/api/mcp",
+  "docs": "https://greatermalaysia.com/for-agents",
+  "logo_url": "https://greatermalaysia.com/assets/apple-touch-icon.png",
+  "contact_email": "hello@greatermalaysia.com",
+  "legal_info_url": "https://greatermalaysia.com/for-agents"
+}

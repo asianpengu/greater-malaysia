@@ -44,6 +44,21 @@ function metricsOf(s) {
   return [{ key: "value", label: s.valueLabel || "Value", color: "seal", fmt: s.fmt || "num" }];
 }
 
+/* ---------- related stories: same tag first, then most recent ---------- */
+const STORY_INDEX = (() => { try { const raw = JSON.parse(readFileSync(join(ROOT, "data", "stories-index.json"), "utf8")); return Array.isArray(raw) ? raw : (raw.stories || []); } catch { return []; } })();
+function relatedFor(slug) {
+  const self = STORY_INDEX.find((x) => x.slug === slug) || {};
+  const others = STORY_INDEX.filter((x) => x.slug !== slug);
+  const sameTag = others.filter((x) => x.tag && self.tag && x.tag === self.tag);
+  const rest = others.filter((x) => !(x.tag && self.tag && x.tag === self.tag));
+  return [...sameTag, ...rest].slice(0, 3);
+}
+function readNextBlock(d) {
+  const rel = relatedFor(d.slug);
+  if (!rel.length) return "";
+  return `<div class="st-related"><h3>Read next</h3><div class="st-related-grid">${rel.map((r) => `<a class="st-related-card" href="${esc(r.url)}"><span class="rc-tag">${esc(r.tag || "Data story")}</span><span class="rc-title">${esc(r.title)}</span><span class="rc-sub">${esc(r.subtitle || "")}</span></a>`).join("")}</div></div>`;
+}
+
 /* ---------- render (mirrors stories/story.js buildStory) ---------- */
 function buildStory(d) {
   const s = d.source, parts = [];
@@ -89,6 +104,8 @@ function buildStory(d) {
   if (d.faq?.length) parts.push(`
     <div class="st-faq"><h3>Frequently asked</h3>
       ${d.faq.map((f) => `<details><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join("")}</div>`);
+
+  parts.push(readNextBlock(d));
 
   parts.push(`
     <div class="st-capture">
@@ -192,7 +209,12 @@ function schemaOf(d) {
       "url": "https://greatermalaysia.com/stories/" + d.slug },
     { "@type": "FAQPage", "mainEntity": (d.faq || []).map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) },
     { "@type": "Article", "headline": d.title, "dateModified": d.updated, "publisher": { "@type": "Organization", "name": "Greater Malaysia" },
-      "citation": { "@type": "CreativeWork", "name": s.document, "publisher": s.publisher, "url": s.url } }
+      "citation": { "@type": "CreativeWork", "name": s.document, "publisher": s.publisher, "url": s.url } },
+    { "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://greatermalaysia.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Data stories", "item": "https://greatermalaysia.com/stories/" },
+      { "@type": "ListItem", "position": 3, "name": d.title, "item": "https://greatermalaysia.com/stories/" + d.slug }
+    ] }
   ];
   return { "@context": "https://schema.org", "@graph": graph };
 }
