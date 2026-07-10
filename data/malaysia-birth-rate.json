@@ -1,0 +1,72 @@
+{
+  "slug": "malaysia-birth-rate",
+  "kind": "data-story",
+  "title": "Is Malaysia having fewer babies?",
+  "subtitle": "Yes, and quickly. Births are near a 24-year low, and fertility has fallen well below the level that replaces the population.",
+  "question": "Is Malaysia's birth rate falling?",
+  "answer": "Yes, sharply. Malaysia registered 414,918 live births in 2024, the fewest in at least 24 years, and the crude birth rate has more than halved since 2000, from 22.9 to 12.2 per 1,000 people. The total fertility rate is now 1.6 children per woman, well below the 2.1 needed to replace the population. Malaysians are having fewer children, and having them later.",
+  "updated": "2026-07-10",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM)",
+    "publisher_type": "Government, national statistics office",
+    "document": "Vital Statistics, Malaysia: annual live births and fertility",
+    "published": "2025",
+    "url": "https://data.gov.my/data-catalogue/births_annual",
+    "retrieved": "2026-07-10",
+    "license": "Official DOSM open data (data.gov.my)",
+    "notes": "Annual live births and the crude birth rate (per 1,000 people) are DOSM vital statistics, 2000 to 2024. Total fertility rate (children a woman would have across her lifetime at current rates) and age-specific fertility rates are DOSM figures; the fertility series runs 1958 to 2024. Replacement-level fertility is about 2.1 children per woman. Trend years shown are selected points from the full series."
+  },
+  "headline": [
+    { "label": "Live births in 2024", "value": "414,918", "sub": "the fewest in at least 24 years", "note": "DOSM" },
+    { "label": "Babies per woman", "value": "1.6", "sub": "total fertility rate (2024)", "note": "replacement = 2.1" },
+    { "label": "Crude birth rate", "value": "12.2", "sub": "per 1,000 people, was 22.9 in 2000", "note": "2024" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Babies per woman, 1970 to 2024",
+      "note": "Total fertility rate: the number of children a woman would have over her lifetime at current rates. Malaysia crossed below the 2.1 replacement line around 2013 and has kept falling. Selected years shown.",
+      "ref": "total fertility rate, 1970-2024",
+      "unit": "children per woman",
+      "x": "year",
+      "metrics": [{ "key": "tfr", "label": "Total fertility rate", "color": "ink", "fmt": "num" }],
+      "rows": [
+        { "year": "1970", "tfr": 4.88 },
+        { "year": "1980", "tfr": 3.99 },
+        { "year": "1990", "tfr": 3.49 },
+        { "year": "2000", "tfr": 2.93 },
+        { "year": "2010", "tfr": 2.14 },
+        { "year": "2015", "tfr": 2.0 },
+        { "year": "2020", "tfr": 1.71 },
+        { "year": "2024", "tfr": 1.6 }
+      ]
+    },
+    "by_age": {
+      "title": "When Malaysian women have children",
+      "note": "Births per 1,000 women in each age group (2024). The peak has moved into the early thirties, motherhood is starting later, and births to women in their twenties have thinned.",
+      "ref": "age-specific fertility rate, 2024",
+      "unit": "births per 1,000 women",
+      "metrics": [{ "key": "rate", "label": "Fertility rate", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "15-19", "rate": 6 },
+        { "label": "20-24", "rate": 34 },
+        { "label": "25-29", "rate": 93 },
+        { "label": "30-34", "rate": 100 },
+        { "label": "35-39", "rate": 59 },
+        { "label": "40-44", "rate": 17 },
+        { "label": "45-49", "rate": 1 }
+      ]
+    }
+  },
+  "takeaways": [
+    "Malaysia registered **414,918** live births in 2024, the **fewest in at least 24 years**, down from 537,853 in 2000.",
+    "The **total fertility rate is 1.6** children per woman, well below the **2.1** replacement level. Malaysia slipped below replacement around **2013** and has kept falling, from 4.9 in 1970 and 2.9 in 2000.",
+    "The crude birth rate has **more than halved** since 2000, from **22.9 to 12.2** births per 1,000 people.",
+    "Malaysians are having children **later**: the peak fertility age group is now **30-34**, and births to women in their twenties have dropped away.",
+    "Fewer babies now points to a **faster-ageing society** and a smaller future workforce, which shapes pensions, healthcare, schools and housing for decades."
+  ],
+  "faq": [
+    { "q": "How many babies were born in Malaysia in 2024?", "a": "About 414,918 live births were registered in 2024, according to the Department of Statistics Malaysia (DOSM), the lowest annual total in at least 24 years (it was 537,853 in 2000)." },
+    { "q": "What is Malaysia's fertility rate?", "a": "Malaysia's total fertility rate was 1.6 children per woman in 2024, well below the replacement level of about 2.1. It has fallen from 4.9 in 1970 and 2.9 in 2000, dipping below replacement around 2013." },
+    { "q": "Why is Malaysia's birth rate falling?", "a": "DOSM's figures show Malaysians are having children later, with the peak fertility age group now 30-34 and far fewer births to women in their twenties. The data measures the trend rather than the causes; commonly cited factors include cost of living, housing, careers and childcare." }
+  ]
+}

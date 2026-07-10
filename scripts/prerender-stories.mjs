@@ -93,9 +93,9 @@ function buildStory(d) {
   parts.push(`
     <div class="st-capture">
       <div class="cap-k">stay in the know</div>
-      <h3>Malaysia, decoded weekly</h3>
-      <p>One email a week, the numbers that run the country, pulled straight from the source. No spam, unsubscribe anytime.</p>
-      <form class="cap-form" id="capForm">
+      <h3>Malaysia, decoded monthly</h3>
+      <p>One email a month, the numbers that run the country, pulled straight from the source. No spam, unsubscribe anytime.</p>
+      <div class="gm-follow"><a class="wa" href="https://whatsapp.com/channel/0029VbDHuM159PwO04A3Mo2G" target="_blank" rel="noopener">Follow on WhatsApp</a><a class="tg" href="https://t.me/GreaterMalaysia" target="_blank" rel="noopener">Follow on Telegram</a></div><div class="gm-or">or by email</div><form class="cap-form" id="capForm">
         <input type="email" id="capEmail" name="${EMAIL_FIELD}" placeholder="you@email.com" required />
         <button type="submit">Get the brief</button>
       </form>
@@ -212,17 +212,18 @@ for (const file of files) {
   if (!m) { console.warn(`skip ${file} — no STORY_DATA_URL`); continue; }
   const d = JSON.parse(readFileSync(join(ROOT, m[1]), "utf8"));
 
-  const main = `<main class="story" id="story"><!-- pre-rendered by scripts/prerender-stories.mjs — do not edit by hand, edit ${m[1]} and re-run --><div id="storyRoot" data-prerendered="true">${buildStory(d)}</div></main>`;
+  const main = `<main class="story" id="story"><!-- pre-rendered by scripts/prerender-stories.mjs, do not edit by hand, edit ${m[1]} and re-run --><div id="storyRoot" data-prerendered="true">${buildStory(d)}</div></main>`;
   const ld = `<script type="application/ld+json" id="ldjson">${JSON.stringify(schemaOf(d)).replace(/</g, "\\u003c")}</script>`;
   const foot = `<p class="footer-sources" id="footerSrc">${footerSrc(d.source)}</p>`;
 
   const reMain = /<main class="story" id="story">[\s\S]*?<\/main>/;
   const reLd = /<script type="application\/ld\+json" id="ldjson">[\s\S]*?<\/script>/;
   const reFoot = /<p class="footer-sources" id="footerSrc">[\s\S]*?<\/p>/;
-  if (!reMain.test(html) || !reLd.test(html) || !reFoot.test(html)) {
+  if (!reMain.test(html) || !reLd.test(html)) {
     console.error(`FAIL ${file} — expected markers not found`); process.exitCode = 1; continue;
   }
-  html = html.replace(reMain, main).replace(reLd, ld).replace(reFoot, foot);
+  html = html.replace(reMain, main).replace(reLd, ld);
+  if (reFoot.test(html)) html = html.replace(reFoot, foot); // footer sources line is static post-redesign; only bake if the legacy marker exists
   writeFileSync(path, html);
   baked++;
   console.log(`baked ${file} ← ${m[1]}`);
