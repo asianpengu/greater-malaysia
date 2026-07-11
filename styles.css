@@ -883,9 +883,9 @@ body[data-nav-open] .nav-sheet { display: flex; }
 .home-expl-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 12px; }
 .he-card { display: block; text-decoration: none; color: inherit; background: var(--paper-card); border: 1.5px solid var(--line-ink); border-radius: var(--r); padding: 14px; transition: transform var(--t-ui) var(--ease), box-shadow var(--t-ui) var(--ease); }
 .he-card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hover); }
-.he-card .e-t { font-family: var(--brush); font-size: 19px; line-height: 0.95; color: var(--ink); }
-.he-card .e-s { font-size: 10.5px; color: var(--ink-soft); margin: 6px 0 8px; line-height: 1.35; }
-.he-card .e-go { font-family: var(--mono); font-size: 10px; color: var(--seal); letter-spacing: 0.04em; }
+.he-card .e-t { display: block; font-family: var(--brush); font-size: 19px; line-height: 0.95; color: var(--ink); }
+.he-card .e-s { display: block; font-size: 10.5px; color: var(--ink-soft); margin: 6px 0 8px; line-height: 1.35; }
+.he-card .e-go { display: block; font-family: var(--mono); font-size: 10px; color: var(--seal); letter-spacing: 0.04em; }
 
 /* homepage: election band */
 .election-band { background: var(--paper-card); border: var(--border-ink); border-top: 6px solid var(--election); border-radius: var(--r); box-shadow: var(--shadow-card); padding: 26px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 30px; align-items: center; }
