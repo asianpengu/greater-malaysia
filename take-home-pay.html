@@ -1,0 +1,143 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2R45WDST7M"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-2R45WDST7M");</script>
+<title>Take-home pay calculator (gaji bersih): salary after EPF, SOCSO, EIS & tax ~ Greater Malaysia</title>
+<meta name="description" content="Enter your monthly salary and see your take-home pay after EPF (11%), SOCSO, EIS and income tax. Malaysian gaji bersih calculator, using KWSP, PERKESO and LHDN rates." />
+<link rel="canonical" href="https://greatermalaysia.com/take-home-pay" />
+<meta property="og:type" content="website" /><meta property="og:site_name" content="Greater Malaysia" />
+<meta property="og:title" content="What's your take-home pay? (gaji bersih)" /><meta property="og:description" content="Your salary after EPF, SOCSO, EIS and income tax. Uses KWSP, PERKESO and LHDN rates." />
+<meta property="og:url" content="https://greatermalaysia.com/take-home-pay" /><meta property="og:image" content="https://greatermalaysia.com/assets/sharecard-take-home-pay.png" />
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content="https://greatermalaysia.com/assets/sharecard-take-home-pay.png" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Malaysia take-home pay calculator (gaji bersih)","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"MYR"},"description":"Calculate net monthly take-home pay from gross salary after EPF, SOCSO, EIS and income tax, using KWSP, PERKESO and LHDN rates.","url":"https://greatermalaysia.com/take-home-pay"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is take-home pay calculated in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"Take-home pay is gross salary minus EPF (employee 11%), SOCSO (0.5%, capped at RM6,000 wages), EIS (0.2%, capped at RM6,000 wages) and monthly income tax. Income tax is based on annual chargeable income (gross minus reliefs) at LHDN's progressive rates."}},{"@type":"Question","name":"How much EPF is deducted from salary in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"The employee EPF contribution rate is 11% of monthly wages for citizens and permanent residents under 60 (the employer adds 12% to 13%). It resets to the 11% statutory rate after the temporary 9% pandemic reduction ended in 2022."}},{"@type":"Question","name":"What is the income tax rate in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"Resident individual income tax is progressive from 0% (first RM5,000 of chargeable income) up to 30% (above RM2,000,000), with an automatic individual relief of RM9,000 and EPF relief up to RM4,000 (YA2024/2025, LHDN)."}}]}]}</script>
+<style>
+  .th { max-width: 940px; margin: 0 auto; padding: 0 clamp(16px,4vw,36px); }
+  .th-p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; margin: 8px 0; }
+  .th-tool { border: 2px solid var(--line-ink); border-radius: var(--r); background: var(--paper-card); padding: 20px 20px 22px; margin: 8px 0 24px; }
+  .th-controls { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+  .th-field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 200px; }
+  .th-field label { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .th-field .in { display: flex; align-items: center; border: 2px solid var(--line-ink); border-radius: var(--r); background: var(--paper-2, #fff); overflow: hidden; }
+  .th-field .in span { font-family: var(--mono); font-size: 15px; color: var(--ink-faint); padding: 0 4px 0 13px; }
+  .th-field input { font-family: var(--sans); font-size: 19px; font-weight: 600; color: var(--ink); background: transparent; border: 0; padding: 11px 13px 11px 6px; width: 100%; }
+  .th-field input:focus { outline: none; }
+  .th-field .in:focus-within { border-color: var(--seal); }
+  .th-net { margin-top: 20px; border-top: 2px solid var(--line-ink); padding-top: 16px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; }
+  .th-net .big { font-family: var(--display); font-weight: 400; font-size: clamp(34px,7vw,58px); line-height: .95; color: var(--seal); }
+  .th-net .lab { font-size: 15px; color: var(--ink-soft); }
+  .th-net .ann { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); }
+  .th-bar { display: flex; height: 30px; border: 1.5px solid var(--line-ink); border-radius: 4px; overflow: hidden; margin: 16px 0 6px; }
+  .th-bar span { height: 100%; }
+  .th-bar .s-net { background: var(--seal); }
+  .th-bar .s-epf { background: color-mix(in srgb, var(--ink) 55%, transparent); }
+  .th-bar .s-socso { background: color-mix(in srgb, var(--ink) 38%, transparent); }
+  .th-bar .s-eis { background: color-mix(in srgb, var(--ink) 26%, transparent); }
+  .th-bar .s-tax { background: color-mix(in srgb, var(--ink) 16%, transparent); }
+  .th-rows { display: grid; gap: 2px; margin-top: 12px; }
+  .th-row { display: grid; grid-template-columns: 14px 1fr auto auto; gap: 10px; align-items: center; padding: 9px 2px; border-bottom: 1px solid color-mix(in srgb, var(--line-ink) 18%, transparent); font-size: 15px; }
+  .th-row .sw { width: 12px; height: 12px; border-radius: 3px; }
+  .th-row .amt { font-family: var(--mono); font-weight: 600; white-space: nowrap; }
+  .th-row .pct { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); white-space: nowrap; text-align: right; min-width: 44px; }
+  .th-row.tot { border-bottom: none; border-top: 2px solid var(--line-ink); margin-top: 2px; font-weight: 700; }
+  .th-row.tot .amt { color: var(--seal); }
+  .th-note { font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-top: 14px; background: var(--paper-2,#fff); border: 1.5px solid color-mix(in srgb,var(--line-ink) 40%,transparent); border-radius: var(--r); padding: 12px 14px; }
+  .th-src { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); margin-top: 12px; }
+  .th-src a { color: var(--seal); }
+</style></head><body>
+<div class="paper-bg" aria-hidden="true"></div><span class="smudge s1" aria-hidden="true"></span><span class="smudge s2" aria-hidden="true"></span>
+<header class="nav" id="nav"><div class="nav-inner">
+<a class="brand" href="/"><svg class="nav-chop" viewBox="0 0 512 512" width="34" height="34" role="img" aria-label="Greater Malaysia"><rect x="8" y="8" width="496" height="496" fill="#f3efe6" stroke="#16130d" stroke-width="16"/><rect x="38" y="38" width="436" height="436" fill="none" stroke="#16130d" stroke-opacity=".35" stroke-width="4"/><text x="252" y="366" text-anchor="middle" font-family="'Caveat Brush',cursive" font-size="300" fill="#16130d">GM</text><rect x="440" y="440" width="36" height="36" fill="#b23a23"/></svg><span class="gm-full">Greater Malaysia</span></a>
+<span class="nav-spacer"></span>
+<nav class="nav-links" aria-label="Primary"><a href="/#tools">Tools</a><a href="/#answers">Answers</a><a href="/election/">Election</a><a href="/explainers/">Explainers</a><a href="/stories/">Data stories</a></nav>
+<a class="nav-cta" href="/#subscribe">Follow the channel</a>
+<button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navSheet"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-sheet" id="navSheet"><a href="/#tools">Tools</a><a href="/#answers">Answers</a><a href="/election/">Election</a><a href="/explainers/">Explainers</a><a href="/stories/">Data stories</a><a class="nav-cta" href="/#subscribe">Follow the channel</a></div>
+</header>
+<main class="answer th">
+  <div class="ans-kicker">your salary</div>
+  <h1 class="ans-h1">What's your take-home pay?</h1>
+  <p class="th-p">Enter your gross monthly salary and see what actually lands in your account, after EPF, SOCSO, EIS and income tax. Malaysian <i>gaji bersih</i>, worked out from the official rates.</p>
+
+  <div class="th-tool">
+    <div class="th-controls">
+      <div class="th-field"><label for="thGross">Gross monthly salary</label><div class="in"><span>RM</span><input id="thGross" type="number" inputmode="numeric" min="0" step="100" value="5000" /></div></div>
+      <div class="th-field"><label for="thRelief">Other yearly tax reliefs (optional)</label><div class="in"><span>RM</span><input id="thRelief" type="number" inputmode="numeric" min="0" step="100" value="0" /></div></div>
+    </div>
+    <div class="th-net" id="thNet"></div>
+    <div class="th-bar" id="thBar"></div>
+    <div class="th-rows" id="thRows"></div>
+    <div class="th-note" id="thNote"></div>
+    <p class="th-src" id="thSrc"></p>
+  </div>
+
+  <div class="ans-section"><h2>Related</h2><div class="ans-related"><a href="/household-income-by-state">Income by state</a><a href="/explainers/epf-malaysia">EPF explained</a><a href="/explainers/b40-m40-t20">B40, M40, T20</a></div></div>
+</main>
+<footer class="footer footer-v2">
+<div class="foot-top"><div class="foot-brand"><div class="foot-wordmark">Greater Malaysia</div><p class="foot-tag">Malaysia, in real time. Free live tools built on the nation's open data.</p></div>
+<div class="foot-cols">
+<div class="foot-col"><div class="fc-h">Tools</div><a href="/waktu-solat/kuala-lumpur">Waktu solat</a><a href="/harga-minyak">Harga minyak</a><a href="/usd-to-myr">Ringgit</a><a href="/household-income-by-state">Income by state</a><a href="/take-home-pay">Take-home pay</a><a href="/cuti-planner">Cuti planner</a><a href="/today">Malaysia today</a></div>
+<div class="foot-col"><div class="fc-h">Answers + Election</div><a href="/#answers">Quick answers</a><a href="/election/">GE16 hub</a><a href="/when-is-ge16">When is GE16</a><a href="/how-to-check-voter-registration">Check voter reg</a></div>
+<div class="foot-col"><div class="fc-h">Read</div><a href="/stories/">Data stories</a><a href="/explainers/">Explainers</a><a href="/malaysia-for-digital-nomads">Digital nomads</a><a href="/how-to-start-a-business-in-malaysia">Start a business</a></div>
+<div class="foot-col"><div class="fc-h">Trust + machines</div><a href="/for-agents">For agents</a><a href="/llms.txt">llms.txt</a><a href="/data/feed.json">Data feed</a><a href="/sitemap.xml">Sitemap</a></div>
+</div></div>
+<p class="foot-disclaimer">Independent and non-partisan. Every number links to its official primary source.</p>
+<p class="foot-follow">Follow the channel: <a href="https://whatsapp.com/channel/0029VbDHuM159PwO04A3Mo2G" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/GreaterMalaysia" target="_blank" rel="noopener">Telegram</a></p>
+<div class="foot-bottom"><p class="foot-sources">Rates from KWSP (EPF), PERKESO (SOCSO/EIS) and LHDN (income tax).</p><p class="footer-credit">Built by <a href="https://x.com/aaronteng" target="_blank" rel="noopener">Aaron Teng</a> <span class="x-ico" aria-hidden="true">&#120143;</span></p></div>
+<p class="footer-meta" id="footerMeta"></p>
+</footer>
+<script src="/common.js"></script>
+<script>
+(function () {
+  var grossEl = document.getElementById("thGross"), reliefEl = document.getElementById("thRelief");
+  var rm = function (n) { return "RM" + (Math.round(n)).toLocaleString("en-MY"); };
+  var rm2 = function (n) { return "RM" + n.toLocaleString("en-MY", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+  // LHDN resident brackets (YA2024/2025): [upper chargeable income, rate on the band up to it]
+  var BR = [[5000,0],[20000,.01],[35000,.03],[50000,.06],[70000,.11],[100000,.19],[400000,.25],[600000,.26],[2000000,.28],[Infinity,.30]];
+  function incomeTax(ci) { var t = 0, prev = 0; for (var i = 0; i < BR.length; i++) { var cap = BR[i][0], rate = BR[i][1]; if (ci > cap) { t += (cap - prev) * rate; prev = cap; } else { t += (ci - prev) * rate; break; } } return t; }
+  function render() {
+    var gross = Math.max(0, +grossEl.value || 0);
+    var otherRelief = Math.max(0, +reliefEl.value || 0);
+    var epf = gross * 0.11;                                   // employee 11%
+    var socso = Math.min(gross * 0.005, 29.75);               // 0.5%, ceiling RM6,000 (max RM29.75)
+    var eis = Math.min(gross * 0.002, 11.90);                 // 0.2%, ceiling RM6,000 (max RM11.90)
+    var annualGross = gross * 12;
+    var epfRelief = Math.min(annualGross * 0.11, 4000);       // EPF relief capped RM4,000
+    var chargeable = Math.max(0, annualGross - 9000 - epfRelief - otherRelief);
+    var annualTax = incomeTax(chargeable);
+    var tax = annualTax / 12;
+    var net = gross - epf - socso - eis - tax;
+    if (net < 0) net = 0;
+    var effRate = annualGross > 0 ? (annualTax / annualGross * 100) : 0;
+
+    document.getElementById("thNet").innerHTML = gross > 0
+      ? '<span class="big">' + rm(net) + '</span><span class="lab">take-home a month</span><span class="ann">' + rm(net * 12) + ' a year &middot; effective tax ' + effRate.toFixed(1) + '%</span>'
+      : '<span class="lab">Enter your salary above.</span>';
+
+    var parts = [["s-net", net], ["s-epf", epf], ["s-socso", socso], ["s-eis", eis], ["s-tax", tax]];
+    document.getElementById("thBar").innerHTML = gross > 0 ? parts.map(function (p) { return '<span class="' + p[0] + '" style="width:' + (p[1] / gross * 100).toFixed(2) + '%"></span>'; }).join("") : "";
+
+    var rows = [
+      ["s-net", "Take-home", net, "tot"],
+      ["s-epf", "EPF (11%)", epf, ""],
+      ["s-socso", "SOCSO (0.5%)", socso, ""],
+      ["s-eis", "EIS (0.2%)", eis, ""],
+      ["s-tax", "Income tax", tax, ""]
+    ];
+    var swatch = { "s-net": "var(--seal)", "s-epf": "color-mix(in srgb,var(--ink) 55%,transparent)", "s-socso": "color-mix(in srgb,var(--ink) 38%,transparent)", "s-eis": "color-mix(in srgb,var(--ink) 26%,transparent)", "s-tax": "color-mix(in srgb,var(--ink) 16%,transparent)" };
+    document.getElementById("thRows").innerHTML = gross > 0 ? ('<div class="th-row" style="border-top:none;font-weight:700"><span class="sw"></span><span>Gross salary</span><span class="amt">' + rm(gross) + '</span><span class="pct"></span></div>' +
+      rows.slice(1).map(function (r) { return '<div class="th-row"><span class="sw" style="background:' + swatch[r[0]] + '"></span><span>' + r[1] + '</span><span class="amt">- ' + rm2(r[2]) + '</span><span class="pct">' + (r[2] / gross * 100).toFixed(1) + '%</span></div>'; }).join("") +
+      '<div class="th-row tot"><span class="sw" style="background:var(--seal)"></span><span>Take-home pay</span><span class="amt">' + rm(net) + '</span><span class="pct">' + (net / gross * 100).toFixed(0) + '%</span></div>') : "";
+
+    document.getElementById("thNote").innerHTML = gross > 0
+      ? "Estimate of statutory deductions for a resident employee under 60. Income tax assumes the automatic RM9,000 individual relief plus EPF relief (capped RM4,000); add your other reliefs above for a closer figure. Your employer also pays EPF (12 to 13%), SOCSO and EIS on top, which does not come out of your salary. Actual monthly tax (PCB) can vary. Not tax advice."
+      : "";
+    document.getElementById("thSrc").innerHTML = 'Rates: <a href="https://www.kwsp.gov.my" target="_blank" rel="noopener">KWSP (EPF)</a>, <a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" target="_blank" rel="noopener">PERKESO (SOCSO/EIS)</a>, <a href="https://www.hasil.gov.my" target="_blank" rel="noopener">LHDN (income tax, YA2024/2025)</a>.';
+  }
+  grossEl.addEventListener("input", render); reliefEl.addEventListener("input", render);
+  render();
+})();
+</script>
+</body></html>

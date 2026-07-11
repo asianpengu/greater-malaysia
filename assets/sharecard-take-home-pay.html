@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#d8d2c2;--paper-card:#f3efe6;--panel:#efeadf;--ink:#16130d;--ink-soft:#4a443a;--ink-faint:#8a8272;--seal:#b23a23;--line-ink:rgba(22,19,13,0.85)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:48px 58px 42px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .brand{display:flex;align-items:center;gap:15px}
+  .gm{font-family:'Caveat Brush',cursive;font-size:52px;line-height:.8}
+  .brand-txt .n{font-weight:700;font-size:20px}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--seal);letter-spacing:.04em}
+  .eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:30px;transform:rotate(-3deg);border:2.5px solid var(--seal);border-radius:40px/28px;padding:6px 20px 4px}
+  .win{flex:1;background:var(--paper-card);border:2.5px solid var(--line-ink);border-radius:14px;box-shadow:10px 10px 0 rgba(22,19,13,.1);display:flex;flex-direction:column;overflow:hidden}
+  .winbar{height:46px;flex:0 0 46px;border-bottom:2px solid var(--line-ink);display:flex;align-items:center;gap:8px;padding:0 18px;background:var(--panel)}
+  .dot{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--line-ink)}
+  .url{margin-left:14px;font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--ink-soft);background:var(--paper);border:1.5px solid rgba(22,19,13,.14);border-radius:20px;padding:5px 16px}
+  .body{flex:1;padding:26px 38px 24px;display:flex;flex-direction:column}
+  .ttl{font-family:'Anton',sans-serif;font-size:46px;line-height:.98;text-transform:uppercase;letter-spacing:.01em}
+  .inp{display:inline-flex;align-items:center;gap:10px;margin:16px 0 4px;font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:600;background:var(--paper);border:2px solid var(--line-ink);border-radius:6px;padding:10px 16px}
+  .net{display:flex;align-items:baseline;gap:16px;margin-top:14px}
+  .net .big{font-family:'Anton',sans-serif;font-size:88px;line-height:.85;color:var(--seal)}
+  .net .lab{font-size:22px;color:var(--ink-soft)}
+  .bar{display:flex;height:34px;border:2px solid var(--line-ink);border-radius:5px;overflow:hidden;margin:24px 0 16px}
+  .bar span{height:100%}
+  .rows{display:flex;gap:34px;flex-wrap:wrap}
+  .row{display:flex;align-items:center;gap:9px;font-size:19px}
+  .sw{width:15px;height:15px;border-radius:3px}
+  .row b{font-family:'JetBrains Mono',monospace;font-weight:700}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:28px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:25px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:24px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <div class="brand"><div class="gm">GM</div><div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div></div>
+    <div class="eyebrow">new tool</div>
+  </div>
+  <div class="win">
+    <div class="winbar"><span class="dot" style="background:#e0655a;border-color:#c14a3f"></span><span class="dot" style="background:#e6b95a"></span><span class="dot" style="background:#7fae7a"></span><span class="url">greatermalaysia.com/take-home-pay</span></div>
+    <div class="body">
+      <div class="ttl">What's your take-home pay?</div>
+      <div class="inp">RM 5,000 / month gross</div>
+      <div class="net"><span class="big">RM4,305</span><span class="lab">take-home a month</span></div>
+      <div class="bar">
+        <span style="width:86.1%;background:var(--seal)"></span>
+        <span style="width:11%;background:color-mix(in srgb,var(--ink) 55%,transparent)"></span>
+        <span style="width:0.5%;background:color-mix(in srgb,var(--ink) 38%,transparent)"></span>
+        <span style="width:0.2%;background:color-mix(in srgb,var(--ink) 26%,transparent)"></span>
+        <span style="width:2.2%;background:color-mix(in srgb,var(--ink) 16%,transparent)"></span>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="sw" style="background:var(--seal)"></span>Take-home <b>RM4,305</b></div>
+        <div class="row"><span class="sw" style="background:color-mix(in srgb,var(--ink) 55%,transparent)"></span>EPF <b>RM550</b></div>
+        <div class="row"><span class="sw" style="background:color-mix(in srgb,var(--ink) 38%,transparent)"></span>SOCSO <b>RM25</b></div>
+        <div class="row"><span class="sw" style="background:color-mix(in srgb,var(--ink) 26%,transparent)"></span>EIS <b>RM10</b></div>
+        <div class="row"><span class="sw" style="background:color-mix(in srgb,var(--ink) 16%,transparent)"></span>Tax <b>RM110</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="site">greatermalaysia.com/take-home-pay</div>
+    <div class="tag">KWSP, PERKESO, LHDN &middot; <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+</body></html>
