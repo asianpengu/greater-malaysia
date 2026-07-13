@@ -42,15 +42,18 @@ export function rewriteInternalLinks(html, { prefix, slugSet }) {
 }
 
 // Inserts hreflang alternate links (en/ms/zh + x-default) immediately after
-// the page's <link rel="canonical"> tag.
+// the page's <link rel="canonical"> tag. Idempotent: strips any existing
+// alternate-hreflang links first, so re-running against an already-processed
+// source doesn't double-insert.
 export function injectHreflang(html, { slug }) {
+  let out = html.replace(/<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/>/g, "");
   const canonicalRe = /(<link rel="canonical" href="[^"]+"\s*\/>)/;
-  if (!canonicalRe.test(html)) throw new Error("injectHreflang: canonical link not found");
+  if (!canonicalRe.test(out)) throw new Error("injectHreflang: canonical link not found");
   const alt = ["en", "ms", "zh"]
     .map((code) => `<link rel="alternate" hreflang="${LANGS[code].hreflang}" href="${SITE_ORIGIN}${LANGS[code].prefix}${slug}" />`)
     .join("");
   const xdefault = `<link rel="alternate" hreflang="x-default" href="${SITE_ORIGIN}${slug}" />`;
-  return html.replace(canonicalRe, `$1${alt}${xdefault}`);
+  return out.replace(canonicalRe, `$1${alt}${xdefault}`);
 }
 
 // Inserts the EN / BM / 中文 language switcher between the "Follow the
@@ -58,6 +61,9 @@ export function injectHreflang(html, { slug }) {
 // on the CTA's href value) so it works whether or not rewriteInternalLinks
 // has already run.
 export function insertLangSwitcher(html, { slug, currentLangCode }) {
+  // Idempotent: remove any switcher a prior run left, so re-processing an
+  // already-switched source replaces it rather than choking on the anchor.
+  html = html.replace(/<div class="nav-lang"[^>]*>[\s\S]*?<\/div>/, "");
   const anchorRe = /(<\/nav>\s*<a class="nav-cta"[^>]*>Follow the channel<\/a>\s*)(<button class="nav-burger")/;
   if (!anchorRe.test(html)) throw new Error("insertLangSwitcher: nav CTA anchor not found");
   const items = ["en", "ms", "zh"]
@@ -89,11 +95,14 @@ export function applyNavFooterGlossary(html, { langCode }) {
   return out;
 }
 
-// Sets <html lang="..."> and the og:locale meta value.
+// Sets the mechanical language markers: <html lang="...">, og:locale, and
+// every JSON-LD "inLanguage":"en-MY" (these are codes, not prose — they get
+// set here during skeleton generation so translators never touch them).
 export function setLangAttrs(html, { langCode }) {
   const lang = LANGS[langCode];
   let out = html.replace(/<html lang="en">/, `<html lang="${lang.htmlLang}">`);
   out = out.replace(/(og:locale" content=")en_MY(")/, `$1${lang.ogLocale}$2`);
+  out = out.replace(/("inLanguage":\s*")en-MY(")/g, `$1${lang.hreflang}$2`);
   return out;
 }
 

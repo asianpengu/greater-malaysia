@@ -84,6 +84,14 @@ test("injectHreflang: throws if canonical tag is missing", () => {
   assert.throws(() => injectHreflang("<title>no canonical here</title>", { slug: "/road-tax" }));
 });
 
+test("injectHreflang: is idempotent (no double-insert on re-run)", () => {
+  const html = '<link rel="canonical" href="https://greatermalaysia.com/road-tax" /><meta property="og:type" content="website" />';
+  const once = injectHreflang(html, { slug: "/road-tax" });
+  const twice = injectHreflang(once, { slug: "/road-tax" });
+  assert.equal((twice.match(/hreflang=/g) || []).length, 4);
+  assert.equal(once, twice);
+});
+
 test("insertLangSwitcher: inserts EN/BM/中文 links after the nav CTA, before the burger button", () => {
   const html = '<nav class="nav-links"><a href="/tools">Tools</a></nav><a class="nav-cta" href="/#subscribe">Follow the channel</a><button class="nav-burger">x</button>';
   const out = insertLangSwitcher(html, { slug: "/road-tax", currentLangCode: "en" });
@@ -93,6 +101,14 @@ test("insertLangSwitcher: inserts EN/BM/中文 links after the nav CTA, before t
   assert.match(out, /<a href="\/zh\/road-tax">中文<\/a>/);
   assert.ok(out.indexOf("nav-lang") > out.indexOf("Follow the channel"));
   assert.ok(out.indexOf("nav-lang") < out.indexOf("nav-burger"));
+});
+
+test("insertLangSwitcher: is idempotent (replaces an existing switcher, one only)", () => {
+  const html = '<nav class="nav-links"></nav><a class="nav-cta" href="/#subscribe">Follow the channel</a><button class="nav-burger">x</button>';
+  const once = insertLangSwitcher(html, { slug: "/road-tax", currentLangCode: "en" });
+  const twice = insertLangSwitcher(once, { slug: "/road-tax", currentLangCode: "en" });
+  assert.equal((twice.match(/class="nav-lang"/g) || []).length, 1);
+  assert.equal(once, twice);
 });
 
 test("insertLangSwitcher: works on the site root slug", () => {
@@ -126,6 +142,15 @@ test("setLangAttrs: sets html lang and og:locale for each language", () => {
   const zh = setLangAttrs(html, { langCode: "zh" });
   assert.match(zh, /<html lang="zh-Hans">/);
   assert.match(zh, /og:locale" content="zh_CN"/);
+});
+
+test("setLangAttrs: rewrites every JSON-LD inLanguage code", () => {
+  const html = '<html lang="en"><script>{"inLanguage": "en-MY"}</script><script>{"inLanguage":"en-MY"}</script></html>';
+  const ms = setLangAttrs(html, { langCode: "ms" });
+  assert.equal((ms.match(/"inLanguage":\s*"ms-MY"/g) || []).length, 2);
+  assert.doesNotMatch(ms, /"en-MY"/);
+  const zh = setLangAttrs(html, { langCode: "zh" });
+  assert.equal((zh.match(/"inLanguage":\s*"zh-Hans-MY"/g) || []).length, 2);
 });
 
 test("localizePage: composes all transforms for a full ms page", () => {
