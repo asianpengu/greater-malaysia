@@ -31,7 +31,7 @@ async function loadPrayer() {
       ${nextKey ? `<div class="prayer-next"><div><div class="pn-lab">${lbl(nextKey)}</div><div class="pn-name">next prayer · ${esc(t[nextKey].slice(0, 5))}</div></div><div class="pn-cd">${esc(cd)}</div></div>` : ""}
       <div class="prayer-list">${PRAYERS.filter(p => p[0] !== "dhuha").map(([k, n]) =>
       `<div class="prayer-row ${k === activeKey ? "active" : ""}"><span class="pr-name"><span class="pr-dot"></span>${n}</span><span class="pr-time">${esc(t[k].slice(0, 5))}</span></div>`).join("")}</div>`;
-  } catch (e) { w.innerHTML = `<div class="tool-err">Couldn't reach JAKIM e-Solat. Refresh shortly.</div>`; }
+  } catch (e) { w.innerHTML = `<div class="tool-err">${t("errPrayerRefresh")}</div>`; }
 }
 
 /* ---------- fuel ---------- */
@@ -46,7 +46,7 @@ async function loadFuel() {
     w.innerHTML = `<div class="fuel-week">Week of ${esc(lvl.date)} · RM / litre</div><div class="fuel-grid">${cells.map(c =>
       `<div class="fuel-cell"><div class="fc-name">${c[0]}</div><div class="fc-price">${fmt(c[1])}</div><div class="fc-unit">RM / L${c[3] ? " · " + c[3] : ""}</div>${ch(c[2])}</div>`).join("")}</div>
       <div class="fuel-note">RON95 shown at the subsidised ceiling. RON97 &amp; diesel float weekly under the automatic pricing mechanism.</div>`;
-  } catch (e) { w.innerHTML = `<div class="tool-err">Couldn't reach data.gov.my fuel feed.</div>`; }
+  } catch (e) { w.innerHTML = `<div class="tool-err">${t("errFuel")}</div>`; }
 }
 
 /* ---------- fx ---------- */
@@ -70,7 +70,7 @@ async function loadFX(base) {
     const conv = () => { const a = parseFloat($("#fxAmt").value) || 0; $("#fxOut").textContent = `RM ${fmt(a * rate)}`; };
     $("#fxAmt").addEventListener("input", conv); conv();
     $$("#ansWidget .fx-pair").forEach(b => b.addEventListener("click", () => loadFX(b.dataset.c)));
-  } catch (e) { w.innerHTML = `<div class="tool-err">Couldn't reach the FX feed.</div>`; }
+  } catch (e) { w.innerHTML = `<div class="tool-err">${t("errFx")}</div>`; }
 }
 
 function setLive(text, asof) {

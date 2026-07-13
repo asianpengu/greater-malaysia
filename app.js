@@ -99,7 +99,7 @@ function startClock() {
    ============================================================ */
 async function loadPrayer(zone) {
   const body = $("#prayerBody");
-  body.innerHTML = `<div class="tool-loading">Fetching prayer times…</div>`;
+  body.innerHTML = `<div class="tool-loading">${t("fetchingPrayer")}</div>`;
   try {
     const url = `https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=today&zone=${zone}`;
     const data = await jget(url, 2, 600e3); // times change once a day
@@ -146,7 +146,7 @@ async function loadPrayer(zone) {
       </div>` : ""}
       <div class="prayer-list">${rows}</div>`;
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach JAKIM e-Solat. Retry shortly.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errPrayerRetry")}</div>`;
   }
 }
 
@@ -208,7 +208,7 @@ async function loadFuel() {
     }));
     recalc();
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach data.gov.my fuel feed.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errFuel")}</div>`;
   }
 }
 
@@ -247,7 +247,7 @@ async function loadPopulation() {
     countUp($("#popBig"), total / 1000, 1500, 1);
     $$("#popBar .pop-seg").forEach((s, i) => setTimeout(() => (s.style.width = (segs[i].v / total) * 100 + "%"), 150 + i * 80));
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach DOSM population feed.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errPopulation")}</div>`;
   }
 }
 
@@ -259,7 +259,7 @@ let fxActive = "USD";
 async function loadFX(base) {
   fxActive = base;
   const body = $("#fxBody");
-  body.innerHTML = `<div class="tool-loading">Fetching rates…</div>`;
+  body.innerHTML = `<div class="tool-loading">${t("fetchingRates")}</div>`;
   try {
     // 1 unit of `base` in MYR
     const latest = await jget(`https://api.frankfurter.dev/v1/latest?base=${base}&symbols=MYR`, 2, 600e3); // daily ECB fix
@@ -295,7 +295,7 @@ async function loadFX(base) {
     $("#fxAmt").addEventListener("input", () => { conv(); track("tool_use", { tool: "ringgit" }); }); conv();
     $$("#fxBody .fx-pair").forEach((b) => b.addEventListener("click", () => { track("tool_use", { tool: "ringgit", pair: b.dataset.cur }); loadFX(b.dataset.cur); }));
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach the FX feed.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errFx")}</div>`;
   }
 }
 
@@ -326,7 +326,7 @@ async function loadCrypto() {
       </div>`;
     }).join("")}</div>`;
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach CoinGecko.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errCoinGecko")}</div>`;
   }
 }
 
@@ -335,7 +335,7 @@ async function loadCrypto() {
    ============================================================ */
 async function loadWeather(idx) {
   const c = CITIES[idx]; const body = $("#wxBody");
-  body.innerHTML = `<div class="tool-loading">Reading the skies over ${esc(c.name)}…</div>`;
+  body.innerHTML = `<div class="tool-loading">${t("fetchingWeather", { city: esc(c.name) })}</div>`;
   try {
     const wxUrl = `https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FKuala_Lumpur&forecast_days=5`;
     const airUrl = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${c.lat}&longitude=${c.lon}&current=pm2_5,us_aqi`;
@@ -386,7 +386,7 @@ async function loadWeather(idx) {
       </div>`;
     setTimeout(() => { const a = $("#airArc"); if (a) a.setAttribute("stroke-dasharray", `${frac * C} ${C}`); }, 200);
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach Open-Meteo.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errWeather")}</div>`;
   }
 }
 function aqiBand(a) {
@@ -443,7 +443,7 @@ async function loadWarnings() {
     }
     body.innerHTML = html;
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach the warnings feed.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errWarnings")}</div>`;
   }
 }
 
@@ -477,7 +477,7 @@ async function loadInflation() {
       <svg class="cpi-spark" viewBox="0 0 320 56" preserveAspectRatio="none">${spark}</svg>
       ${yoy != null ? `<div class="cpi-eg">What cost <b>RM 100</b> a year ago now costs about <b>RM ${fmt(eg, 0)}</b>. The basket: food, transport, housing, the everyday.</div>` : ""}`;
   } catch (e) {
-    body.innerHTML = `<div class="tool-err">Couldn't reach the inflation feed.</div>`;
+    body.innerHTML = `<div class="tool-err">${t("errInflation")}</div>`;
   }
 }
 
