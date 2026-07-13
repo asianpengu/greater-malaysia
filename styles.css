@@ -121,6 +121,13 @@ a { color: inherit; }
   transition: 0.2s;
 }
 .nav-cta:hover { background: var(--seal); border-color: var(--seal); }
+.nav-lang { display: flex; align-items: center; gap: 2px; margin-left: 8px; }
+.nav-lang a {
+  text-decoration: none; color: var(--ink-faint); font-size: 12px; font-weight: 600;
+  padding: 6px 8px; border: 1px solid transparent; transition: 0.2s;
+}
+.nav-lang a:hover { color: var(--ink); }
+.nav-lang a.is-current { color: var(--seal); }
 
 /* ---------- layout ---------- */
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
@@ -705,6 +712,8 @@ body[data-nav-open] .nav-sheet { display: flex; }
   .nav-inner > .nav-cta { display: none; }
   .nav-burger { display: flex; }
   .nav-spacer { flex: 1; }
+  .nav-lang { margin-left: 4px; gap: 0; }
+  .nav-lang a { padding: 4px 5px; font-size: 11px; }
 }
 
 /* ---------- footer v2 (ink) ---------- */
