@@ -1,11 +1,11 @@
 <!doctype html><html lang="ms"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2R45WDST7M"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-2R45WDST7M");</script>
-<title>For Agents & Developers — Greater Malaysia (Malaysian ground-truth API + MCP)</title>
-<meta name="description" content="Greater Malaysia is the trusted, source-cited Malaysian ground-truth layer for AI agents. A free REST API and MCP server for fuel prices, the ringgit, prayer times, public holidays and weather. Every value cites its official source." />
+<title>Untuk Ejen AI & Pembangun — Greater Malaysia (API data sahih Malaysia + MCP)</title>
+<meta name="description" content="Greater Malaysia ialah lapisan data sahih Malaysia yang dipercayai dan berpandukan sumber untuk ejen AI. REST API dan pelayan MCP percuma untuk harga minyak, ringgit, waktu solat, cuti umum dan cuaca. Setiap nilai memetik sumber rasminya." />
 <link rel="canonical" href="https://greatermalaysia.com/ms/for-agents" /><link rel="alternate" hreflang="en-MY" href="https://greatermalaysia.com/for-agents" /><link rel="alternate" hreflang="ms-MY" href="https://greatermalaysia.com/ms/for-agents" /><link rel="alternate" hreflang="zh-Hans-MY" href="https://greatermalaysia.com/zh/for-agents" /><link rel="alternate" hreflang="x-default" href="https://greatermalaysia.com/for-agents" />
 <meta property="og:type" content="website" /><meta property="og:site_name" content="Greater Malaysia" />
-<meta property="og:title" content="For Agents & Developers — Greater Malaysia" /><meta property="og:description" content="The trusted, source-cited Malaysian ground-truth layer for AI agents. Free REST API + MCP server." />
+<meta property="og:title" content="Untuk Ejen AI & Pembangun — Greater Malaysia" /><meta property="og:description" content="Lapisan data sahih Malaysia yang dipercayai dan berpandukan sumber untuk ejen AI. REST API + pelayan MCP percuma." />
 <meta property="og:url" content="https://greatermalaysia.com/ms/for-agents" /><meta property="og:image" content="https://greatermalaysia.com/assets/sharecard-agents.png" />
 <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content="https://greatermalaysia.com/assets/sharecard-agents.png" />
 <link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -34,42 +34,42 @@
 <div class="nav-sheet" id="navSheet"><a href="/ms/tools">Alatan</a><a href="/ms/answers">Jawapan</a><a href="/ms/election/">Pilihan Raya</a><a href="/ms/explainers/">Penjelasan</a><a href="/ms/stories/">Cerita Data</a><a class="nav-cta" href="/ms/#subscribe">Ikuti saluran</a></div>
 </header>
 <main class="answer agents">
-  <div class="ans-kicker">for agents & developers</div>
-  <h1 class="ans-h1">Malaysian ground-truth, for machines</h1>
-  <p class="ag-lead">Greater Malaysia is the <b>trusted, source-cited data layer for AI agents</b> that need current facts about Malaysia. A free REST API and an MCP server. Every value links to its official primary source, so an agent can cite it, not guess it.</p>
+  <div class="ans-kicker">untuk ejen AI & pembangun</div>
+  <h1 class="ans-h1">Data sahih Malaysia, untuk mesin</h1>
+  <p class="ag-lead">Greater Malaysia ialah <b>lapisan data yang dipercayai dan berpandukan sumber untuk ejen AI</b> yang memerlukan fakta terkini tentang Malaysia. REST API dan pelayan MCP percuma. Setiap nilai dipautkan ke sumber rasmi asalnya, jadi ejen boleh memetiknya, bukan sekadar meneka.</p>
   <div class="ans-rule"></div>
 
-  <p class="ag-p">The scattered truth of Malaysian public data (fuel prices, the ringgit, prayer times, holidays, weather) in one clean, current, machine-readable place. No API key. No signup. CORS-open. Signal over noise, always sourced.</p>
+  <p class="ag-p">Kebenaran data awam Malaysia yang berselerak (harga minyak, ringgit, waktu solat, cuti, cuaca) di satu tempat yang kemas, terkini dan boleh dibaca mesin. Tiada kunci API. Tiada pendaftaran. CORS terbuka. Isyarat mengatasi hingar, sentiasa bersumber.</p>
 
   <h2 class="ag-h2">REST API</h2>
-  <p class="ag-p">Base: <b>https://greatermalaysia.com/api</b> — returns JSON with a <code>source</code> block on every response.</p>
+  <p class="ag-p">Asas: <b>https://greatermalaysia.com/api</b> — memulangkan JSON dengan blok <code>source</code> pada setiap respons.</p>
   <div class="ag-endpoints">
-    <div class="ag-ep"><div class="m">GET /api/fuel</div><div class="d">This week's RON95, RON97 and diesel prices (RM/litre). Source: data.gov.my (KPDN).</div></div>
-    <div class="ag-ep"><div class="m">GET /api/fx?base=USD&amp;symbols=MYR</div><div class="d">Ringgit and other exchange rates. Source: European Central Bank via Frankfurter.</div></div>
-    <div class="ag-ep"><div class="m">GET /api/prayer?city=kuala-lumpur</div><div class="d">Today's prayer times (waktu solat) by city or JAKIM zone. Source: JAKIM e-Solat.</div></div>
-    <div class="ag-ep"><div class="m">GET /api/holidays?year=2026</div><div class="d">National public holidays plus the next upcoming one. Source: official gazette.</div></div>
-    <div class="ag-ep"><div class="m">GET /api/weather?city=kuala-lumpur</div><div class="d">Current weather and US air-quality index. Source: Open-Meteo.</div></div>
-    <div class="ag-ep"><div class="m">GET /api/inflation</div><div class="d">Headline inflation (CPI) and the year-on-year rate. Source: DOSM via data.gov.my.</div></div>
-    <div class="ag-ep"><div class="m">GET /api/population</div><div class="d">Malaysia's total population, latest official figure. Source: DOSM via data.gov.my.</div></div>
-    <div class="ag-ep"><div class="m">GET /api/election</div><div class="d">Next general election (GE16): the must-be-held-by date, a countdown, and how the system works. Source: Federal Constitution; SPR.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/fuel</div><div class="d">Harga RON95, RON97 dan diesel minggu ini (RM/liter). Sumber: data.gov.my (KPDN).</div></div>
+    <div class="ag-ep"><div class="m">GET /api/fx?base=USD&amp;symbols=MYR</div><div class="d">Ringgit dan kadar pertukaran lain. Sumber: European Central Bank melalui Frankfurter.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/prayer?city=kuala-lumpur</div><div class="d">Waktu solat hari ini mengikut bandar atau zon JAKIM. Sumber: JAKIM e-Solat.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/holidays?year=2026</div><div class="d">Cuti umum kebangsaan serta cuti seterusnya yang akan datang. Sumber: warta rasmi.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/weather?city=kuala-lumpur</div><div class="d">Cuaca semasa dan indeks kualiti udara AS. Sumber: Open-Meteo.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/inflation</div><div class="d">Inflasi utama (CPI) dan kadar tahun ke tahun. Sumber: DOSM melalui data.gov.my.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/population</div><div class="d">Jumlah penduduk Malaysia, angka rasmi terkini. Sumber: DOSM melalui data.gov.my.</div></div>
+    <div class="ag-ep"><div class="m">GET /api/election</div><div class="d">Pilihan raya umum seterusnya (GE16): tarikh akhir ia mesti diadakan, kiraan detik, dan cara sistem berfungsi. Sumber: Federal Constitution; SPR.</div></div>
   </div>
   <pre><span class="c"># try it</span>
 curl https://greatermalaysia.com/api/fuel
 
 <span class="c"># catalog of every endpoint</span>
 curl https://greatermalaysia.com/api</pre>
-  <p class="ag-p"><b>Machine discovery:</b> a full <b>OpenAPI 3.1</b> spec at <code>/api/openapi</code> lets GPT Actions, LangChain and other tool routers auto-generate a client. There is also a descriptor at <code>/.well-known/ai-plugin.json</code>.</p>
+  <p class="ag-p"><b>Penemuan mesin:</b> spesifikasi <b>OpenAPI 3.1</b> penuh di <code>/api/openapi</code> membolehkan GPT Actions, LangChain dan penghala alat lain menjana klien secara automatik. Terdapat juga deskriptor di <code>/.well-known/ai-plugin.json</code>.</p>
 
-  <h2 class="ag-h2">MCP server</h2>
-  <p class="ag-p">Plug Greater Malaysia straight into any AI agent that speaks the <b>Model Context Protocol</b>. One endpoint, eight tools: <code>get_fuel_prices</code>, <code>get_exchange_rate</code>, <code>get_prayer_times</code>, <code>get_public_holidays</code>, <code>get_weather</code>, <code>get_inflation</code>, <code>get_population</code>, <code>get_election</code>.</p>
-  <p class="ag-p"><b>Endpoint:</b> <code>https://greatermalaysia.com/api/mcp</code> (Streamable HTTP)</p>
-  <p class="ag-p">Clients that support remote MCP over HTTP:</p>
+  <h2 class="ag-h2">Pelayan MCP</h2>
+  <p class="ag-p">Sambungkan Greater Malaysia terus ke mana-mana ejen AI yang bertutur <b>Model Context Protocol</b>. Satu titik akhir, lapan alat: <code>get_fuel_prices</code>, <code>get_exchange_rate</code>, <code>get_prayer_times</code>, <code>get_public_holidays</code>, <code>get_weather</code>, <code>get_inflation</code>, <code>get_population</code>, <code>get_election</code>.</p>
+  <p class="ag-p"><b>Titik akhir:</b> <code>https://greatermalaysia.com/api/mcp</code> (Streamable HTTP)</p>
+  <p class="ag-p">Klien yang menyokong MCP jauh melalui HTTP:</p>
   <pre>{
   <span class="c">"mcpServers"</span>: {
     <span class="c">"greater-malaysia"</span>: { <span class="c">"url"</span>: "https://greatermalaysia.com/api/mcp" }
   }
 }</pre>
-  <p class="ag-p">Stdio-only clients (e.g. some desktop apps) can bridge with <code>mcp-remote</code>:</p>
+  <p class="ag-p">Klien stdio sahaja (cth. sesetengah apl desktop) boleh merentas dengan <code>mcp-remote</code>:</p>
   <pre>{
   <span class="c">"mcpServers"</span>: {
     <span class="c">"greater-malaysia"</span>: {
@@ -79,9 +79,9 @@ curl https://greatermalaysia.com/api</pre>
   }
 }</pre>
 
-  <h2 class="ag-h2">Terms</h2>
-  <p class="ag-p">Free to use. Figures derive from official Malaysian open data; please cite the <code>source</code> listed in each response. Independent and non-partisan. Rate-limited fairly; be kind. Questions: <a href="mailto:hello@greatermalaysia.com">hello@greatermalaysia.com</a>.</p>
-  <div class="ans-section"><h2>Related</h2><div class="ans-related"><a href="/ms/tools">The live tools</a><a href="/ms/stories/">Cerita Data</a><a href="/llms.txt">llms.txt</a><a href="/data/feed.json">Suapan data</a></div></div>
+  <h2 class="ag-h2">Terma</h2>
+  <p class="ag-p">Percuma untuk digunakan. Angka diperoleh daripada data terbuka rasmi Malaysia; sila petik <code>source</code> yang disenaraikan dalam setiap respons. Bebas dan tidak berpihak. Had kadar dikenakan secara adil; bertimbang rasa. Pertanyaan: <a href="mailto:hello@greatermalaysia.com">hello@greatermalaysia.com</a>.</p>
+  <div class="ans-section"><h2>Berkaitan</h2><div class="ans-related"><a href="/ms/tools">Alatan langsung</a><a href="/ms/stories/">Cerita Data</a><a href="/llms.txt">llms.txt</a><a href="/data/feed.json">Suapan data</a></div></div>
 </main>
 <footer class="footer footer-v2">
 <div class="foot-top"><div class="foot-brand"><div class="foot-wordmark">Greater Malaysia</div><p class="foot-tag">Malaysia, secara masa nyata. Alatan langsung percuma dibina atas data terbuka negara.</p></div>
