@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#d8d2c2;--paper-card:#f3efe6;--panel:#efeadf;--ink:#16130d;--ink-soft:#4a443a;--ink-faint:#8a8272;--seal:#b23a23;--line-ink:rgba(22,19,13,0.85)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:48px 58px 42px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .brand{display:flex;align-items:center;gap:15px}
+  .gm{font-family:'Caveat Brush',cursive;font-size:52px;line-height:.8}
+  .brand-txt .n{font-weight:700;font-size:20px}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--seal);letter-spacing:.04em}
+  .eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:30px;transform:rotate(-3deg);border:2.5px solid var(--seal);border-radius:40px/28px;padding:6px 20px 4px}
+  .win{flex:1;background:var(--paper-card);border:2.5px solid var(--line-ink);border-radius:14px;box-shadow:10px 10px 0 rgba(22,19,13,.1);display:flex;flex-direction:column;overflow:hidden}
+  .winbar{height:46px;flex:0 0 46px;border-bottom:2px solid var(--line-ink);display:flex;align-items:center;gap:8px;padding:0 18px;background:var(--panel)}
+  .dot{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--line-ink)}
+  .url{margin-left:14px;font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--ink-soft);background:var(--paper);border:1.5px solid rgba(22,19,13,.14);border-radius:20px;padding:5px 16px}
+  .body{flex:1;padding:26px 38px 24px;display:flex;flex-direction:column}
+  .ttl{font-family:'Anton',sans-serif;font-size:46px;line-height:.98;text-transform:uppercase;letter-spacing:.01em}
+  .inp{display:inline-flex;align-items:center;gap:10px;margin:16px 0 4px;font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:600;background:var(--paper);border:2px solid var(--line-ink);border-radius:6px;padding:10px 16px}
+  .net{display:flex;align-items:baseline;gap:16px;margin-top:14px}
+  .net .big{font-family:'Anton',sans-serif;font-size:88px;line-height:.85;color:var(--seal)}
+  .net .lab{font-size:22px;color:var(--ink-soft)}
+  .strip{display:flex;gap:0;margin-top:26px;border:2px solid var(--line-ink);border-radius:6px;overflow:hidden}
+  .seg{flex:1;padding:14px 10px;text-align:center;border-right:2px solid var(--line-ink)}
+  .seg:last-child{border-right:0}
+  .seg.hi{background:var(--seal)}
+  .seg .cc{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-soft)}
+  .seg.hi .cc{color:#f3efe6}
+  .seg .rm{font-family:'Anton',sans-serif;font-size:30px;margin-top:4px}
+  .seg.hi .rm{color:#fff}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:28px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:25px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:24px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <div class="brand"><div class="gm">GM</div><div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div></div>
+    <div class="eyebrow">new tool</div>
+  </div>
+  <div class="win">
+    <div class="winbar"><span class="dot" style="background:#e0655a;border-color:#c14a3f"></span><span class="dot" style="background:#e6b95a"></span><span class="dot" style="background:#7fae7a"></span><span class="url">greatermalaysia.com/road-tax</span></div>
+    <div class="body">
+      <div class="ttl">What's your road tax?</div>
+      <div class="inp">2,000 cc / private saloon</div>
+      <div class="net"><span class="big">RM380</span><span class="lab">a year</span></div>
+      <div class="strip">
+        <div class="seg"><div class="cc">1.5L / 1,500cc</div><div class="rm">RM90</div></div>
+        <div class="seg hi"><div class="cc">2.0L / 2,000cc</div><div class="rm">RM380</div></div>
+        <div class="seg"><div class="cc">3.0L / 3,000cc</div><div class="rm">RM2,130</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="site">greatermalaysia.com/road-tax</div>
+    <div class="tag">JPJ rates &middot; <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,67 @@
+{
+  "slug": "is-malaysia-getting-old",
+  "kind": "data-story",
+  "title": "Is Malaysia getting old?",
+  "subtitle": "Yes. Malaysia is now an ageing society, more than 1 in 13 people are 65 or older, and the country is on track to be an aged society by around 2040.",
+  "question": "Is Malaysia's population ageing?",
+  "answer": "Yes, and faster than most Malaysians realise. In 2024, 7.7% of Malaysians were aged 65 and over, above the 7% line the United Nations uses to call a country an ageing society. Counting everyone 60 and older, it is 11.6%, about 3.9 million people, up from just 5.5% in 1970. The Department of Statistics Malaysia projects Malaysia will become an aged society, 14% aged 65+, within about 16 years, around 2040. Fewer babies and longer lives are flipping the age pyramid.",
+  "updated": "2026-07-13",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM)",
+    "publisher_type": "Government, national statistics office",
+    "document": "Current Population Estimates and Population Projections, Malaysia",
+    "published": "2024 to 2025",
+    "url": "https://data.gov.my/data-catalogue/population_malaysia",
+    "retrieved": "2026-07-13",
+    "license": "Official DOSM open data (data.gov.my)",
+    "notes": "Share of population aged 65+ (7.7% in 2024, up from 7.4% in 2023) and the old-age dependency ratio (10.9 in 2024) are DOSM Current Population Estimates. Share aged 60+ (11.6%, 3.9 million in 2024; 5.5% in 1970) and the under-14 share (22.2% in 2024; 44.5% in 1970), plus projections to 2040 (17.3% aged 60+, 6.4 million of 37.1 million) and 2050 (23.4%), are DOSM figures reported in its 2024 population projections. UN ageing thresholds: ageing society at 7% aged 65+, aged society at 14%, super-aged at 20%. Median age 31.3 in 2025. Projection year for aged-society status is approximate."
+  },
+  "headline": [
+    { "label": "Aged 65 and over", "value": "7.7%", "sub": "in 2024, past the 7% ageing line", "note": "DOSM" },
+    { "label": "Aged 60 and over", "value": "11.6%", "sub": "3.9 million people, was 5.5% in 1970", "note": "DOSM" },
+    { "label": "Aged society by", "value": "~2040", "sub": "when 14% will be 65 or older", "note": "DOSM projection" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Share of Malaysians aged 60 and over, 1970 to 2050",
+      "note": "The over-60 share has roughly doubled since 1970 and is projected to keep climbing. Values for 2040 and 2050 are DOSM projections. Selected years shown.",
+      "ref": "population aged 60+, 1970-2050 (projected)",
+      "unit": "% of population",
+      "x": "year",
+      "metrics": [{ "key": "share", "label": "Aged 60+", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "year": "1970", "share": 5.5 },
+        { "year": "2024", "share": 11.6 },
+        { "year": "2040", "share": 17.3 },
+        { "year": "2050", "share": 23.4 }
+      ]
+    },
+    "by_age": {
+      "title": "The age pyramid is flipping",
+      "note": "Malaysia's youngest and oldest have traded places since 1970: the share under 14 has halved while the 60-and-over share has doubled. Percentages of total population.",
+      "ref": "age structure, 1970 vs 2024",
+      "unit": "% of population",
+      "metrics": [
+        { "key": "y1970", "label": "1970", "color": "ink", "fmt": "num" },
+        { "key": "y2024", "label": "2024", "color": "seal", "fmt": "num" }
+      ],
+      "rows": [
+        { "label": "Under 14", "y1970": 44.5, "y2024": 22.2 },
+        { "label": "60 and over", "y1970": 5.5, "y2024": 11.6 }
+      ]
+    }
+  },
+  "takeaways": [
+    "In 2024, **7.7%** of Malaysians were aged **65 and over**, up from 7.4% in 2023 and past the **7%** line the UN uses to define an **ageing society**.",
+    "Counting everyone **60 and over**, it is **11.6%**, about **3.9 million** people, more than double the **5.5%** share in 1970.",
+    "The **old-age dependency ratio** rose to **10.9** in 2024: roughly nine working-age Malaysians for every person 65 or older, and falling.",
+    "The age pyramid is **flipping**: the under-14 share has halved since 1970 (44.5% to **22.2%**) while the 60-plus share has doubled.",
+    "DOSM projects Malaysia will be an **aged society** (14% aged 65+) in about **16 years, around 2040**, and the 60-plus share will reach **17.3%** by 2040. Fewer babies plus longer lives is the driver."
+  ],
+  "faq": [
+    { "q": "Is Malaysia an ageing society?", "a": "Yes. In 2024, 7.7% of Malaysians were aged 65 and over, above the 7% threshold the United Nations uses to classify a country as an ageing society, according to the Department of Statistics Malaysia (DOSM). It was 7.4% in 2023." },
+    { "q": "When will Malaysia become an aged society?", "a": "DOSM projects Malaysia will reach aged-society status, meaning 14% of the population aged 65 and over, in about 16 years from 2024, so around 2040. A super-aged society is 20% aged 65+." },
+    { "q": "What percentage of Malaysia's population is elderly?", "a": "In 2024, 7.7% were aged 65 and over, and 11.6% (about 3.9 million people) were aged 60 and over, up from 5.5% in 1970 (DOSM). The old-age dependency ratio was 10.9." },
+    { "q": "Why is Malaysia's population ageing?", "a": "Two forces: Malaysians are living longer, and they are having far fewer children. The total fertility rate has fallen to 1.6, below the 2.1 replacement level, so each generation is smaller, which raises the share of older people over time." }
+  ]
+}

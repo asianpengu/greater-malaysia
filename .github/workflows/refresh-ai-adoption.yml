@@ -1,0 +1,51 @@
+name: Refresh AI-adoption data
+
+# Quarterly re-check of the Microsoft AI Diffusion open CSV so the
+# "Is Malaysia actually using AI?" story never silently goes stale.
+# It updates the machine-readable data and opens a PR for human review;
+# it never pushes to main directly, so no unverified number reaches prod.
+#
+# Requires repo setting: Settings > Actions > General >
+# "Allow GitHub Actions to create and approve pull requests".
+
+on:
+  schedule:
+    - cron: "0 2 1 1,4,7,10 *"   # 02:00 UTC on the 1st of Jan, Apr, Jul, Oct
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Refresh structured data + prerender
+        run: |
+          node scripts/refresh-ai-adoption.mjs
+          node scripts/prerender-stories.mjs
+      - name: Open PR if the story changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No change — AI-adoption story already matches the latest CSV."
+            exit 0
+          fi
+          BRANCH="auto/ai-adoption-refresh-$(date +%Y%m%d)"
+          git config user.name "gm-refresh-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add data/ai-adoption-malaysia.json stories/ai-adoption-malaysia.html
+          git commit -m "data: refresh AI-adoption figures from Microsoft AI Diffusion CSV"
+          git push origin "$BRANCH"
+          gh pr create --base main --head "$BRANCH" \
+            --title "Refresh AI-adoption story (Microsoft AI Diffusion)" \
+            --body "Automated quarterly refresh of the structured data from the latest Microsoft AI Diffusion CSV.
+
+          REVIEW BEFORE MERGING: the script updates the headline, trend and SEA table, but not the prose. Check the subtitle, answer, takeaways and FAQ in data/ai-adoption-malaysia.json for the old figure (the run log lists the exact fields), fix them, re-run the prerender, then merge. Merging deploys to production."

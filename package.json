@@ -2,5 +2,9 @@
   "name": "greater-malaysia",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=18" }
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "prerender": "node scripts/prerender-stories.mjs",
+    "refresh:ai": "node scripts/refresh-ai-adoption.mjs && node scripts/prerender-stories.mjs"
+  }
 }

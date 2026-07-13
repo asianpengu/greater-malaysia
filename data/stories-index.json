@@ -1,6 +1,16 @@
 {
   "stories": [
     {
+      "slug": "is-malaysia-getting-old",
+      "url": "/stories/is-malaysia-getting-old",
+      "tag": "Society",
+      "title": "Is Malaysia getting old?",
+      "subtitle": "Yes. 7.7% are now 65 or older, past the ageing line, and an aged society beckons by around 2040.",
+      "source": "DOSM",
+      "date": "2026-07-13",
+      "new": true
+    },
+    {
       "slug": "malaysia-birth-rate",
       "url": "/stories/malaysia-birth-rate",
       "tag": "Society",
