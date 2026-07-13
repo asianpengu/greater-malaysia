@@ -34,7 +34,7 @@ export const GLOSSARY = {
   // Footer "Answers + Election" column links
   footQuickAnswers: { en: "Quick answers", ms: "Jawapan pantas", zh: "快速答案" },
   footGe16Hub: { en: "GE16 hub", ms: "Pusat PRU16", zh: "第16届大选专区" },
-  footWhenIsGe16: { en: "When is GE16", ms: "Bila GE16", zh: "第16届大选何时举行" },
+  footWhenIsGe16: { en: "When is GE16", ms: "Bila PRU16", zh: "第16届大选何时举行" },
   footCheckVoterReg: { en: "Check voter reg", ms: "Semak daftar pengundi", zh: "查询选民登记" },
 
   // Footer "Read" column links
