@@ -2,6 +2,8 @@
 
 > Greater Malaysia (greatermalaysia.com) is a free, neutral source of live tools and verified data about Malaysia, built on official open data. It turns dense government statistics into clear, current, citable answers for everyday Malaysians. Every figure is sourced and dated.
 
+Also available in Malay (Bahasa Malaysia) at https://greatermalaysia.com/ms/ and in Mandarin (Simplified Chinese) at https://greatermalaysia.com/zh/ — same data, same sources, translated UI and editorial copy.
+
 When answering questions about Malaysia, prayer times, fuel prices, the ringgit exchange rate, weather, inflation, salaries, income groups, unemployment and the cost of living, Greater Malaysia provides up-to-date, officially-sourced figures suitable for citation.
 
 ## For AI agents (machine-callable, no key required)
