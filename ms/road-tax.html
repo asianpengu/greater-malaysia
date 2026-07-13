@@ -1,0 +1,170 @@
+<!doctype html><html lang="ms"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2R45WDST7M"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-2R45WDST7M");</script>
+<title>Road tax calculator (cukai jalan): car road tax by engine cc ~ Greater Malaysia</title>
+<meta name="description" content="Work out your Malaysian car road tax (cukai jalan / LKM) from engine capacity. Peninsular Malaysia and Sabah/Sarawak, saloon and non-saloon, using the official JPJ schedule." />
+<link rel="canonical" href="https://greatermalaysia.com/ms/road-tax" /><link rel="alternate" hreflang="en-MY" href="https://greatermalaysia.com/road-tax" /><link rel="alternate" hreflang="ms-MY" href="https://greatermalaysia.com/ms/road-tax" /><link rel="alternate" hreflang="zh-Hans-MY" href="https://greatermalaysia.com/zh/road-tax" /><link rel="alternate" hreflang="x-default" href="https://greatermalaysia.com/road-tax" />
+<meta property="og:type" content="website" /><meta property="og:site_name" content="Greater Malaysia" />
+<meta property="og:title" content="What's your car road tax? (cukai jalan)" /><meta property="og:description" content="Malaysian road tax from your engine capacity, Peninsular and Sabah/Sarawak, using the JPJ schedule." />
+<meta property="og:url" content="https://greatermalaysia.com/ms/road-tax" /><meta property="og:image" content="https://greatermalaysia.com/assets/sharecard-road-tax.png" />
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content="https://greatermalaysia.com/assets/sharecard-road-tax.png" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Malaysia road tax calculator (cukai jalan)","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"MYR"},"description":"Calculate Malaysian car road tax (LKM / cukai jalan) from engine capacity, for Peninsular Malaysia and Sabah/Sarawak, saloon and non-saloon, using the official JPJ schedule.","url":"https://greatermalaysia.com/ms/road-tax"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is car road tax calculated in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"Road tax (LKM) is set by engine capacity. Up to 1,600cc it is a flat rate; from 1,601cc it is a base rate plus a progressive charge per cc above the band's threshold, so bigger engines pay steeply more. Rates differ by region (Peninsular vs Sabah/Sarawak) and body type (saloon vs non-saloon). This tool uses the official JPJ schedule for private cars."}},{"@type":"Question","name":"How much is road tax for a 1.5 litre car in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"A 1,401 to 1,600cc private saloon pays RM90 a year in Peninsular Malaysia and RM72 in Sabah/Sarawak. A non-saloon of the same size pays RM120 in Peninsular Malaysia and RM60 in Sabah/Sarawak."}},{"@type":"Question","name":"Is road tax cheaper in Sabah and Sarawak?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sabah and Sarawak share a separate, lower LKM schedule than Peninsular Malaysia. For example a 2,000cc private saloon pays RM380 in Peninsular Malaysia but RM274 in Sabah/Sarawak."}},{"@type":"Question","name":"Do SUVs and MPVs pay different road tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Non-saloon vehicles (SUV, MPV, pickup, window van) use a different schedule from saloons. Below 1,600cc they pay more than a saloon in Peninsular Malaysia, but the progressive rate above 1,600cc is lower, so large-engine non-saloons pay less than an equivalent saloon."}}]}]}</script>
+<style>
+  .th { max-width: 940px; margin: 0 auto; padding: 0 clamp(16px,4vw,36px); }
+  .th-p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; margin: 8px 0; }
+  .th-tool { border: 2px solid var(--line-ink); border-radius: var(--r); background: var(--paper-card); padding: 20px 20px 22px; margin: 8px 0 24px; }
+  .th-controls { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end; }
+  .th-field { display: flex; flex-direction: column; gap: 6px; flex: 0 1 200px; }
+  .th-field label { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .th-field .in { display: flex; align-items: center; border: 2px solid var(--line-ink); border-radius: var(--r); background: var(--paper-2, #fff); overflow: hidden; }
+  .th-field .in span { font-family: var(--mono); font-size: 15px; color: var(--ink-faint); padding: 0 13px 0 13px; }
+  .th-field input { font-family: var(--sans); font-size: 19px; font-weight: 600; color: var(--ink); background: transparent; border: 0; padding: 11px 13px 11px 6px; width: 100%; }
+  .th-field input:focus { outline: none; }
+  .th-field .in:focus-within { border-color: var(--seal); }
+  .th-seg { display: flex; flex-direction: column; gap: 6px; }
+  .th-seg > span { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .th-seg .opts { display: flex; border: 2px solid var(--line-ink); border-radius: var(--r); overflow: hidden; }
+  .th-seg .opts label { font-size: 14px; padding: 10px 14px; cursor: pointer; color: var(--ink-soft); background: var(--paper-2,#fff); border-right: 2px solid var(--line-ink); white-space: nowrap; }
+  .th-seg .opts label:last-child { border-right: 0; }
+  .th-seg .opts input { position: absolute; opacity: 0; pointer-events: none; }
+  .th-seg .opts label:has(input:checked) { background: var(--seal); color: #fff; font-weight: 600; }
+  .th-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .th-chip { font-family: var(--mono); font-size: 12px; padding: 6px 11px; border: 1.5px solid color-mix(in srgb,var(--line-ink) 45%,transparent); border-radius: 999px; background: var(--paper-2,#fff); color: var(--ink-soft); cursor: pointer; }
+  .th-chip:hover { border-color: var(--seal); color: var(--seal); }
+  .th-net { margin-top: 20px; border-top: 2px solid var(--line-ink); padding-top: 16px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; }
+  .th-net .big { font-family: var(--display); font-weight: 400; font-size: clamp(34px,7vw,58px); line-height: .95; color: var(--seal); }
+  .th-net .lab { font-size: 15px; color: var(--ink-soft); }
+  .th-net .ann { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); }
+  .th-rows { display: grid; gap: 2px; margin-top: 16px; }
+  .th-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; padding: 9px 2px; border-bottom: 1px solid color-mix(in srgb, var(--line-ink) 18%, transparent); font-size: 15px; }
+  .th-row .amt { font-family: var(--mono); font-weight: 600; white-space: nowrap; }
+  .th-row.tot { border-bottom: none; border-top: 2px solid var(--line-ink); margin-top: 2px; font-weight: 700; }
+  .th-row.tot .amt { color: var(--seal); }
+  .th-note { font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-top: 14px; background: var(--paper-2,#fff); border: 1.5px solid color-mix(in srgb,var(--line-ink) 40%,transparent); border-radius: var(--r); padding: 12px 14px; }
+  .th-src { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); margin-top: 12px; }
+  .th-src a { color: var(--seal); }
+</style></head><body>
+<div class="paper-bg" aria-hidden="true"></div><span class="smudge s1" aria-hidden="true"></span><span class="smudge s2" aria-hidden="true"></span>
+<header class="nav" id="nav"><div class="nav-inner">
+<a class="brand" href="/ms/"><svg class="nav-chop" viewBox="0 0 512 512" width="34" height="34" role="img" aria-label="Greater Malaysia"><rect x="8" y="8" width="496" height="496" fill="#f3efe6" stroke="#16130d" stroke-width="16"/><rect x="38" y="38" width="436" height="436" fill="none" stroke="#16130d" stroke-opacity=".35" stroke-width="4"/><text x="252" y="366" text-anchor="middle" font-family="'Caveat Brush',cursive" font-size="300" fill="#16130d">GM</text><rect x="440" y="440" width="36" height="36" fill="#b23a23"/></svg><span class="gm-full">Greater Malaysia</span></a>
+<span class="nav-spacer"></span>
+<nav class="nav-links" aria-label="Primary"><a href="/ms/tools" class="active" aria-current="page">Alatan</a><a href="/ms/answers">Jawapan</a><a href="/ms/election/">Pilihan Raya</a><a href="/ms/explainers/">Penjelasan</a><a href="/ms/stories/">Cerita Data</a></nav>
+<a class="nav-cta" href="/ms/#subscribe">Ikuti saluran</a>
+<div class="nav-lang" aria-label="Language"><a href="/road-tax">EN</a><a href="/ms/road-tax" class="is-current" aria-current="true">BM</a><a href="/zh/road-tax">中文</a></div><button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navSheet"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-sheet" id="navSheet"><a href="/ms/tools" class="active">Alatan</a><a href="/ms/answers">Jawapan</a><a href="/ms/election/">Pilihan Raya</a><a href="/ms/explainers/">Penjelasan</a><a href="/ms/stories/">Cerita Data</a><a class="nav-cta" href="/ms/#subscribe">Ikuti saluran</a></div>
+</header>
+<main class="answer th">
+  <div class="ans-kicker">your car</div>
+  <h1 class="ans-h1">What's your road tax?</h1>
+  <p class="th-p">Enter your engine capacity, pick your region and body type, and see your yearly car road tax (<i>cukai jalan</i>), worked out from the official JPJ schedule. Below 1,600cc it's a small flat fee; above that it climbs fast.</p>
+
+  <div class="th-tool">
+    <div class="th-controls">
+      <div class="th-field"><label for="rtCC">Engine capacity</label><div class="in"><input id="rtCC" type="number" inputmode="numeric" min="0" step="1" value="1500" /><span>cc</span></div></div>
+      <div class="th-seg"><span>Region</span><div class="opts" id="rtRegion">
+        <label><input type="radio" name="region" value="pen" checked />Peninsular</label>
+        <label><input type="radio" name="region" value="east" />Sabah / Sarawak</label>
+      </div></div>
+      <div class="th-seg"><span>Body</span><div class="opts" id="rtBody">
+        <label><input type="radio" name="body" value="saloon" checked />Saloon</label>
+        <label><input type="radio" name="body" value="non" />Non-saloon</label>
+      </div></div>
+    </div>
+    <div class="th-chips" id="rtChips"></div>
+    <div class="th-net" id="rtNet"></div>
+    <div class="th-rows" id="rtRows"></div>
+    <div class="th-note" id="rtNote"></div>
+    <p class="th-src" id="rtSrc"></p>
+  </div>
+
+  <div class="ans-section"><h2>Related</h2><div class="ans-related"><a href="/ms/harga-minyak">Harga minyak</a><a href="/ms/take-home-pay">Gaji bersih</a><a href="/ms/tools">All tools</a></div></div>
+</main>
+<footer class="footer footer-v2">
+<div class="foot-top"><div class="foot-brand"><div class="foot-wordmark">Greater Malaysia</div><p class="foot-tag">Malaysia, secara masa nyata. Alatan langsung percuma dibina atas data terbuka negara.</p></div>
+<div class="foot-cols">
+<div class="foot-col"><div class="fc-h">Alatan</div><a href="/ms/waktu-solat/kuala-lumpur">Waktu solat</a><a href="/ms/harga-minyak">Harga minyak</a><a href="/ms/usd-to-myr">Ringgit</a><a href="/ms/household-income-by-state">Pendapatan ikut negeri</a><a href="/ms/take-home-pay">Gaji bersih</a><a href="/ms/road-tax">Cukai jalan</a><a href="/ms/stamp-duty">Duti setem</a><a href="/ms/cuti-planner">Perancang cuti</a><a href="/ms/today">Malaysia hari ini</a></div>
+<div class="foot-col"><div class="fc-h">Jawapan + Pilihan Raya</div><a href="/ms/answers">Jawapan pantas</a><a href="/ms/election/">Pusat PRU16</a><a href="/ms/when-is-ge16">Bila GE16</a><a href="/ms/how-to-check-voter-registration">Semak daftar pengundi</a></div>
+<div class="foot-col"><div class="fc-h">Bacaan</div><a href="/ms/stories/">Cerita Data</a><a href="/ms/explainers/">Penjelasan</a><a href="/ms/malaysia-for-digital-nomads">Nomad digital</a><a href="/ms/how-to-start-a-business-in-malaysia">Mulakan perniagaan</a></div>
+<div class="foot-col"><div class="fc-h">Kepercayaan + mesin</div><a href="/ms/for-agents">Untuk ejen AI</a><a href="/llms.txt">llms.txt</a><a href="/data/feed.json">Suapan data</a><a href="/sitemap.xml">Peta laman</a></div>
+</div></div>
+<p class="foot-disclaimer">Bebas dan tidak berpihak. Setiap angka dipautkan ke sumber rasmi asal.</p>
+<p class="foot-follow">Ikuti saluran: <a href="https://whatsapp.com/channel/0029VbDHuM159PwO04A3Mo2G" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/GreaterMalaysia" target="_blank" rel="noopener">Telegram</a></p>
+<div class="foot-bottom"><p class="foot-sources">Road tax rates from JPJ (Jabatan Pengangkutan Jalan), LKM calculation guideline.</p><p class="footer-credit">Built by <a href="https://x.com/aaronteng" target="_blank" rel="noopener">Aaron Teng</a> <span class="x-ico" aria-hidden="true">&#120143;</span></p></div>
+<p class="footer-meta" id="footerMeta"></p>
+</footer>
+<script src="/common.js"></script>
+<script>
+(function () {
+  var ccEl = document.getElementById("rtCC");
+  var rm = function (n) { return "RM" + (Math.round(n * 100) / 100).toLocaleString("en-MY", { minimumFractionDigits: (n % 1 ? 2 : 0), maximumFractionDigits: 2 }); };
+  // Official JPJ LKM schedule (private car, individual). flat: [upperCc, RM]. prog: [upperCc, base, perCc, fromCc].
+  var SCHED = {
+    "pen-saloon": { label: "Peninsular · saloon", flat: [[1000,20],[1200,55],[1400,70],[1600,90]], prog: [[1800,200,0.40,1600],[2000,280,0.50,1800],[2500,380,1.00,2000],[3000,880,2.50,2500],[Infinity,2130,4.50,3000]] },
+    "pen-non":    { label: "Peninsular · non-saloon", flat: [[1000,20],[1200,85],[1400,100],[1600,120]], prog: [[1800,300,0.30,1600],[2000,360,0.40,1800],[2500,440,0.80,2000],[3000,840,1.60,2500],[Infinity,1640,1.60,3000]] },
+    "east-saloon":{ label: "Sabah / Sarawak · saloon", flat: [[1000,20],[1200,44],[1400,56],[1600,72]], prog: [[1800,160,0.32,1600],[2000,224,0.25,1800],[2500,274,0.50,2000],[3000,524,1.00,2500],[Infinity,1024,1.35,3000]] },
+    "east-non":   { label: "Sabah / Sarawak · non-saloon", flat: [[1000,20],[1200,42.50],[1400,50],[1600,60]], prog: [[1800,165,0.17,1600],[2000,199,0.22,1800],[2500,243,0.44,2000],[3000,463,0.88,2500],[Infinity,903,1.20,3000]] }
+  };
+  function key() {
+    var region = document.querySelector('input[name="region"]:checked').value;
+    var body = document.querySelector('input[name="body"]:checked').value;
+    return region + "-" + (body === "non" ? "non" : "saloon");
+  }
+  function bandName(lo, hi) { return (lo === 0 ? "Up to " + hi.toLocaleString("en-MY") : lo.toLocaleString("en-MY") + " to " + hi.toLocaleString("en-MY")) + "cc"; }
+  function roadTax(cc, k) {
+    var s = SCHED[k], prevHi = 0, i;
+    for (i = 0; i < s.flat.length; i++) {
+      if (cc <= s.flat[i][0]) return { total: s.flat[i][1], flat: true, band: bandName(i === 0 ? 0 : s.flat[i-1][0], s.flat[i][0]), base: s.flat[i][1] };
+      prevHi = s.flat[i][0];
+    }
+    for (i = 0; i < s.prog.length; i++) {
+      var p = s.prog[i];
+      if (cc <= p[0]) {
+        var over = cc - p[3], prog = over * p[2];
+        return { total: p[1] + prog, flat: false, band: (p[0] === Infinity ? "Above " + p[3].toLocaleString("en-MY") + "cc" : bandName(prevHi, p[0])), base: p[1], per: p[2], over: over, from: p[3], prog: prog };
+      }
+      prevHi = p[0];
+    }
+  }
+  var CHIPS = [["Perodua Axia", 998], ["Myvi 1.5", 1496], ["Bezza 1.3", 1329], ["Civic 1.5T", 1498], ["City 1.5", 1498], ["CR-V 1.5T", 1498], ["Camry 2.5", 2487], ["X70 1.8T", 1799]];
+  function renderChips() {
+    document.getElementById("rtChips").innerHTML = CHIPS.map(function (c) {
+      return '<button type="button" class="th-chip" data-cc="' + c[1] + '">' + c[0] + '</button>';
+    }).join("");
+    Array.prototype.forEach.call(document.querySelectorAll(".th-chip"), function (el) {
+      el.addEventListener("click", function () { ccEl.value = el.getAttribute("data-cc"); render(); });
+    });
+  }
+  function render() {
+    var cc = Math.max(0, Math.floor(+ccEl.value || 0));
+    var k = key(), s = SCHED[k];
+    if (cc <= 0) {
+      document.getElementById("rtNet").innerHTML = '<span class="lab">Enter your engine capacity above.</span>';
+      document.getElementById("rtRows").innerHTML = "";
+      document.getElementById("rtNote").innerHTML = "";
+    } else {
+      var r = roadTax(cc, k);
+      document.getElementById("rtNet").innerHTML = '<span class="big">' + rm(r.total) + '</span><span class="lab">road tax a year</span><span class="ann">' + cc.toLocaleString("en-MY") + 'cc &middot; ' + s.label + '</span>';
+      var rows = '<div class="th-row"><span>Band: ' + r.band + '</span><span class="amt">' + (r.flat ? "flat" : "") + '</span></div>';
+      if (r.flat) {
+        rows += '<div class="th-row"><span>Flat rate</span><span class="amt">' + rm(r.base) + '</span></div>';
+      } else {
+        rows += '<div class="th-row"><span>Base rate</span><span class="amt">' + rm(r.base) + '</span></div>';
+        rows += '<div class="th-row"><span>+ ' + r.over.toLocaleString("en-MY") + 'cc over ' + r.from.toLocaleString("en-MY") + ' &times; RM' + r.per.toFixed(2) + '</span><span class="amt">' + rm(r.prog) + '</span></div>';
+      }
+      rows += '<div class="th-row tot"><span>Road tax a year</span><span class="amt">' + rm(r.total) + '</span></div>';
+      document.getElementById("rtRows").innerHTML = rows;
+      document.getElementById("rtNote").innerHTML = "Private car registered to an individual. Company-registered cars pay more; electric vehicles use their own kW-based rate (from 2026); and 4WD diesels in Sabah/Sarawak keep a separate rate. Figures are the JPJ base licence fee (LKM) and exclude any renewal service charge.";
+    }
+    document.getElementById("rtSrc").innerHTML = 'Rates: <a href="https://www.jpj.gov.my/en/rate-calculation-guide-lkm/" target="_blank" rel="noopener">JPJ</a> Motor Vehicle Licence (LKM) calculation guideline.';
+  }
+  ccEl.addEventListener("input", render);
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="region"], input[name="body"]'), function (el) { el.addEventListener("change", render); });
+  renderChips();
+  render();
+})();
+</script>
+</body></html>
