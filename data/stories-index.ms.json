@@ -1,0 +1,169 @@
+{
+  "stories": [
+    {
+      "slug": "is-malaysia-getting-old",
+      "url": "/stories/is-malaysia-getting-old",
+      "tag": "Masyarakat",
+      "title": "Adakah Malaysia semakin tua?",
+      "subtitle": "Ya. 7.7% kini berumur 65 tahun ke atas, melepasi garis penuaan, dan masyarakat tua bakal menjelang sekitar 2040.",
+      "source": "DOSM",
+      "date": "2026-07-13",
+      "new": true
+    },
+    {
+      "slug": "malaysia-birth-rate",
+      "url": "/stories/malaysia-birth-rate",
+      "tag": "Masyarakat",
+      "title": "Adakah rakyat Malaysia kurang melahirkan anak?",
+      "subtitle": "Ya, dan cepat pula. Kelahiran hampir paras terendah dalam 24 tahun dan kesuburan di bawah paras gantian.",
+      "source": "DOSM",
+      "date": "2026-07-10",
+      "new": true
+    },
+    {
+      "slug": "what-malaysia-exports",
+      "url": "/stories/what-malaysia-exports",
+      "tag": "Perdagangan",
+      "title": "Apa yang Malaysia jual kepada dunia?",
+      "subtitle": "Cip dan mesin, kebanyakannya. Dan Malaysia menikmati lebihan dagangan yang besar hasilnya.",
+      "source": "DOSM",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "who-visits-malaysia",
+      "url": "/stories/who-visits-malaysia",
+      "tag": "Pelancongan",
+      "title": "Siapa yang melawat Malaysia?",
+      "subtitle": "Separuh daripada semua ketibaan datang dari satu negara jiran: Singapura.",
+      "source": "Immigration / Tourism Malaysia",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "how-malaysians-commute",
+      "url": "/stories/how-malaysians-commute",
+      "tag": "Pengangkutan",
+      "title": "Bagaimana rakyat Malaysia bergerak?",
+      "subtitle": "1.4 juta perjalanan sehari menaiki pengangkutan awam. MRT dan LRT memikul beban utama.",
+      "source": "Prasarana / KTMB",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "malaysia-income-divide",
+      "url": "/stories/malaysia-income-divide",
+      "tag": "Pendapatan",
+      "title": "Jurang pendapatan Malaysia, negeri demi negeri",
+      "subtitle": "Di Sabah kira-kira 1 daripada 5 isi rumah hidup dalam kemiskinan; di KL kira-kira 1 daripada 70.",
+      "source": "DOSM",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "how-malaysians-pay",
+      "url": "/stories/how-malaysians-pay",
+      "tag": "Wang",
+      "title": "Bagaimana rakyat Malaysia membayar?",
+      "subtitle": "FPX mengalirkan RM1.3 bilion sehari. Menyingkap lonjakan tanpa tunai Malaysia.",
+      "source": "Bank Negara / PayNet",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "malaysia-ev-adoption",
+      "url": "/stories/malaysia-ev-adoption",
+      "tag": "Kereta",
+      "title": "Adakah rakyat Malaysia beralih ke EV?",
+      "subtitle": "Kereta elektrik mencecah 6% pendaftaran baharu, dua kali ganda berbanding setahun sebelumnya.",
+      "source": "JPJ (Road Transport Dept)",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "crime-in-malaysia",
+      "url": "/stories/crime-in-malaysia",
+      "tag": "Keselamatan",
+      "title": "Adakah jenayah meningkat di Malaysia?",
+      "subtitle": "Jenayah indeks yang direkodkan telah berkurang lebih separuh sejak 2016.",
+      "source": "Royal Malaysia Police",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "ai-adoption-malaysia",
+      "url": "/stories/ai-adoption-malaysia",
+      "tag": "Teknologi",
+      "title": "Adakah Malaysia benar-benar menggunakan AI?",
+      "subtitle": "21.8% rakyat Malaysia usia bekerja menggunakan AI, ke-51 di dunia, satu pertiga daripada kadar Singapura.",
+      "source": "Microsoft AI for Good Lab · Vodus",
+      "date": "2026-07-03",
+      "new": true
+    },
+    {
+      "slug": "malaysia-election-history",
+      "url": "/stories/malaysia-election-history",
+      "tag": "Pilihan Raya",
+      "title": "Cara Malaysia mengundi: setiap pilihan raya sejak 1959",
+      "subtitle": "Blok pemenang pernah menguasai 90% Parlimen. Pada 2022, tiada sesiapa menang majoriti langsung.",
+      "source": "Election Commission (SPR)",
+      "date": "2026-07-01",
+      "new": true
+    },
+    {
+      "slug": "government-spending-malaysia",
+      "url": "/stories/government-spending-malaysia",
+      "tag": "Kerajaan",
+      "title": "Ke mana perginya wang Malaysia?",
+      "subtitle": "RM407 bilion kerajaan persekutuan, siapa yang dibayar, dan apa yang dibina.",
+      "source": "Ministry of Finance",
+      "date": "2026-07-01",
+      "new": true
+    },
+    {
+      "slug": "population-malaysia",
+      "url": "/stories/population-malaysia",
+      "tag": "Rakyat",
+      "title": "Siapakah rakyat?",
+      "subtitle": "34.2 juta penduduk Malaysia, komposisi etnik, struktur umur dan penduduk mengikut negeri.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "cost-of-living-malaysia",
+      "url": "/stories/cost-of-living-malaysia",
+      "tag": "Kos sara hidup",
+      "title": "Apa yang semakin mahal?",
+      "subtitle": "Inflasi Malaysia mengikut kategori, di mana harga naik paling pantas, 2026.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "household-income-state-2022",
+      "url": "/stories/household-income-state-2022",
+      "tag": "Pendapatan",
+      "title": "Di mana anda tinggal menentukan pendapatan anda",
+      "subtitle": "Pendapatan isi rumah, kemiskinan & pecahan B40/M40/T20 mengikut negeri, 2022.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "unemployment-malaysia",
+      "url": "/stories/unemployment-malaysia",
+      "tag": "Pekerjaan",
+      "title": "Adakah Malaysia bekerja?",
+      "subtitle": "Pengangguran & tenaga buruh, 2010–2026, lonjakan COVID dan pemulihan.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "median-salary-malaysia-2024",
+      "url": "/stories/median-salary-malaysia-2024",
+      "tag": "Pendapatan",
+      "title": "Berapa pendapatan rakyat Malaysia?",
+      "subtitle": "Gaji bulanan median & purata di Malaysia, 2024, mengikut jantina, pendidikan dan sektor.",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    }
+  ]
+}

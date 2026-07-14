@@ -108,7 +108,10 @@
         const pfx = _L === "ms" ? "/ms" : _L === "zh-Hans" ? "/zh" : "";
         const T = ({ ms:{badge:"Baharu",source:"Sumber",read:"Baca →",soon:"lebih banyak cerita<br>akan datang ~",err:"Tidak dapat memuatkan cerita."}, zh:{badge:"新",source:"来源",read:"阅读 →",soon:"更多故事<br>即将推出 ~",err:"无法加载故事。"} }[_L==="ms"?"ms":_L==="zh-Hans"?"zh":"en"]) || {badge:"New",source:"Source",read:"Read →",soon:"more stories<br>coming soon ~",err:"Couldn’t load stories."};
         try {
-          const { stories } = await (await fetch("/data/stories-index.json")).json();
+          const _df = _L === "ms" ? "/data/stories-index.ms.json" : _L === "zh-Hans" ? "/data/stories-index.zh.json" : "/data/stories-index.json";
+                    let stories;
+                    try { ({ stories } = await (await fetch(_df)).json()); }
+                    catch (_) { ({ stories } = await (await fetch("/data/stories-index.json")).json()); }
           const cards = stories.map((s) => `
             <a class="story-card" href="${pfx}${esc(s.url)}">
               ${s.new && (Date.now() - Date.parse(s.date)) < 14 * 864e5 ? `<span class="badge-new">${T.badge}</span>` : ``}

@@ -1,0 +1,169 @@
+{
+  "stories": [
+    {
+      "slug": "is-malaysia-getting-old",
+      "url": "/stories/is-malaysia-getting-old",
+      "tag": "社会",
+      "title": "马来西亚正在老龄化吗？",
+      "subtitle": "是的。7.7% 的人口已达 65 岁或以上，越过老龄化门槛，预计约 2040 年将迈入老龄社会。",
+      "source": "DOSM",
+      "date": "2026-07-13",
+      "new": true
+    },
+    {
+      "slug": "malaysia-birth-rate",
+      "url": "/stories/malaysia-birth-rate",
+      "tag": "社会",
+      "title": "马来西亚人越生越少了吗？",
+      "subtitle": "是的，而且很快。新生儿数量逼近 24 年来最低，生育率低于人口更替水平。",
+      "source": "DOSM",
+      "date": "2026-07-10",
+      "new": true
+    },
+    {
+      "slug": "what-malaysia-exports",
+      "url": "/stories/what-malaysia-exports",
+      "tag": "贸易",
+      "title": "马来西亚向世界卖什么？",
+      "subtitle": "主要是芯片和机械。而且靠着它们赚取庞大的贸易顺差。",
+      "source": "DOSM",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "who-visits-malaysia",
+      "url": "/stories/who-visits-malaysia",
+      "tag": "旅游",
+      "title": "谁在造访马来西亚？",
+      "subtitle": "一半的入境游客来自隔壁一个国家：新加坡。",
+      "source": "Immigration / Tourism Malaysia",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "how-malaysians-commute",
+      "url": "/stories/how-malaysians-commute",
+      "tag": "交通",
+      "title": "马来西亚人怎么出行？",
+      "subtitle": "每天 140 万人次搭乘公共交通。MRT 和 LRT 挑起大梁。",
+      "source": "Prasarana / KTMB",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "malaysia-income-divide",
+      "url": "/stories/malaysia-income-divide",
+      "tag": "收入",
+      "title": "马来西亚的收入鸿沟，一州一州看",
+      "subtitle": "在沙巴，约每 5 户就有 1 户生活在贫穷线下；在吉隆坡，约每 70 户才有 1 户。",
+      "source": "DOSM",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "how-malaysians-pay",
+      "url": "/stories/how-malaysians-pay",
+      "tag": "理财",
+      "title": "马来西亚人怎么付款？",
+      "subtitle": "FPX 每天流转 RM1.3 亿。走进马来西亚的无现金浪潮。",
+      "source": "Bank Negara / PayNet",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "malaysia-ev-adoption",
+      "url": "/stories/malaysia-ev-adoption",
+      "tag": "汽车",
+      "title": "马来西亚人在转向电动车吗？",
+      "subtitle": "电动车占新注册量的 6%，是一年前的两倍。",
+      "source": "JPJ (Road Transport Dept)",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "crime-in-malaysia",
+      "url": "/stories/crime-in-malaysia",
+      "tag": "治安",
+      "title": "马来西亚的罪案在上升吗？",
+      "subtitle": "有记录的指标性罪案自 2016 年以来已减少超过一半。",
+      "source": "Royal Malaysia Police",
+      "date": "2026-07-06",
+      "new": true
+    },
+    {
+      "slug": "ai-adoption-malaysia",
+      "url": "/stories/ai-adoption-malaysia",
+      "tag": "科技",
+      "title": "马来西亚真的在用 AI 吗？",
+      "subtitle": "21.8% 的适龄工作马来西亚人使用 AI，全球排名第 51，仅为新加坡的三分之一。",
+      "source": "Microsoft AI for Good Lab · Vodus",
+      "date": "2026-07-03",
+      "new": true
+    },
+    {
+      "slug": "malaysia-election-history",
+      "url": "/stories/malaysia-election-history",
+      "tag": "选举",
+      "title": "马来西亚如何投票：1959 年以来的每一届大选",
+      "subtitle": "胜出阵营曾拿下 90% 的国会议席。到了 2022 年，无人赢得过半数。",
+      "source": "Election Commission (SPR)",
+      "date": "2026-07-01",
+      "new": true
+    },
+    {
+      "slug": "government-spending-malaysia",
+      "url": "/stories/government-spending-malaysia",
+      "tag": "政府",
+      "title": "马来西亚的钱花到哪里去了？",
+      "subtitle": "联邦政府的 RM4070 亿，谁领薪水，又建了些什么。",
+      "source": "Ministry of Finance",
+      "date": "2026-07-01",
+      "new": true
+    },
+    {
+      "slug": "population-malaysia",
+      "url": "/stories/population-malaysia",
+      "tag": "人民",
+      "title": "人民是谁？",
+      "subtitle": "马来西亚的 3420 万人口、族群构成、年龄结构与各州人口。",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "cost-of-living-malaysia",
+      "url": "/stories/cost-of-living-malaysia",
+      "tag": "生活成本",
+      "title": "什么东西越来越贵？",
+      "subtitle": "马来西亚各类别的通货膨胀，哪里的物价涨得最快，2026。",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "household-income-state-2022",
+      "url": "/stories/household-income-state-2022",
+      "tag": "收入",
+      "title": "你住在哪里，决定你赚多少",
+      "subtitle": "各州的家庭收入、贫穷率与 B40/M40/T20 分层，2022。",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "unemployment-malaysia",
+      "url": "/stories/unemployment-malaysia",
+      "tag": "就业",
+      "title": "马来西亚有在工作吗？",
+      "subtitle": "失业率与劳动力，2010–2026，疫情冲击与复苏。",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    },
+    {
+      "slug": "median-salary-malaysia-2024",
+      "url": "/stories/median-salary-malaysia-2024",
+      "tag": "收入",
+      "title": "马来西亚人赚多少？",
+      "subtitle": "马来西亚的月薪中位数与平均值，2024，按性别、教育程度与行业划分。",
+      "source": "DOSM",
+      "date": "2026-06-30"
+    }
+  ]
+}
