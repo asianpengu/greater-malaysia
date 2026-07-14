@@ -3,7 +3,7 @@ export const SITE_ORIGIN = "https://greatermalaysia.com";
 export const LANGS = {
   en: { code: "en", hreflang: "en-MY", ogLocale: "en_MY", htmlLang: "en", prefix: "", label: "EN" },
   ms: { code: "ms", hreflang: "ms-MY", ogLocale: "ms_MY", htmlLang: "ms", prefix: "/ms", label: "BM" },
-  zh: { code: "zh", hreflang: "zh-Hans-MY", ogLocale: "zh_CN", htmlLang: "zh-Hans", prefix: "/zh", label: "中文" },
+  zh: { code: "zh", hreflang: "zh-Hans-MY", ogLocale: "zh_CN", htmlLang: "zh-Hans", prefix: "/zh", label: "CN" },
 };
 
 // slug: root-relative path exactly as used in existing href/src attributes and the sitemap.

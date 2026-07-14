@@ -92,13 +92,13 @@ test("injectHreflang: is idempotent (no double-insert on re-run)", () => {
   assert.equal(once, twice);
 });
 
-test("insertLangSwitcher: inserts EN/BM/中文 links after the nav CTA, before the burger button", () => {
+test("insertLangSwitcher: inserts EN/BM/CN links after the nav CTA, before the burger button", () => {
   const html = '<nav class="nav-links"><a href="/tools">Tools</a></nav><a class="nav-cta" href="/#subscribe">Follow the channel</a><button class="nav-burger">x</button>';
   const out = insertLangSwitcher(html, { slug: "/road-tax", currentLangCode: "en" });
   assert.match(out, /<div class="nav-lang" aria-label="Language">/);
   assert.match(out, /<a href="\/road-tax" class="is-current" aria-current="true">EN<\/a>/);
   assert.match(out, /<a href="\/ms\/road-tax">BM<\/a>/);
-  assert.match(out, /<a href="\/zh\/road-tax">中文<\/a>/);
+  assert.match(out, /<a href="\/zh\/road-tax">CN<\/a>/);
   assert.ok(out.indexOf("nav-lang") > out.indexOf("Follow the channel"));
   assert.ok(out.indexOf("nav-lang") < out.indexOf("nav-burger"));
 });
@@ -116,7 +116,7 @@ test("insertLangSwitcher: works on the site root slug", () => {
   const out = insertLangSwitcher(html, { slug: "/", currentLangCode: "ms" });
   assert.match(out, /<a href="\/" >EN<\/a>|<a href="\/">EN<\/a>/);
   assert.match(out, /<a href="\/ms\/" class="is-current" aria-current="true">BM<\/a>/);
-  assert.match(out, /<a href="\/zh\/">中文<\/a>/);
+  assert.match(out, /<a href="\/zh\/">CN<\/a>/);
 });
 
 test("applyNavFooterGlossary: translates nav and footer boilerplate text nodes", () => {
