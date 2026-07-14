@@ -85,8 +85,8 @@
 <script src="/assets/i18n.js"></script><script src="/common.js"></script>
 <script>
 (function () {
-  var HOL = { "2026-01-01": "New Year's Day", "2026-02-17": "Chinese New Year", "2026-02-18": "Chinese New Year (2nd Day)", "2026-03-20": "Hari Raya Aidilfitri", "2026-03-21": "Hari Raya Aidilfitri", "2026-03-23": "Hari Raya Aidilfitri (replacement)", "2026-05-01": "Labour Day", "2026-05-27": "Hari Raya Haji", "2026-05-31": "Wesak Day", "2026-06-01": "Agong's Birthday", "2026-06-17": "Awal Muharram", "2026-08-25": "Maulidur Rasul", "2026-08-31": "Merdeka Day", "2026-09-16": "Malaysia Day", "2026-11-08": "Deepavali", "2026-11-09": "Deepavali (replacement)", "2026-12-25": "Christmas Day" };
-  var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var HOL = { "2026-01-01": "元旦", "2026-02-17": "农历新年", "2026-02-18": "农历新年（第二天）", "2026-03-20": "开斋节", "2026-03-21": "开斋节", "2026-03-23": "开斋节（补假）", "2026-05-01": "劳动节", "2026-05-27": "哈芝节", "2026-05-31": "卫塞节", "2026-06-01": "最高元首诞辰", "2026-06-17": "回历新年", "2026-08-25": "先知穆罕默德诞辰", "2026-08-31": "国庆日", "2026-09-16": "马来西亚日", "2026-11-08": "屠妖节", "2026-11-09": "屠妖节（补假）", "2026-12-25": "圣诞节" };
+  var MON = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
   function iso(d) { return d.toISOString().slice(0, 10); }
   function isFree(d) { var w = d.getUTCDay(); return w === 0 || w === 6 || HOL[iso(d)]; }
   function isHol(d) { return !!HOL[iso(d)]; }
@@ -132,16 +132,16 @@
     }
     var chosen = best.set, spent = best.leave;
     var totalOff = freebies.reduce(function (s, o) { return s + o.off; }, 0) + best.off;
-    document.getElementById("cpHead").innerHTML = '<div class="big">Spend <b>' + spent + '</b> leave day' + (spent === 1 ? "" : "s") + ' &rarr; <b>' + totalOff + '</b> days off in 2026</div><div class="sub">Plus the free long weekends below, taken automatically. Highlighted cards are the ones we picked for your ' + budget + '-day budget.</div>';
+    document.getElementById("cpHead").innerHTML = '<div class="big">用 <b>' + spent + '</b> 天年假 &rarr; 2026 年共 <b>' + totalOff + '</b> 天假期</div><div class="sub">还有下方免费的长周末，会自动帮你安排。高亮的卡片就是我们为你 ' + budget + ' 天年假预算挑选的组合。</div>';
     document.getElementById("cpList").innerHTML = OPPS.map(function (o) {
       var on = o.leave === 0 || chosen[o.start];
       var cls = o.leave === 0 ? "cp-card free" : (on ? "cp-card on" : "cp-card");
-      var badge = o.leave === 0 ? '<span class="cp-badge free">free</span>' : (on ? '<span class="cp-badge">picked</span>' : '<span class="cp-badge">' + (o.off / o.leave).toFixed(1) + 'x</span>');
-      var take = o.leave === 0 ? "No leave needed, it is already a long weekend." : "Take <b>" + o.leave + "</b> day" + (o.leave === 1 ? "" : "s") + ": " + o.leaveDays.map(fmt).join(", ");
-      return '<div class="' + cls + '"><div class="cp-top"><span class="cp-days">' + o.off + '</span><span class="cp-range">days off &middot; ' + fmt(o.start) + ' to ' + fmt(o.end) + '</span>' + badge + '</div><div class="cp-take">' + take + '</div><div class="cp-hol">' + o.hols.join(" &middot; ") + '</div></div>';
+      var badge = o.leave === 0 ? '<span class="cp-badge free">免费</span>' : (on ? '<span class="cp-badge">已选</span>' : '<span class="cp-badge">' + (o.off / o.leave).toFixed(1) + 'x</span>');
+      var take = o.leave === 0 ? "无需请假，这本来就是长周末。" : "请 <b>" + o.leave + "</b> 天年假：" + o.leaveDays.map(fmt).join(", ");
+      return '<div class="' + cls + '"><div class="cp-top"><span class="cp-days">' + o.off + '</span><span class="cp-range">天假期 &middot; ' + fmt(o.start) + ' 至 ' + fmt(o.end) + '</span>' + badge + '</div><div class="cp-take">' + take + '</div><div class="cp-hol">' + o.hols.join(" &middot; ") + '</div></div>';
     }).join("");
-    document.getElementById("cpNote").innerHTML = "This uses the 17 national gazetted holidays. Your state may have extra holidays (for example Thaipusam, state Sultan birthdays) that open up more breaks. Leave days shown are working weekdays to book off.";
-    document.getElementById("cpSrc").innerHTML = 'Holidays: 2026 national gazette (see <a href="/zh/cuti-umum-2026">Cuti Umum 2026</a>).';
+    document.getElementById("cpNote").innerHTML = "这里采用 17 个全国宪报公共假期。你所在的州属可能还有额外假期（例如大宝森节、州苏丹诞辰），能凑出更多长假。这里显示的年假是你需要请的工作日。";
+    document.getElementById("cpSrc").innerHTML = '假期：2026 全国宪报（见 <a href="/zh/cuti-umum-2026">Cuti Umum 2026</a>）。';
   }
   document.getElementById("cpLeave").addEventListener("input", render);
   render();

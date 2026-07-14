@@ -85,8 +85,8 @@
 <script src="/assets/i18n.js"></script><script src="/common.js"></script>
 <script>
 (function () {
-  var HOL = { "2026-01-01": "New Year's Day", "2026-02-17": "Chinese New Year", "2026-02-18": "Chinese New Year (2nd Day)", "2026-03-20": "Hari Raya Aidilfitri", "2026-03-21": "Hari Raya Aidilfitri", "2026-03-23": "Hari Raya Aidilfitri (replacement)", "2026-05-01": "Labour Day", "2026-05-27": "Hari Raya Haji", "2026-05-31": "Wesak Day", "2026-06-01": "Agong's Birthday", "2026-06-17": "Awal Muharram", "2026-08-25": "Maulidur Rasul", "2026-08-31": "Merdeka Day", "2026-09-16": "Malaysia Day", "2026-11-08": "Deepavali", "2026-11-09": "Deepavali (replacement)", "2026-12-25": "Christmas Day" };
-  var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var HOL = { "2026-01-01": "Tahun Baharu", "2026-02-17": "Tahun Baru Cina", "2026-02-18": "Tahun Baru Cina (Hari Kedua)", "2026-03-20": "Hari Raya Aidilfitri", "2026-03-21": "Hari Raya Aidilfitri", "2026-03-23": "Hari Raya Aidilfitri (ganti)", "2026-05-01": "Hari Pekerja", "2026-05-27": "Hari Raya Haji", "2026-05-31": "Hari Wesak", "2026-06-01": "Hari Keputeraan Agong", "2026-06-17": "Awal Muharram", "2026-08-25": "Maulidur Rasul", "2026-08-31": "Hari Merdeka", "2026-09-16": "Hari Malaysia", "2026-11-08": "Deepavali", "2026-11-09": "Deepavali (ganti)", "2026-12-25": "Hari Krismas" };
+  var MON = ["Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ogo", "Sep", "Okt", "Nov", "Dis"];
   function iso(d) { return d.toISOString().slice(0, 10); }
   function isFree(d) { var w = d.getUTCDay(); return w === 0 || w === 6 || HOL[iso(d)]; }
   function isHol(d) { return !!HOL[iso(d)]; }
@@ -132,16 +132,16 @@
     }
     var chosen = best.set, spent = best.leave;
     var totalOff = freebies.reduce(function (s, o) { return s + o.off; }, 0) + best.off;
-    document.getElementById("cpHead").innerHTML = '<div class="big">Spend <b>' + spent + '</b> leave day' + (spent === 1 ? "" : "s") + ' &rarr; <b>' + totalOff + '</b> days off in 2026</div><div class="sub">Plus the free long weekends below, taken automatically. Highlighted cards are the ones we picked for your ' + budget + '-day budget.</div>';
+    document.getElementById("cpHead").innerHTML = '<div class="big">Guna <b>' + spent + '</b> hari cuti &rarr; <b>' + totalOff + '</b> hari bercuti pada 2026</div><div class="sub">Termasuk juga hujung minggu panjang percuma di bawah, diambil secara automatik. Kad yang diserlahkan ialah pilihan kami untuk bajet ' + budget + ' hari anda.</div>';
     document.getElementById("cpList").innerHTML = OPPS.map(function (o) {
       var on = o.leave === 0 || chosen[o.start];
       var cls = o.leave === 0 ? "cp-card free" : (on ? "cp-card on" : "cp-card");
-      var badge = o.leave === 0 ? '<span class="cp-badge free">free</span>' : (on ? '<span class="cp-badge">picked</span>' : '<span class="cp-badge">' + (o.off / o.leave).toFixed(1) + 'x</span>');
-      var take = o.leave === 0 ? "No leave needed, it is already a long weekend." : "Take <b>" + o.leave + "</b> day" + (o.leave === 1 ? "" : "s") + ": " + o.leaveDays.map(fmt).join(", ");
-      return '<div class="' + cls + '"><div class="cp-top"><span class="cp-days">' + o.off + '</span><span class="cp-range">days off &middot; ' + fmt(o.start) + ' to ' + fmt(o.end) + '</span>' + badge + '</div><div class="cp-take">' + take + '</div><div class="cp-hol">' + o.hols.join(" &middot; ") + '</div></div>';
+      var badge = o.leave === 0 ? '<span class="cp-badge free">percuma</span>' : (on ? '<span class="cp-badge">dipilih</span>' : '<span class="cp-badge">' + (o.off / o.leave).toFixed(1) + 'x</span>');
+      var take = o.leave === 0 ? "Tak perlu ambil cuti, ini memang hujung minggu panjang." : "Ambil <b>" + o.leave + "</b> hari cuti: " + o.leaveDays.map(fmt).join(", ");
+      return '<div class="' + cls + '"><div class="cp-top"><span class="cp-days">' + o.off + '</span><span class="cp-range">hari bercuti &middot; ' + fmt(o.start) + ' hingga ' + fmt(o.end) + '</span>' + badge + '</div><div class="cp-take">' + take + '</div><div class="cp-hol">' + o.hols.join(" &middot; ") + '</div></div>';
     }).join("");
-    document.getElementById("cpNote").innerHTML = "This uses the 17 national gazetted holidays. Your state may have extra holidays (for example Thaipusam, state Sultan birthdays) that open up more breaks. Leave days shown are working weekdays to book off.";
-    document.getElementById("cpSrc").innerHTML = 'Holidays: 2026 national gazette (see <a href="/ms/cuti-umum-2026">Cuti Umum 2026</a>).';
+    document.getElementById("cpNote").innerHTML = "Ini menggunakan 17 cuti umum kebangsaan yang diwartakan. Negeri anda mungkin ada cuti tambahan (contohnya Thaipusam, hari keputeraan Sultan negeri) yang membuka lebih banyak peluang bercuti. Hari cuti yang ditunjukkan ialah hari bekerja untuk anda mohon cuti.";
+    document.getElementById("cpSrc").innerHTML = 'Cuti: warta kebangsaan 2026 (lihat <a href="/ms/cuti-umum-2026">Cuti Umum 2026</a>).';
   }
   document.getElementById("cpLeave").addEventListener("input", render);
   render();

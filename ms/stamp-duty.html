@@ -130,26 +130,26 @@
     var grand = stampTotal + legalBase + sst;
 
     if (price <= 0) {
-      document.getElementById("sdNet").innerHTML = '<span class="lab">Enter the property price above.</span>';
+      document.getElementById("sdNet").innerHTML = '<span class="lab">Masukkan harga hartanah di atas.</span>';
       document.getElementById("sdRows").innerHTML = "";
       document.getElementById("sdNote").innerHTML = "";
     } else {
-      document.getElementById("sdNet").innerHTML = '<span class="big">' + rm(stampTotal) + '</span><span class="lab">stamp duty' + (exempt ? ' &middot; exempt' : '') + '</span><span class="ann">' + rm(grand) + ' total upfront, with legal fees</span>';
+      document.getElementById("sdNet").innerHTML = '<span class="big">' + rm(stampTotal) + '</span><span class="lab">duti setem' + (exempt ? ' &middot; dikecualikan' : '') + '</span><span class="ann">' + rm(grand) + ' jumlah pendahuluan, termasuk yuran guaman</span>';
       var z = function (n) { return n === 0 ? ' zero' : ''; };
       var rows =
-        '<div class="th-row"><span>MOT stamp duty ' + (foreign ? '(8% foreign buyer)' : '(1% / 2% / 3% / 4%)') + (exempt ? '<span class="hint">first-home exemption applied</span>' : '') + '</span><span class="amt' + z(mot) + '">' + (mot === 0 ? 'RM0' : rm(mot)) + '</span></div>' +
-        '<div class="th-row"><span>Loan stamp duty (0.5%)' + (exempt ? '<span class="hint">first-home exemption applied</span>' : '') + '</span><span class="amt' + z(loanSD) + '">' + (loanSD === 0 ? 'RM0' : rm(loanSD)) + '</span></div>' +
-        '<div class="th-row sub"><span>Total stamp duty</span><span class="amt">' + rm(stampTotal) + '</span></div>' +
-        '<div class="th-row"><span>SPA legal fee (SRO 2023)</span><span class="amt">' + rm(spaLegal) + '</span></div>' +
-        '<div class="th-row"><span>Loan legal fee (SRO 2023)</span><span class="amt">' + rm(loanLegal) + '</span></div>' +
-        '<div class="th-row"><span>Service tax on legal (8%)</span><span class="amt">' + rm(sst) + '</span></div>' +
-        '<div class="th-row tot"><span>Total upfront cost</span><span class="amt">' + rm(grand) + '</span></div>';
+        '<div class="th-row"><span>Duti setem MOT ' + (foreign ? '(8% pembeli asing)' : '(1% / 2% / 3% / 4%)') + (exempt ? '<span class="hint">pengecualian rumah pertama diterapkan</span>' : '') + '</span><span class="amt' + z(mot) + '">' + (mot === 0 ? 'RM0' : rm(mot)) + '</span></div>' +
+        '<div class="th-row"><span>Duti setem pinjaman (0.5%)' + (exempt ? '<span class="hint">pengecualian rumah pertama diterapkan</span>' : '') + '</span><span class="amt' + z(loanSD) + '">' + (loanSD === 0 ? 'RM0' : rm(loanSD)) + '</span></div>' +
+        '<div class="th-row sub"><span>Jumlah duti setem</span><span class="amt">' + rm(stampTotal) + '</span></div>' +
+        '<div class="th-row"><span>Yuran guaman SPA (SRO 2023)</span><span class="amt">' + rm(spaLegal) + '</span></div>' +
+        '<div class="th-row"><span>Yuran guaman pinjaman (SRO 2023)</span><span class="amt">' + rm(loanLegal) + '</span></div>' +
+        '<div class="th-row"><span>Cukai perkhidmatan atas guaman (8%)</span><span class="amt">' + rm(sst) + '</span></div>' +
+        '<div class="th-row tot"><span>Jumlah kos pendahuluan</span><span class="amt">' + rm(grand) + '</span></div>';
       document.getElementById("sdRows").innerHTML = rows;
       document.getElementById("sdNote").innerHTML = (exempt
-        ? "First-home exemption applied: 100% off MOT and loan stamp duty for a Malaysian citizen's first residential property up to RM500,000, for SPAs signed in 2026 to 2027. "
-        : "") + "Legal fees follow the SRO 2023 scale (1.25% on the first RM500,000, 1% above), a minimum of RM500 each, plus 8% SST; solicitors may discount up to 25%. Excludes disbursements, valuation and other costs. Not legal or tax advice.";
+        ? "Pengecualian rumah pertama diterapkan: 100% pengecualian duti setem MOT dan pinjaman untuk hartanah kediaman pertama warganegara Malaysia sehingga RM500,000, bagi SPA yang ditandatangani pada 2026 hingga 2027. "
+        : "") + "Yuran guaman mengikut skala SRO 2023 (1.25% atas RM500,000 pertama, 1% selebihnya), minimum RM500 setiap satu, tambah 8% SST; peguam boleh memberi diskaun sehingga 25%. Tidak termasuk perbelanjaan sampingan, penilaian dan kos lain. Bukan nasihat guaman atau cukai.";
     }
-    document.getElementById("sdSrc").innerHTML = 'Rates: <a href="https://www.hasil.gov.my" target="_blank" rel="noopener">LHDN (stamp duty)</a>, Solicitors&#x27; Remuneration Order 2023 (legal fees).';
+    document.getElementById("sdSrc").innerHTML = 'Kadar: <a href="https://www.hasil.gov.my" target="_blank" rel="noopener">LHDN (duti setem)</a>, Solicitors&#x27; Remuneration Order 2023 (yuran guaman).';
   }
   [priceEl, loanEl].forEach(function (el) { el.addEventListener("input", render); });
   [firstEl, foreignEl].forEach(function (el) { el.addEventListener("change", render); });

@@ -113,28 +113,28 @@
     var effRate = annualGross > 0 ? (annualTax / annualGross * 100) : 0;
 
     document.getElementById("thNet").innerHTML = gross > 0
-      ? '<span class="big">' + rm(net) + '</span><span class="lab">take-home a month</span><span class="ann">' + rm(net * 12) + ' a year &middot; effective tax ' + effRate.toFixed(1) + '%</span>'
-      : '<span class="lab">Enter your salary above.</span>';
+      ? '<span class="big">' + rm(net) + '</span><span class="lab">gaji bersih sebulan</span><span class="ann">' + rm(net * 12) + ' setahun &middot; cukai efektif ' + effRate.toFixed(1) + '%</span>'
+      : '<span class="lab">Masukkan gaji anda di atas.</span>';
 
     var parts = [["s-net", net], ["s-epf", epf], ["s-socso", socso], ["s-eis", eis], ["s-tax", tax]];
     document.getElementById("thBar").innerHTML = gross > 0 ? parts.map(function (p) { return '<span class="' + p[0] + '" style="width:' + (p[1] / gross * 100).toFixed(2) + '%"></span>'; }).join("") : "";
 
     var rows = [
-      ["s-net", "Take-home", net, "tot"],
+      ["s-net", "Gaji bersih", net, "tot"],
       ["s-epf", "EPF (11%)", epf, ""],
       ["s-socso", "SOCSO (0.5%)", socso, ""],
       ["s-eis", "EIS (0.2%)", eis, ""],
-      ["s-tax", "Income tax", tax, ""]
+      ["s-tax", "Cukai pendapatan", tax, ""]
     ];
     var swatch = { "s-net": "var(--seal)", "s-epf": "color-mix(in srgb,var(--ink) 55%,transparent)", "s-socso": "color-mix(in srgb,var(--ink) 38%,transparent)", "s-eis": "color-mix(in srgb,var(--ink) 26%,transparent)", "s-tax": "color-mix(in srgb,var(--ink) 16%,transparent)" };
-    document.getElementById("thRows").innerHTML = gross > 0 ? ('<div class="th-row" style="border-top:none;font-weight:700"><span class="sw"></span><span>Gross salary</span><span class="amt">' + rm(gross) + '</span><span class="pct"></span></div>' +
+    document.getElementById("thRows").innerHTML = gross > 0 ? ('<div class="th-row" style="border-top:none;font-weight:700"><span class="sw"></span><span>Gaji kasar</span><span class="amt">' + rm(gross) + '</span><span class="pct"></span></div>' +
       rows.slice(1).map(function (r) { return '<div class="th-row"><span class="sw" style="background:' + swatch[r[0]] + '"></span><span>' + r[1] + '</span><span class="amt">- ' + rm2(r[2]) + '</span><span class="pct">' + (r[2] / gross * 100).toFixed(1) + '%</span></div>'; }).join("") +
       '<div class="th-row tot"><span class="sw" style="background:var(--seal)"></span><span>Gaji bersih</span><span class="amt">' + rm(net) + '</span><span class="pct">' + (net / gross * 100).toFixed(0) + '%</span></div>') : "";
 
     document.getElementById("thNote").innerHTML = gross > 0
-      ? "Estimate of statutory deductions for a resident employee under 60. Income tax assumes the automatic RM9,000 individual relief plus EPF relief (capped RM4,000); add your other reliefs above for a closer figure. Your employer also pays EPF (12 to 13%), SOCSO and EIS on top, which does not come out of your salary. Actual monthly tax (PCB) can vary. Not tax advice."
+      ? "Anggaran potongan berkanun untuk pekerja pemastautin berumur bawah 60. Cukai pendapatan mengandaikan pelepasan individu automatik RM9,000 serta pelepasan EPF (had RM4,000); tambah pelepasan lain anda di atas untuk angka yang lebih tepat. Majikan anda juga membayar EPF (12 hingga 13%), SOCSO dan EIS di atasnya, yang tidak ditolak daripada gaji anda. Cukai bulanan sebenar (PCB) boleh berbeza. Bukan nasihat cukai."
       : "";
-    document.getElementById("thSrc").innerHTML = 'Rates: <a href="https://www.kwsp.gov.my" target="_blank" rel="noopener">KWSP (EPF)</a>, <a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" target="_blank" rel="noopener">PERKESO (SOCSO/EIS)</a>, <a href="https://www.hasil.gov.my" target="_blank" rel="noopener">LHDN (income tax, YA2024/2025)</a>.';
+    document.getElementById("thSrc").innerHTML = 'Kadar: <a href="https://www.kwsp.gov.my" target="_blank" rel="noopener">KWSP (EPF)</a>, <a href="https://www.perkeso.gov.my/en/rate-of-contribution.html" target="_blank" rel="noopener">PERKESO (SOCSO/EIS)</a>, <a href="https://www.hasil.gov.my" target="_blank" rel="noopener">LHDN (cukai pendapatan, YA2024/2025)</a>.';
   }
   grossEl.addEventListener("input", render); reliefEl.addEventListener("input", render);
   render();
