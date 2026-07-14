@@ -104,19 +104,22 @@
         const onScroll = () => nav.classList.toggle("scrolled", (window.scrollY || document.documentElement.scrollTop) > 24);
         window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
         const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+        const _L = document.documentElement.lang;
+        const pfx = _L === "ms" ? "/ms" : _L === "zh-Hans" ? "/zh" : "";
+        const T = ({ ms:{badge:"Baharu",source:"Sumber",read:"Baca →",soon:"lebih banyak cerita<br>akan datang ~",err:"Tidak dapat memuatkan cerita."}, zh:{badge:"新",source:"来源",read:"阅读 →",soon:"更多故事<br>即将推出 ~",err:"无法加载故事。"} }[_L==="ms"?"ms":_L==="zh-Hans"?"zh":"en"]) || {badge:"New",source:"Source",read:"Read →",soon:"more stories<br>coming soon ~",err:"Couldn’t load stories."};
         try {
           const { stories } = await (await fetch("/data/stories-index.json")).json();
           const cards = stories.map((s) => `
-            <a class="story-card" href="${esc(s.url)}">
-              ${s.new && (Date.now() - Date.parse(s.date)) < 14 * 864e5 ? `<span class="badge-new">New</span>` : ``}
+            <a class="story-card" href="${pfx}${esc(s.url)}">
+              ${s.new && (Date.now() - Date.parse(s.date)) < 14 * 864e5 ? `<span class="badge-new">${T.badge}</span>` : ``}
               <span class="sc-tag">${esc(s.tag)}</span>
               <h3>${esc(s.title)}</h3>
               <div class="sc-sub">${esc(s.subtitle)}</div>
-              <div class="sc-meta"><span>Source · ${esc(s.source)} · ${esc(s.date)}</span><span class="sc-arrow">Read →</span></div>
+              <div class="sc-meta"><span>${T.source} · ${esc(s.source)} · ${esc(s.date)}</span><span class="sc-arrow">${T.read}</span></div>
             </a>`).join("");
-          document.querySelector("#hubGrid").innerHTML = cards + `<div class="story-card hub-soon">more stories<br>coming soon ~</div>`;
+          document.querySelector("#hubGrid").innerHTML = cards + `<div class="story-card hub-soon">${T.soon}</div>`;
         } catch (e) {
-          document.querySelector("#hubGrid").innerHTML = `<div class="story-loading">Couldn't load stories.</div>`;
+          document.querySelector("#hubGrid").innerHTML = `<div class="story-loading">${T.err}</div>`;
         }
       })();
     </script>
