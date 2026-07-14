@@ -14,7 +14,11 @@ let problems = [];
 for (const page of PAGES) {
   for (const prefix of ["", "ms/", "zh/"]) {
     const filePath = `${ROOT}${prefix}${page.file}`;
-    const html = readFileSync(filePath, "utf8");
+    // Strip <script> blocks: they hold JS template literals (e.g. href="${s.url}")
+    // that are rendered at runtime, not static links this audit can resolve.
+    const html = readFileSync(filePath, "utf8").replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+
+    // 1) Absolute internal hrefs must point at a known page (or redirect alias).
     const hrefs = [...html.matchAll(/(?:href|src)="(\/[^"]*)"/g)].map((m) => m[1]);
     for (const raw of hrefs) {
       const base = raw.split(/[?#]/)[0];
@@ -25,6 +29,16 @@ for (const page of PAGES) {
         if (base === p || base.startsWith(p + "/")) { bare = base.slice(p.length) || "/"; break; }
       }
       if (!slugs.has(bare)) problems.push(`${prefix}${page.file}: links to unknown page "${raw}"`);
+    }
+
+    // 2) No RELATIVE internal anchor hrefs. They resolve against the served base
+    //    URL, so under Vercel cleanUrls (page served at /ms, no trailing slash) a
+    //    relative "today" leaks to /today (the English page). Internal links must
+    //    be absolute. (Excludes external, in-page #anchors, and asset files.)
+    const relHrefs = [...html.matchAll(/(?<![\w-])href="(?!\/|https?:|#|mailto:|tel:|data:)([^"]+)"/g)].map((m) => m[1]);
+    for (const raw of relHrefs) {
+      if (/\.(css|js|png|jpe?g|svg|ico|json|xml|txt)$/.test(raw.split(/[?#]/)[0])) continue;
+      problems.push(`${prefix}${page.file}: RELATIVE internal href "${raw}" (must be absolute — leaks to English under cleanUrls)`);
     }
   }
 }
