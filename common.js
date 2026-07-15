@@ -23,6 +23,56 @@ function track(name, params = {}) {
   window.gtag("event", name, params);
 }
 
+/* ------------------------------------------------------------
+   Local, no-login preferences — one versioned key, validated codes only.
+   ------------------------------------------------------------ */
+const GM_PREFS_KEY = "gm:prefs:v1";
+
+/* the shared weather-city registry (homepage selector + /today) */
+const GM_CITIES = [
+  { slug: "kuala-lumpur", name: "Kuala Lumpur", short: "KL", lat: 3.139, lon: 101.687 },
+  { slug: "george-town", name: "George Town", short: "Penang", lat: 5.414, lon: 100.329 },
+  { slug: "johor-bahru", name: "Johor Bahru", short: "JB", lat: 1.493, lon: 103.741 },
+  { slug: "ipoh", name: "Ipoh", short: "Ipoh", lat: 4.597, lon: 101.09 },
+  { slug: "kuching", name: "Kuching", short: "Kuching", lat: 1.553, lon: 110.359 },
+  { slug: "kota-kinabalu", name: "Kota Kinabalu", short: "KK", lat: 5.98, lon: 116.073 },
+  { slug: "malacca", name: "Malacca", short: "Melaka", lat: 2.196, lon: 102.25 },
+  { slug: "kuala-terengganu", name: "Kuala Terengganu", short: "K. Terengganu", lat: 5.331, lon: 103.137 },
+];
+
+/* the sixteen state / federal-territory codes of the holiday dataset */
+const GM_STATE_CODES = ["jhr", "kdh", "ktn", "mlk", "nsn", "phg", "prk", "pls", "png", "sbh", "swk", "sgr", "trg", "kul", "lbn", "pjy"];
+
+const GM_PREF_DEFAULTS = { city: "kuala-lumpur", state: "kul" };
+
+/* keep only recognized fields with valid codes */
+function _validPrefs(raw) {
+  const out = {};
+  if (raw && typeof raw === "object" && !Array.isArray(raw)) {
+    if (GM_CITIES.some((c) => c.slug === raw.city)) out.city = raw.city;
+    if (GM_STATE_CODES.indexOf(raw.state) > -1) out.state = raw.state;
+  }
+  return out;
+}
+
+function getPrefs() {
+  let stored = {};
+  try { stored = _validPrefs(JSON.parse(localStorage.getItem(GM_PREFS_KEY))); }
+  catch (e) { /* corrupt JSON or blocked storage — defaults */ }
+  return { city: stored.city || GM_PREF_DEFAULTS.city, state: stored.state || GM_PREF_DEFAULTS.state };
+}
+
+function setPrefs(patch) {
+  const merged = { ...getPrefs(), ..._validPrefs(patch) };
+  try { localStorage.setItem(GM_PREFS_KEY, JSON.stringify(merged)); }
+  catch (e) { /* quota / private mode — preference simply doesn't persist */ }
+  return merged;
+}
+
+function clearPrefs() {
+  try { localStorage.removeItem(GM_PREFS_KEY); } catch (e) { /* blocked storage */ }
+}
+
 /* GA4 product events — bounded parameters only, never the user's data.
    live_card_result: page, card, status(fresh|cache|stale|error), cache_state, source.
    share_click: page, medium, personalized. */
