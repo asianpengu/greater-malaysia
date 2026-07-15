@@ -5,6 +5,8 @@
   "engines": { "node": ">=18" },
   "scripts": {
     "prerender": "node scripts/prerender-stories.mjs",
-    "refresh:ai": "node scripts/refresh-ai-adoption.mjs && node scripts/prerender-stories.mjs"
+    "refresh:ai": "node scripts/refresh-ai-adoption.mjs && node scripts/prerender-stories.mjs",
+    "test": "node --test \"tests/*.test.mjs\" \"scripts/i18n/*.test.mjs\" scripts/verify-i18n.test.mjs",
+    "check": "npm test && node scripts/check-i18n-pages.mjs && node scripts/check-broken-links.mjs"
   }
 }
