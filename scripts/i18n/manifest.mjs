@@ -63,6 +63,6 @@ export const PAGES = [
   { slug: "/stories/median-salary-malaysia-2024", file: "stories/median-salary-malaysia-2024.html", changefreq: "monthly", priority: "0.7", lastmod: "2026-06-30" },
   { slug: "/stories/household-income-state-2022", file: "stories/household-income-state-2022.html", changefreq: "monthly", priority: "0.7", lastmod: "2026-06-30" },
   { slug: "/stories/unemployment-malaysia", file: "stories/unemployment-malaysia.html", changefreq: "monthly", priority: "0.7", lastmod: "2026-06-30" },
-  { slug: "/for-agents", file: "for-agents.html", changefreq: "monthly", priority: "0.7", lastmod: "2026-07-08" },
+  { slug: "/for-agents", file: "for-agents.html", changefreq: "monthly", priority: "0.7", lastmod: "2026-07-15" },
   { slug: "/companies", file: "companies.html", changefreq: "monthly", priority: "0.7", lastmod: "2026-07-13" },
 ];
