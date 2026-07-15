@@ -3,6 +3,7 @@
    Relies on globals from common.js (jget, getPrefs, setPrefs, track, esc). */
 import { buildOpportunities, optimizePlan } from "/cuti-engine.mjs";
 import { resolvePlannerParams, buildPlannerQuery } from "/cuti-url.mjs";
+import { buildLeaveCalendar, downloadCalendar } from "/cuti-calendar.mjs";
 
 const YEAR = 2026;
 const LANG = (() => { const l = document.documentElement.lang; return l === "ms" ? "ms" : l === "zh-Hans" ? "zh" : "en"; })();
@@ -156,7 +157,9 @@ function render() {
   el("cpNote").innerHTML = esc(COPY.note(stateName(activeState)));
   el("cpSrc").innerHTML = COPY.src + (holidayState.from === "local" ? ` <span class="cp-local">${esc(COPY.usingLocal)}</span>` : "");
 
-  window.GM_CUTI_RESULT = { state: activeState, budget, plan, weekendDays }; // consumed by share + calendar ships
+  window.GM_CUTI_RESULT = { state: activeState, budget, plan, weekendDays }; // consumed by share + calendar
+  const ics = el("cpIcs");
+  if (ics) ics.disabled = plan.leaveDates.length === 0; // nothing to export without proposed leave dates
   document.dispatchEvent(new CustomEvent("gm:cuti-rendered"));
 }
 
@@ -195,6 +198,17 @@ function boot() {
   if (budgetInput) {
     if (initial.leaveFromQuery) budgetInput.value = String(initial.leave);
     budgetInput.addEventListener("input", () => { syncUrl(); render(); });
+  }
+  const ics = el("cpIcs");
+  if (ics) {
+    ics.addEventListener("click", () => {
+      const r = window.GM_CUTI_RESULT;
+      if (!r || !r.plan.leaveDates.length) return;
+      downloadCalendar({
+        filename: `greater-malaysia-cuti-${YEAR}-${r.state}.ics`,
+        contents: buildLeaveCalendar({ locale: LANG, state: r.state, leaveDates: r.plan.leaveDates }),
+      });
+    });
   }
   loadAndRender();
 }

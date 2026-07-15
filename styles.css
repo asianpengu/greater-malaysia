@@ -664,6 +664,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 .cp-retry { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); background: var(--paper-2, #fff); border: 2px solid var(--line-ink); border-radius: var(--r); padding: 5px 10px; margin-left: 8px; cursor: pointer; }
 .cp-retry:hover { border-color: var(--seal); color: var(--seal); }
 .cp-retry[disabled] { opacity: 0.5; cursor: wait; }
+.cp-ics { font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); background: var(--paper-2, #fff); border: 2px solid var(--line-ink); border-radius: var(--r); padding: 9px 14px; margin-top: 14px; cursor: pointer; }
+.cp-ics:hover { border-color: var(--seal); color: var(--seal); }
+.cp-ics:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
+.cp-ics[disabled] { opacity: 0.45; cursor: not-allowed; }
 .today-city { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; }
 .today-city label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
 .today-city select { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink); background: var(--paper-card); border: 2px solid var(--line-ink); border-radius: var(--r); padding: 8px 10px; max-width: 100%; }
