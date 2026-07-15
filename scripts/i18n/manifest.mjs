@@ -12,7 +12,7 @@ export const PAGES = [
   { slug: "/", file: "index.html", changefreq: "daily", priority: "1.0", lastmod: "2026-06-30" },
   { slug: "/tools", file: "tools.html", changefreq: "weekly", priority: "0.9", lastmod: "2026-07-11" },
   { slug: "/answers", file: "answers.html", changefreq: "weekly", priority: "0.9", lastmod: "2026-07-11" },
-  { slug: "/today", file: "today.html", changefreq: "always", priority: "0.9", lastmod: "2026-06-30" },
+  { slug: "/today", file: "today.html", changefreq: "always", priority: "0.9", lastmod: "2026-07-15" },
   { slug: "/waktu-solat/kuala-lumpur", file: "waktu-solat/kuala-lumpur.html", changefreq: "daily", priority: "0.9", lastmod: "2026-06-30" },
   { slug: "/waktu-solat/selangor", file: "waktu-solat/selangor.html", changefreq: "daily", priority: "0.8", lastmod: "2026-06-30" },
   { slug: "/waktu-solat/pulau-pinang", file: "waktu-solat/pulau-pinang.html", changefreq: "daily", priority: "0.8", lastmod: "2026-06-30" },

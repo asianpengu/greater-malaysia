@@ -27,6 +27,11 @@ const MAX_STALE = {
   population: 400 * 86400e3,
 };
 
+/* ---- active weather city (D3.1): saved preference, else Kuala Lumpur ---- */
+const CITY_COPY = { en: "City", ms: "Bandar", zh: "城市" }[TLANG];
+const cityBySlug = (slug) => GM_CITIES.find((c) => c.slug === slug);
+let activeCity = cityBySlug(getPrefs().city) || GM_CITIES[0];
+
 /* share copy — the heading and labels used when sharing the live snapshot */
 const SHARE_COPY = {
   en: { title: "Malaysia right now", inflation: "Inflation", lastKnown: "last known" },
@@ -76,13 +81,54 @@ $("#todayGrid").innerHTML = [
   card("tSolat", "Waktu Solat", "next prayer · KL"),
   card("tFuel", "Harga Minyak", "this week · RM/L"),
   card("tFx", "Ringgit", "1 USD in MYR"),
-  card("tWx", "Cuaca KL", "now"),
-  card("tAir", "Udara KL", "air quality"),
+  card("tWx", `Cuaca ${esc(activeCity.short)}`, "now"),
+  card("tAir", `Udara ${esc(activeCity.short)}`, "air quality"),
   card("tBtc", "Bitcoin", "in ringgit"),
   card("tCpi", "Inflasi", "cost of living"),
   card("tPop", "Rakyat", "population"),
 ].join("");
 const set = (id, html) => { const b = $(`#${id} .tc-body`); if (b) b.innerHTML = html; };
+
+/* city control — changing it reloads only the weather and AQI cards */
+const citySel = $("#todayCity");
+if (citySel) {
+  citySel.innerHTML = GM_CITIES.map((c) => `<option value="${c.slug}"${c.slug === activeCity.slug ? " selected" : ""}>${esc(c.name)}</option>`).join("");
+  citySel.addEventListener("change", (e) => {
+    const c = cityBySlug(e.target.value); if (!c) return;
+    activeCity = c;
+    setPrefs({ city: c.slug });
+    track("preference_set", { preference: "city", value: c.slug, source: "today_selector" });
+    loadTodayWeather();
+  });
+}
+
+/* weather + AQI loader — reused by the initial load and the city control */
+let weatherBusy = false;
+async function loadTodayWeather() {
+  if (weatherBusy) return; weatherBusy = true;
+  const city = activeCity;
+  const wk = $("#tWx .tc-k"), ak = $("#tAir .tc-k");
+  if (wk) wk.textContent = `Cuaca ${city.short}`;
+  if (ak) ak.textContent = `Udara ${city.short}`;
+  set("tWx", `<div class="tc-load">…</div>`); set("tAir", `<div class="tc-load">…</div>`);
+  try {
+    const [mwx, mair] = await Promise.all([
+      jgetMeta(`https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,weather_code,relative_humidity_2m&timezone=Asia%2FKuala_Lumpur`, 2, 300e3, { persistent: true, maxStaleMs: MAX_STALE.weather }),
+      jgetMeta(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${city.lat}&longitude=${city.lon}&current=us_aqi`, 2, 300e3, { persistent: true, maxStaleMs: MAX_STALE.weather })
+    ]);
+    const wx = mwx.value, air = mair.value;
+    const WX = { 0: "☀️", 1: "🌤", 2: "⛅", 3: "☁️", 45: "🌫", 51: "🌦", 53: "🌦", 55: "🌧", 61: "🌦", 63: "🌧", 65: "🌧", 80: "🌦", 81: "🌧", 82: "⛈", 95: "⛈", 96: "⛈", 99: "⛈" };
+    set("tWx", `<div class="tc-big">${Math.round(wx.current.temperature_2m)}° ${WX[wx.current.weather_code] || "🌡"}</div><div class="tc-sub">humidity ${Math.round(wx.current.relative_humidity_2m)}%</div>`);
+    const aqi = Math.round(air.current.us_aqi); const band = aqi <= 50 ? "Good" : aqi <= 100 ? "Moderate" : aqi <= 150 ? "Unhealthy (sensitive)" : "Unhealthy";
+    set("tAir", `<div class="tc-big">${aqi}</div><div class="tc-sub">US AQI · ${band}</div>`);
+    setFresh("tWx", mwx); setFresh("tAir", mair);
+    noteShare("tWx", `${city.short} ${Math.round(wx.current.temperature_2m)}°C`, mwx); noteShare("tAir", `AQI ${aqi}`, mair);
+    trackResult("weather", statusOf(mwx), mwx.cacheState, "open_meteo"); trackResult("air", statusOf(mair), mair.cacheState, "open_meteo");
+  } catch (e) {
+    set("tWx", `<div class="tc-err">—</div>`); set("tAir", `<div class="tc-err">—</div>`);
+    trackResult("weather", "error", "none", "open_meteo"); trackResult("air", "error", "none", "open_meteo");
+  } finally { weatherBusy = false; }
+}
 
 (async () => {
   // staggered to respect rate limits
@@ -105,20 +151,7 @@ const set = (id, html) => { const b = $(`#${id} .tc-body`); if (b) b.innerHTML =
   try { const m = await jgetMeta("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR", 2, 600e3, { persistent: true, maxStaleMs: MAX_STALE.fx }); set("tFx", `<div class="tc-big">RM ${fmt(m.value.rates.MYR, 4)}</div><div class="tc-sub">per 1 USD</div>`); setFresh("tFx", m); noteShare("tFx", `USD RM${fmt(m.value.rates.MYR, 2)}`, m); trackResult("fx", statusOf(m), m.cacheState, "frankfurter"); } catch (e) { set("tFx", `<div class="tc-err">—</div>`); trackResult("fx", "error", "none", "frankfurter"); }
 
   await sleep(200);
-  try {
-    const [mwx, mair] = await Promise.all([
-      jgetMeta("https://api.open-meteo.com/v1/forecast?latitude=3.139&longitude=101.687&current=temperature_2m,weather_code,relative_humidity_2m&timezone=Asia%2FKuala_Lumpur", 2, 300e3, { persistent: true, maxStaleMs: MAX_STALE.weather }),
-      jgetMeta("https://air-quality-api.open-meteo.com/v1/air-quality?latitude=3.139&longitude=101.687&current=us_aqi", 2, 300e3, { persistent: true, maxStaleMs: MAX_STALE.weather })
-    ]);
-    const wx = mwx.value, air = mair.value;
-    const WX = { 0: "☀️", 1: "🌤", 2: "⛅", 3: "☁️", 45: "🌫", 51: "🌦", 53: "🌦", 55: "🌧", 61: "🌦", 63: "🌧", 65: "🌧", 80: "🌦", 81: "🌧", 82: "⛈", 95: "⛈", 96: "⛈", 99: "⛈" };
-    set("tWx", `<div class="tc-big">${Math.round(wx.current.temperature_2m)}° ${WX[wx.current.weather_code] || "🌡"}</div><div class="tc-sub">humidity ${Math.round(wx.current.relative_humidity_2m)}%</div>`);
-    const aqi = Math.round(air.current.us_aqi); const band = aqi <= 50 ? "Good" : aqi <= 100 ? "Moderate" : aqi <= 150 ? "Unhealthy (sensitive)" : "Unhealthy";
-    set("tAir", `<div class="tc-big">${aqi}</div><div class="tc-sub">US AQI · ${band}</div>`);
-    setFresh("tWx", mwx); setFresh("tAir", mair);
-    noteShare("tWx", `KL ${Math.round(wx.current.temperature_2m)}°C`, mwx); noteShare("tAir", `AQI ${aqi}`, mair);
-    trackResult("weather", statusOf(mwx), mwx.cacheState, "open_meteo"); trackResult("air", statusOf(mair), mair.cacheState, "open_meteo");
-  } catch (e) { set("tWx", `<div class="tc-err">—</div>`); set("tAir", `<div class="tc-err">—</div>`); trackResult("weather", "error", "none", "open_meteo"); trackResult("air", "error", "none", "open_meteo"); }
+  await loadTodayWeather(); // weather + AQI for the active city
 
   await sleep(500);
   try { const m = await jgetMeta("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=myr&include_24hr_change=true", 2, 60e3, { persistent: true, maxStaleMs: MAX_STALE.btc }); const d = m.value;
