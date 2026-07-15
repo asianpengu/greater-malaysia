@@ -669,6 +669,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 .today-card .tc-row3 span { display: flex; justify-content: space-between; }
 .today-card .tc-row3 b { font-family: var(--mono); }
 .today-card .tc-load, .today-card .tc-err { font-family: var(--mono); color: var(--ink-ghost); font-size: 20px; }
+.today-card .tc-freshness { font-family: var(--mono); font-size: 10px; color: var(--ink-ghost); letter-spacing: 0.03em; margin-top: 8px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.today-card .tc-freshness.is-stale { color: var(--seal); }
+.today-card .tc-freshness.is-error { color: var(--ink-faint); }
 @media (max-width: 860px) { .today-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 460px) { .today-grid { grid-template-columns: 1fr 1fr; } .today-card { padding: 14px; min-height: 110px; } .today-card .tc-big { font-size: 22px; } }
 

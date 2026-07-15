@@ -24,26 +24,30 @@ function track(name, params = {}) {
 }
 
 /* fetch JSON with a 10s timeout, retry with backoff, and a sessionStorage
-   TTL cache so repeat navigation doesn't re-hit rate-limited public APIs */
-const jget = async (url, retries = 2, ttl = 60e3) => {
+   TTL cache so repeat navigation doesn't re-hit rate-limited public APIs.
+   jgetMeta additionally reports when the value was fetched and where it came
+   from ("network" | "session"), so cards can render honest freshness. */
+async function jgetMeta(url, retries = 2, ttl = 60e3, options = {}) {
   const key = "gm:" + url;
   try {
     const hit = JSON.parse(sessionStorage.getItem(key));
-    if (hit && Date.now() - hit.t < ttl) return hit.v;
+    if (hit && Date.now() - hit.t < ttl) return { value: hit.v, fetchedAt: hit.t, cacheState: "session", stale: false };
   } catch (e) { /* no cache — fetch fresh */ }
   for (let i = 0; ; i++) {
     try {
       const r = await fetch(url, { signal: typeof AbortSignal.timeout === "function" ? AbortSignal.timeout(10000) : undefined });
       if (!r.ok) throw new Error(r.status);
       const v = await r.json();
-      try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), v })); } catch (e) { /* quota / private mode */ }
-      return v;
+      const t = Date.now();
+      try { sessionStorage.setItem(key, JSON.stringify({ t, v })); } catch (e) { /* quota / private mode */ }
+      return { value: v, fetchedAt: t, cacheState: "network", stale: false };
     } catch (e) {
       if (i >= retries) throw e;
       await sleep(500 + i * 600); // backoff on transient burst failures
     }
   }
-};
+}
+const jget = async (url, retries = 2, ttl = 60e3) => (await jgetMeta(url, retries, ttl)).value;
 
 /* nav turns solid once you scroll past the hero top, and wires the mobile sheet */
 function wireNav() {
