@@ -78,10 +78,10 @@ export function makeDocument(selectors = {}, lang = "en") {
   };
 }
 
-/* Evaluate `file` (repo-relative) in a stubbed browser context.
-   Returns { ctx, [each name in names] }. */
+/* Evaluate one file or several files in order (repo-relative paths) in a
+   stubbed browser context. Returns { ctx, [each name in names] }. */
 export function loadScript(file, { names = [], globals = {} } = {}) {
-  const src = readFileSync(path.join(ROOT, file), "utf8");
+  const files = Array.isArray(file) ? file : [file];
   // Timers fire immediately so retry/backoff paths finish fast in tests.
   const immediateTimeout = (fn, _ms, ...a) => { Promise.resolve().then(() => fn(...a)); return 0; };
   const ctx = {
@@ -108,7 +108,9 @@ export function loadScript(file, { names = [], globals = {} } = {}) {
   ctx.window = ctx;
   ctx.globalThis = ctx;
   vm.createContext(ctx);
-  vm.runInContext(src, ctx, { filename: file });
+  for (const f of files) {
+    vm.runInContext(readFileSync(path.join(ROOT, f), "utf8"), ctx, { filename: f });
+  }
   const out = { ctx };
   for (const n of names) {
     out[n] = vm.runInContext(`typeof ${n} !== "undefined" ? ${n} : undefined`, ctx);

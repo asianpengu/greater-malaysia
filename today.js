@@ -15,6 +15,28 @@ const FRESH_COPY = {
   zh: { just: "已检查 · 刚刚", min: "已检查 · {m} 分钟前", hr: "已检查 · {h} 小时前" },
 }[TLANG];
 
+/* share copy — the heading and labels used when sharing the live snapshot */
+const SHARE_COPY = {
+  en: { title: "Malaysia right now", inflation: "Inflation", lastKnown: "last known" },
+  ms: { title: "Malaysia sekarang", inflation: "Inflasi", lastKnown: "terakhir diketahui" },
+  zh: { title: "马来西亚此刻", inflation: "通胀", lastKnown: "最后已知" },
+}[TLANG];
+
+/* card id → short human summary of the successfully rendered value */
+const shareSummary = {};
+function noteShare(id, text, meta) {
+  shareSummary[id] = meta && meta.stale ? `${text} (${SHARE_COPY.lastKnown})` : text;
+}
+
+/* result-aware share payload — common.js resolveShare() calls this at click
+   time; null (fewer than three loaded cards) falls back to page metadata */
+window.GM_SHARE_PAYLOAD = function () {
+  const parts = ["tFuel", "tFx", "tWx", "tAir", "tBtc", "tSolat", "tCpi"].map((id) => shareSummary[id]).filter(Boolean);
+  if (parts.length < 3) return null;
+  const url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href.split("?")[0];
+  return { title: SHARE_COPY.title, text: parts.slice(0, 4).join(" · "), url, personalized: false };
+};
+
 const cardMeta = {}; // card id → last jgetMeta result, so the footer re-renders without refetching
 function freshText(meta) {
   const mins = Math.floor((Date.now() - meta.fetchedAt) / 60000);
@@ -50,7 +72,7 @@ const set = (id, html) => { const b = $(`#${id} .tc-body`); if (b) b.innerHTML =
     const seq = [["fajr", "Subuh"], ["syuruk", "Syuruk"], ["dhuhr", "Zohor"], ["asr", "Asar"], ["maghrib", "Maghrib"], ["isha", "Isyak"]];
     const now = myNow(); const nm = now.getHours() * 60 + now.getMinutes(); const toMin = h => { const [a, b] = h.split(":").map(Number); return a * 60 + b; };
     const nx = seq.find(([k]) => toMin(t[k]) > nm);
-    if (nx) set("tSolat", `<div class="tc-big">${esc(t[nx[0]].slice(0, 5))}</div><div class="tc-sub">${nx[1]}</div>`);
+    if (nx) { set("tSolat", `<div class="tc-big">${esc(t[nx[0]].slice(0, 5))}</div><div class="tc-sub">${nx[1]}</div>`); noteShare("tSolat", `${nx[1]} ${t[nx[0]].slice(0, 5)}`, m); }
     else set("tSolat", `<div class="tc-big">${esc(t.fajr.slice(0, 5))}</div><div class="tc-sub">Subuh (esok)</div>`); // after Isyak — tomorrow's dawn
     setFresh("tSolat", m);
   } catch (e) { set("tSolat", `<div class="tc-err">—</div>`); }
@@ -58,11 +80,11 @@ const set = (id, html) => { const b = $(`#${id} .tc-body`); if (b) b.innerHTML =
   await sleep(150);
   try { const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=fuelprice&limit=4&sort=-date", 2, 36e5); const l = m.value.find(r => r.series_type === "level");
     set("tFuel", `<div class="tc-row3"><span>RON95<b>${fmt(l.ron95_skps ?? l.ron95)}</b></span><span>RON97<b>${fmt(l.ron97)}</b></span><span>Diesel<b>${fmt(l.diesel)}</b></span></div>`);
-    setFresh("tFuel", m);
+    setFresh("tFuel", m); noteShare("tFuel", `RON95 RM${fmt(l.ron95_skps ?? l.ron95)}`, m);
   } catch (e) { set("tFuel", `<div class="tc-err">—</div>`); }
 
   await sleep(150);
-  try { const m = await jgetMeta("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR", 2, 600e3); set("tFx", `<div class="tc-big">RM ${fmt(m.value.rates.MYR, 4)}</div><div class="tc-sub">per 1 USD</div>`); setFresh("tFx", m); } catch (e) { set("tFx", `<div class="tc-err">—</div>`); }
+  try { const m = await jgetMeta("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR", 2, 600e3); set("tFx", `<div class="tc-big">RM ${fmt(m.value.rates.MYR, 4)}</div><div class="tc-sub">per 1 USD</div>`); setFresh("tFx", m); noteShare("tFx", `USD RM${fmt(m.value.rates.MYR, 2)}`, m); } catch (e) { set("tFx", `<div class="tc-err">—</div>`); }
 
   await sleep(200);
   try {
@@ -76,19 +98,20 @@ const set = (id, html) => { const b = $(`#${id} .tc-body`); if (b) b.innerHTML =
     const aqi = Math.round(air.current.us_aqi); const band = aqi <= 50 ? "Good" : aqi <= 100 ? "Moderate" : aqi <= 150 ? "Unhealthy (sensitive)" : "Unhealthy";
     set("tAir", `<div class="tc-big">${aqi}</div><div class="tc-sub">US AQI · ${band}</div>`);
     setFresh("tWx", mwx); setFresh("tAir", mair);
+    noteShare("tWx", `KL ${Math.round(wx.current.temperature_2m)}°C`, mwx); noteShare("tAir", `AQI ${aqi}`, mair);
   } catch (e) { set("tWx", `<div class="tc-err">—</div>`); set("tAir", `<div class="tc-err">—</div>`); }
 
   await sleep(500);
   try { const m = await jgetMeta("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=myr&include_24hr_change=true", 2, 60e3); const d = m.value;
     const c = d.bitcoin.myr_24h_change ?? 0; set("tBtc", `<div class="tc-big">RM ${fmt(d.bitcoin.myr, 0)}</div><div class="tc-sub ${c >= 0 ? "up-c" : "down-c"}">${c >= 0 ? "▲" : "▼"} ${fmt(Math.abs(c), 1)}% 24h</div>`);
-    setFresh("tBtc", m);
+    setFresh("tBtc", m); noteShare("tBtc", `BTC RM${fmt(d.bitcoin.myr, 0)}`, m);
   } catch (e) { set("tBtc", `<div class="tc-err">—</div>`); }
 
   await sleep(200);
   try { const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=cpi_headline&limit=400&sort=-date", 2, 36e5); const o = m.value.filter(r => r.division === "overall"); const ld = o[0].date.slice(0, 7); const ya = o.find(r => r.date.slice(0, 7) === `${+ld.slice(0, 4) - 1}${ld.slice(4)}`);
     const yoy = ya ? (o[0].index / ya.index - 1) * 100 : null;
     if (yoy == null) set("tCpi", `<div class="tc-err">—</div>`);
-    else { set("tCpi", `<div class="tc-big">${yoy >= 0 ? "+" : ""}${fmt(yoy, 1)}%</div><div class="tc-sub">inflation, year-on-year</div>`); setFresh("tCpi", m); }
+    else { set("tCpi", `<div class="tc-big">${yoy >= 0 ? "+" : ""}${fmt(yoy, 1)}%</div><div class="tc-sub">inflation, year-on-year</div>`); setFresh("tCpi", m); noteShare("tCpi", `${SHARE_COPY.inflation} ${yoy >= 0 ? "+" : ""}${fmt(yoy, 1)}%`, m); }
   } catch (e) { set("tCpi", `<div class="tc-err">—</div>`); }
 
   await sleep(200);

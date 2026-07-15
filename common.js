@@ -114,6 +114,24 @@ function toast(msg) {
   clearTimeout(toastT); toastT = setTimeout(() => { t.classList.remove("show"); setTimeout(() => (t.hidden = true), 320); }, 2000);
 }
 
+/* Resolve share text/link at click time. An optional page hook
+   (window.GM_SHARE_PAYLOAD) supplies the values the user actually saw; when
+   it is absent, returns nothing useful, or throws, we fall back to the page's
+   canonical metadata. UTM tags stay on every link so GA attributes the click. */
+function resolveShare(src, fallback) {
+  let p = null;
+  try {
+    if (typeof window.GM_SHARE_PAYLOAD === "function") {
+      const c = window.GM_SHARE_PAYLOAD();
+      if (c && c.text && c.url) p = c;
+    }
+  } catch (e) { /* broken hook — use page metadata */ }
+  const base = p ? p.url : fallback.url;
+  const link = base + (base.indexOf("?") > -1 ? "&" : "?") + "utm_source=" + src + "&utm_medium=social&utm_campaign=share";
+  const text = p ? (p.title ? p.title + "\n" + p.text : p.text) : fallback.title;
+  return { link, text, personalized: !!(p && p.personalized) };
+}
+
 /* Share row (WhatsApp / Telegram / X / copy) on stories and answer pages.
    Inserted after the H1. Retries because story.js renders its title async. */
 function wireShare() {
@@ -123,24 +141,32 @@ function wireShare() {
   const url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href.split("?")[0];
   const title = (document.querySelector('meta[property="og:title"]') || {}).content || document.title;
   const enc = encodeURIComponent;
-  // Tag shared links so GA attributes the inbound click instead of dumping it in "Unassigned".
-  const tag = (src) => url + (url.indexOf("?") > -1 ? "&" : "?") + "utm_source=" + src + "&utm_medium=social&utm_campaign=share";
-  const wa = "https://wa.me/?text=" + enc(title + "\n" + tag("whatsapp"));
-  const tg = "https://t.me/share/url?url=" + enc(tag("telegram")) + "&text=" + enc(title);
-  const x = "https://twitter.com/intent/tweet?text=" + enc(title) + "&url=" + enc(tag("twitter"));
+  const fallback = { url, title };
+  const links = {
+    whatsapp: (r) => "https://wa.me/?text=" + enc(r.text + "\n" + r.link),
+    telegram: (r) => "https://t.me/share/url?url=" + enc(r.link) + "&text=" + enc(r.text),
+    twitter: (r) => "https://twitter.com/intent/tweet?text=" + enc(r.text) + "&url=" + enc(r.link),
+  };
   const row = document.createElement("div");
   row.className = "gm-share";
   row.innerHTML =
     '<span class="gs-lab">Share</span>' +
-    '<a class="gs-btn" href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' +
-    '<a class="gs-btn" href="' + tg + '" target="_blank" rel="noopener">Telegram</a>' +
-    '<a class="gs-btn" href="' + x + '" target="_blank" rel="noopener">X</a>' +
+    '<a class="gs-btn" data-share="whatsapp" href="' + links.whatsapp(resolveShare("whatsapp", fallback)) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+    '<a class="gs-btn" data-share="telegram" href="' + links.telegram(resolveShare("telegram", fallback)) + '" target="_blank" rel="noopener">Telegram</a>' +
+    '<a class="gs-btn" data-share="twitter" href="' + links.twitter(resolveShare("twitter", fallback)) + '" target="_blank" rel="noopener">X</a>' +
     '<button class="gs-btn gs-copy" type="button">Copy link</button>';
   h.insertAdjacentElement("afterend", row);
+  // re-resolve at click time so the link carries the values currently on screen
+  row.querySelectorAll("a[data-share]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      this.href = links[this.dataset.share](resolveShare(this.dataset.share, fallback));
+    });
+  });
   const copy = row.querySelector(".gs-copy");
   copy.addEventListener("click", function () {
     const done = function () { copy.textContent = "Copied"; setTimeout(function () { copy.textContent = "Copy link"; }, 1500); };
-    const link = tag("copy_link");
+    // copy shares the URL only — share text must never leak into the link
+    const link = resolveShare("copy_link", fallback).link;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(link).then(done).catch(function () { fallbackCopy(link); done(); });
     } else { fallbackCopy(link); done(); }
