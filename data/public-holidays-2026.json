@@ -1,0 +1,3767 @@
+{
+ "year": 2026,
+ "verified_at": "2026-07-16",
+ "note": "Gazetted federal (P) and state (N) holidays transcribed from the official 2026 schedule by the Cabinet, Constitution and Inter-Government Relations Division, Prime Minister's Department. Dates marked subject-to-confirmation follow the lunar calendar and may shift on official announcement. The two replacement days are the nationally published ones; states may gazette additional replacement days during the year.",
+ "sources": [
+  {
+   "publisher": "Bahagian Kabinet, Perlembagaan Dan Perhubungan Antara Kerajaan, Jabatan Perdana Menteri",
+   "url": "https://www.kabinet.gov.my/storage/2025/08/HKA-2026.pdf"
+  },
+  {
+   "publisher": "MyGov Malaysia (national public holiday list)",
+   "url": "https://www.malaysia.gov.my"
+  }
+ ],
+ "jurisdictions": {
+  "kul": {
+   "name": {
+    "en": "Kuala Lumpur",
+    "ms": "W.P. Kuala Lumpur",
+    "zh": "吉隆坡"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Federal Territory Day",
+      "ms": "Hari Wilayah Persekutuan",
+      "zh": "联邦直辖区日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Thaipusam",
+      "ms": "Hari Thaipusam",
+      "zh": "大宝森节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "lbn": {
+   "name": {
+    "en": "Labuan",
+    "ms": "W.P. Labuan",
+    "zh": "纳闽"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Federal Territory Day",
+      "ms": "Hari Wilayah Persekutuan",
+      "zh": "联邦直辖区日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-30",
+     "name": {
+      "en": "Pesta Kaamatan (Harvest Festival)",
+      "ms": "Pesta Kaamatan (Pesta Menuai)",
+      "zh": "丰收节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Pesta Kaamatan (Harvest Festival, 2nd Day)",
+      "ms": "Pesta Kaamatan (Pesta Menuai)",
+      "zh": "丰收节（第二天）"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "pjy": {
+   "name": {
+    "en": "Putrajaya",
+    "ms": "W.P. Putrajaya",
+    "zh": "布城"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Federal Territory Day",
+      "ms": "Hari Wilayah Persekutuan",
+      "zh": "联邦直辖区日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Thaipusam",
+      "ms": "Hari Thaipusam",
+      "zh": "大宝森节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "jhr": {
+   "name": {
+    "en": "Johor",
+    "ms": "Johor",
+    "zh": "柔佛"
+   },
+   "weekend_days": [
+    5,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Thaipusam",
+      "ms": "Hari Thaipusam",
+      "zh": "大宝森节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-19",
+     "name": {
+      "en": "Beginning of Ramadan",
+      "ms": "Awal Ramadan",
+      "zh": "斋月首日"
+     },
+     "scope": "state",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Birthday of the Sultan of Johor",
+      "ms": "Hari Keputeraan Sultan Johor",
+      "zh": "柔佛苏丹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-07-21",
+     "name": {
+      "en": "Hol of Almarhum Sultan Iskandar",
+      "ms": "Hari Hol Almarhum Sultan Iskandar",
+      "zh": "已故苏丹依斯干达忌辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "kdh": {
+   "name": {
+    "en": "Kedah",
+    "ms": "Kedah",
+    "zh": "吉打"
+   },
+   "weekend_days": [
+    5,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-17",
+     "name": {
+      "en": "Israk and Mikraj",
+      "ms": "Israk dan Mikraj",
+      "zh": "登霄节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-19",
+     "name": {
+      "en": "Beginning of Ramadan",
+      "ms": "Awal Ramadan",
+      "zh": "斋月首日"
+     },
+     "scope": "state",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-28",
+     "name": {
+      "en": "Hari Raya Haji (2nd Day)",
+      "ms": "Hari Raya Qurban (Hari Kedua)",
+      "zh": "哈芝节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-21",
+     "name": {
+      "en": "Birthday of the Sultan of Kedah",
+      "ms": "Hari Keputeraan Sultan Kedah",
+      "zh": "吉打苏丹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "ktn": {
+   "name": {
+    "en": "Kelantan",
+    "ms": "Kelantan",
+    "zh": "吉兰丹"
+   },
+   "weekend_days": [
+    5,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-26",
+     "name": {
+      "en": "Day of Arafah",
+      "ms": "Hari Arafah",
+      "zh": "阿拉法日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-28",
+     "name": {
+      "en": "Hari Raya Haji (2nd Day)",
+      "ms": "Hari Raya Qurban (Hari Kedua)",
+      "zh": "哈芝节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-29",
+     "name": {
+      "en": "Birthday of the Sultan of Kelantan",
+      "ms": "Hari Keputeraan Sultan Kelantan",
+      "zh": "吉兰丹苏丹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-30",
+     "name": {
+      "en": "Birthday of the Sultan of Kelantan (2nd Day)",
+      "ms": "Hari Keputeraan Sultan Kelantan",
+      "zh": "吉兰丹苏丹诞辰（第二天）"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "mlk": {
+   "name": {
+    "en": "Melaka",
+    "ms": "Melaka",
+    "zh": "马六甲"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-20",
+     "name": {
+      "en": "Declaration of Independence Day",
+      "ms": "Hari Pengisytiharan Tarikh Kemerdekaan",
+      "zh": "独立宣言日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (3rd Day)",
+      "ms": "Hari Raya Puasa (Hari Ketiga)",
+      "zh": "开斋节（第三天）"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-24",
+     "name": {
+      "en": "Birthday of the Yang di-Pertua Negeri of Melaka",
+      "ms": "Hari Jadi Yang di-Pertua Negeri Melaka",
+      "zh": "马六甲州元首诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "nsn": {
+   "name": {
+    "en": "Negeri Sembilan",
+    "ms": "Negeri Sembilan",
+    "zh": "森美兰"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-01-14",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Besar of Negeri Sembilan",
+      "ms": "Hari Keputeraan Yang di-Pertuan Besar Negeri Sembilan",
+      "zh": "森美兰最高统治者诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-01-17",
+     "name": {
+      "en": "Israk and Mikraj",
+      "ms": "Israk dan Mikraj",
+      "zh": "登霄节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Thaipusam",
+      "ms": "Hari Thaipusam",
+      "zh": "大宝森节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "phg": {
+   "name": {
+    "en": "Pahang",
+    "ms": "Pahang",
+    "zh": "彭亨"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-22",
+     "name": {
+      "en": "Hol of Almarhum Sultan Ahmad Shah",
+      "ms": "Hari Hol Almarhum Sultan Ahmad Shah Al-Musta'in Billah ibni Almarhum Sultan Abu Bakar",
+      "zh": "已故苏丹阿末沙忌辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-07-31",
+     "name": {
+      "en": "Birthday of the Sultan of Pahang",
+      "ms": "Hari Keputeraan Sultan Pahang",
+      "zh": "彭亨苏丹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "prk": {
+   "name": {
+    "en": "Perak",
+    "ms": "Perak",
+    "zh": "霹雳"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Thaipusam",
+      "ms": "Hari Thaipusam",
+      "zh": "大宝森节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-06",
+     "name": {
+      "en": "Birthday of the Sultan of Perak",
+      "ms": "Hari Keputeraan Sultan Perak",
+      "zh": "霹雳苏丹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "pls": {
+   "name": {
+    "en": "Perlis",
+    "ms": "Perlis",
+    "zh": "玻璃市"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-17",
+     "name": {
+      "en": "Israk and Mikraj",
+      "ms": "Israk dan Mikraj",
+      "zh": "登霄节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-17",
+     "name": {
+      "en": "Birthday of the Raja of Perlis",
+      "ms": "Hari Ulang Tahun Keputeraan Raja Perlis",
+      "zh": "玻璃市拉惹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-28",
+     "name": {
+      "en": "Hari Raya Haji (2nd Day)",
+      "ms": "Hari Raya Qurban (Hari Kedua)",
+      "zh": "哈芝节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "png": {
+   "name": {
+    "en": "Penang",
+    "ms": "Pulau Pinang",
+    "zh": "槟城"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Thaipusam",
+      "ms": "Hari Thaipusam",
+      "zh": "大宝森节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-07-07",
+     "name": {
+      "en": "George Town World Heritage City Day",
+      "ms": "Hari Ulang Tahun Perisytiharan Tapak Warisan Dunia",
+      "zh": "乔治市世界遗产日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-07-11",
+     "name": {
+      "en": "Birthday of the Yang di-Pertua Negeri of Penang",
+      "ms": "Hari Jadi Yang di-Pertua Negeri Pulau Pinang",
+      "zh": "槟城州元首诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "sbh": {
+   "name": {
+    "en": "Sabah",
+    "ms": "Sabah",
+    "zh": "沙巴"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-03-30",
+     "name": {
+      "en": "Birthday of the Yang di-Pertua Negeri of Sabah",
+      "ms": "Hari Jadi Yang di-Pertua Negeri Sabah",
+      "zh": "沙巴州元首诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-04-03",
+     "name": {
+      "en": "Good Friday",
+      "ms": "Good Friday",
+      "zh": "耶稣受难日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-30",
+     "name": {
+      "en": "Pesta Kaamatan (Harvest Festival)",
+      "ms": "Pesta Kaamatan (Pesta Menuai)",
+      "zh": "丰收节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Pesta Kaamatan (Harvest Festival, 2nd Day)",
+      "ms": "Pesta Kaamatan (Pesta Menuai)",
+      "zh": "丰收节（第二天）"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-24",
+     "name": {
+      "en": "Christmas Eve",
+      "ms": "Christmas Eve",
+      "zh": "圣诞节前夕"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "swk": {
+   "name": {
+    "en": "Sarawak",
+    "ms": "Sarawak",
+    "zh": "砂拉越"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-04-03",
+     "name": {
+      "en": "Good Friday",
+      "ms": "Good Friday",
+      "zh": "耶稣受难日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Gawai Dayak Festival",
+      "ms": "Perayaan Hari Gawai Dayak",
+      "zh": "达雅节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-02",
+     "name": {
+      "en": "Gawai Dayak Festival (2nd Day)",
+      "ms": "Perayaan Hari Gawai Dayak",
+      "zh": "达雅节（第二天）"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-07-22",
+     "name": {
+      "en": "Sarawak Independence Day",
+      "ms": "Hari Kemerdekaan Sarawak",
+      "zh": "砂拉越独立日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-10-10",
+     "name": {
+      "en": "Birthday of the Yang di-Pertua Negeri of Sarawak",
+      "ms": "Hari Jadi Yang di-Pertua Negeri Sarawak",
+      "zh": "砂拉越州元首诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "sgr": {
+   "name": {
+    "en": "Selangor",
+    "ms": "Selangor",
+    "zh": "雪兰莪"
+   },
+   "weekend_days": [
+    0,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-01",
+     "name": {
+      "en": "New Year's Day",
+      "ms": "Tahun Baharu",
+      "zh": "元旦"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-01",
+     "name": {
+      "en": "Thaipusam",
+      "ms": "Hari Thaipusam",
+      "zh": "大宝森节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-09",
+     "name": {
+      "en": "Deepavali (replacement day)",
+      "ms": "Hari Deepavali (ganti)",
+      "zh": "屠妖节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-12-11",
+     "name": {
+      "en": "Birthday of the Sultan of Selangor",
+      "ms": "Hari Keputeraan Sultan Selangor",
+      "zh": "雪兰莪苏丹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  },
+  "trg": {
+   "name": {
+    "en": "Terengganu",
+    "ms": "Terengganu",
+    "zh": "登嘉楼"
+   },
+   "weekend_days": [
+    5,
+    6
+   ],
+   "holidays": [
+    {
+     "date": "2026-01-17",
+     "name": {
+      "en": "Israk and Mikraj",
+      "ms": "Israk dan Mikraj",
+      "zh": "登霄节"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-17",
+     "name": {
+      "en": "Chinese New Year",
+      "ms": "Tahun Baharu Cina",
+      "zh": "农历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-02-18",
+     "name": {
+      "en": "Chinese New Year (2nd Day)",
+      "ms": "Tahun Baharu Cina (Hari Kedua)",
+      "zh": "农历新年（第二天）"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-04",
+     "name": {
+      "en": "Anniversary of the Coronation of the Sultan of Terengganu",
+      "ms": "Hari Ulang Tahun Pertabalan Sultan Terengganu",
+      "zh": "登嘉楼苏丹登基纪念日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-07",
+     "name": {
+      "en": "Nuzul Al-Quran",
+      "ms": "Hari Nuzul Al-Quran",
+      "zh": "古兰经降世日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-21",
+     "name": {
+      "en": "Hari Raya Aidilfitri",
+      "ms": "Hari Raya Puasa",
+      "zh": "开斋节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-22",
+     "name": {
+      "en": "Hari Raya Aidilfitri (2nd Day)",
+      "ms": "Hari Raya Puasa (Hari Kedua)",
+      "zh": "开斋节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-03-23",
+     "name": {
+      "en": "Hari Raya Aidilfitri (replacement day)",
+      "ms": "Hari Raya Puasa (ganti)",
+      "zh": "开斋节（补假）"
+     },
+     "scope": "national",
+     "status": "replacement",
+     "source_index": 1
+    },
+    {
+     "date": "2026-04-26",
+     "name": {
+      "en": "Birthday of the Sultan of Terengganu",
+      "ms": "Hari Keputeraan Sultan Terengganu",
+      "zh": "登嘉楼苏丹诞辰"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-01",
+     "name": {
+      "en": "Labour Day",
+      "ms": "Hari Pekerja",
+      "zh": "劳动节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-26",
+     "name": {
+      "en": "Day of Arafah",
+      "ms": "Hari Arafah",
+      "zh": "阿拉法日"
+     },
+     "scope": "state",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-27",
+     "name": {
+      "en": "Hari Raya Haji (Aidiladha)",
+      "ms": "Hari Raya Qurban",
+      "zh": "哈芝节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-28",
+     "name": {
+      "en": "Hari Raya Haji (2nd Day)",
+      "ms": "Hari Raya Qurban (Hari Kedua)",
+      "zh": "哈芝节（第二天）"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-05-31",
+     "name": {
+      "en": "Wesak Day",
+      "ms": "Hari Wesak",
+      "zh": "卫塞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-01",
+     "name": {
+      "en": "Birthday of the Yang di-Pertuan Agong",
+      "ms": "Hari Keputeraan Rasmi Seri Paduka Baginda Yang di-Pertuan Agong",
+      "zh": "国家元首诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-06-17",
+     "name": {
+      "en": "Awal Muharram (Maal Hijrah)",
+      "ms": "Awal Muharam (Maal Hijrah)",
+      "zh": "回历新年"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-25",
+     "name": {
+      "en": "Maulidur Rasul (Prophet Muhammad's Birthday)",
+      "ms": "Hari Keputeraan Nabi Muhammad S.A.W. (Maulidur Rasul)",
+      "zh": "先知穆罕默德诞辰"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-08-31",
+     "name": {
+      "en": "Merdeka Day",
+      "ms": "Hari Kebangsaan",
+      "zh": "国庆日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-09-16",
+     "name": {
+      "en": "Malaysia Day",
+      "ms": "Hari Malaysia",
+      "zh": "马来西亚日"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    },
+    {
+     "date": "2026-11-08",
+     "name": {
+      "en": "Deepavali",
+      "ms": "Hari Deepavali",
+      "zh": "屠妖节"
+     },
+     "scope": "national",
+     "status": "subject-to-confirmation",
+     "source_index": 0
+    },
+    {
+     "date": "2026-12-25",
+     "name": {
+      "en": "Christmas Day",
+      "ms": "Hari Krismas",
+      "zh": "圣诞节"
+     },
+     "scope": "national",
+     "status": "gazetted",
+     "source_index": 0
+    }
+   ]
+  }
+ }
+}

@@ -78,6 +78,39 @@ python3 -m http.server 4178
 
 The tools fetch live data, so they update every time you load.
 
+## Verify before shipping
+
+Everything runs on Node's built-in test runner — no test dependencies.
+
+```bash
+npm test        # all unit + integration tests (tests/*.test.mjs, scripts/i18n/*)
+npm run check   # npm test + 168-page trilingual structural verification + internal link check
+```
+
+A failed step exits non-zero, so `npm run check` is the release gate. Run it
+from a clean checkout before deploying.
+
+## Shared interfaces
+
+- `jgetMeta(url, retries, ttl, {persistent, maxStaleMs})` in `common.js` —
+  fetch JSON with metadata: `{value, fetchedAt, cacheState: "network"|"session"|"stale", stale}`.
+  With `persistent: true` the last good value is kept in `localStorage`
+  (`gm:last:v1:<url>`) and served only after every retry fails and only
+  within `maxStaleMs`. `jget()` still returns raw JSON for existing callers.
+- `getPrefs()` / `setPrefs(patch)` / `clearPrefs()` in `common.js` — no-login
+  local preferences under the versioned key `gm:prefs:v1` (`{city, state}`,
+  validated against `GM_CITIES` and `GM_STATE_CODES`).
+- `window.GM_SHARE_PAYLOAD()` — optional page hook read at click time by the
+  share row; returns `{title, text, url, personalized}` or null to fall back
+  to page metadata. `/today` and `/cuti-planner` publish result-aware payloads.
+- `cuti-engine.mjs` — pure `buildOpportunities({year, holidays, weekendDays})`
+  and `optimizePlan({opportunities, leaveBudget})`; `cuti-url.mjs` — planner
+  URL params + share/analytics builders; `cuti-calendar.mjs` — RFC 5545
+  export. `data/public-holidays-2026.json` is the source-cited 16-jurisdiction
+  holiday dataset behind `/api/holidays?state=`.
+- GA4 events: `live_card_result`, `share_click`, `preference_set`,
+  `retry_click`, `cuti_plan`, `calendar_export` — bounded parameters only.
+
 ## Maintenance
 
 **Data stories are pre-rendered.** The `stories/*.html` pages have their full

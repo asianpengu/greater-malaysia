@@ -5,17 +5,9 @@
    sparkline, toast, myNow…) live in common.js — load it first.
    ============================================================ */
 
-/* Malaysian cities (lat/lon) for weather + air */
-const CITIES = [
-  { name: "Kuala Lumpur", lat: 3.139, lon: 101.687 },
-  { name: "George Town", lat: 5.414, lon: 100.329 },
-  { name: "Johor Bahru", lat: 1.493, lon: 103.741 },
-  { name: "Ipoh", lat: 4.597, lon: 101.09 },
-  { name: "Kuching", lat: 1.553, lon: 110.359 },
-  { name: "Kota Kinabalu", lat: 5.98, lon: 116.073 },
-  { name: "Malacca", lat: 2.196, lon: 102.25 },
-  { name: "Kuala Terengganu", lat: 5.331, lon: 103.137 },
-];
+/* Malaysian cities (lat/lon) for weather + air — the shared registry lives
+   in common.js so the homepage and /today use one list of slugs */
+const CITIES = GM_CITIES;
 
 /* JAKIM e-solat zones (curated, major areas) */
 const ZONES = [
@@ -63,11 +55,18 @@ function boot() {
   startClock();
   wireNav();
   setupReveal();
-  // populate selects
+  // populate selects — restore the saved weather city before the first request
+  const savedIdx = Math.max(0, CITIES.findIndex((c) => c.slug === getPrefs().city));
   $("#prayerZone").innerHTML = ZONES.map((z) => `<option value="${z.code}">${esc(z.name)}</option>`).join("");
-  $("#wxCity").innerHTML = CITIES.map((c, i) => `<option value="${i}">${esc(c.name)}</option>`).join("");
+  $("#wxCity").innerHTML = CITIES.map((c, i) => `<option value="${i}"${i === savedIdx ? " selected" : ""}>${esc(c.name)}</option>`).join("");
   $("#prayerZone").addEventListener("change", (e) => { loadPrayer(e.target.value); track("tool_use", { tool: "waktu_solat", zone: e.target.value }); });
-  $("#wxCity").addEventListener("change", (e) => { loadWeather(+e.target.value); track("tool_use", { tool: "cuaca_udara", city: CITIES[+e.target.value]?.name }); });
+  $("#wxCity").addEventListener("change", (e) => {
+    const i = +e.target.value; const c = CITIES[i] || CITIES[0];
+    setPrefs({ city: c.slug }); // remember the slug, never the numeric index
+    track("preference_set", { preference: "city", value: c.slug, source: "homepage_selector" });
+    loadWeather(i);
+    track("tool_use", { tool: "cuaca_udara", city: c.name });
+  });
 
   // engagement events
   $$('a[href="#tools"], a[href$="stories/"]').forEach((a) =>
@@ -80,7 +79,7 @@ function boot() {
   loadFuel();                                 // data.gov.my
   setTimeout(() => loadFX("USD"), 200);       // frankfurter (2 calls)
   setTimeout(() => loadPopulation(), 450);    // data.gov.my
-  setTimeout(() => loadWeather(0), 700);      // open-meteo (2 calls)
+  setTimeout(() => loadWeather(savedIdx), 700); // open-meteo (2 calls)
   setTimeout(() => loadInflation(), 1000);    // data.gov.my
   setTimeout(() => loadWarnings(), 1300);     // data.gov.my (2 calls)
   setTimeout(() => loadCrypto(), 1700);       // coingecko
@@ -352,7 +351,7 @@ async function loadWeather(idx) {
     const aqi = Math.round(air.current.us_aqi);
     const pm = air.current.pm2_5;
     const band = aqiBand(aqi);
-    if (idx === 0) { tickerData.wx = Math.round(cur.temperature_2m); tickerData.aqi = aqi; rebuildTicker(); }
+    tickerData.city = c.short; tickerData.wx = Math.round(cur.temperature_2m); tickerData.aqi = aqi; rebuildTicker();
 
     const R = 54, C = 2 * Math.PI * R;
     const frac = Math.min(aqi / 200, 1);
@@ -491,8 +490,8 @@ function rebuildTicker() {
   if (tickerData.fuel) items.push(["Diesel", `RM ${fmt(tickerData.fuel.diesel, 2)}`, "/L"]);
   if (tickerData.fx) items.push(["USD", `RM ${fmt(tickerData.fx, 4)}`, ""]);
   if (tickerData.btc) items.push(["Bitcoin", `RM ${fmt(tickerData.btc, 0)}`, ""]);
-  if (tickerData.wx != null) items.push(["KL now", `${tickerData.wx}°C`, ""]);
-  if (tickerData.aqi != null) items.push(["KL air", `AQI ${tickerData.aqi}`, aqiBand(tickerData.aqi).label]);
+  if (tickerData.wx != null) items.push([`${tickerData.city || "KL"} now`, `${tickerData.wx}°C`, ""]);
+  if (tickerData.aqi != null) items.push([`${tickerData.city || "KL"} air`, `AQI ${tickerData.aqi}`, aqiBand(tickerData.aqi).label]);
   if (tickerData.cpi != null) items.push(["Inflation", `${tickerData.cpi >= 0 ? "+" : ""}${fmt(tickerData.cpi, 1)}%`, "y/y"]);
   if (tickerData.warn != null) items.push(["Amaran", tickerData.warn ? `${tickerData.warn} active` : "all clear", ""]);
   if (tickerData.pop) items.push(["Rakyat", `${fmt(tickerData.pop / 1000, 1)}M`, ""]);

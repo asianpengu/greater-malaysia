@@ -23,27 +23,111 @@ function track(name, params = {}) {
   window.gtag("event", name, params);
 }
 
+/* ------------------------------------------------------------
+   Local, no-login preferences — one versioned key, validated codes only.
+   ------------------------------------------------------------ */
+const GM_PREFS_KEY = "gm:prefs:v1";
+
+/* the shared weather-city registry (homepage selector + /today) */
+const GM_CITIES = [
+  { slug: "kuala-lumpur", name: "Kuala Lumpur", short: "KL", lat: 3.139, lon: 101.687 },
+  { slug: "george-town", name: "George Town", short: "Penang", lat: 5.414, lon: 100.329 },
+  { slug: "johor-bahru", name: "Johor Bahru", short: "JB", lat: 1.493, lon: 103.741 },
+  { slug: "ipoh", name: "Ipoh", short: "Ipoh", lat: 4.597, lon: 101.09 },
+  { slug: "kuching", name: "Kuching", short: "Kuching", lat: 1.553, lon: 110.359 },
+  { slug: "kota-kinabalu", name: "Kota Kinabalu", short: "KK", lat: 5.98, lon: 116.073 },
+  { slug: "malacca", name: "Malacca", short: "Melaka", lat: 2.196, lon: 102.25 },
+  { slug: "kuala-terengganu", name: "Kuala Terengganu", short: "K. Terengganu", lat: 5.331, lon: 103.137 },
+];
+
+/* the sixteen state / federal-territory codes of the holiday dataset */
+const GM_STATE_CODES = ["jhr", "kdh", "ktn", "mlk", "nsn", "phg", "prk", "pls", "png", "sbh", "swk", "sgr", "trg", "kul", "lbn", "pjy"];
+
+const GM_PREF_DEFAULTS = { city: "kuala-lumpur", state: "kul" };
+
+/* keep only recognized fields with valid codes */
+function _validPrefs(raw) {
+  const out = {};
+  if (raw && typeof raw === "object" && !Array.isArray(raw)) {
+    if (GM_CITIES.some((c) => c.slug === raw.city)) out.city = raw.city;
+    if (GM_STATE_CODES.indexOf(raw.state) > -1) out.state = raw.state;
+  }
+  return out;
+}
+
+function getPrefs() {
+  let stored = {};
+  try { stored = _validPrefs(JSON.parse(localStorage.getItem(GM_PREFS_KEY))); }
+  catch (e) { /* corrupt JSON or blocked storage — defaults */ }
+  return { city: stored.city || GM_PREF_DEFAULTS.city, state: stored.state || GM_PREF_DEFAULTS.state };
+}
+
+function setPrefs(patch) {
+  const merged = { ...getPrefs(), ..._validPrefs(patch) };
+  try { localStorage.setItem(GM_PREFS_KEY, JSON.stringify(merged)); }
+  catch (e) { /* quota / private mode — preference simply doesn't persist */ }
+  return merged;
+}
+
+function clearPrefs() {
+  try { localStorage.removeItem(GM_PREFS_KEY); } catch (e) { /* blocked storage */ }
+}
+
+/* GA4 product events — bounded parameters only, never the user's data.
+   live_card_result: page, card, status(fresh|cache|stale|error), cache_state, source.
+   share_click: page, medium, personalized. */
+function trackResult(card, status, cacheState, source, attempt) {
+  const params = { page: location.pathname, card, status, cache_state: cacheState, source };
+  if (attempt && attempt > 1) params.attempt = attempt;
+  track("live_card_result", params);
+}
+function trackShare(medium, personalized) {
+  track("share_click", { page: location.pathname, medium, personalized: !!personalized });
+}
+
 /* fetch JSON with a 10s timeout, retry with backoff, and a sessionStorage
-   TTL cache so repeat navigation doesn't re-hit rate-limited public APIs */
-const jget = async (url, retries = 2, ttl = 60e3) => {
+   TTL cache so repeat navigation doesn't re-hit rate-limited public APIs.
+   jgetMeta additionally reports when the value was fetched and where it came
+   from ("network" | "session" | "stale"), so cards can render honest freshness.
+   options.persistent keeps the last good value in localStorage as a fallback
+   read only after every retry fails; options.maxStaleMs caps how old that
+   last-known value may be before it is rejected. */
+const GM_LAST_PREFIX = "gm:last:v1:";
+async function jgetMeta(url, retries = 2, ttl = 60e3, options = {}) {
   const key = "gm:" + url;
+  const lastKey = GM_LAST_PREFIX + encodeURIComponent(url);
   try {
     const hit = JSON.parse(sessionStorage.getItem(key));
-    if (hit && Date.now() - hit.t < ttl) return hit.v;
+    if (hit && Date.now() - hit.t < ttl) return { value: hit.v, fetchedAt: hit.t, cacheState: "session", stale: false };
   } catch (e) { /* no cache — fetch fresh */ }
   for (let i = 0; ; i++) {
     try {
       const r = await fetch(url, { signal: typeof AbortSignal.timeout === "function" ? AbortSignal.timeout(10000) : undefined });
       if (!r.ok) throw new Error(r.status);
       const v = await r.json();
-      try { sessionStorage.setItem(key, JSON.stringify({ t: Date.now(), v })); } catch (e) { /* quota / private mode */ }
-      return v;
+      const t = Date.now();
+      try { sessionStorage.setItem(key, JSON.stringify({ t, v })); } catch (e) { /* quota / private mode */ }
+      if (options.persistent) { try { localStorage.setItem(lastKey, JSON.stringify({ t, v })); } catch (e) { /* quota / private mode */ } }
+      return { value: v, fetchedAt: t, cacheState: "network", stale: false };
     } catch (e) {
-      if (i >= retries) throw e;
+      if (i >= retries) {
+        if (options.persistent) {
+          // last-known fallback — never the first read path, and never past its limit
+          try {
+            const last = JSON.parse(localStorage.getItem(lastKey));
+            const maxAge = options.maxStaleMs === undefined ? 24 * 3600e3 : options.maxStaleMs;
+            if (last && typeof last.t === "number" && Date.now() - last.t <= maxAge) {
+              return { value: last.v, fetchedAt: last.t, cacheState: "stale", stale: true };
+            }
+          } catch (e2) { /* unreadable record — surface the original error */ }
+        }
+        throw e;
+      }
       await sleep(500 + i * 600); // backoff on transient burst failures
     }
   }
-};
+}
+const jget = async (url, retries = 2, ttl = 60e3) => (await jgetMeta(url, retries, ttl)).value;
 
 /* nav turns solid once you scroll past the hero top, and wires the mobile sheet */
 function wireNav() {
@@ -110,6 +194,24 @@ function toast(msg) {
   clearTimeout(toastT); toastT = setTimeout(() => { t.classList.remove("show"); setTimeout(() => (t.hidden = true), 320); }, 2000);
 }
 
+/* Resolve share text/link at click time. An optional page hook
+   (window.GM_SHARE_PAYLOAD) supplies the values the user actually saw; when
+   it is absent, returns nothing useful, or throws, we fall back to the page's
+   canonical metadata. UTM tags stay on every link so GA attributes the click. */
+function resolveShare(src, fallback) {
+  let p = null;
+  try {
+    if (typeof window.GM_SHARE_PAYLOAD === "function") {
+      const c = window.GM_SHARE_PAYLOAD();
+      if (c && c.text && c.url) p = c;
+    }
+  } catch (e) { /* broken hook — use page metadata */ }
+  const base = p ? p.url : fallback.url;
+  const link = base + (base.indexOf("?") > -1 ? "&" : "?") + "utm_source=" + src + "&utm_medium=social&utm_campaign=share";
+  const text = p ? (p.title ? p.title + "\n" + p.text : p.text) : fallback.title;
+  return { link, text, personalized: !!(p && p.personalized) };
+}
+
 /* Share row (WhatsApp / Telegram / X / copy) on stories and answer pages.
    Inserted after the H1. Retries because story.js renders its title async. */
 function wireShare() {
@@ -119,24 +221,36 @@ function wireShare() {
   const url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href.split("?")[0];
   const title = (document.querySelector('meta[property="og:title"]') || {}).content || document.title;
   const enc = encodeURIComponent;
-  // Tag shared links so GA attributes the inbound click instead of dumping it in "Unassigned".
-  const tag = (src) => url + (url.indexOf("?") > -1 ? "&" : "?") + "utm_source=" + src + "&utm_medium=social&utm_campaign=share";
-  const wa = "https://wa.me/?text=" + enc(title + "\n" + tag("whatsapp"));
-  const tg = "https://t.me/share/url?url=" + enc(tag("telegram")) + "&text=" + enc(title);
-  const x = "https://twitter.com/intent/tweet?text=" + enc(title) + "&url=" + enc(tag("twitter"));
+  const fallback = { url, title };
+  const links = {
+    whatsapp: (r) => "https://wa.me/?text=" + enc(r.text + "\n" + r.link),
+    telegram: (r) => "https://t.me/share/url?url=" + enc(r.link) + "&text=" + enc(r.text),
+    twitter: (r) => "https://twitter.com/intent/tweet?text=" + enc(r.text) + "&url=" + enc(r.link),
+  };
   const row = document.createElement("div");
   row.className = "gm-share";
   row.innerHTML =
     '<span class="gs-lab">Share</span>' +
-    '<a class="gs-btn" href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' +
-    '<a class="gs-btn" href="' + tg + '" target="_blank" rel="noopener">Telegram</a>' +
-    '<a class="gs-btn" href="' + x + '" target="_blank" rel="noopener">X</a>' +
+    '<a class="gs-btn" data-share="whatsapp" href="' + links.whatsapp(resolveShare("whatsapp", fallback)) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+    '<a class="gs-btn" data-share="telegram" href="' + links.telegram(resolveShare("telegram", fallback)) + '" target="_blank" rel="noopener">Telegram</a>' +
+    '<a class="gs-btn" data-share="twitter" href="' + links.twitter(resolveShare("twitter", fallback)) + '" target="_blank" rel="noopener">X</a>' +
     '<button class="gs-btn gs-copy" type="button">Copy link</button>';
   h.insertAdjacentElement("afterend", row);
+  // re-resolve at click time so the link carries the values currently on screen
+  row.querySelectorAll("a[data-share]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      const r = resolveShare(this.dataset.share, fallback);
+      trackShare(this.dataset.share, r.personalized); // before opening the share target
+      this.href = links[this.dataset.share](r);
+    });
+  });
   const copy = row.querySelector(".gs-copy");
   copy.addEventListener("click", function () {
     const done = function () { copy.textContent = "Copied"; setTimeout(function () { copy.textContent = "Copy link"; }, 1500); };
-    const link = tag("copy_link");
+    // copy shares the URL only — share text must never leak into the link
+    const r = resolveShare("copy_link", fallback);
+    trackShare("copy_link", r.personalized); // before copying
+    const link = r.link;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(link).then(done).catch(function () { fallbackCopy(link); done(); });
     } else { fallbackCopy(link); done(); }
