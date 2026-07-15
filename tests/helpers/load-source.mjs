@@ -99,6 +99,7 @@ export function loadScript(file, { names = [], globals = {} } = {}) {
     location: { href: "https://greatermalaysia.com/", search: "", origin: "https://greatermalaysia.com", pathname: "/" },
     history: { replaceState() {} },
     navigator: {},
+    URLSearchParams,
     AbortSignal: { timeout: () => undefined },
     IntersectionObserver: class { observe() {} unobserve() {} disconnect() {} },
     Blob: class { constructor(parts, opts) { this.parts = parts; this.type = opts && opts.type; } },

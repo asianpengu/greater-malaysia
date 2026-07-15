@@ -88,6 +88,54 @@ test("changing city reloads exactly weather and AQI, persists the slug, and leav
   assert.equal(pref.params.value, "ipoh");
 });
 
+/* ---- D3.2: ?city= query override ---- */
+
+test("a valid city query parameter wins for the visit without touching saved preferences", async () => {
+  const storage = makeStorage({ "gm:prefs:v1": JSON.stringify({ city: "ipoh", state: "kul" }) });
+  const { els, calls } = await loadToday({ storage, search: "?city=george-town" });
+  assert.ok(forecasts(calls)[0].includes("latitude=5.414"), forecasts(calls)[0]);
+  assert.equal(els["#tWx .tc-k"].textContent, "Cuaca Penang");
+  assert.match(els["#todayCity"].innerHTML, /value="george-town" selected/);
+  assert.equal(JSON.parse(storage.getItem("gm:prefs:v1")).city, "ipoh", "query must not overwrite the stored preference");
+});
+
+test("invalid or repeated city parameters fall back safely; first recognized value wins", async () => {
+  const storage = makeStorage({ "gm:prefs:v1": JSON.stringify({ city: "kuching", state: "swk" }) });
+  const bad = await loadToday({ storage, search: "?city=gotham" });
+  assert.ok(forecasts(bad.calls)[0].includes("latitude=1.553"), "invalid query falls back to saved preference");
+  const multi = await loadToday({ storage: makeStorage(), search: "?city=gotham&city=ipoh&city=kuching" });
+  assert.ok(forecasts(multi.calls)[0].includes("latitude=4.597"), "first recognized value wins");
+});
+
+test("query city application is tracked as source query with the normalized slug only", async () => {
+  const { events } = await loadToday({ search: "?city=ipoh%22%3Cscript%3E&city=malacca" });
+  const pref = events.find((e) => e.name === "preference_set" && e.params.source === "query");
+  assert.equal(pref.params.value, "malacca");
+});
+
+test("the share payload carries the normalized city parameter and the personalized flag", async () => {
+  const { ctx } = await loadToday({ search: "?city=ipoh" });
+  const p = ctx.GM_SHARE_PAYLOAD();
+  assert.equal(p.url, "https://greatermalaysia.com/today?city=ipoh");
+  assert.equal(p.personalized, true);
+});
+
+test("the default Kuala Lumpur snapshot shares the clean canonical URL", async () => {
+  const { ctx } = await loadToday();
+  const p = ctx.GM_SHARE_PAYLOAD();
+  assert.equal(p.url, "https://greatermalaysia.com/today");
+  assert.equal(p.personalized, false);
+});
+
+test("changing the control after a query visit persists the explicit choice", async () => {
+  const storage = makeStorage({ "gm:prefs:v1": JSON.stringify({ city: "ipoh", state: "kul" }) });
+  const { els } = await loadToday({ storage, search: "?city=george-town" });
+  els["#todayCity"].value = "kuala-terengganu";
+  els["#todayCity"].dispatch("change");
+  await new Promise((r) => setTimeout(r, 50));
+  assert.equal(JSON.parse(storage.getItem("gm:prefs:v1")).city, "kuala-terengganu");
+});
+
 test("the share payload names the active city, not KL", async () => {
   const storage = makeStorage({ "gm:prefs:v1": JSON.stringify({ city: "kota-kinabalu", state: "sbh" }) });
   const { ctx } = await loadToday({ storage });

@@ -27,10 +27,18 @@ const MAX_STALE = {
   population: 400 * 86400e3,
 };
 
-/* ---- active weather city (D3.1): saved preference, else Kuala Lumpur ---- */
-const CITY_COPY = { en: "City", ms: "Bandar", zh: "城市" }[TLANG];
+/* ---- active weather city: ?city= query (visit only) > saved preference >
+   Kuala Lumpur. A shared link never overwrites the recipient's saved city. */
 const cityBySlug = (slug) => GM_CITIES.find((c) => c.slug === slug);
-let activeCity = cityBySlug(getPrefs().city) || GM_CITIES[0];
+function cityFromQuery() {
+  try {
+    // first recognized value wins; unknown or hostile values are ignored
+    return new URLSearchParams(location.search).getAll("city").map(cityBySlug).find(Boolean) || null;
+  } catch (e) { return null; }
+}
+const queryCity = cityFromQuery();
+let activeCity = queryCity || cityBySlug(getPrefs().city) || GM_CITIES[0];
+if (queryCity) track("preference_set", { preference: "city", value: queryCity.slug, source: "query" });
 
 /* share copy — the heading and labels used when sharing the live snapshot */
 const SHARE_COPY = {
@@ -50,8 +58,11 @@ function noteShare(id, text, meta) {
 window.GM_SHARE_PAYLOAD = function () {
   const parts = ["tFuel", "tFx", "tWx", "tAir", "tBtc", "tSolat", "tCpi"].map((id) => shareSummary[id]).filter(Boolean);
   if (parts.length < 3) return null;
-  const url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href.split("?")[0];
-  return { title: SHARE_COPY.title, text: parts.slice(0, 4).join(" · "), url, personalized: false };
+  const base = (document.querySelector('link[rel="canonical"]') || {}).href || location.href.split("?")[0];
+  // carry only the normalized city parameter so the recipient sees the same snapshot
+  const personalized = activeCity.slug !== "kuala-lumpur";
+  const url = personalized ? base + (base.indexOf("?") > -1 ? "&" : "?") + "city=" + activeCity.slug : base;
+  return { title: SHARE_COPY.title, text: parts.slice(0, 4).join(" · "), url, personalized };
 };
 
 const cardMeta = {}; // card id → last jgetMeta result, so the footer re-renders without refetching
