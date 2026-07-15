@@ -674,6 +674,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 .today-card .tc-row3 b { font-family: var(--mono); }
 .today-card .tc-load, .today-card .tc-err { font-family: var(--mono); color: var(--ink-ghost); font-size: 20px; }
 .today-card .tc-freshness { font-family: var(--mono); font-size: 10px; color: var(--ink-ghost); letter-spacing: 0.03em; margin-top: 8px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.today-card .tc-error-message { font-size: 12px; color: var(--ink-soft); line-height: 1.45; }
+.today-card .tc-retry { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); background: var(--paper-2, #fff); border: 2px solid var(--line-ink); border-radius: var(--r); padding: 5px 10px; margin-top: 8px; cursor: pointer; }
+.today-card .tc-retry:hover { border-color: var(--seal); color: var(--seal); }
+.today-card .tc-retry:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
+.today-card .tc-retry[disabled] { opacity: 0.5; cursor: wait; }
 .today-card .tc-freshness.is-stale { color: var(--seal); }
 .today-card .tc-freshness.is-error { color: var(--ink-faint); }
 @media (max-width: 860px) { .today-grid { grid-template-columns: repeat(2, 1fr); } }

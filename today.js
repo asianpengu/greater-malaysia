@@ -83,6 +83,7 @@ function renderFresh(id) {
   if (!el || !meta) return;
   el.innerHTML = `<time datetime="${new Date(meta.fetchedAt).toISOString()}">${esc(freshText(meta))}</time>`;
   el.classList.toggle("is-stale", !!meta.stale);
+  el.classList.remove("is-error");
 }
 function setFresh(id, meta) { cardMeta[id] = meta; renderFresh(id); }
 setInterval(() => Object.keys(cardMeta).forEach(renderFresh), 60000);
@@ -113,10 +114,79 @@ if (citySel) {
   });
 }
 
-/* weather + AQI loader — reused by the initial load and the city control */
+/* ---- retryable source errors (D3.3): a failed card names its source and
+   offers one focusable retry button; last-known data always wins over this. */
+const ERR_COPY = {
+  en: { msg: "Source unavailable.", retry: "Try again" },
+  ms: { msg: "Sumber tidak tersedia.", retry: "Cuba lagi" },
+  zh: { msg: "数据源不可用。", retry: "重试" },
+}[TLANG];
+const SOURCE_NAMES = { jakim_esolat: "JAKIM e-Solat", data_gov_my: "data.gov.my", frankfurter: "Frankfurter (ECB)", open_meteo: "Open-Meteo", coingecko: "CoinGecko" };
+const CARD_KEY = { tSolat: "prayer", tFuel: "fuel", tFx: "fx", tWx: "weather", tAir: "air", tBtc: "btc", tCpi: "cpi", tPop: "population" };
+const attempts = {}; // analytics attempt counter per card key
+const retryFns = {}; // card id → loader to re-run
+const nextAttempt = (cardKey) => (attempts[cardKey] = (attempts[cardKey] || 0) + 1);
+
+function setCardError(cardId, source, retryFn) {
+  retryFns[cardId] = retryFn;
+  set(cardId, `<div class="tc-error-message">${esc(SOURCE_NAMES[source] || source)} · ${ERR_COPY.msg}</div><button class="tc-retry" type="button" data-card="${cardId}" data-source="${source}">${ERR_COPY.retry}</button>`);
+  const f = $(`#${cardId} .tc-freshness`);
+  if (f) { f.innerHTML = ""; f.classList.add("is-error"); }
+}
+
+/* delegated retry handling — the button disables while its loader runs */
+const todayGrid = $("#todayGrid");
+if (todayGrid) {
+  todayGrid.addEventListener("click", (e) => {
+    const btn = e.target && e.target.closest ? e.target.closest(".tc-retry") : null;
+    if (!btn || btn.disabled) return;
+    btn.disabled = true;
+    track("retry_click", { page: location.pathname, card: CARD_KEY[btn.dataset.card] || btn.dataset.card, source: btn.dataset.source });
+    const fn = retryFns[btn.dataset.card];
+    if (fn) fn();
+  });
+}
+
+/* ---- named loaders, one per source ---- */
+
+async function loadTodayPrayer() {
+  const att = nextAttempt("prayer");
+  try {
+    const m = await jgetMeta("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=today&zone=WLY01", 2, 600e3, { persistent: true, maxStaleMs: MAX_STALE.prayer });
+    const t = m.value.prayerTime[0];
+    const seq = [["fajr", "Subuh"], ["syuruk", "Syuruk"], ["dhuhr", "Zohor"], ["asr", "Asar"], ["maghrib", "Maghrib"], ["isha", "Isyak"]];
+    const now = myNow(); const nm = now.getHours() * 60 + now.getMinutes(); const toMin = h => { const [a, b] = h.split(":").map(Number); return a * 60 + b; };
+    const nx = seq.find(([k]) => toMin(t[k]) > nm);
+    if (nx) { set("tSolat", `<div class="tc-big">${esc(t[nx[0]].slice(0, 5))}</div><div class="tc-sub">${nx[1]}</div>`); noteShare("tSolat", `${nx[1]} ${t[nx[0]].slice(0, 5)}`, m); }
+    else set("tSolat", `<div class="tc-big">${esc(t.fajr.slice(0, 5))}</div><div class="tc-sub">Subuh (esok)</div>`); // after Isyak — tomorrow's dawn
+    setFresh("tSolat", m); trackResult("prayer", statusOf(m), m.cacheState, "jakim_esolat", att);
+  } catch (e) { setCardError("tSolat", "jakim_esolat", loadTodayPrayer); trackResult("prayer", "error", "none", "jakim_esolat", att); }
+}
+
+async function loadTodayFuel() {
+  const att = nextAttempt("fuel");
+  try {
+    const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=fuelprice&limit=4&sort=-date", 2, 36e5, { persistent: true, maxStaleMs: MAX_STALE.fuel });
+    const l = m.value.find(r => r.series_type === "level");
+    set("tFuel", `<div class="tc-row3"><span>RON95<b>${fmt(l.ron95_skps ?? l.ron95)}</b></span><span>RON97<b>${fmt(l.ron97)}</b></span><span>Diesel<b>${fmt(l.diesel)}</b></span></div>`);
+    setFresh("tFuel", m); noteShare("tFuel", `RON95 RM${fmt(l.ron95_skps ?? l.ron95)}`, m); trackResult("fuel", statusOf(m), m.cacheState, "data_gov_my", att);
+  } catch (e) { setCardError("tFuel", "data_gov_my", loadTodayFuel); trackResult("fuel", "error", "none", "data_gov_my", att); }
+}
+
+async function loadTodayFx() {
+  const att = nextAttempt("fx");
+  try {
+    const m = await jgetMeta("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR", 2, 600e3, { persistent: true, maxStaleMs: MAX_STALE.fx });
+    set("tFx", `<div class="tc-big">RM ${fmt(m.value.rates.MYR, 4)}</div><div class="tc-sub">per 1 USD</div>`);
+    setFresh("tFx", m); noteShare("tFx", `USD RM${fmt(m.value.rates.MYR, 2)}`, m); trackResult("fx", statusOf(m), m.cacheState, "frankfurter", att);
+  } catch (e) { setCardError("tFx", "frankfurter", loadTodayFx); trackResult("fx", "error", "none", "frankfurter", att); }
+}
+
+/* weather + AQI — one paired operation shared by initial load, city control and retry */
 let weatherBusy = false;
 async function loadTodayWeather() {
   if (weatherBusy) return; weatherBusy = true;
+  const att = nextAttempt("weather");
   const city = activeCity;
   const wk = $("#tWx .tc-k"), ak = $("#tAir .tc-k");
   if (wk) wk.textContent = `Cuaca ${city.short}`;
@@ -134,53 +204,58 @@ async function loadTodayWeather() {
     set("tAir", `<div class="tc-big">${aqi}</div><div class="tc-sub">US AQI · ${band}</div>`);
     setFresh("tWx", mwx); setFresh("tAir", mair);
     noteShare("tWx", `${city.short} ${Math.round(wx.current.temperature_2m)}°C`, mwx); noteShare("tAir", `AQI ${aqi}`, mair);
-    trackResult("weather", statusOf(mwx), mwx.cacheState, "open_meteo"); trackResult("air", statusOf(mair), mair.cacheState, "open_meteo");
+    trackResult("weather", statusOf(mwx), mwx.cacheState, "open_meteo", att); trackResult("air", statusOf(mair), mair.cacheState, "open_meteo", att);
   } catch (e) {
-    set("tWx", `<div class="tc-err">—</div>`); set("tAir", `<div class="tc-err">—</div>`);
-    trackResult("weather", "error", "none", "open_meteo"); trackResult("air", "error", "none", "open_meteo");
+    setCardError("tWx", "open_meteo", loadTodayWeather); setCardError("tAir", "open_meteo", loadTodayWeather);
+    trackResult("weather", "error", "none", "open_meteo", att); trackResult("air", "error", "none", "open_meteo", att);
   } finally { weatherBusy = false; }
 }
 
-(async () => {
-  // staggered to respect rate limits
-  try { const m = await jgetMeta("https://www.e-solat.gov.my/index.php?r=esolatApi/takwimsolat&period=today&zone=WLY01", 2, 600e3, { persistent: true, maxStaleMs: MAX_STALE.prayer }); const t = m.value.prayerTime[0];
-    const seq = [["fajr", "Subuh"], ["syuruk", "Syuruk"], ["dhuhr", "Zohor"], ["asr", "Asar"], ["maghrib", "Maghrib"], ["isha", "Isyak"]];
-    const now = myNow(); const nm = now.getHours() * 60 + now.getMinutes(); const toMin = h => { const [a, b] = h.split(":").map(Number); return a * 60 + b; };
-    const nx = seq.find(([k]) => toMin(t[k]) > nm);
-    if (nx) { set("tSolat", `<div class="tc-big">${esc(t[nx[0]].slice(0, 5))}</div><div class="tc-sub">${nx[1]}</div>`); noteShare("tSolat", `${nx[1]} ${t[nx[0]].slice(0, 5)}`, m); }
-    else set("tSolat", `<div class="tc-big">${esc(t.fajr.slice(0, 5))}</div><div class="tc-sub">Subuh (esok)</div>`); // after Isyak — tomorrow's dawn
-    setFresh("tSolat", m); trackResult("prayer", statusOf(m), m.cacheState, "jakim_esolat");
-  } catch (e) { set("tSolat", `<div class="tc-err">—</div>`); trackResult("prayer", "error", "none", "jakim_esolat"); }
-
-  await sleep(150);
-  try { const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=fuelprice&limit=4&sort=-date", 2, 36e5, { persistent: true, maxStaleMs: MAX_STALE.fuel }); const l = m.value.find(r => r.series_type === "level");
-    set("tFuel", `<div class="tc-row3"><span>RON95<b>${fmt(l.ron95_skps ?? l.ron95)}</b></span><span>RON97<b>${fmt(l.ron97)}</b></span><span>Diesel<b>${fmt(l.diesel)}</b></span></div>`);
-    setFresh("tFuel", m); noteShare("tFuel", `RON95 RM${fmt(l.ron95_skps ?? l.ron95)}`, m); trackResult("fuel", statusOf(m), m.cacheState, "data_gov_my");
-  } catch (e) { set("tFuel", `<div class="tc-err">—</div>`); trackResult("fuel", "error", "none", "data_gov_my"); }
-
-  await sleep(150);
-  try { const m = await jgetMeta("https://api.frankfurter.dev/v1/latest?base=USD&symbols=MYR", 2, 600e3, { persistent: true, maxStaleMs: MAX_STALE.fx }); set("tFx", `<div class="tc-big">RM ${fmt(m.value.rates.MYR, 4)}</div><div class="tc-sub">per 1 USD</div>`); setFresh("tFx", m); noteShare("tFx", `USD RM${fmt(m.value.rates.MYR, 2)}`, m); trackResult("fx", statusOf(m), m.cacheState, "frankfurter"); } catch (e) { set("tFx", `<div class="tc-err">—</div>`); trackResult("fx", "error", "none", "frankfurter"); }
-
-  await sleep(200);
-  await loadTodayWeather(); // weather + AQI for the active city
-
-  await sleep(500);
-  try { const m = await jgetMeta("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=myr&include_24hr_change=true", 2, 60e3, { persistent: true, maxStaleMs: MAX_STALE.btc }); const d = m.value;
+async function loadTodayBitcoin() {
+  const att = nextAttempt("btc");
+  try {
+    const m = await jgetMeta("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=myr&include_24hr_change=true", 2, 60e3, { persistent: true, maxStaleMs: MAX_STALE.btc });
+    const d = m.value;
     const c = d.bitcoin.myr_24h_change ?? 0; set("tBtc", `<div class="tc-big">RM ${fmt(d.bitcoin.myr, 0)}</div><div class="tc-sub ${c >= 0 ? "up-c" : "down-c"}">${c >= 0 ? "▲" : "▼"} ${fmt(Math.abs(c), 1)}% 24h</div>`);
-    setFresh("tBtc", m); noteShare("tBtc", `BTC RM${fmt(d.bitcoin.myr, 0)}`, m); trackResult("btc", statusOf(m), m.cacheState, "coingecko");
-  } catch (e) { set("tBtc", `<div class="tc-err">—</div>`); trackResult("btc", "error", "none", "coingecko"); }
+    setFresh("tBtc", m); noteShare("tBtc", `BTC RM${fmt(d.bitcoin.myr, 0)}`, m); trackResult("btc", statusOf(m), m.cacheState, "coingecko", att);
+  } catch (e) { setCardError("tBtc", "coingecko", loadTodayBitcoin); trackResult("btc", "error", "none", "coingecko", att); }
+}
 
-  await sleep(200);
-  try { const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=cpi_headline&limit=400&sort=-date", 2, 36e5, { persistent: true, maxStaleMs: MAX_STALE.cpi }); const o = m.value.filter(r => r.division === "overall"); const ld = o[0].date.slice(0, 7); const ya = o.find(r => r.date.slice(0, 7) === `${+ld.slice(0, 4) - 1}${ld.slice(4)}`);
+async function loadTodayCpi() {
+  const att = nextAttempt("cpi");
+  try {
+    const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=cpi_headline&limit=400&sort=-date", 2, 36e5, { persistent: true, maxStaleMs: MAX_STALE.cpi });
+    const o = m.value.filter(r => r.division === "overall"); const ld = o[0].date.slice(0, 7); const ya = o.find(r => r.date.slice(0, 7) === `${+ld.slice(0, 4) - 1}${ld.slice(4)}`);
     const yoy = ya ? (o[0].index / ya.index - 1) * 100 : null;
-    if (yoy == null) { set("tCpi", `<div class="tc-err">—</div>`); trackResult("cpi", "error", "none", "data_gov_my"); }
-    else { set("tCpi", `<div class="tc-big">${yoy >= 0 ? "+" : ""}${fmt(yoy, 1)}%</div><div class="tc-sub">inflation, year-on-year</div>`); setFresh("tCpi", m); noteShare("tCpi", `${SHARE_COPY.inflation} ${yoy >= 0 ? "+" : ""}${fmt(yoy, 1)}%`, m); trackResult("cpi", statusOf(m), m.cacheState, "data_gov_my"); }
-  } catch (e) { set("tCpi", `<div class="tc-err">—</div>`); trackResult("cpi", "error", "none", "data_gov_my"); }
+    if (yoy == null) { setCardError("tCpi", "data_gov_my", loadTodayCpi); trackResult("cpi", "error", "none", "data_gov_my", att); }
+    else { set("tCpi", `<div class="tc-big">${yoy >= 0 ? "+" : ""}${fmt(yoy, 1)}%</div><div class="tc-sub">inflation, year-on-year</div>`); setFresh("tCpi", m); noteShare("tCpi", `${SHARE_COPY.inflation} ${yoy >= 0 ? "+" : ""}${fmt(yoy, 1)}%`, m); trackResult("cpi", statusOf(m), m.cacheState, "data_gov_my", att); }
+  } catch (e) { setCardError("tCpi", "data_gov_my", loadTodayCpi); trackResult("cpi", "error", "none", "data_gov_my", att); }
+}
 
-  await sleep(200);
-  try { const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=population_malaysia&limit=40&sort=-date", 2, 36e5, { persistent: true, maxStaleMs: MAX_STALE.population }); const rows = m.value; const ld = rows[0].date;
+async function loadTodayPopulation() {
+  const att = nextAttempt("population");
+  try {
+    const m = await jgetMeta("https://api.data.gov.my/data-catalogue/?id=population_malaysia&limit=40&sort=-date", 2, 36e5, { persistent: true, maxStaleMs: MAX_STALE.population });
+    const rows = m.value; const ld = rows[0].date;
     const total = rows.find(r => r.date === ld && r.sex === "both" && r.age === "overall" && r.ethnicity === "overall").population;
     set("tPop", `<div class="tc-big">${fmt(total / 1000, 1)}M</div><div class="tc-sub">people · ${esc(ld.slice(0, 4))}</div>`);
-    setFresh("tPop", m); trackResult("population", statusOf(m), m.cacheState, "data_gov_my");
-  } catch (e) { set("tPop", `<div class="tc-err">—</div>`); trackResult("population", "error", "none", "data_gov_my"); }
+    setFresh("tPop", m); trackResult("population", statusOf(m), m.cacheState, "data_gov_my", att);
+  } catch (e) { setCardError("tPop", "data_gov_my", loadTodayPopulation); trackResult("population", "error", "none", "data_gov_my", att); }
+}
+
+(async () => {
+  // staggered by source host to respect rate limits
+  await loadTodayPrayer();
+  await sleep(150);
+  await loadTodayFuel();
+  await sleep(150);
+  await loadTodayFx();
+  await sleep(200);
+  await loadTodayWeather();
+  await sleep(500);
+  await loadTodayBitcoin();
+  await sleep(200);
+  await loadTodayCpi();
+  await sleep(200);
+  await loadTodayPopulation();
 })();
