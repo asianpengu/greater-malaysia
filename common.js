@@ -23,6 +23,18 @@ function track(name, params = {}) {
   window.gtag("event", name, params);
 }
 
+/* GA4 product events — bounded parameters only, never the user's data.
+   live_card_result: page, card, status(fresh|cache|stale|error), cache_state, source.
+   share_click: page, medium, personalized. */
+function trackResult(card, status, cacheState, source, attempt) {
+  const params = { page: location.pathname, card, status, cache_state: cacheState, source };
+  if (attempt && attempt > 1) params.attempt = attempt;
+  track("live_card_result", params);
+}
+function trackShare(medium, personalized) {
+  track("share_click", { page: location.pathname, medium, personalized: !!personalized });
+}
+
 /* fetch JSON with a 10s timeout, retry with backoff, and a sessionStorage
    TTL cache so repeat navigation doesn't re-hit rate-limited public APIs.
    jgetMeta additionally reports when the value was fetched and where it came
@@ -159,14 +171,18 @@ function wireShare() {
   // re-resolve at click time so the link carries the values currently on screen
   row.querySelectorAll("a[data-share]").forEach(function (a) {
     a.addEventListener("click", function () {
-      this.href = links[this.dataset.share](resolveShare(this.dataset.share, fallback));
+      const r = resolveShare(this.dataset.share, fallback);
+      trackShare(this.dataset.share, r.personalized); // before opening the share target
+      this.href = links[this.dataset.share](r);
     });
   });
   const copy = row.querySelector(".gs-copy");
   copy.addEventListener("click", function () {
     const done = function () { copy.textContent = "Copied"; setTimeout(function () { copy.textContent = "Copy link"; }, 1500); };
     // copy shares the URL only — share text must never leak into the link
-    const link = resolveShare("copy_link", fallback).link;
+    const r = resolveShare("copy_link", fallback);
+    trackShare("copy_link", r.personalized); // before copying
+    const link = r.link;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(link).then(done).catch(function () { fallbackCopy(link); done(); });
     } else { fallbackCopy(link); done(); }
