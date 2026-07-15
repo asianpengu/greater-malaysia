@@ -2,6 +2,7 @@
    for the EN, BM and Chinese pages; all calculations live in cuti-engine.mjs.
    Relies on globals from common.js (jget, getPrefs, setPrefs, track, esc). */
 import { buildOpportunities, optimizePlan } from "/cuti-engine.mjs";
+import { resolvePlannerParams, buildPlannerQuery } from "/cuti-url.mjs";
 
 const YEAR = 2026;
 const LANG = (() => { const l = document.documentElement.lang; return l === "ms" ? "ms" : l === "zh-Hans" ? "zh" : "en"; })();
@@ -94,8 +95,20 @@ const fmtDate = (isoDate) => {
   return COPY.fmt(d.getUTCDate(), COPY.months[d.getUTCMonth()]);
 };
 
-let activeState = STATE_CODES.includes(getPrefs().state) ? getPrefs().state : "kul";
+/* ?state= and ?leave= reproduce a shared plan for this visit only —
+   they never overwrite the stored preference until the user changes it */
+const initial = resolvePlannerParams(location.search, getPrefs().state);
+let activeState = initial.state;
 let holidayState = null; // { rows, weekendDays, from } for activeState
+
+/* reflect explicit changes in the address bar without reload or history spam */
+function syncUrl() {
+  try {
+    const budgetInput = el("cpLeave");
+    const leave = Math.max(0, Math.min(30, Math.floor(Number(budgetInput && budgetInput.value) || 0)));
+    history.replaceState(null, "", location.pathname + buildPlannerQuery(location.search, activeState, leave));
+  } catch (e) { /* URL sync is cosmetic */ }
+}
 
 /* API first; the local verified dataset is the fallback */
 async function fetchHolidays(state) {
@@ -172,13 +185,17 @@ function boot() {
       const code = String(e.target.value);
       if (!STATE_CODES.includes(code)) return;
       activeState = code;
-      setPrefs({ state: code });
+      setPrefs({ state: code }); // explicit change — now it may persist
       track("preference_set", { preference: "state", value: code, source: "cuti_selector" });
+      syncUrl();
       loadAndRender();
     });
   }
   const budgetInput = el("cpLeave");
-  if (budgetInput) budgetInput.addEventListener("input", render);
+  if (budgetInput) {
+    if (initial.leaveFromQuery) budgetInput.value = String(initial.leave);
+    budgetInput.addEventListener("input", () => { syncUrl(); render(); });
+  }
   loadAndRender();
 }
 
