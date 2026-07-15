@@ -101,6 +101,61 @@ test("jget keeps returning raw JSON for existing callers", async () => {
   assert.ok(ctx.sessionStorage.getItem("gm:https://x.test/fx"));
 });
 
+/* ---- D2.3: persistent last-known fallback ---- */
+
+const LAST_KEY = "gm:last:v1:" + encodeURIComponent("https://x.test/a");
+
+test("persistent data within its limit appears only after all retries fail", async () => {
+  const t = Date.now() - 3600e3; // checked an hour ago
+  const { jgetMeta } = loadScript("common.js", {
+    names: ["jgetMeta"],
+    globals: {
+      fetch: async () => { throw new Error("down"); },
+      localStorage: makeStorage({ [LAST_KEY]: JSON.stringify({ t, v: { last: 1 } }) }),
+    },
+  });
+  const m = await jgetMeta("https://x.test/a", 1, 60e3, { persistent: true, maxStaleMs: 2 * 3600e3 });
+  assert.equal(m.cacheState, "stale");
+  assert.equal(m.stale, true);
+  assert.equal(m.fetchedAt, t);
+  assert.deepEqual(JSON.parse(JSON.stringify(m.value)), { last: 1 });
+});
+
+test("persistent data older than maxStaleMs is rejected and the error surfaces", async () => {
+  const t = Date.now() - 3 * 3600e3;
+  const { jgetMeta } = loadScript("common.js", {
+    names: ["jgetMeta"],
+    globals: {
+      fetch: async () => { throw new Error("down"); },
+      localStorage: makeStorage({ [LAST_KEY]: JSON.stringify({ t, v: { last: 1 } }) }),
+    },
+  });
+  await assert.rejects(() => jgetMeta("https://x.test/a", 0, 60e3, { persistent: true, maxStaleMs: 2 * 3600e3 }), /down/);
+});
+
+test("a network success is preferred over persistent data and replaces the stale record", async () => {
+  const old = Date.now() - 3600e3;
+  const storage = makeStorage({ [LAST_KEY]: JSON.stringify({ t: old, v: { last: 1 } }) });
+  const { jgetMeta } = loadScript("common.js", {
+    names: ["jgetMeta"],
+    globals: { fetch: okFetch({ fresh: 1 }), localStorage: storage },
+  });
+  const m = await jgetMeta("https://x.test/a", 0, 60e3, { persistent: true, maxStaleMs: 2 * 3600e3 });
+  assert.equal(m.cacheState, "network");
+  const rec = JSON.parse(storage.getItem(LAST_KEY));
+  assert.deepEqual(rec.v, { fresh: 1 });
+  assert.ok(rec.t > old);
+});
+
+test("unavailable localStorage neither breaks success nor failure paths", async () => {
+  const denied = makeStorage({}, { throwOn: "all" });
+  const ok = loadScript("common.js", { names: ["jgetMeta"], globals: { fetch: okFetch({ x: 1 }), localStorage: denied } });
+  const m = await ok.jgetMeta("https://x.test/a", 0, 60e3, { persistent: true, maxStaleMs: 60e3 });
+  assert.equal(m.cacheState, "network");
+  const bad = loadScript("common.js", { names: ["jgetMeta"], globals: { fetch: async () => { throw new Error("down"); }, localStorage: denied } });
+  await assert.rejects(() => bad.jgetMeta("https://x.test/a", 0, 60e3, { persistent: true, maxStaleMs: 60e3 }), /down/);
+});
+
 test("all retries failing rejects with the underlying error", async () => {
   let calls = 0;
   const { jgetMeta } = loadScript("common.js", {

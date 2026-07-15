@@ -88,9 +88,14 @@ function trackShare(medium, personalized) {
 /* fetch JSON with a 10s timeout, retry with backoff, and a sessionStorage
    TTL cache so repeat navigation doesn't re-hit rate-limited public APIs.
    jgetMeta additionally reports when the value was fetched and where it came
-   from ("network" | "session"), so cards can render honest freshness. */
+   from ("network" | "session" | "stale"), so cards can render honest freshness.
+   options.persistent keeps the last good value in localStorage as a fallback
+   read only after every retry fails; options.maxStaleMs caps how old that
+   last-known value may be before it is rejected. */
+const GM_LAST_PREFIX = "gm:last:v1:";
 async function jgetMeta(url, retries = 2, ttl = 60e3, options = {}) {
   const key = "gm:" + url;
+  const lastKey = GM_LAST_PREFIX + encodeURIComponent(url);
   try {
     const hit = JSON.parse(sessionStorage.getItem(key));
     if (hit && Date.now() - hit.t < ttl) return { value: hit.v, fetchedAt: hit.t, cacheState: "session", stale: false };
@@ -102,9 +107,22 @@ async function jgetMeta(url, retries = 2, ttl = 60e3, options = {}) {
       const v = await r.json();
       const t = Date.now();
       try { sessionStorage.setItem(key, JSON.stringify({ t, v })); } catch (e) { /* quota / private mode */ }
+      if (options.persistent) { try { localStorage.setItem(lastKey, JSON.stringify({ t, v })); } catch (e) { /* quota / private mode */ } }
       return { value: v, fetchedAt: t, cacheState: "network", stale: false };
     } catch (e) {
-      if (i >= retries) throw e;
+      if (i >= retries) {
+        if (options.persistent) {
+          // last-known fallback — never the first read path, and never past its limit
+          try {
+            const last = JSON.parse(localStorage.getItem(lastKey));
+            const maxAge = options.maxStaleMs === undefined ? 24 * 3600e3 : options.maxStaleMs;
+            if (last && typeof last.t === "number" && Date.now() - last.t <= maxAge) {
+              return { value: last.v, fetchedAt: last.t, cacheState: "stale", stale: true };
+            }
+          } catch (e2) { /* unreadable record — surface the original error */ }
+        }
+        throw e;
+      }
       await sleep(500 + i * 600); // backoff on transient burst failures
     }
   }
