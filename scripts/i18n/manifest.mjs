@@ -29,7 +29,7 @@ export const PAGES = [
   { slug: "/take-home-pay", file: "take-home-pay.html", changefreq: "monthly", priority: "0.9", lastmod: "2026-07-11" },
   { slug: "/road-tax", file: "road-tax.html", changefreq: "monthly", priority: "0.9", lastmod: "2026-07-13" },
   { slug: "/stamp-duty", file: "stamp-duty.html", changefreq: "monthly", priority: "0.9", lastmod: "2026-07-13" },
-  { slug: "/cuti-planner", file: "cuti-planner.html", changefreq: "monthly", priority: "0.8", lastmod: "2026-07-11" },
+  { slug: "/cuti-planner", file: "cuti-planner.html", changefreq: "monthly", priority: "0.8", lastmod: "2026-07-15" },
   { slug: "/cuti-umum-2026", file: "cuti-umum-2026.html", changefreq: "monthly", priority: "0.8", lastmod: "2026-06-30" },
   { slug: "/government-tender-malaysia", file: "government-tender-malaysia.html", changefreq: "weekly", priority: "0.8", lastmod: "2026-07-01" },
   { slug: "/election/", file: "election/index.html", changefreq: "weekly", priority: "0.9", lastmod: "2026-07-01" },

@@ -658,6 +658,12 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px)
 .cuti-caveat a { color: var(--ink-soft); }
 
 /* today snapshot grid */
+.cp-field select { font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--ink); background: var(--paper-2, #fff); border: 2px solid var(--line-ink); border-radius: var(--r); padding: 11px 13px; max-width: 100%; }
+.cp-field select:focus { outline: none; border-color: var(--seal); }
+.cp-local { font-family: var(--mono); font-size: 11px; color: var(--seal); margin-left: 8px; }
+.cp-retry { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); background: var(--paper-2, #fff); border: 2px solid var(--line-ink); border-radius: var(--r); padding: 5px 10px; margin-left: 8px; cursor: pointer; }
+.cp-retry:hover { border-color: var(--seal); color: var(--seal); }
+.cp-retry[disabled] { opacity: 0.5; cursor: wait; }
 .today-city { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; }
 .today-city label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
 .today-city select { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink); background: var(--paper-card); border: 2px solid var(--line-ink); border-radius: var(--r); padding: 8px 10px; max-width: 100%; }

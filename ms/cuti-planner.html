@@ -58,7 +58,7 @@
 
   <div class="cp-tool">
     <div class="cp-controls">
-      <div class="cp-field"><label for="cpLeave">Hari cuti tahunan untuk digunakan</label><input id="cpLeave" type="number" inputmode="numeric" min="0" max="30" step="1" value="8" /></div>
+      <div class="cp-field"><label for="cpState">Negeri</label><select id="cpState"></select></div><div class="cp-field"><label for="cpLeave">Hari cuti tahunan untuk digunakan</label><input id="cpLeave" type="number" inputmode="numeric" min="0" max="30" step="1" value="8" /></div>
     </div>
     <div class="cp-head" id="cpHead"></div>
   </div>
@@ -83,68 +83,5 @@
 <p class="footer-meta" id="footerMeta"></p>
 </footer>
 <script src="/assets/i18n.js"></script><script src="/common.js"></script>
-<script>
-(function () {
-  var HOL = { "2026-01-01": "Tahun Baharu", "2026-02-17": "Tahun Baru Cina", "2026-02-18": "Tahun Baru Cina (Hari Kedua)", "2026-03-20": "Hari Raya Aidilfitri", "2026-03-21": "Hari Raya Aidilfitri", "2026-03-23": "Hari Raya Aidilfitri (ganti)", "2026-05-01": "Hari Pekerja", "2026-05-27": "Hari Raya Haji", "2026-05-31": "Hari Wesak", "2026-06-01": "Hari Keputeraan Agong", "2026-06-17": "Awal Muharram", "2026-08-25": "Maulidur Rasul", "2026-08-31": "Hari Merdeka", "2026-09-16": "Hari Malaysia", "2026-11-08": "Deepavali", "2026-11-09": "Deepavali (ganti)", "2026-12-25": "Hari Krismas" };
-  var MON = ["Jan", "Feb", "Mac", "Apr", "Mei", "Jun", "Jul", "Ogo", "Sep", "Okt", "Nov", "Dis"];
-  function iso(d) { return d.toISOString().slice(0, 10); }
-  function isFree(d) { var w = d.getUTCDay(); return w === 0 || w === 6 || HOL[iso(d)]; }
-  function isHol(d) { return !!HOL[iso(d)]; }
-  function fmt(s) { var d = new Date(s + "T00:00:00Z"); return d.getUTCDate() + " " + MON[d.getUTCMonth()]; }
-  // build opportunities: for each holiday region, greedily bridge to nearby weekends (<=2 leave days per side)
-  function build() {
-    var seen = {}, opps = [], d = new Date(Date.UTC(2026, 0, 1));
-    while (d.getUTCFullYear() === 2026) {
-      if (isHol(d) && !seen[iso(d)]) {
-        var s = new Date(d), e = new Date(d), i;
-        for (;;) { var p = new Date(s); p.setUTCDate(p.getUTCDate() - 1); if (isFree(p)) s = p; else break; }
-        for (;;) { var n = new Date(e); n.setUTCDate(n.getUTCDate() + 1); if (isFree(n)) e = n; else break; }
-        var leave = 0, leaveDays = [];
-        function gap(dir) { var c = new Date(dir < 0 ? s : e), g = []; for (;;) { c.setUTCDate(c.getUTCDate() + dir); if (isFree(c)) return { g: g, hit: new Date(c) }; g.push(new Date(c)); if (g.length > 6) return { g: g, hit: null }; } }
-        for (i = 0; i < 4; i++) {
-          var L = gap(-1), R = gap(1), lc = L.hit ? L.g.length : 99, rc = R.hit ? R.g.length : 99;
-          if (Math.min(lc, rc) > 2) break;
-          if (lc <= rc) { leave += lc; L.g.forEach(function (x) { leaveDays.push(iso(x)); }); s = L.hit; for (;;) { var p2 = new Date(s); p2.setUTCDate(p2.getUTCDate() - 1); if (isFree(p2)) s = p2; else break; } }
-          else { leave += rc; R.g.forEach(function (x) { leaveDays.push(iso(x)); }); e = R.hit; for (;;) { var n2 = new Date(e); n2.setUTCDate(n2.getUTCDate() + 1); if (isFree(n2)) e = n2; else break; } }
-        }
-        var off = Math.round((e - s) / 86400000) + 1, hols = [], t = new Date(s);
-        while (t <= e) { if (isHol(t)) { hols.push(HOL[iso(t)]); seen[iso(t)] = 1; } t.setUTCDate(t.getUTCDate() + 1); }
-        leaveDays.sort();
-        opps.push({ start: iso(s), end: iso(e), off: off, leave: leave, leaveDays: leaveDays, hols: hols });
-      }
-      d.setUTCDate(d.getUTCDate() + 1);
-    }
-    opps.sort(function (a, b) { return a.start < b.start ? -1 : 1; });
-    return opps;
-  }
-  var OPPS = build();
-  function render() {
-    var budget = Math.max(0, +document.getElementById("cpLeave").value || 0);
-    // freebies always selected; then greedily pick best efficiency within budget
-    var freebies = OPPS.filter(function (o) { return o.leave === 0; });
-    var payg = OPPS.filter(function (o) { return o.leave > 0; });
-    // small knapsack: pick the set of breaks (leave <= budget) that maximises days off
-    var best = { off: 0, leave: 0, set: {} };
-    for (var m = 0; m < (1 << payg.length); m++) {
-      var l = 0, o = 0, set = {};
-      for (var b = 0; b < payg.length; b++) { if (m & (1 << b)) { l += payg[b].leave; o += payg[b].off; set[payg[b].start] = 1; } }
-      if (l <= budget && o > best.off) { best = { off: o, leave: l, set: set }; }
-    }
-    var chosen = best.set, spent = best.leave;
-    var totalOff = freebies.reduce(function (s, o) { return s + o.off; }, 0) + best.off;
-    document.getElementById("cpHead").innerHTML = '<div class="big">Guna <b>' + spent + '</b> hari cuti &rarr; <b>' + totalOff + '</b> hari bercuti pada 2026</div><div class="sub">Termasuk juga hujung minggu panjang percuma di bawah, diambil secara automatik. Kad yang diserlahkan ialah pilihan kami untuk bajet ' + budget + ' hari anda.</div>';
-    document.getElementById("cpList").innerHTML = OPPS.map(function (o) {
-      var on = o.leave === 0 || chosen[o.start];
-      var cls = o.leave === 0 ? "cp-card free" : (on ? "cp-card on" : "cp-card");
-      var badge = o.leave === 0 ? '<span class="cp-badge free">percuma</span>' : (on ? '<span class="cp-badge">dipilih</span>' : '<span class="cp-badge">' + (o.off / o.leave).toFixed(1) + 'x</span>');
-      var take = o.leave === 0 ? "Tak perlu ambil cuti, ini memang hujung minggu panjang." : "Ambil <b>" + o.leave + "</b> hari cuti: " + o.leaveDays.map(fmt).join(", ");
-      return '<div class="' + cls + '"><div class="cp-top"><span class="cp-days">' + o.off + '</span><span class="cp-range">hari bercuti &middot; ' + fmt(o.start) + ' hingga ' + fmt(o.end) + '</span>' + badge + '</div><div class="cp-take">' + take + '</div><div class="cp-hol">' + o.hols.join(" &middot; ") + '</div></div>';
-    }).join("");
-    document.getElementById("cpNote").innerHTML = "Ini menggunakan 17 cuti umum kebangsaan yang diwartakan. Negeri anda mungkin ada cuti tambahan (contohnya Thaipusam, hari keputeraan Sultan negeri) yang membuka lebih banyak peluang bercuti. Hari cuti yang ditunjukkan ialah hari bekerja untuk anda mohon cuti.";
-    document.getElementById("cpSrc").innerHTML = 'Cuti: warta kebangsaan 2026 (lihat <a href="/ms/cuti-umum-2026">Cuti Umum 2026</a>).';
-  }
-  document.getElementById("cpLeave").addEventListener("input", render);
-  render();
-})();
-</script>
+<script type="module" src="/cuti-planner.mjs"></script>
 </body></html>
