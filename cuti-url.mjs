@@ -29,6 +29,38 @@ export function resolvePlannerParams(search, storedState) {
   };
 }
 
+/* Result-aware share payload for the planner. Pure: states only what the
+   engine proved (leave spent, days off) — never efficiency claims — and
+   links to the same-language planner page with normalized parameters. */
+export function buildCutiShare({ locale, stateName, state, leave, spent, daysOff, origin, path }) {
+  const t = {
+    en: { title: "Cuti Planner 2026", text: `${stateName}: ${spent} leave days → ${daysOff} days off in 2026` },
+    ms: { title: "Perancang Cuti 2026", text: `${stateName}: ${spent} hari cuti → ${daysOff} hari bercuti pada 2026` },
+    zh: { title: "2026 假期规划", text: `${stateName}：${spent} 天年假 → 2026 年共 ${daysOff} 天假期` },
+  }[locale] || { title: "Cuti Planner 2026", text: `${stateName}: ${spent} leave days → ${daysOff} days off in 2026` };
+  const safeState = CUTI_STATE_CODES.includes(state) ? state : "kul";
+  const safeLeave = parseLeaveParam(String(leave)) ?? LEAVE_DEFAULT;
+  return { title: t.title, text: t.text, url: `${origin}${path}?state=${safeState}&leave=${safeLeave}`, personalized: true };
+}
+
+/* Bounded GA4 parameter builders (REFERENCE contract) — codes and counts
+   only, never dates, URLs or free-form text. */
+export function cutiPlanParams(result) {
+  return {
+    state: result.state,
+    leave_budget: result.budget,
+    leave_spent: result.plan.spent,
+    days_off: result.plan.daysOff,
+  };
+}
+export function calendarExportParams(result) {
+  return {
+    state: result.state,
+    leave_days: result.plan.leaveDates.length,
+    events: result.plan.leaveDates.length,
+  };
+}
+
 /* Normalized query string for history.replaceState: recognized UTM
    parameters survive, planner params are deduplicated, everything else
    (including arbitrary query text) is dropped. */

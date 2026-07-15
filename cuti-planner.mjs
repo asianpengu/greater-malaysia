@@ -2,7 +2,7 @@
    for the EN, BM and Chinese pages; all calculations live in cuti-engine.mjs.
    Relies on globals from common.js (jget, getPrefs, setPrefs, track, esc). */
 import { buildOpportunities, optimizePlan } from "/cuti-engine.mjs";
-import { resolvePlannerParams, buildPlannerQuery } from "/cuti-url.mjs";
+import { resolvePlannerParams, buildPlannerQuery, buildCutiShare, cutiPlanParams, calendarExportParams } from "/cuti-url.mjs";
 import { buildLeaveCalendar, downloadCalendar } from "/cuti-calendar.mjs";
 
 const YEAR = 2026;
@@ -160,6 +160,7 @@ function render() {
   window.GM_CUTI_RESULT = { state: activeState, budget, plan, weekendDays }; // consumed by share + calendar
   const ics = el("cpIcs");
   if (ics) ics.disabled = plan.leaveDates.length === 0; // nothing to export without proposed leave dates
+  track("cuti_plan", cutiPlanParams(window.GM_CUTI_RESULT)); // deduped per identical result
   document.dispatchEvent(new CustomEvent("gm:cuti-rendered"));
 }
 
@@ -208,8 +209,20 @@ function boot() {
         filename: `greater-malaysia-cuti-${YEAR}-${r.state}.ics`,
         contents: buildLeaveCalendar({ locale: LANG, state: r.state, leaveDates: r.plan.leaveDates }),
       });
+      track("calendar_export", calendarExportParams(r));
     });
   }
+  /* result-aware sharing — the shared handler in common.js resolves this at
+     click time, so it always reflects the latest visible result */
+  window.GM_SHARE_PAYLOAD = () => {
+    const r = window.GM_CUTI_RESULT;
+    if (!r) return null;
+    return buildCutiShare({
+      locale: LANG, stateName: stateName(r.state), state: r.state, leave: r.budget,
+      spent: r.plan.spent, daysOff: r.plan.daysOff,
+      origin: location.origin, path: location.pathname,
+    });
+  };
   loadAndRender();
 }
 
