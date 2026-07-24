@@ -1,0 +1,94 @@
+{
+  "slug": "malaysia-government-revenue",
+  "kind": "data-story",
+  "title": "Where does Malaysia's money come from?",
+  "subtitle": "Companies pay the biggest share. Oil still runs through everything. And GST now brings in nothing.",
+  "question": "How does the Malaysian government make its money, and what are its main sources of revenue?",
+  "answer": "In 2023 the federal government collected RM315 billion. More than half was direct tax, and the single biggest source was companies' income tax at almost RM94 billion, roughly two and a half times what individuals paid. A quarter of all revenue was non-tax income, led by investment returns and Petronas. Sales and service tax (SST) has replaced GST, which was abolished in 2018 and now collects nothing.",
+  "updated": "2026-07-24",
+  "source": {
+    "publisher": "Ministry of Finance, via data.gov.my",
+    "publisher_type": "Government, federal treasury, open data",
+    "document": "Federal Government Revenue by year",
+    "published": "2023",
+    "url": "https://data.gov.my/data-catalogue/federal_finance_year_revenue",
+    "retrieved": "2026-07-24",
+    "license": "Official open data (data.gov.my), Ministry of Finance Malaysia",
+    "notes": "Federal government revenue, annual actuals, in ringgit. Figures are for financial year 2023, the latest published year. Values shown in RM billion. 'Investment income' is mostly interest and investment returns, including dividends from Petronas and other government-linked companies. GST was abolished in 2018 and replaced by SST."
+  },
+  "headline": [
+    { "label": "Total federal revenue", "value": "RM315", "suffix": "bn", "sub": "financial year 2023", "note": "Ministry of Finance" },
+    { "label": "From companies' income tax", "value": "RM94", "suffix": "bn", "sub": "the single biggest source, ~30%", "note": "firms pay the most" },
+    { "label": "Was non-tax income", "value": "25", "suffix": "%", "sub": "investment returns, Petronas, permits", "note": "RM79 billion" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Federal government revenue, by year (RM billion)",
+      "note": "Revenue has climbed to a record RM315 billion, after a dip in 2020 when the pandemic hit collections.",
+      "ref": "Total federal revenue, annual actuals",
+      "unit": "RM billion",
+      "x": "year",
+      "highlight": { "x": "2020", "label": "Covid" },
+      "metrics": [{ "key": "value", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "year": "2016", "value": 212.4 },
+        { "year": "2017", "value": 220.4 },
+        { "year": "2018", "value": 232.9 },
+        { "year": "2019", "value": 264.4 },
+        { "year": "2020", "value": 225.1 },
+        { "year": "2021", "value": 233.8 },
+        { "year": "2022", "value": 294.4 },
+        { "year": "2023", "value": 315.0 }
+      ]
+    },
+    "bycategory": {
+      "title": "Revenue by type (2023)",
+      "note": "Over half is direct tax, on company profits and personal income. A quarter is non-tax income, much of it from Petronas and investments.",
+      "ref": "Revenue by broad category, 2023",
+      "unit": "RM billion",
+      "layout": "horizontal",
+      "metrics": [{ "key": "value", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Direct tax (income & profits)", "value": 171.3 },
+        { "label": "Non-tax income", "value": 79.0 },
+        { "label": "Indirect tax (SST, excise, duties)", "value": 57.8 },
+        { "label": "Non-revenue receipts", "value": 6.7 }
+      ]
+    },
+    "bysource": {
+      "title": "Top individual sources of revenue (2023)",
+      "note": "Companies' income tax dwarfs everything, including what individuals pay. Investment income, mostly Petronas dividends and interest, is the second largest line.",
+      "ref": "Largest single revenue lines, 2023",
+      "unit": "RM billion",
+      "layout": "horizontal",
+      "metrics": [{ "key": "value", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Companies' income tax", "value": 93.9 },
+        { "label": "Investment income & interest", "value": 55.8 },
+        { "label": "Individuals' income tax", "value": 36.2 },
+        { "label": "Petroleum income tax", "value": 26.1 },
+        { "label": "Sales tax (SST)", "value": 18.4 },
+        { "label": "Service tax (SST)", "value": 17.1 },
+        { "label": "Excise duties", "value": 13.1 },
+        { "label": "Licences & permits", "value": 9.9 },
+        { "label": "Stamp duty", "value": 9.6 },
+        { "label": "Petroleum royalties", "value": 6.8 }
+      ]
+    }
+  },
+  "takeaways": [
+    "**Companies pay the most.** Corporate income tax brought in RM93.9 billion in 2023, about 2.6 times the RM36.2 billion individuals paid. The bulk of Malaysia's direct tax comes from business profits, not salaries.",
+    "**A quarter of revenue isn't tax at all.** Non-tax income was RM79 billion, led by RM55.8 billion of investment returns and interest, much of it Petronas dividends, plus petroleum royalties and licence fees.",
+    "**Oil still runs through the budget.** Petroleum income tax (RM26.1bn) and royalties (RM6.8bn), on top of Petronas dividends inside investment income, tie tens of billions of ringgit a year to the price of crude.",
+    "**GST is gone.** Abolished in 2018, it now collects nothing. Its replacement, SST, raised about RM35.5 billion in 2023 (sales RM18.4bn plus service RM17.1bn), less than GST did at its peak.",
+    "**Revenue still trails spending.** The RM315 billion collected in 2023 sits well below the roughly RM407 billion the government spends, and the gap is filled by borrowing."
+  ],
+  "faq": [
+    { "q": "How does the Malaysian government make money?", "a": "Mostly through tax. In 2023 the federal government collected RM315 billion: about RM171 billion in direct tax (company and personal income tax), RM58 billion in indirect tax (SST, excise and duties), and RM79 billion in non-tax income such as investment returns, Petronas dividends and licence fees, per Ministry of Finance data on data.gov.my." },
+    { "q": "What is the Malaysian government's biggest source of revenue?", "a": "Companies' income tax, at about RM93.9 billion in 2023, roughly 30% of all federal revenue and the single largest line, ahead of investment income (RM55.8 billion) and individuals' income tax (RM36.2 billion)." },
+    { "q": "How much tax does Malaysia collect a year?", "a": "The federal government collected about RM315 billion in total revenue in 2023, of which around RM229 billion was tax (direct plus indirect) and the rest non-tax income." },
+    { "q": "Does Malaysia still have GST?", "a": "No. The Goods and Services Tax (GST) was abolished in 2018 and now collects nothing. It was replaced by the Sales and Service Tax (SST), which raised about RM35.5 billion in 2023." },
+    { "q": "How much does Malaysia depend on oil for revenue?", "a": "A lot. Petroleum income tax was RM26.1 billion and petroleum royalties RM6.8 billion in 2023, and Petronas dividends sit inside the RM55.8 billion of investment income, so oil and gas are tied to tens of billions of ringgit of federal revenue each year." },
+    { "q": "Where does this revenue data come from?", "a": "From the Ministry of Finance's federal government revenue accounts, published as official open data on data.gov.my. Figures are 2023 actuals, the latest published year." }
+  ]
+}

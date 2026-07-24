@@ -1,6 +1,26 @@
 {
   "stories": [
     {
+      "slug": "malaysia-gdp-growth",
+      "url": "/stories/malaysia-gdp-growth",
+      "tag": "Economy",
+      "title": "Is Malaysia's economy growing?",
+      "subtitle": "Yes. GDP grew 5.4% in early 2026, and services now run the show.",
+      "source": "DOSM",
+      "date": "2026-07-24",
+      "new": true
+    },
+    {
+      "slug": "malaysia-government-revenue",
+      "url": "/stories/malaysia-government-revenue",
+      "tag": "Government",
+      "title": "Where does Malaysia's money come from?",
+      "subtitle": "Companies pay the biggest share. Oil still runs through everything. And GST now brings in nothing.",
+      "source": "Ministry of Finance",
+      "date": "2026-07-24",
+      "new": true
+    },
+    {
       "slug": "is-malaysia-getting-old",
       "url": "/stories/is-malaysia-getting-old",
       "tag": "Society",

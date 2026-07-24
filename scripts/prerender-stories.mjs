@@ -146,19 +146,24 @@ function chartBlock(b, s, layout) {
 function vBars(b, metrics) {
   const rows = b.rows, xKey = b.x || "year";
   const W = 720, H = 290, padL = 8, padR = 8, padT = 24, padB = b.highlight ? 42 : 30;
-  const max = Math.max(...rows.flatMap((r) => metrics.map((m) => +r[m.key]))) * 1.1;
+  const vals = rows.flatMap((r) => metrics.map((m) => +r[m.key]));
+  const dataMax = Math.max(...vals), dataMin = Math.min(...vals);
+  const top = (dataMax > 0 ? dataMax : 0) * 1.1 || 1;   // headroom above the tallest bar
+  const bot = (dataMin < 0 ? dataMin : 0) * 1.12;        // room below zero when a bar is negative
+  const span = (top - bot) || 1;
   const gW = (W - padL - padR) / rows.length;
   const bw = Math.min(16, (gW * 0.72) / metrics.length);
-  const y = (v) => padT + (1 - v / max) * (H - padT - padB);
+  const y = (v) => padT + (1 - (v - bot) / span) * (H - padT - padB);
+  const yZero = y(0);                                     // baseline; == chart bottom when all values are >= 0
   let svg = "";
   rows.forEach((r, i) => {
     const cx = padL + gW * i + gW / 2;
     const total = bw * metrics.length + (metrics.length - 1) * 2;
     metrics.forEach((m, j) => {
       const x = cx - total / 2 + j * (bw + 2);
-      const v = +r[m.key], by = y(v), bh = H - padB - by;
+      const v = +r[m.key], yv = y(v), by = v >= 0 ? yv : yZero, bh = Math.abs(yv - yZero);
       svg += `<rect x="${x.toFixed(1)}" y="${by.toFixed(1)}" width="${bw}" height="${bh.toFixed(1)}" rx="1" fill="${COLORS[m.color] || m.color}"/>`;
-      if (rows.length <= 18) svg += `<text class="bar-lab" x="${(x + bw / 2).toFixed(1)}" y="${(by - 3).toFixed(1)}" text-anchor="middle">${fmtBar(v, m.fmt)}</text>`;
+      if (rows.length <= 18) svg += `<text class="bar-lab" x="${(x + bw / 2).toFixed(1)}" y="${(v >= 0 ? by - 3 : by + bh + 11).toFixed(1)}" text-anchor="middle">${fmtBar(v, m.fmt)}</text>`;
     });
     svg += `<text class="yr-lab" x="${cx.toFixed(1)}" y="${H - padB + 15}" text-anchor="middle">${esc(r[xKey])}</text>`;
     if (b.highlight && b.highlight.x === r[xKey]) svg += `<text class="covid" x="${cx.toFixed(1)}" y="${H - padB + 28}" text-anchor="middle">${esc(b.highlight.label)}</text>`;

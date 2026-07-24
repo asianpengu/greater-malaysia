@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2R45WDST7M"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-2R45WDST7M");</script>
+<title>Home loan calculator Malaysia: monthly housing loan instalment &amp; interest ~ Greater Malaysia</title>
+<meta name="description" content="Work out your monthly housing loan instalment in Malaysia. Enter the property price, down payment, interest rate and tenure to see your monthly repayment, total interest and the income you'd need. Free Malaysian home loan calculator." />
+<link rel="canonical" href="https://greatermalaysia.com/home-loan-calculator" /><link rel="alternate" hreflang="en-MY" href="https://greatermalaysia.com/home-loan-calculator" /><link rel="alternate" hreflang="ms-MY" href="https://greatermalaysia.com/ms/home-loan-calculator" /><link rel="alternate" hreflang="zh-Hans-MY" href="https://greatermalaysia.com/zh/home-loan-calculator" /><link rel="alternate" hreflang="x-default" href="https://greatermalaysia.com/home-loan-calculator" />
+<meta property="og:type" content="website" /><meta property="og:site_name" content="Greater Malaysia" />
+<meta property="og:title" content="Home loan calculator (Malaysia)" /><meta property="og:description" content="Your monthly housing loan instalment, total interest and the income you'd need. Free, for Malaysian home buyers." />
+<meta property="og:url" content="https://greatermalaysia.com/home-loan-calculator" /><meta property="og:image" content="https://greatermalaysia.com/assets/og.png" />
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content="https://greatermalaysia.com/assets/og.png" />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" /><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" /><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Malaysia home loan calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"MYR"},"description":"Calculate the monthly instalment, total interest and required income for a housing loan in Malaysia from the property price, down payment, interest rate and loan tenure.","url":"https://greatermalaysia.com/home-loan-calculator"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is a housing loan instalment calculated in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"Malaysian home loans use monthly rest amortisation. The monthly instalment is the loan amount times r(1+r)^n / ((1+r)^n - 1), where r is the monthly interest rate (annual rate divided by 12) and n is the number of months (tenure in years times 12). Over the tenure you repay the principal plus total interest."}},{"@type":"Question","name":"What is the interest rate for home loans in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"Most Malaysian housing loans are variable and track the bank's Base Rate (BR) or Standardised Base Rate (SBR), which moves with Bank Negara's OPR. In 2026 effective rates are commonly around 4.0% to 4.5% a year, though your rate depends on the bank, package and your profile."}},{"@type":"Question","name":"How much salary do I need for a RM500,000 house in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"As a rule of thumb banks like your home loan instalment to stay within about a third of your gross income. A RM450,000 loan (10% down) over 35 years at 4.2% is roughly RM2,050 a month, so you'd typically want gross income of around RM6,200 a month or more, alongside a healthy overall debt-service ratio."}},{"@type":"Question","name":"How many years can I take a home loan in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"Housing loan tenures in Malaysia run up to 35 years, subject to a maximum age (often 70) at the end of the loan. A longer tenure lowers the monthly instalment but increases the total interest you pay."}},{"@type":"Question","name":"How much down payment do I need for a house in Malaysia?","acceptedAnswer":{"@type":"Answer","text":"The standard down payment is 10% of the property price, with the bank financing up to 90% (margin of finance). First-time buyer schemes can offer higher financing. You also budget for legal fees and stamp duty on the transfer and the loan agreement."}}]}]}</script>
+<style>
+  .th { max-width: 940px; margin: 0 auto; padding: 0 clamp(16px,4vw,36px); }
+  .th-p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; margin: 8px 0; }
+  .th-tool { border: 2px solid var(--line-ink); border-radius: var(--r); background: var(--paper-card); padding: 20px 20px 22px; margin: 8px 0 24px; }
+  .th-controls { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+  .th-field { display: flex; flex-direction: column; gap: 6px; flex: 1 1 200px; }
+  .th-field label { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .th-field .in { display: flex; align-items: center; border: 2px solid var(--line-ink); border-radius: var(--r); background: var(--paper-2, #fff); overflow: hidden; }
+  .th-field .in span.pre { font-family: var(--mono); font-size: 15px; color: var(--ink-faint); padding: 0 4px 0 13px; }
+  .th-field .in span.suf { font-family: var(--mono); font-size: 15px; color: var(--ink-faint); padding: 0 13px 0 4px; }
+  .th-field input { font-family: var(--sans); font-size: 19px; font-weight: 600; color: var(--ink); background: transparent; border: 0; padding: 11px 13px 11px 6px; width: 100%; }
+  .th-field input:focus { outline: none; }
+  .th-field .in:focus-within { border-color: var(--seal); }
+  .th-net { margin-top: 20px; border-top: 2px solid var(--line-ink); padding-top: 16px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; }
+  .th-net .big { font-family: var(--display); font-weight: 400; font-size: clamp(34px,7vw,58px); line-height: .95; color: var(--seal); }
+  .th-net .lab { font-size: 15px; color: var(--ink-soft); }
+  .th-net .ann { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); }
+  .th-bar { display: flex; height: 30px; border: 1.5px solid var(--line-ink); border-radius: 4px; overflow: hidden; margin: 16px 0 6px; }
+  .th-bar span { height: 100%; }
+  .th-bar .s-prin { background: var(--seal); }
+  .th-bar .s-int { background: color-mix(in srgb, var(--ink) 30%, transparent); }
+  .th-legend { display: flex; gap: 16px; font-size: 12.5px; color: var(--ink-soft); margin-bottom: 6px; }
+  .th-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .th-legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .th-rows { display: grid; gap: 2px; margin-top: 12px; }
+  .th-row { display: grid; grid-template-columns: 14px 1fr auto auto; gap: 10px; align-items: center; padding: 9px 2px; border-bottom: 1px solid color-mix(in srgb, var(--line-ink) 18%, transparent); font-size: 15px; }
+  .th-row .sw { width: 12px; height: 12px; border-radius: 3px; }
+  .th-row .amt { font-family: var(--mono); font-weight: 600; white-space: nowrap; }
+  .th-row .pct { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); white-space: nowrap; text-align: right; min-width: 44px; }
+  .th-row.tot { border-bottom: none; border-top: 2px solid var(--line-ink); margin-top: 2px; font-weight: 700; }
+  .th-row.tot .amt { color: var(--seal); }
+  .th-income { margin-top: 16px; background: color-mix(in srgb, var(--seal) 7%, var(--paper-2,#fff)); border: 1.5px solid color-mix(in srgb, var(--seal) 40%, transparent); border-radius: var(--r); padding: 13px 15px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; }
+  .th-income b { color: var(--ink); }
+  .th-note { font-size: 13px; color: var(--ink-soft); line-height: 1.5; margin-top: 14px; background: var(--paper-2,#fff); border: 1.5px solid color-mix(in srgb,var(--line-ink) 40%,transparent); border-radius: var(--r); padding: 12px 14px; }
+  .th-src { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); margin-top: 12px; }
+  .th-src a { color: var(--seal); }
+</style></head><body>
+<div class="paper-bg" aria-hidden="true"></div><span class="smudge s1" aria-hidden="true"></span><span class="smudge s2" aria-hidden="true"></span>
+<header class="nav" id="nav"><div class="nav-inner">
+<a class="brand" href="/"><svg class="nav-chop" viewBox="0 0 512 512" width="34" height="34" role="img" aria-label="Greater Malaysia"><rect x="8" y="8" width="496" height="496" fill="#f3efe6" stroke="#16130d" stroke-width="16"/><rect x="38" y="38" width="436" height="436" fill="none" stroke="#16130d" stroke-opacity=".35" stroke-width="4"/><text x="252" y="366" text-anchor="middle" font-family="'Caveat Brush',cursive" font-size="300" fill="#16130d">GM</text><rect x="440" y="440" width="36" height="36" fill="#b23a23"/></svg><span class="gm-full">Greater Malaysia</span></a>
+<span class="nav-spacer"></span>
+<nav class="nav-links" aria-label="Primary"><a href="/tools">Tools</a><a href="/answers">Answers</a><a href="/election/">Election</a><a href="/explainers/">Explainers</a><a href="/stories/">Data stories</a></nav>
+<a class="nav-cta" href="/#subscribe">Follow the channel</a>
+<div class="nav-lang" aria-label="Language"><a href="/home-loan-calculator" class="is-current" aria-current="true">EN</a><a href="/ms/home-loan-calculator">BM</a><a href="/zh/home-loan-calculator">CN</a></div><button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navSheet"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-sheet" id="navSheet"><a href="/tools">Tools</a><a href="/answers">Answers</a><a href="/election/">Election</a><a href="/explainers/">Explainers</a><a href="/stories/">Data stories</a><a class="nav-cta" href="/#subscribe">Follow the channel</a></div>
+</header>
+<main class="answer th">
+  <div class="ans-kicker">your home loan</div>
+  <h1 class="ans-h1">Home loan calculator</h1>
+  <p class="th-p">Buying a house in Malaysia? Enter the property price, your down payment, the interest rate and how long you want to borrow for. See your monthly instalment, the total interest over the life of the loan, and roughly what income you'd need.</p>
+
+  <div class="th-tool">
+    <div class="th-controls">
+      <div class="th-field"><label for="hlPrice">Property price</label><div class="in"><span class="pre">RM</span><input id="hlPrice" type="number" inputmode="numeric" min="0" step="10000" value="500000" /></div></div>
+      <div class="th-field"><label for="hlDown">Down payment</label><div class="in"><input id="hlDown" type="number" inputmode="numeric" min="0" max="100" step="1" value="10" /><span class="suf">%</span></div></div>
+      <div class="th-field"><label for="hlRate">Interest rate (a year)</label><div class="in"><input id="hlRate" type="number" inputmode="decimal" min="0" max="20" step="0.1" value="4.2" /><span class="suf">%</span></div></div>
+      <div class="th-field"><label for="hlYears">Loan tenure</label><div class="in"><input id="hlYears" type="number" inputmode="numeric" min="1" max="40" step="1" value="35" /><span class="suf">yrs</span></div></div>
+    </div>
+    <div class="th-net" id="hlNet"></div>
+    <div class="th-legend" id="hlLegend"></div>
+    <div class="th-bar" id="hlBar"></div>
+    <div class="th-rows" id="hlRows"></div>
+    <div class="th-income" id="hlIncome"></div>
+    <div class="th-note" id="hlNote"></div>
+    <p class="th-src" id="hlSrc"></p>
+  </div>
+
+  <div class="ans-section"><h2>Related</h2><div class="ans-related"><a href="/take-home-pay">Take-home pay</a><a href="/stamp-duty">Stamp duty on your home</a><a href="/household-income-by-state">Income by state</a><a href="/malaysia-economy">Malaysia's economy</a></div></div>
+</main>
+<footer class="footer footer-v2">
+<div class="foot-top"><div class="foot-brand"><div class="foot-wordmark">Greater Malaysia</div><p class="foot-tag">Malaysia, in real time. Free live tools built on the nation's open data.</p></div>
+<div class="foot-cols">
+<div class="foot-col"><div class="fc-h">Tools</div><a href="/waktu-solat/kuala-lumpur">Waktu solat</a><a href="/harga-minyak">Harga minyak</a><a href="/usd-to-myr">Ringgit</a><a href="/home-loan-calculator">Home loan</a><a href="/take-home-pay">Take-home pay</a><a href="/road-tax">Road tax</a><a href="/stamp-duty">Stamp duty</a><a href="/cuti-planner">Cuti planner</a><a href="/today">Malaysia today</a></div>
+<div class="foot-col"><div class="fc-h">Answers + Election</div><a href="/answers">Quick answers</a><a href="/election/">GE16 hub</a><a href="/when-is-ge16">When is GE16</a><a href="/how-to-check-voter-registration">Check voter reg</a></div>
+<div class="foot-col"><div class="fc-h">Read</div><a href="/stories/">Data stories</a><a href="/explainers/">Explainers</a><a href="/malaysia-economy">Malaysia's economy</a><a href="/how-to-start-a-business-in-malaysia">Start a business</a></div>
+<div class="foot-col"><div class="fc-h">Trust + machines</div><a href="/for-agents">For agents</a><a href="/llms.txt">llms.txt</a><a href="/data/feed.json">Data feed</a><a href="/sitemap.xml">Sitemap</a></div>
+</div></div>
+<p class="foot-disclaimer">Independent and non-partisan. A guide, not financial advice.</p>
+<p class="foot-follow">Follow the channel: <a href="https://whatsapp.com/channel/0029VbDHuM159PwO04A3Mo2G" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/GreaterMalaysia" target="_blank" rel="noopener">Telegram</a></p>
+<div class="foot-bottom"><p class="foot-sources">A general amortisation guide. Actual rates, margin of finance and eligibility depend on your bank and Bank Negara's OPR.</p><p class="footer-credit">Built by <a href="https://x.com/aaronteng" target="_blank" rel="noopener">Aaron Teng</a> <span class="x-ico" aria-hidden="true">&#120143;</span></p></div>
+<p class="footer-meta" id="footerMeta"></p>
+</footer>
+<script src="/assets/i18n.js"></script><script src="/common.js"></script>
+<script>
+(function () {
+  var priceEl = document.getElementById("hlPrice"),
+      downEl = document.getElementById("hlDown"),
+      rateEl = document.getElementById("hlRate"),
+      yearsEl = document.getElementById("hlYears");
+  var rm = function (n) { return "RM" + (Math.round(n)).toLocaleString("en-MY"); };
+  function render() {
+    var price = Math.max(0, +priceEl.value || 0);
+    var downPct = Math.min(100, Math.max(0, +downEl.value || 0));
+    var rate = Math.max(0, +rateEl.value || 0);
+    var years = Math.max(1, Math.min(40, +yearsEl.value || 1));
+    var down = price * downPct / 100;
+    var loan = Math.max(0, price - down);
+    var r = rate / 100 / 12;
+    var n = Math.round(years * 12);
+    var monthly = r === 0 ? loan / n : loan * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    var totalPay = monthly * n;
+    var totalInt = totalPay - loan;
+    var reqIncome = monthly * 3; // instalment within ~1/3 of gross income (rule of thumb)
+
+    document.getElementById("hlNet").innerHTML = loan > 0
+      ? '<span class="big">' + rm(monthly) + '</span><span class="lab">a month</span><span class="ann">over ' + years + ' years &middot; ' + rate.toFixed(1) + '% a year</span>'
+      : '<span class="lab">Enter a property price above.</span>';
+
+    document.getElementById("hlLegend").innerHTML = loan > 0
+      ? '<span><i style="background:var(--seal)"></i>Principal (what you borrow)</span><span><i style="background:color-mix(in srgb,var(--ink) 30%,transparent)"></i>Interest (what it costs)</span>'
+      : "";
+    document.getElementById("hlBar").innerHTML = loan > 0 && totalPay > 0
+      ? '<span class="s-prin" style="width:' + (loan / totalPay * 100).toFixed(2) + '%"></span><span class="s-int" style="width:' + (totalInt / totalPay * 100).toFixed(2) + '%"></span>'
+      : "";
+
+    document.getElementById("hlRows").innerHTML = loan > 0 ? (
+      '<div class="th-row" style="border-top:none"><span class="sw"></span><span>Property price</span><span class="amt">' + rm(price) + '</span><span class="pct"></span></div>' +
+      '<div class="th-row"><span class="sw"></span><span>Down payment (' + downPct + '%)</span><span class="amt">- ' + rm(down) + '</span><span class="pct"></span></div>' +
+      '<div class="th-row"><span class="sw" style="background:var(--seal)"></span><span>Loan amount (principal)</span><span class="amt">' + rm(loan) + '</span><span class="pct">' + (100 - downPct) + '%</span></div>' +
+      '<div class="th-row"><span class="sw" style="background:color-mix(in srgb,var(--ink) 30%,transparent)"></span><span>Total interest over ' + years + ' years</span><span class="amt">' + rm(totalInt) + '</span><span class="pct">' + (loan > 0 ? (totalInt / loan * 100).toFixed(0) : 0) + '%</span></div>' +
+      '<div class="th-row tot"><span class="sw" style="background:var(--seal)"></span><span>Total you repay</span><span class="amt">' + rm(totalPay) + '</span><span class="pct"></span></div>'
+    ) : "";
+
+    document.getElementById("hlIncome").innerHTML = loan > 0
+      ? 'To stay comfortable, banks usually like your home loan instalment to be within about a third of your gross income. At ' + rm(monthly) + ' a month, that points to a gross income of roughly <b>' + rm(reqIncome) + ' a month</b> (before your other commitments like car loans and cards, which the bank also counts).'
+      : "";
+
+    document.getElementById("hlNote").innerHTML = loan > 0
+      ? "This is a standard monthly-rest amortisation estimate. Most Malaysian home loans are variable and track the bank's Base Rate / SBR, which moves with Bank Negara's OPR, so your instalment can change over the years. A longer tenure lowers the monthly payment but raises the total interest. On top of this, budget for legal fees and stamp duty on the transfer and loan agreement. Not financial advice."
+      : "";
+    document.getElementById("hlSrc").innerHTML = 'Method: monthly-rest amortisation. Rate context: <a href="/usd-to-myr">Ringgit &amp; rates</a> &middot; loan stamp duty: <a href="/stamp-duty">stamp duty tool</a>.';
+  }
+  [priceEl, downEl, rateEl, yearsEl].forEach(function (el) { el.addEventListener("input", render); });
+  render();
+})();
+</script>
+</body></html>

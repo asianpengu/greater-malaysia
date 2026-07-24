@@ -1,0 +1,78 @@
+{
+  "slug": "malaysia-gdp-growth",
+  "kind": "data-story",
+  "title": "Is Malaysia's economy growing?",
+  "subtitle": "Yes. GDP grew 5.4% in early 2026, and services now run the show.",
+  "question": "Is Malaysia's economy growing, what is the GDP growth rate, and how big is the economy?",
+  "answer": "Yes. Malaysia's economy grew 5.4% year-on-year in the first quarter of 2026, after 5.2% growth across the whole of 2025, faster than most advanced economies. In real terms the economy is worth about RM1.74 trillion a year. Almost 60% of it is services; manufacturing adds another quarter. Agriculture, once the backbone, is now just 6%.",
+  "updated": "2026-07-24",
+  "source": {
+    "publisher": "Department of Statistics Malaysia (DOSM), via data.gov.my",
+    "publisher_type": "Government, national statistics office, open data",
+    "document": "Gross Domestic Product (GDP), real terms",
+    "published": "2026",
+    "url": "https://data.gov.my/data-catalogue/gdp_qtr_real",
+    "retrieved": "2026-07-24",
+    "license": "Official open data (data.gov.my), Department of Statistics Malaysia",
+    "notes": "Real (inflation-adjusted, constant-price) GDP. Annual growth rates are year-on-year in real terms. The latest quarterly figure is Q1 2026 (5.4% year-on-year). Sector shares are real GDP by economic activity for 2025, in RM billion. Nominal (current-price) GDP is higher, at roughly RM1.9 trillion."
+  },
+  "headline": [
+    { "label": "GDP growth", "value": "5.4", "suffix": "%", "sub": "Q1 2026, year-on-year", "note": "still expanding" },
+    { "label": "Size of the economy", "value": "RM1.74", "suffix": "tn", "sub": "real terms, 2025", "note": "a year" },
+    { "label": "Is services", "value": "60", "suffix": "%", "sub": "the biggest sector by far", "note": "RM1.03tn" }
+  ],
+  "series": {
+    "trend": {
+      "title": "Annual GDP growth, real terms (%)",
+      "note": "Malaysia's economy has grown most years. The exception was 2020, when it shrank 5.5% in the pandemic, before snapping back 9.0% in 2022.",
+      "ref": "Real GDP growth, year-on-year, annual",
+      "unit": "% growth",
+      "x": "year",
+      "highlight": { "x": "2020", "label": "Covid" },
+      "metrics": [{ "key": "value", "label": "% growth", "color": "seal", "fmt": "pct" }],
+      "rows": [
+        { "year": "2016", "value": 4.4 },
+        { "year": "2017", "value": 5.8 },
+        { "year": "2018", "value": 4.8 },
+        { "year": "2019", "value": 4.4 },
+        { "year": "2020", "value": -5.5 },
+        { "year": "2021", "value": 3.3 },
+        { "year": "2022", "value": 9.0 },
+        { "year": "2023", "value": 3.6 },
+        { "year": "2024", "value": 5.2 },
+        { "year": "2025", "value": 5.2 }
+      ]
+    },
+    "bysector": {
+      "title": "The economy by sector (2025, RM billion)",
+      "note": "Services dominate, at nearly 60% of GDP. Manufacturing is the second pillar. Agriculture, mining and construction are now minor slices of a services-and-factories economy.",
+      "ref": "Real GDP by economic activity, 2025",
+      "unit": "RM billion",
+      "layout": "horizontal",
+      "metrics": [{ "key": "value", "label": "RM billion", "color": "seal", "fmt": "num" }],
+      "rows": [
+        { "label": "Services", "value": 1034.0 },
+        { "label": "Manufacturing", "value": 399.4 },
+        { "label": "Agriculture", "value": 106.4 },
+        { "label": "Mining & quarrying", "value": 99.3 },
+        { "label": "Construction", "value": 74.7 },
+        { "label": "Taxes on products", "value": 23.3 }
+      ]
+    }
+  },
+  "takeaways": [
+    "**The economy is still growing.** Real GDP rose 5.4% year-on-year in Q1 2026, extending a solid run of 5.2% in 2025 and 5.2% in 2024, quicker than most developed economies.",
+    "**Services are the engine.** At about RM1.03 trillion, services, retail, finance, tourism, transport, telecoms and government, make up nearly 60% of the economy.",
+    "**Manufacturing is the second pillar** (about RM399 billion, ~23%), the same electronics and machinery that dominate Malaysia's exports.",
+    "**The Covid scar was deep.** GDP shrank 5.5% in 2020, the worst contraction since the 1998 Asian financial crisis, then rebounded 9.0% in 2022 as the economy reopened.",
+    "**Malaysia has left the farm behind.** Agriculture is now just ~6% of GDP. The country has shifted decisively from a commodity economy to services and manufacturing."
+  ],
+  "faq": [
+    { "q": "What is Malaysia's GDP growth rate?", "a": "Malaysia's real GDP grew 5.4% year-on-year in the first quarter of 2026, following full-year growth of 5.2% in 2025 and 5.2% in 2024, according to DOSM data on data.gov.my." },
+    { "q": "How big is Malaysia's economy?", "a": "About RM1.74 trillion a year in real (inflation-adjusted) terms in 2025, per DOSM. In nominal (current-price) terms it is larger, roughly RM1.9 trillion." },
+    { "q": "What is the biggest sector of Malaysia's economy?", "a": "Services, at about RM1.03 trillion, nearly 60% of GDP. Manufacturing is second at around RM399 billion (about 23%), followed by agriculture, mining and construction." },
+    { "q": "Is Malaysia's economy doing well?", "a": "By most measures yes: growth of 5.4% in early 2026 is above the global average and faster than most advanced economies, driven by services and a strong manufacturing and export base." },
+    { "q": "How much did Malaysia's economy shrink during Covid?", "a": "Real GDP contracted 5.5% in 2020, its worst year since the 1998 Asian financial crisis, before recovering and growing 9.0% in 2022." },
+    { "q": "Where does this GDP data come from?", "a": "From the Department of Statistics Malaysia (DOSM), published as official open data on data.gov.my. Quarterly figures run to Q1 2026 and annual sector figures to 2025." }
+  ]
+}
