@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#d8d2c2;--paper-card:#f3efe6;--panel:#efeadf;--ink:#16130d;--ink-soft:#4a443a;--ink-faint:#8a8272;--seal:#b23a23;--line-ink:rgba(22,19,13,0.85);--line:rgba(22,19,13,0.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper)}
+  .card{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;color:var(--ink);padding:56px 62px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .brand{display:flex;align-items:center;gap:15px}
+  .gm{font-family:'Caveat Brush',cursive;font-size:56px;line-height:.8}
+  .brand-txt .n{font-weight:700;font-size:21px}
+  .brand-txt .u{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--seal);letter-spacing:.04em}
+  .eyebrow{font-family:'Caveat Brush',cursive;color:var(--seal);font-size:26px}
+  .title{font-family:'Anton',sans-serif;font-size:60px;line-height:.94;text-transform:uppercase;letter-spacing:.005em;margin-bottom:10px}
+  .sub{font-size:22px;color:var(--ink-soft);line-height:1.3;margin-bottom:22px}
+  .rule{height:3px;background:var(--line-ink);position:relative;margin-bottom:26px}
+  .rule::after{content:"";position:absolute;right:0;top:-3px;border-left:9px solid var(--line-ink);border-top:5px solid transparent;border-bottom:5px solid transparent}
+
+  .bframe{flex:1;background:#fff;border:2.5px solid var(--line-ink);border-radius:14px;box-shadow:11px 11px 0 rgba(22,19,13,.10);overflow:hidden;display:flex;flex-direction:column}
+  .bbar{height:48px;background:var(--paper-card);border-bottom:2px solid var(--line-ink);display:flex;align-items:center;gap:14px;padding:0 18px;flex-shrink:0}
+  .dots{display:flex;gap:9px}
+  .dots i{width:14px;height:14px;border-radius:50%;display:block;border:1.5px solid rgba(22,19,13,.5)}
+  .dots i:nth-child(1){background:#c8593f}.dots i:nth-child(2){background:#d9a441}.dots i:nth-child(3){background:#6f8f5a}
+  .burl{flex:1;background:#fff;border:1.5px solid var(--line);border-radius:8px;height:30px;display:flex;align-items:center;padding:0 14px;font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--ink-soft)}
+  .bbody{flex:1;background:var(--paper);padding:26px 34px;display:flex;flex-direction:column;justify-content:center}
+  .toolbox{background:var(--paper-card);border:2.5px solid var(--line-ink);border-radius:12px;padding:24px 30px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+  .chip{background:#fff;border:1.5px solid var(--line-ink);border-radius:9px;padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:17px}
+  .chip .k{color:var(--ink-faint);font-size:12px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+  .chip .v{color:var(--ink);font-weight:600}
+  .res{display:flex;align-items:baseline;gap:18px;border-top:2px solid var(--line-ink);padding-top:18px}
+  .big{font-family:'Anton',sans-serif;font-size:92px;line-height:.86;color:var(--seal)}
+  .big-lab{font-size:22px;color:var(--ink-soft)}
+  .big-ann{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--ink-faint);margin-left:auto}
+  .legend{display:flex;gap:22px;font-size:15px;color:var(--ink-soft);margin:16px 0 8px}
+  .legend span{display:inline-flex;align-items:center;gap:8px}
+  .legend i{width:13px;height:13px;border-radius:3px;display:inline-block}
+  .bar{display:flex;height:32px;border:1.5px solid var(--line-ink);border-radius:5px;overflow:hidden}
+  .bar .p{background:var(--seal)}.bar .in{background:color-mix(in srgb,var(--ink) 30%,transparent)}
+  .mini{display:flex;gap:34px;margin-top:16px;font-family:'JetBrains Mono',monospace}
+  .mini div{font-size:15px;color:var(--ink-faint)}
+  .mini div b{display:block;font-size:22px;color:var(--ink);font-weight:700;margin-top:3px}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+  .foot .site{font-family:'Anton',sans-serif;font-size:29px;letter-spacing:.02em}
+  .foot .tag{font-family:'Caveat Brush',cursive;font-size:25px;color:var(--ink-soft)}
+  .foot .tag b{color:var(--seal)}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <div class="brand"><div class="gm">GM</div><div class="brand-txt"><div class="n">Greater Malaysia</div><div class="u">@GreaterMsia</div></div></div>
+    <div class="eyebrow">free tool</div>
+  </div>
+  <div class="title">Home loan calculator</div>
+  <div class="sub">Your monthly instalment, total interest and the income you'd need, in seconds.</div>
+  <div class="rule"></div>
+  <div class="bframe">
+    <div class="bbar"><span class="dots"><i></i><i></i><i></i></span><div class="burl">greatermalaysia.com/home-loan-calculator</div></div>
+    <div class="bbody">
+      <div class="toolbox">
+        <div class="chips">
+          <div class="chip"><span class="k">Property price</span><span class="v">RM500,000</span></div>
+          <div class="chip"><span class="k">Down payment</span><span class="v">10%</span></div>
+          <div class="chip"><span class="k">Interest rate</span><span class="v">4.2%</span></div>
+          <div class="chip"><span class="k">Tenure</span><span class="v">35 yrs</span></div>
+        </div>
+        <div class="res"><span class="big">RM2,047</span><span class="big-lab">a month</span><span class="big-ann">over 35 years &middot; 4.2% a year</span></div>
+        <div class="legend"><span><i style="background:var(--seal)"></i>Principal (what you borrow)</span><span><i style="background:color-mix(in srgb,var(--ink) 30%,transparent)"></i>Interest (what it costs)</span></div>
+        <div class="bar"><span class="p" style="width:52.4%"></span><span class="in" style="width:47.6%"></span></div>
+        <div class="mini">
+          <div>Loan amount<b>RM450,000</b></div>
+          <div>Total interest<b>RM409,667</b></div>
+          <div>Total you repay<b>RM859,667</b></div>
+          <div>Income you'd want<b>~RM6,140/mo</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="site">greatermalaysia.com</div>
+    <div class="tag">free &amp; live &middot; <b>building in public 🇲🇾</b></div>
+  </div>
+</div>
+</body></html>
