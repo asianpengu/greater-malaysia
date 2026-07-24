@@ -1054,3 +1054,5 @@ body[data-nav-open] .nav-sheet { display: flex; }
 .gm-share .gs-btn:hover { background: var(--ink); color: var(--paper-2); transform: translateY(-1px); }
 .gm-share .gs-copy { font: inherit; font-size: 13px; font-weight: 600; }
 @media (max-width: 600px) { .gm-share .gs-btn { min-height: 44px; display: inline-flex; align-items: center; } }
+
+.footer-credit a.x-ico, .footer-v2 .footer-credit a.x-ico { border-bottom: none; }
